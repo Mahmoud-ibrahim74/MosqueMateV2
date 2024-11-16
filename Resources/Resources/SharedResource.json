@@ -1,0 +1,455 @@
+{
+  "AppName": {
+    "en": "Mosque Mate",
+    "ar": "موسكى ميت",
+    "fr": "Mosque Mate"
+  },
+  "Alert": {
+    "en": "Alert",
+    "ar": "تنبيه",
+    "fr": "alerte"
+  },
+  "HadithNo": {
+    "en": "Hadith No.",
+    "ar": "الحديث رقم",
+    "fr": "Hadith n°"
+  },
+  "Adhan": {
+    "en": "Adhan",
+    "ar": "الآذان",
+    "fr": "Adhan"
+  },
+  "CloseApp": {
+    "en": "Close App",
+    "ar": "إغلاق التطبيق",
+    "fr": "Fermer l'application"
+  },
+  "GoodMorning": {
+    "ar": "صباح الخير اخى المسلم",
+    "en": "Good morning, my Muslim brother",
+    "fr": "Bonjour, mon frère musulman"
+  },
+  "minimize": {
+    "en": "minimize",
+    "ar": "تصغير",
+    "fr": "minimiser"
+  },
+  "autoStartUp": {
+    "ar": "بدء التشغيل التلقائي",
+    "en": "Auto StartUp",
+    "fr": "Démarrage automatique"
+  },
+  "InternetTimeout": {
+    "en": "Your App Need Internet to Run, Please Check Your Internet Connection ,then try again",
+    "ar": "التطبيق يحتاج الى الإنترنت لكى يعمل , برجاء التحقق من اتصالك بالانترنت وحاول مجددا",
+    "fr": "Your App Need Internet to Run, Please Check Your Internet Connection ,then try again"
+  },
+  "checkConnction": {
+    "en": "This page need internet to work , please check internet then try again",
+    "ar": "هذه الصفحة تحتاج إلى انترنت كي تعمل برجاء التحقق من اتصالك بالانترنت ثم اعد المحاولة ",
+    "fr": "Cette page a besoin d'Internet pour fonctionner, veuillez vérifier Internet puis réessayer"
+  },
+  "GoodEvening": {
+    "ar": "مساء الخير",
+    "en": "Good Evening",
+    "fr": "Bonsoir"
+  },
+  "ContinueReading": {
+    "ar": "أكمل القراءة ",
+    "en": "Continue Reading",
+    "fr": "Continuer la lecture"
+  },
+  "PrayerTime": {
+    "ar": "أوقات الصلاة",
+    "en": "Prayer Time",
+    "fr": "Temps de prière"
+  },
+  "AlertNotify": {
+    "ar": "باقى اقل  من  ساعة على الصلاة القادمة هيا قم وصلي الصلاة السابقة  قال الله ( فخلف من بعدهم خلف أضاعوا الصلاة واتبعوا الشهوات فسوف يلقون غياً ) ",
+    "en": "There is half an hour left until the next prayer. Come on, get up and pray the previous prayer. God said (So after them came successors who neglected prayer and followed desires. They will meet with error.) ",
+    "fr": "Il reste une demi-heure avant la prochaine prière. Allez, lève-toi et fais la prière précédente. Dieu a dit (Ainsi, après eux sont venus des successeurs qui ont négligé la prière et suivi les désirs. Ils rencontreront l'erreur.) "
+  },
+  "AppSettingWindowTitle": {
+    "ar": "إعدادات التطبيق",
+    "en": "App Settings",
+    "fr": "Paramètres de l'application"
+  },
+  "country": {
+    "ar": "برجاء اختيار البلد",
+    "en": "Please Select Country",
+    "fr": "Veuillez sélectionner le pays"
+  },
+  "QiblaDirection": {
+    "ar": "إتجاه القبلة",
+    "en": "Qibla Direction",
+    "fr": "Direction de la Qibla"
+  },
+  "Error": {
+    "en": "Error",
+    "ar": "خطأ",
+    "fr": "Erreur"
+  },
+  "HijriTitle": {
+    "ar": "التاريخ الهجري",
+    "en": "Hijri Date",
+    "fr": "Date Hijri"
+  },
+  "HijriMonth": {
+    "ar": "الشهر الهجري",
+    "en": "Hijri Month",
+    "fr": "Hijri Month"
+  },
+  "NextZekr": {
+    "ar": "الذكر التالى",
+    "en": "Next Zekr",
+    "fr": "Le suivant Zekr"
+  },
+  "PrevZekr": {
+    "ar": "الذكر السابق",
+    "en": "Previous Zekr",
+    "fr": "La précédente Zekr"
+  },
+  "HomePage": {
+    "ar": "الرئيسية",
+    "en": "Home",
+    "fr": "Accueil"
+  },
+  "Info": {
+    "en": "Information",
+    "ar": "معلومات",
+    "fr": "information"
+  },
+  "Language": {
+    "ar": "اللغة",
+    "en": "Language",
+    "fr": "Langue"
+  },
+  "Mode": {
+    "ar": "الوضع المظلم",
+    "en": "Dark Mode",
+    "fr": "Mode Sombre"
+  },
+  "MiladiTitle": {
+    "ar": "التاريخ الميلادى",
+    "en": "Gregorian Date",
+    "fr": "Date grégorienne,"
+  },
+  "Minutes": {
+    "ar": "دقائق",
+    "en": "Minutes",
+    "fr": "Minutes"
+  },
+  "Muezzin": {
+    "ar": "المؤذن",
+    "en": "The muezzin",
+    "fr": "Le muezzin"
+  },
+  "PrayerLeft": {
+    "ar": "باقى على صلاة",
+    "en": "Remaining in prayer",
+    "fr": "Temps restant pour la prière"
+  },
+  "prayerTimes": {
+    "Fajr": {
+      "ar": "الفجر",
+      "en": "Fajr",
+      "fr": "Fajr"
+    },
+    "Sunrise": {
+      "ar": "الشروق",
+      "en": "Sunrise",
+      "fr": "Lever du soleil"
+    },
+    "Dhuhr": {
+      "ar": "الظهر",
+      "en": "Dhuhr",
+      "fr": "Dhuhr"
+    },
+    "Asr": {
+      "ar": "العصر",
+      "en": "Asr",
+      "fr": "Asr"
+    },
+    "Sunset": {
+      "ar": "الغروب",
+      "en": "Sunset",
+      "fr": "Coucher du soleil"
+    },
+    "Maghrib": {
+      "ar": "المغرب",
+      "en": "Maghrib",
+      "fr": "Maghrib"
+    },
+    "Isha": {
+      "ar": "العشاء",
+      "en": "Isha",
+      "fr": "Isha"
+    },
+    "TimeForPrayer": {
+      "ar": "حان الان موعد صلاة ",
+      "en": "Now is the time for prayer ",
+      "fr": "C'est maintenant l'heure de la prière"
+    }
+  },
+  "RestartAppWarning": {
+    "ar": "سيتم إعادة تشغيل التطبيق ؟",
+    "en": "Application will be restart ?",
+    "fr": "l'application va redémarrer ?"
+  },
+  "Save": {
+    "ar": "حفظ",
+    "en": "Save",
+    "fr": "sauvegarder"
+  },
+  "SelectedLang": {
+    "ar": "برجاء اختيار اللغة",
+    "en": "Please Select Language",
+    "fr": "Veuillez sélectionner la langue"
+  },
+  "SettingValidations": {
+    "rdLang": {
+      "ar": "برجاء اختيار اللغة",
+      "en": "Please Select Language",
+      "fr": "Veuillez sélectionner la langue"
+    },
+    "rdCombo": {
+      "ar": "برجاء اختيار المؤذن",
+      "en": "Please Select the muezzin",
+      "fr": "Veuillez sélectionner le muezzin"
+    },
+    "rdCountryCombo": {
+      "ar": "برجاء إختيار البلد",
+      "en": "Please select the country",
+      "fr": "Veuillez sélectionner le pays"
+    },
+    "rdCityCombo": {
+      "ar": "برجاء إختيار المدينة",
+      "en": "Please select the city",
+      "fr": "Veuillez sélectionner la ville"
+    },
+    "methodCombo": {
+      "ar": "برجاء إختيار طريقة الحساب",
+      "en": "Please select Calculation Method",
+      "fr": "Veuillez sélectionner la méthode de calcul"
+    }
+  },
+  "countryLBL": {
+    "ar": "البلد",
+    "en": "Country",
+    "fr": "Pays"
+  },
+  "cityLBL": {
+    "ar": "المدينة",
+    "en": "City",
+    "fr": "Ville"
+  },
+  "notificationLBL": {
+    "ar": "الإشعارات",
+    "en": "Notifications",
+    "fr": "Notifications"
+  },
+  "notificationDesc": {
+    "ar": " عند تشغيل هذه الميزة ستصلك إشعارات مثل تنبيه قبل الآذان بساعة أو إشعارات الآذان الآن وإشعارات التحديثات",
+    "en": "When this feature is turned on, you will receive notifications such as an alert one hour before the call to prayer or notifications of the call to prayer now and Updates Notifications",
+    "fr": "Lorsque cette fonctionnalité est activée, vous recevrez des notifications telles qu'une alerte une heure avant l'appel à la prière ou des notifications de l'appel à la prière maintenant"
+  },
+  "calculationMethod": {
+    "ar": "الطريقة",
+    "en": "Method",
+    "fr": "la Méthode"
+  },
+  "calculationMethodToolTip": {
+    "ar": "ترجع الطريقة إلى طريقة حساب الوقت المخصصة لأشهر البلاد العربية والأجنبية",
+    "en": "The method goes back to the method of calculating the time allocated to the most famous Arab and foreign countries.",
+    "fr": "La méthode est due à la méthode de calcul du temps allouée aux pays arabes et étrangers les plus connus."
+  },
+
+  "SideBar": {
+    "Home": {
+      "ar": "الرئيسية",
+      "en": "Home",
+      "fr": "Accueil"
+    },
+    "Profile": {
+      "ar": "الملف الشخصى",
+      "en": "Profile",
+      "fr": "Profil"
+    },
+    "contactUs": {
+      "ar": "تواصل معنا",
+      "en": "Contact Us",
+      "fr": "Contactez-nous"
+    },
+    "Adhkar": {
+      "en": "Adhkar",
+      "ar": "الأذكار",
+      "fr": "Adhkar"
+    },
+    "Quran": {
+      "en": "Quran",
+      "ar": "القرآن الكريم",
+      "fr": "Quran"
+    },
+    "Settings": {
+      "ar": "الإعدادت",
+      "en": "Settings",
+      "fr": "Paramètres"
+    }
+  },
+  "TabControlAppSetting": {
+    "GeneralSettingsTab": {
+      "ar": "إعدادت عامة",
+      "en": "General Settings",
+      "fr": "Paramètres généraux"
+    },
+    "profileTab": {
+      "ar": "الملف الشخصى",
+      "en": "Profile",
+      "fr": "Profil"
+    },
+    "OurTeamTab": {
+      "ar": "فريقنا",
+      "en": "Our Team",
+      "fr": "Notre équipe"
+    }
+  },
+  "TimeLeft": {
+    "ar": "الصلاة القادمة بعد",
+    "en": "Next prayer after",
+    "fr": "Prochaine prière après"
+
+  },
+  "Warning": {
+    "en": "Warning",
+    "ar": "تحذير",
+    "fr": "Avertissement"
+  },
+  "WelcomeTitle": {
+    "ar": "مرحبا بك في تطبيق",
+    "en": "Welcome To",
+    "fr": "Bienvenue dans"
+  },
+  "WindowTitle": {
+    "ar": "الرئيسية",
+    "en": "Home",
+    "fr": "Principal"
+  },
+  "ZekrCount": {
+    "ar": "عدد المرات",
+    "en": "how often",
+    "fr": "à quelle fréquence"
+  },
+  "Hadith": {
+    "ar": "الأحاديث النووية",
+    "en": "The Nawawi Hadiths ",
+    "fr": "Les Nawawi Hadiths"
+  },
+  "bukhari": {
+    "ar": "الإمام البخاري",
+    "en": "Bukhari",
+    "fr": "Bukhari"
+  },
+  "abudaud": {
+    "ar": "الإمام أبو داود ",
+    "en": "Abudaud",
+    "fr": "Abudaud"
+  },
+  "ahmad": {
+    "ar": "الإمام أحمد بن حنبل",
+    "en": "Ahmad ibn Hanbal",
+    "fr": "Ahmad ibn Hanbal"
+  },
+  "darimi": {
+    "ar": "الإمام الدارمي",
+    "en": "Darimi",
+    "fr": "Darimi"
+  },
+  "ibnumajah": {
+    "ar": "الإمام ابن ماجه",
+    "en": "Ibnumajah",
+    "fr": "Ibnumajah"
+  },
+  "malik": {
+    "ar": "الإمام مالك",
+    "en": "Malik",
+    "fr": "Malik"
+  },
+  "muslim": {
+    "ar": "الإمام مسلم",
+    "en": "Muslim",
+    "fr": "Muslim "
+  },
+  "nasai": {
+    "ar": "الإمام النسائي ",
+    "en": "Nasai",
+    "fr": "Nasai"
+  },
+  "tirmidzi": {
+    "ar": "الإمام الترمزي ",
+    "en": "Tirmidzi",
+    "fr": "Tirmidzi"
+  },
+
+
+  "Time": {
+    "ar": "مرة",
+    "en": "Once",
+    "fr": "Une fois"
+  },
+  "Times": {
+    "ar": "مرات",
+    "en": "times",
+    "fr": "fois"
+  },
+  "TwoTimes": {
+    "ar": "مرتان",
+    "en": "Two Times",
+    "fr": "Two Times"
+  },
+  "fnameValidation": {
+    "ar": "من فضلك ادخل الأسم الأول",
+    "en": "Please enter first name",
+    "fr": "Veuillez saisir votre prénom"
+  },
+  "lnameValidation": {
+    "ar": "من فضلك ادخل الأسم الأخير",
+    "en": "Please enter last name",
+    "fr": "Veuillez entrer votre nom de famille"
+  },
+  "emailValidation": {
+    "ar": "من فضلك ادخل البريد الإلكتروني",
+    "en": "Please enter email",
+    "fr": "Veuillez entrer le email"
+  },
+  "emailValidation2": {
+    "ar": "من فضلك ادخل بريد إلكتروني صحيح مثل (a@example.com)",
+    "en": "Please enter correct email like (a@example.com)",
+    "fr": "Veuillez saisir l'adresse e-mail correcte, comme (a@example.com)"
+  },
+  "bodyValidation": {
+    "ar": "من فضلك ادخل  المحتوي",
+    "en": "Please enter body",
+    "fr": "Veuillez entrer le corps"
+  },
+  "NextVersion": {
+    "ar": "هذه الخدمة غير متاحة حاليا سوف تكون متاحة فى التحديث القادم",
+    "en": "This service is currently unavailable. It will be available in the next update",
+    "fr": "Ce service est actuellement indisponible. Il sera disponible dans la prochaine mise à jour"
+  },
+  "UpdateAviliable": {
+    "ar": "يتوفر تحديث  جديد ",
+    "en": "A new update is available.",
+    "fr": "Une nouvelle mise à jour est disponible. "
+  },
+  "checkForUpdate": {
+    "ar": "التحقق من  تحديث  جديد",
+    "en": "Check new update is available",
+    "fr": "Une nouvelle mise à jour est disponible. "
+  },
+  "PlaySoura": {
+    "ar": "الإستماع إلى السورة",
+    "en": "Listin to soura",
+    "fr": "écoute Soura"
+  }
+
+}
