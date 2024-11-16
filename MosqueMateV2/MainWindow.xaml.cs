@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Resources;
+using System.Windows;
 
 namespace MosqueMateV2
 {
@@ -9,7 +10,7 @@ namespace MosqueMateV2
     {
         public MainWindow()
         {
-            var gg = App.LocalizationService[];
+            var gg = App.LocalizationService[AppLocalization.Arabic];
             InitializeComponent();
         }
     }
