@@ -11,13 +11,15 @@ namespace MosqueMateV2
         public static JsonLocalizationService LocalizationService { get; private set; }
         protected override void OnStartup(StartupEventArgs e)
         {
-            base.OnStartup(e);
 
             // Load localization file
             LocalizationService = new JsonLocalizationService();
 
             // Set default culture (e.g., "en")
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(AppLocalization.Arabic);
+
+            base.OnStartup(e);
+
         }
     }
 

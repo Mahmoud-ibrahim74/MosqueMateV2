@@ -4,6 +4,12 @@
     "ar": "موسكى ميت",
     "fr": "Mosque Mate"
   },
+  "MainMenu": {
+    "ar": "القائمة الرئيسية",
+    "en": "Main Menu",
+    "fr": "Menu principal"
+  },
+
   "Alert": {
     "en": "Alert",
     "ar": "تنبيه",

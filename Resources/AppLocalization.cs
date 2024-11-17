@@ -4,6 +4,7 @@
     {
         public const string Arabic = "ar";
         public const string IsNotExisted = "IsNotExisted";
+        public const string MainMenu = "MainMenu";
         public const string SomethingWrong = "SomethingWrong";
         public const string English = "en";
         public const string NotClinic = "NotClinic";
