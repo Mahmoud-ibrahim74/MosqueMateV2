@@ -9,14 +9,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="loading.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Reactive" Version="6.0.1" />
     <PackageReference Include="System.Reactive.Windows.Threading" Version="6.0.1" />
+    <PackageReference Include="XamlAnimatedGif" Version="2.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MosqueMateV2.Domain\MosqueMateV2.Domain.csproj" />
     <ProjectReference Include="..\MosqueMateV2.Helpers\MosqueMateV2.Helpers.csproj" />
     <ProjectReference Include="..\Resources\Resources.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\loading.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

@@ -3,17 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xag="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif"
         xmlns:local="clr-namespace:MosqueMateV2"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="800" MinWidth="600" MinHeight="400" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
-            <RowDefinition Height="25*"/>
-            <RowDefinition Height="146*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="243*"/>
+            <RowDefinition Height="341*"/>
         </Grid.RowDefinitions>
-        <Label Content="....." FontSize="20" FontWeight="UltraBold" Padding="10 3 0 0" Margin="0,0,491,50"/>
-        <Label Content="....." FontSize="20" FontWeight="UltraBold" Padding="10 3 0 0" Margin="0,50,491,0"/>
-        <Button Content="Button" Margin="400,50,0,0" VerticalAlignment="Top" Width="188" Click="Button_Click"/>
+        <Label x:Name="mildaiDate" Content="....." FontSize="15"  Padding="10 3 0 0" Margin="0,0,491,50"/>
+        <Label x:Name="hijiriDate" Content="....." FontSize="15" Padding="10 3 0 0" Margin="0,50,491,0"/>
+        <Label x:Name="title" Content="....." FontSize="30" FontWeight="UltraBold" Padding="10 0 0 0" Margin="314,25,177,25"/>
 
+
+
+
+
+        <Image xag:AnimationBehavior.SourceUri="pack://application:,,,/Assets/loading.gif"
+            x:Name="LoaderGif"
+               Stretch="Uniform"
+               Visibility="Hidden"
+               HorizontalAlignment="Left"
+               Height="210" Margin="278,155,0,0" 
+               Grid.Row="1"  VerticalAlignment="Top"
+               Width="210" Grid.RowSpan="2"/>
     </Grid>
 </Window>

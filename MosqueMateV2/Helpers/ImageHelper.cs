@@ -5,20 +5,16 @@ namespace MosqueMateV2.Helpers
 {
     public class ImageHelper
     {
-        public BitmapImage ConvertBytesToImage(byte[] imageData)
-        {
-            BitmapImage bitmap = new BitmapImage();
-
-            using (MemoryStream stream = new MemoryStream(imageData))
-            {
-                bitmap.BeginInit();
-                bitmap.CacheOption = BitmapCacheOption.OnLoad; // Load the image into memory
-                bitmap.StreamSource = stream;
-                bitmap.EndInit();
-            }
-
-            bitmap.Freeze(); // Freeze to make it thread-safe and immutable
-            return bitmap;
+        public static BitmapImage LoadGifImage()
+        {     
+            // Load the GIF
+            BitmapImage gifBitmap = new();
+            gifBitmap.BeginInit();
+            gifBitmap.UriSource = new Uri("pack://application:,,,/Assets/loading.gif", UriKind.RelativeOrAbsolute); // Use your GIF path
+            gifBitmap.CacheOption = BitmapCacheOption.OnLoad; // Load immediately
+            gifBitmap.EndInit();
+            gifBitmap.Freeze(); 
+            return gifBitmap;
         }
     }
 }
