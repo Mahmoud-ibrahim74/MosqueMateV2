@@ -13,6 +13,7 @@
         </Grid.RowDefinitions>
         <Label Content="....." FontSize="20" FontWeight="UltraBold" Padding="10 3 0 0" Margin="0,0,491,50"/>
         <Label Content="....." FontSize="20" FontWeight="UltraBold" Padding="10 3 0 0" Margin="0,50,491,0"/>
+        <Button Content="Button" Margin="400,50,0,0" VerticalAlignment="Top" Width="188" Click="Button_Click"/>
 
     </Grid>
 </Window>

@@ -9,7 +9,7 @@ namespace Resources
 
         public JsonLocalizationService()
         {
-            string jsonFilePath = Path.Combine(Environment.CurrentDirectory, "Resources", "SharedResource.json");
+            string jsonFilePath = Path.Combine(Environment.CurrentDirectory, "AppResources", "SharedResource.json");
             if (!File.Exists(jsonFilePath))
                 throw new FileNotFoundException($"Localization file not found: {jsonFilePath}");
 

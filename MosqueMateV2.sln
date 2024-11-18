@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resources", "Resources\Reso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MosqueMateV2.Domain", "MosqueMateV2.Domain\MosqueMateV2.Domain.csproj", "{2AF6C04E-5686-4A66-8E4D-ABF49C53D854}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MosqueMateV2.Helpers", "MosqueMateV2.Helpers\MosqueMateV2.Helpers.csproj", "{C08E9A3D-E978-4A77-B451-A6CE4681DD97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2AF6C04E-5686-4A66-8E4D-ABF49C53D854}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AF6C04E-5686-4A66-8E4D-ABF49C53D854}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AF6C04E-5686-4A66-8E4D-ABF49C53D854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C08E9A3D-E978-4A77-B451-A6CE4681DD97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C08E9A3D-E978-4A77-B451-A6CE4681DD97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C08E9A3D-E978-4A77-B451-A6CE4681DD97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C08E9A3D-E978-4A77-B451-A6CE4681DD97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
