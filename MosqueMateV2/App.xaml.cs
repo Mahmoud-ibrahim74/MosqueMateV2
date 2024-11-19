@@ -9,6 +9,7 @@ namespace MosqueMateV2
     public partial class App : Application
     {
         public static JsonLocalizationService LocalizationService { get; private set; }
+        public static string AppLanguage { get; private set; }
         protected override void OnStartup(StartupEventArgs e)
         {
 
@@ -16,8 +17,8 @@ namespace MosqueMateV2
             LocalizationService = new JsonLocalizationService();
 
             // Set default culture (e.g., "en")
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(AppLocalization.Arabic);
-
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(AppLocalization.English);
+            AppLanguage = Thread.CurrentThread.CurrentUICulture.Name;
             base.OnStartup(e);
 
         }

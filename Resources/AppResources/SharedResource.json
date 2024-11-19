@@ -4,12 +4,16 @@
     "ar": "زميل المسجد الإصدار الثاني",
     "fr": "Mosque Mate V2"
   },
+  "WeclomeApp": {
+    "en": "Alsalam ealaykum",
+    "ar": "السلام عليكم",
+    "fr": "Alsalam ealaykum"
+  },
   "MainMenu": {
     "ar": "القائمة الرئيسية",
     "en": "Main Menu",
     "fr": "Menu principal"
   },
-
   "Alert": {
     "en": "Alert",
     "ar": "تنبيه",
@@ -56,9 +60,9 @@
     "fr": "Cette page a besoin d'Internet pour fonctionner, veuillez vérifier Internet puis réessayer"
   },
   "GoodEvening": {
-    "ar": "مساء الخير",
-    "en": "Good Evening",
-    "fr": "Bonsoir"
+    "ar": "مساء الخير اخى المسلم",
+    "en": "Good Evening , My Muslim brother",
+    "fr": "Bonsoir , mon frère musulman"
   },
   "ContinueReading": {
     "ar": "أكمل القراءة ",

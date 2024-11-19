@@ -3,6 +3,7 @@
     public static class AppLocalization
     {
         public const string AppName = "AppName";
+        public const string WeclomeApp = "WeclomeApp";
         public const string Arabic = "ar";
         public const string IsNotExisted = "IsNotExisted";
         public const string MainMenu = "MainMenu";
@@ -20,5 +21,7 @@
         public const string City = "City";
         public const string IsExist = "IsExist";
         public const string OfficialVacationIsExist = "OfficialVacationIsExist";
+        public const string GoodMorning = "GoodMorning";
+        public const string GoodAfternoon = "GoodAfternoon";
     }
 }
