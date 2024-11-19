@@ -1,4 +1,5 @@
-﻿using Resources;
+﻿using MosqueMateV2.Domain.DTOs;
+using Resources;
 using System.Globalization;
 using System.Windows;
 namespace MosqueMateV2
@@ -10,6 +11,7 @@ namespace MosqueMateV2
     {
         public static JsonLocalizationService LocalizationService { get; private set; }
         public static string AppLanguage { get; private set; }
+        public static DTOPrayerTimesResponse Api_Response { get; set; }
         protected override void OnStartup(StartupEventArgs e)
         {
 

@@ -14,6 +14,7 @@ namespace MosqueMateV2.Helpers.AppHelpers
         /// <typeparam name="T">The type of the result returned by the asynchronous task.</typeparam>
         /// <param name="backgroundTask">A function that represents the asynchronous task to be executed in the background.</param>
         /// <param name="onSuccess">An action to handle the result of the task on the UI thread upon successful completion.</param>
+        /// <param name="onError">An action to handle the result of the task if has exception .</param>
         /// <remarks>
         /// This method uses the System.Reactive library to handle asynchronous task execution and ensures that 
         /// the success callback is invoked on the UI thread.
@@ -21,18 +22,24 @@ namespace MosqueMateV2.Helpers.AppHelpers
         /// </remarks>
         public static void RunBackgroundTaskOnUI<T>(
             Func<Task<T>> backgroundTask,
-            Action<T> onSuccess)
+            Action<T> onSuccess,
+            Action onError = null
+            )
         {
             var uiScheduler = new SynchronizationContextScheduler(SynchronizationContext.Current);
-                 Observable
-                .FromAsync(backgroundTask) // Run the asynchronous task
-                .ObserveOn(uiScheduler)    // Switch back to the UI thread
-                .Subscribe(
-                    result => onSuccess(result), // Handle success
-                    error =>
-                    {
-                        Console.WriteLine($"Error: {error.Message}");
-                    });
+            Observable
+           .FromAsync(backgroundTask) // Run the asynchronous task
+           .ObserveOn(uiScheduler)    // Switch back to the UI thread
+           .Subscribe(
+               result => onSuccess(result), // Handle success
+               error =>
+               {
+                   if (!string.IsNullOrEmpty(error.Message))
+                   {
+                       if (onError != null)
+                           onError();
+                   }
+               });
         }
 
         /// <summary>

@@ -11,7 +11,7 @@ namespace MosqueMateV2.Helpers
             if (currentHour < 12)
                 return App.LocalizationService[AppLocalization.GoodMorning];
             else
-                return App.LocalizationService[AppLocalization.GoodAfternoon];
+                return App.LocalizationService[AppLocalization.GoodEvening];
 
         }
     }

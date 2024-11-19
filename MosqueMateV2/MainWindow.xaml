@@ -3,24 +3,63 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:xag="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif"
-        xmlns:local="clr-namespace:MosqueMateV2"
+        xmlns:xag="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif" 
+        xmlns:local="clr-namespace:MosqueMateV2.CustomUserControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="800"
         MinWidth="600" MinHeight="400" 
         WindowStartupLocation="CenterScreen" 
         Loaded="Window_Loaded"
         KeyDown="Window_KeyDown" ThemeMode="System">
+    <Window.Resources>
+        <!-- Define a DataTemplate for each carousel item -->
+        <DataTemplate x:Key="CarouselItemTemplate">
+            <Border BorderThickness="1" CornerRadius="10" Background="#f8f9fa" Margin="10">
+                <StackPanel>
+                    <!-- Image -->
+                    <Image Source="{Binding ImageSource}" Height="150" Stretch="UniformToFill" Margin="5" />
+
+                    <!-- Title -->
+                    <TextBlock Text="{Binding Title}" FontWeight="Bold" Foreground="#27ae60" 
+                               FontSize="16" Margin="10,5,10,0" />
+
+                    <!-- Description -->
+                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap" FontSize="14" Margin="10,5,10,10" />
+
+                    <!-- Date -->
+                    <TextBlock Text="{Binding Date}" FontSize="12" Foreground="#7f8c8d" Margin="10,0,10,5" />
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+    </Window.Resources>
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="100*"/>
             <RowDefinition Height="243*"/>
             <RowDefinition Height="341*"/>
         </Grid.RowDefinitions>
-        <Border CornerRadius="10" Margin="10,10,10,0" BorderBrush="Azure" BorderThickness="0.1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Border CornerRadius="10" 
+                Margin="10,10,10,0" 
+                BorderBrush="Azure" 
+                BorderThickness="0.1"
+                Grid.Row="0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
             <Grid>
                 <Label x:Name="welcomeLBL" Content="....." FontSize="12"  Padding="10 15 0 0" Margin="0,0,390,50"/>
                 <Label x:Name="hijiriDateLBL" Content="....." FontWeight="Bold" FontSize="15" Padding="10 0 0 0" Margin="0,44,390,6"/>
+            </Grid>
+        </Border>
+
+        <Border CornerRadius="10"
+                Grid.Row="1" 
+                Margin="10,10,10,0"               
+                BorderBrush="Azure"
+                BorderThickness="0.1"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+            <Grid x:Name="carouselContainer">
+                <local:CarouselUserControl Slides="{Binding Slides, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
             </Grid>
         </Border>
     </Grid>

@@ -22,6 +22,6 @@
         public const string IsExist = "IsExist";
         public const string OfficialVacationIsExist = "OfficialVacationIsExist";
         public const string GoodMorning = "GoodMorning";
-        public const string GoodAfternoon = "GoodAfternoon";
+        public const string GoodEvening = "GoodEvening";
     }
 }
