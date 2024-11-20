@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using MosqueMateV2.DataAccess.Models;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,23 +14,21 @@ namespace MosqueMateV2.CustomUserControls
         {
             InitializeComponent();
         }
-        // Dependency Property for Slides
-        public static readonly DependencyProperty SlidesProperty =
-            DependencyProperty.Register(
-                "Slides",
-                typeof(ObservableCollection<Slide>),
-                typeof(CarouselUserControl),
-                new PropertyMetadata(null));
+        #region Dependency Property
+        // Dependency Property for PrayerSlides
+        public static readonly DependencyProperty PrayerSlidesProperty =
+            DependencyProperty.Register(nameof(PrayerSlides), typeof(ObservableCollection<PrayerSlide>), typeof(CarouselUserControl),
+                new PropertyMetadata(new ObservableCollection<PrayerSlide>()));
 
         /// <summary>
         /// The collection of slides to display in the carousel.
         /// </summary>
-        public ObservableCollection<Slide> Slides
+        public ObservableCollection<PrayerSlide> PrayerSlides
         {
-            get { return (ObservableCollection<Slide>)GetValue(SlidesProperty); }
-            set { SetValue(SlidesProperty, value); }
+            get => (ObservableCollection<PrayerSlide>)GetValue(PrayerSlidesProperty);
+            set => SetValue(PrayerSlidesProperty, value);
         }
-        // Current index to keep track of the visible slide
+        #endregion
         private int _currentIndex = 0;
 
         /// <summary>
@@ -38,10 +36,11 @@ namespace MosqueMateV2.CustomUserControls
         /// </summary>
         private void PrevButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Slides is IList slidesList && slidesList.Count > 0)
+            if (PrayerSlides.Any())
             {
-                _currentIndex = (_currentIndex - 1 + slidesList.Count) % slidesList.Count;
-                UpdateCarousel(slidesList);
+                // Use LINQ to calculate the previous slide index
+                _currentIndex = (_currentIndex - 1 + PrayerSlides.Count) % PrayerSlides.Count;
+                UpdateCarousel();
             }
         }
 
@@ -50,30 +49,24 @@ namespace MosqueMateV2.CustomUserControls
         /// </summary>
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Slides is IList slidesList && slidesList.Count > 0)
+            if (PrayerSlides.Any())
             {
-                _currentIndex = (_currentIndex + 1) % slidesList.Count;
-                UpdateCarousel(slidesList);
+                // Use LINQ to calculate the next slide index
+                _currentIndex = (_currentIndex + 1) % PrayerSlides.Count;
+                UpdateCarousel();
             }
         }
 
         /// <summary>
         /// Updates the carousel to display the slide at the current index.
         /// </summary>
-        private void UpdateCarousel(IList slidesList)
+        private void UpdateCarousel()
         {
-            if (slidesList.Count > 0)
-            {
-                var currentSlide = new[] { slidesList[_currentIndex] };
-                SlideContainer.DataContext = currentSlide;
-            }
+            // Rearrange the slides to start from _currentIndex
+            var reorderedSlides = PrayerSlides.Skip(_currentIndex)
+                                              .Concat(PrayerSlides.Take(_currentIndex))
+                                              .ToArray();
+            ItemsControlSlides.ItemsSource = reorderedSlides;
         }
-    }
-
-    public class Slide
-    {
-        public string ImagePath { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
     }
 }

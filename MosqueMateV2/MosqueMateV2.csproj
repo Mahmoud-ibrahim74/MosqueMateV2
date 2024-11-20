@@ -10,6 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Asha.png" />
+    <None Remove="Assets\Asr.jpg" />
+    <None Remove="Assets\Dhur.jpg" />
+    <None Remove="Assets\Fajr.png" />
+    <None Remove="Assets\Magrib.jpg" />
+    <None Remove="Assets\shrouq.png" />
     <None Remove="loading.gif" />
   </ItemGroup>
 
@@ -24,13 +30,32 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MosqueMateV2.DataAccess\MosqueMateV2.DataAccess.csproj" />
     <ProjectReference Include="..\MosqueMateV2.Domain\MosqueMateV2.Domain.csproj" />
     <ProjectReference Include="..\MosqueMateV2.Helpers\MosqueMateV2.Helpers.csproj" />
     <ProjectReference Include="..\Resources\Resources.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Asha.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Asr.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Dhur.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Fajr.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\loading.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Magrib.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\shrouq.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
@@ -38,18 +63,6 @@
   <ItemGroup>
     <Folder Include="Pages\" />
     <Folder Include="Windows\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Assets\slide1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\slide2.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\slide3.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

@@ -36,31 +36,27 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100*"/>
             <RowDefinition Height="243*"/>
-            <RowDefinition Height="341*"/>
+            <RowDefinition Height="141*"/>
+            <RowDefinition Height="200*"/>
         </Grid.RowDefinitions>
         <Border CornerRadius="10" 
                 Margin="10,10,10,0" 
                 BorderBrush="Azure" 
                 BorderThickness="0.1"
-                Grid.Row="0"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch">
+                Grid.Row="0">
             <Grid>
                 <Label x:Name="welcomeLBL" Content="....." FontSize="12"  Padding="10 15 0 0" Margin="0,0,390,50"/>
                 <Label x:Name="hijiriDateLBL" Content="....." FontWeight="Bold" FontSize="15" Padding="10 0 0 0" Margin="0,44,390,6"/>
             </Grid>
         </Border>
 
-        <Border CornerRadius="10"
-                Grid.Row="1" 
-                Margin="10,10,10,0"               
-                BorderBrush="Azure"
-                BorderThickness="0.1"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch">
-            <Grid x:Name="carouselContainer">
-                <local:CarouselUserControl Slides="{Binding Slides, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-            </Grid>
-        </Border>
+        <Grid 
+            x:Name="carouselContainer"
+            Grid.Row="1" 
+            Grid.RowSpan="2"
+            Margin="10,10,10,0"                     
+            >
+            <local:CarouselUserControl PrayerSlides="{Binding PrayerSlidesData}" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"/>
+        </Grid>
     </Grid>
 </Window>

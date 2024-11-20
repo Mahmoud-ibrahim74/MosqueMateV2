@@ -1,4 +1,5 @@
 ﻿using MosqueMateV2.CustomUserControls;
+using MosqueMateV2.DataAccess.Models;
 using MosqueMateV2.Domain.APIService;
 using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Helpers;
@@ -21,19 +22,20 @@ namespace MosqueMateV2
     {
 
         public string apiContent { get; set; } = string.Empty;
-        public ObservableCollection<Slide> Slides { get; set; }
+        public ObservableCollection<PrayerSlide> PrayerSlidesData { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             ApiClient.Configure("cairo", "egypt", 2);
-
-            Slides =
-            [
-                new Slide { ImagePath = "pack://application:,,,/Assets/slide1.png", Title = "First Slide", Description = "This is the first slide." },
-                new Slide { ImagePath = "pack://application:,,,/Assets/slide2.jpg", Title = "Second Slide", Description = "This is the second slide." },
-                new Slide { ImagePath = "pack://application:,,,/Assets/slide3.jpg", Title = "Third Slide", Description = "This is the third slide." }
-            ];
-            DataContext = this;
+            PrayerSlidesData =
+                   [
+                        new(){ ImagePath = "pack://application:,,,/Assets/Dhur.jpg", Title = ".....", Description = "......" },
+                        new(){ ImagePath = "pack://application:,,,/Assets/Asr.jpg", Title = "....", Description = "......" },
+                        new(){ ImagePath = "pack://application:,,,/Assets/Magrib.jpg", Title = "....", Description = "......" },
+                        new(){ ImagePath = "pack://application:,,,/Assets/Asha.png", Title = ".....", Description = "......." },
+                        new(){ ImagePath = "pack://application:,,,/Assets/Fajr.png", Title = ".....", Description = "....." },
+                        new(){ ImagePath = "pack://application:,,,/Assets/shrouq.png", Title = ".....", Description = "......" },
+                    ];
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -61,6 +63,9 @@ namespace MosqueMateV2
             this.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
                                                     FlowDirection.RightToLeft :
                                                     FlowDirection.LeftToRight;
+
+
+            BindingCarusel();
 
             #region hijriDateBuilder
             StringBuilder hijriDate = new();
@@ -98,6 +103,19 @@ namespace MosqueMateV2
                 e.Key == Key.D)
             {
 
+            }
+        }
+
+
+        private void BindingCarusel()
+        {
+            if (App.Api_Response is not null)
+            {
+                var newPrayerSlidesData = PrayerSlidesData.Select(x => new PrayerSlide
+                {
+
+                }).ToList();
+                DataContext = this;
             }
         }
     }
