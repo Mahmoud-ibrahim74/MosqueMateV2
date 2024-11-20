@@ -68,5 +68,6 @@ namespace MosqueMateV2.CustomUserControls
                                               .ToArray();
             ItemsControlSlides.ItemsSource = reorderedSlides;
         }
+
     }
 }
