@@ -463,6 +463,16 @@
     "ar": "الإستماع إلى السورة",
     "en": "Listin to soura",
     "fr": "écoute Soura"
+  },
+  "Play": {
+    "ar": "تشغيل الأذان",
+    "en": "Play Adhan",
+    "fr": "Play Adhan"
+  },
+  "Pause": {
+    "ar": "ايقاف الأذان",
+    "en": "Pause Adhan",
+    "fr": "Pause Adhan"
   }
 
 }

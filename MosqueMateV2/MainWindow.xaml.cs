@@ -1,5 +1,4 @@
-﻿using MosqueMateV2.CustomUserControls;
-using MosqueMateV2.DataAccess.Models;
+﻿using MosqueMateV2.DataAccess.Models;
 using MosqueMateV2.Domain.APIService;
 using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Enums;
@@ -7,11 +6,8 @@ using MosqueMateV2.Helpers;
 using MosqueMateV2.Helpers.AppHelpers;
 using Newtonsoft.Json;
 using Resources;
-using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using XamlAnimatedGif;
 
@@ -25,6 +21,7 @@ namespace MosqueMateV2
 
         public string apiContent { get; set; } = string.Empty;
         public List<PrayerSlide> PrayerSlidesData { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -73,6 +70,8 @@ namespace MosqueMateV2
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+          var adhan =   MediaResources.GetAdhanFiles();
+            App.mP3Player.Play(adhan.Values.FirstOrDefault());
             this.Loader.Visibility = Visibility.Visible;
             this.IsEnabled = false;
             TaskHelper.RunBackgroundTaskOnUI(
@@ -134,6 +133,7 @@ namespace MosqueMateV2
                 Uri(DateTimeHelper.
                 GetNightOfDay(App.Api_Response.Data.Timings.Maghrib))
                 );
+            toggleAdhan.Content = App.LocalizationService[AppLocalization.Pause];
 
         }
 
@@ -163,6 +163,22 @@ namespace MosqueMateV2
             }
         }
 
+        private void toggleAdhan_Checked(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void toggleAdhan_Click(object sender, RoutedEventArgs e)
+        {
+            if (toggleAdhan.IsChecked == true)
+            {
+                toggleAdhan.Content = App.LocalizationService[AppLocalization.Play];
+            }
+            else if (toggleAdhan.IsChecked == false)
+            {
+                toggleAdhan.Content = App.LocalizationService[AppLocalization.Pause];
+
+            }
+        }
     }
 }

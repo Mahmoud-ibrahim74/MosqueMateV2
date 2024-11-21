@@ -1,18 +1,26 @@
-﻿namespace Resources
+﻿using Newtonsoft.Json.Linq;
+
+namespace Resources
 {
     public class MediaResources
     {
-        public static byte[] GetLoaderImage()
+        
+        public string[] AdhanNames { get; set; } = [];
+        public MediaResources()
         {
-            string imgPath = Path.Combine(Environment.CurrentDirectory, "AppResources", "loading.gif");
-            if (!File.Exists(imgPath))
-                return null;
-
-            var fileBytes = File.ReadAllBytes(imgPath);
-            return fileBytes;
+           
         }
+        public static Dictionary<string, byte[]> GetAdhanFiles()
+        {
+            string dirPath = Path.Combine(Environment.CurrentDirectory, "AppResources", "Adhan");
+            if (!Directory.Exists(dirPath))
+            {
+                throw new DirectoryNotFoundException($"The directory '{dirPath}' does not exist.");
+            }
 
-
-
+            return Directory.GetFiles(dirPath)
+                            .ToDictionary(file => Path.GetFileName(file),
+                                          file => File.ReadAllBytes(file));
+        }
     }
 }

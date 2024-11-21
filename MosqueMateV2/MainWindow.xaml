@@ -46,7 +46,7 @@
             <Grid>
                 <Label x:Name="welcomeLBL" Content="....." Grid.Row="0" FontSize="12"  Padding="10 15 0 0" Margin="0,0,390,50"/>
                 <Label x:Name="hijiriDateLBL" Content="....." Grid.Row="0" FontWeight="Bold" FontSize="15" Padding="10 2 0 0" Margin="0,44,390,6"/>
-                <Button x:Name="toggleAdhan" Width="162" Height="40" HorizontalAlignment="Center" Margin="350,0,0,0">....</Button>
+                <ToggleButton x:Name="toggleAdhan" Width="162" Height="40" HorizontalAlignment="Center" Margin="350,0,0,0" Click="toggleAdhan_Click">....</ToggleButton>
                 <Image x:Name="timeNow" Stretch="UniformToFill"  Width="40" Height="40" HorizontalAlignment="Right" Margin="0,15,16,25"></Image>
             </Grid>
         </Border>

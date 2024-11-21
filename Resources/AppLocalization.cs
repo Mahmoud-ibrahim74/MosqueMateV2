@@ -6,6 +6,8 @@
         public const string WeclomeApp = "WeclomeApp";
         public const string Arabic = "ar";
         public const string IsNotExisted = "IsNotExisted";
+        public const string Play = "Play";
+        public const string Pause = "Pause";
         public const string MainMenu = "MainMenu";
         public const string itIsTime = "itIsTime";
         public const string NextPrayer = "NextPrayer";
