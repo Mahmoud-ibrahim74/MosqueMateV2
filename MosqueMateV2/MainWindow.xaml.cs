@@ -2,6 +2,7 @@
 using MosqueMateV2.DataAccess.Models;
 using MosqueMateV2.Domain.APIService;
 using MosqueMateV2.Domain.DTOs;
+using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Helpers.AppHelpers;
 using Newtonsoft.Json;
@@ -11,6 +12,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 using XamlAnimatedGif;
 
 namespace MosqueMateV2
@@ -22,25 +24,56 @@ namespace MosqueMateV2
     {
 
         public string apiContent { get; set; } = string.Empty;
-        public ObservableCollection<PrayerSlide> PrayerSlidesData { get; set; }
+        public List<PrayerSlide> PrayerSlidesData { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             ApiClient.Configure("cairo", "egypt", 2);
             PrayerSlidesData =
                    [
-                        new(){ ImagePath = "pack://application:,,,/Assets/Dhur.jpg", Title = ".....", Description = "......" },
-                        new(){ ImagePath = "pack://application:,,,/Assets/Asr.jpg", Title = "....", Description = "......" },
-                        new(){ ImagePath = "pack://application:,,,/Assets/Magrib.jpg", Title = "....", Description = "......" },
-                        new(){ ImagePath = "pack://application:,,,/Assets/Asha.png", Title = ".....", Description = "......." },
-                        new(){ ImagePath = "pack://application:,,,/Assets/Fajr.png", Title = ".....", Description = "....." },
-                        new(){ ImagePath = "pack://application:,,,/Assets/shrouq.png", Title = ".....", Description = "......" },
+                        new(){
+                            id = 1,
+                            ImagePath = "pack://application:,,,/Assets/Fajr.png",
+                            CurrentPrayerName = string.Empty,
+                            CurrentPrayerTime = string.Empty,
+                        },
+                        new(){
+                            id = 2,
+                            ImagePath = "pack://application:,,,/Assets/Sunrise.png",
+                            CurrentPrayerName = string.Empty,
+                            CurrentPrayerTime = string.Empty,
+                        },
+                        new(){
+                            id = 3,
+                            ImagePath = "pack://application:,,,/Assets/Dhur.jpg",
+                            CurrentPrayerName = string.Empty,
+                            CurrentPrayerTime = string.Empty,
+                        },
+                        new(){
+                            id=4,
+                            ImagePath = "pack://application:,,,/Assets/Asr.jpg",
+                            CurrentPrayerName = string.Empty,
+                            CurrentPrayerTime = string.Empty,
+                        },
+                        new(){
+                            id = 5,
+                            ImagePath = "pack://application:,,,/Assets/Magrib.jpg",
+                            CurrentPrayerName = string.Empty,
+                            CurrentPrayerTime = string.Empty,
+                        },
+                        new(){
+                            id=6,
+                            ImagePath = "pack://application:,,,/Assets/Asha.png",
+                            CurrentPrayerName = string.Empty,
+                            CurrentPrayerTime = string.Empty,
+                        },
                     ];
+            AnimationBehavior.SetSourceUri(Loader, new Uri("pack://application:,,,/Assets/loader.gif"));
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.Visibility = Visibility.Visible;
+            this.Loader.Visibility = Visibility.Visible;
             this.IsEnabled = false;
             TaskHelper.RunBackgroundTaskOnUI(
                  backgroundTask: () => ApiClient.GetAsync(),
@@ -48,11 +81,15 @@ namespace MosqueMateV2
                  {
                      apiContent = result;
                      this.IsEnabled = true;
+                     this.Loader.Visibility = Visibility.Hidden;
+                     this.Loader.Source = null;
                      App.Api_Response = JsonConvert.DeserializeObject<DTOPrayerTimesResponse>(apiContent);
                      RenderWindowWithData();
                  },
+                 retryNumber: 2,
                  () => // handle an error
                  {
+
                  });
         }
         private void RenderWindowWithData()
@@ -93,30 +130,39 @@ namespace MosqueMateV2
 
             this.welcomeLBL.Content = WelcomeBuilder.ToString();
             this.hijiriDateLBL.Content = hijriDate.ToString();
+            this.timeNow.Source  = new BitmapImage(new 
+                Uri(DateTimeHelper.
+                GetNightOfDay(App.Api_Response.Data.Timings.Maghrib))
+                );
+
         }
-
-        private void Window_KeyDown(object sender, KeyEventArgs e)
-        {
-            // Check if Ctrl, Shift, and D are pressed together
-            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control &&
-                (Keyboard.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift &&
-                e.Key == Key.D)
-            {
-
-            }
-        }
-
 
         private void BindingCarusel()
         {
             if (App.Api_Response is not null)
             {
-                var newPrayerSlidesData = PrayerSlidesData.Select(x => new PrayerSlide
+                var prayers = new (PrayerEnum Prayer, DateTime Timing)[]
                 {
+                    (PrayerEnum.Fajr, App.Api_Response.Data.Timings.Fajr),
+                    (PrayerEnum.Sunrise, App.Api_Response.Data.Timings.Sunrise),
+                    (PrayerEnum.Dhuhr, App.Api_Response.Data.Timings.Dhuhr),
+                    (PrayerEnum.Asr, App.Api_Response.Data.Timings.Asr),
+                    (PrayerEnum.Maghrib, App.Api_Response.Data.Timings.Maghrib),
+                    (PrayerEnum.Isha, App.Api_Response.Data.Timings.Isha)
+                };
 
-                }).ToList();
-                DataContext = this;
+                // Update PrayerSlidesData using the prayer array
+                for (int i = 0; i < prayers.Length; i++)
+                {
+                    PrayerSlidesData[i].CurrentPrayerName = App.LocalizationService[prayers[i].Prayer.ToString()];
+                    PrayerSlidesData[i].CurrentPrayerTime = prayers[i].Timing.ToString("hh:mm tt");
+                }
+
+
+                this.DataContext = this;
             }
         }
+
+
     }
 }

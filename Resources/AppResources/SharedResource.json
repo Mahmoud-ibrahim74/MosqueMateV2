@@ -9,6 +9,11 @@
     "ar": "السلام عليكم",
     "fr": "Alsalam ealaykum"
   },
+  "itIsTime": {
+    "en": "it is time for",
+    "ar": " وقت لصلاة",
+    "fr": "il est temps pour"
+  },
   "MainMenu": {
     "ar": "القائمة الرئيسية",
     "en": "Main Menu",
@@ -159,47 +164,45 @@
     "en": "Remaining in prayer",
     "fr": "Temps restant pour la prière"
   },
-  "prayerTimes": {
-    "Fajr": {
-      "ar": "الفجر",
-      "en": "Fajr",
-      "fr": "Fajr"
-    },
-    "Sunrise": {
-      "ar": "الشروق",
-      "en": "Sunrise",
-      "fr": "Lever du soleil"
-    },
-    "Dhuhr": {
-      "ar": "الظهر",
-      "en": "Dhuhr",
-      "fr": "Dhuhr"
-    },
-    "Asr": {
-      "ar": "العصر",
-      "en": "Asr",
-      "fr": "Asr"
-    },
-    "Sunset": {
-      "ar": "الغروب",
-      "en": "Sunset",
-      "fr": "Coucher du soleil"
-    },
-    "Maghrib": {
-      "ar": "المغرب",
-      "en": "Maghrib",
-      "fr": "Maghrib"
-    },
-    "Isha": {
-      "ar": "العشاء",
-      "en": "Isha",
-      "fr": "Isha"
-    },
-    "TimeForPrayer": {
-      "ar": "حان الان موعد صلاة ",
-      "en": "Now is the time for prayer ",
-      "fr": "C'est maintenant l'heure de la prière"
-    }
+  "Fajr": {
+    "ar": "الفجر",
+    "en": "Fajr",
+    "fr": "Fajr"
+  },
+  "Sunrise": {
+    "ar": "الشروق",
+    "en": "Sunrise",
+    "fr": "Lever du soleil"
+  },
+  "Dhuhr": {
+    "ar": "الظهر",
+    "en": "Dhuhr",
+    "fr": "Dhuhr"
+  },
+  "Asr": {
+    "ar": "العصر",
+    "en": "Asr",
+    "fr": "Asr"
+  },
+  "Sunset": {
+    "ar": "الغروب",
+    "en": "Sunset",
+    "fr": "Coucher du soleil"
+  },
+  "Maghrib": {
+    "ar": "المغرب",
+    "en": "Maghrib",
+    "fr": "Maghrib"
+  },
+  "Isha": {
+    "ar": "العشاء",
+    "en": "Isha",
+    "fr": "Isha"
+  },
+  "TimeForPrayer": {
+    "ar": "حان الان موعد صلاة ",
+    "en": "Now is the time for prayer ",
+    "fr": "C'est maintenant l'heure de la prière"
   },
   "RestartAppWarning": {
     "ar": "سيتم إعادة تشغيل التطبيق ؟",
@@ -323,10 +326,10 @@
       "fr": "Notre équipe"
     }
   },
-  "TimeLeft": {
-    "ar": "الصلاة القادمة بعد",
-    "en": "Next prayer after",
-    "fr": "Prochaine prière après"
+  "NextPrayer": {
+    "ar": "الصلاة القادمة",
+    "en": "Next prayer",
+    "fr": "Prochaine prière"
 
   },
   "Warning": {

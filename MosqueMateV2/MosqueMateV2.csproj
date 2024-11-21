@@ -14,8 +14,10 @@
     <None Remove="Assets\Asr.jpg" />
     <None Remove="Assets\Dhur.jpg" />
     <None Remove="Assets\Fajr.png" />
+    <None Remove="Assets\loader.gif" />
     <None Remove="Assets\Magrib.jpg" />
-    <None Remove="Assets\shrouq.png" />
+    <None Remove="Assets\night.png" />
+    <None Remove="Assets\sunny.png" />
     <None Remove="loading.gif" />
   </ItemGroup>
 
@@ -49,13 +51,22 @@
     <Resource Include="Assets\Fajr.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\loader.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\loading.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Magrib.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\shrouq.png">
+    <Resource Include="Assets\night.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\sunny.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Sunrise.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

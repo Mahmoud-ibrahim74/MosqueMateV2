@@ -9,8 +9,7 @@
         Title="MainWindow" Height="700" Width="800"
         MinWidth="600" MinHeight="400" 
         WindowStartupLocation="CenterScreen" 
-        Loaded="Window_Loaded"
-        KeyDown="Window_KeyDown" ThemeMode="System">
+        Loaded="Window_Loaded" ThemeMode="System">
     <Window.Resources>
         <!-- Define a DataTemplate for each carousel item -->
         <DataTemplate x:Key="CarouselItemTemplate">
@@ -45,18 +44,22 @@
                 BorderThickness="0.1"
                 Grid.Row="0">
             <Grid>
-                <Label x:Name="welcomeLBL" Content="....." FontSize="12"  Padding="10 15 0 0" Margin="0,0,390,50"/>
-                <Label x:Name="hijiriDateLBL" Content="....." FontWeight="Bold" FontSize="15" Padding="10 0 0 0" Margin="0,44,390,6"/>
+                <Label x:Name="welcomeLBL" Content="....." Grid.Row="0" FontSize="12"  Padding="10 15 0 0" Margin="0,0,390,50"/>
+                <Label x:Name="hijiriDateLBL" Content="....." Grid.Row="0" FontWeight="Bold" FontSize="15" Padding="10 2 0 0" Margin="0,44,390,6"/>
+                <Button x:Name="toggleAdhan" Width="162" Height="40" HorizontalAlignment="Center" Margin="350,0,0,0">....</Button>
+                <Image x:Name="timeNow" Stretch="UniformToFill"  Width="40" Height="40" HorizontalAlignment="Right" Margin="0,15,16,25"></Image>
             </Grid>
         </Border>
-
         <Grid 
             x:Name="carouselContainer"
             Grid.Row="1" 
             Grid.RowSpan="2"
             Margin="10,10,10,0"                     
             >
-            <local:CarouselUserControl PrayerSlides="{Binding PrayerSlidesData}" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"/>
+            <local:CarouselUserControl PrayerSlides="{Binding PrayerSlidesData}" 
+                                       HorizontalAlignment="Stretch" 
+                                       VerticalAlignment="Stretch"/>
         </Grid>
+        <Image x:Name="Loader" Visibility="Visible" Panel.ZIndex="1" Margin="353,121,353,20" Grid.RowSpan="2" Grid.Row="1"/>
     </Grid>
 </Window>

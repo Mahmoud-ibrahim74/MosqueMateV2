@@ -17,15 +17,15 @@ namespace MosqueMateV2.CustomUserControls
         #region Dependency Property
         // Dependency Property for PrayerSlides
         public static readonly DependencyProperty PrayerSlidesProperty =
-            DependencyProperty.Register(nameof(PrayerSlides), typeof(ObservableCollection<PrayerSlide>), typeof(CarouselUserControl),
-                new PropertyMetadata(new ObservableCollection<PrayerSlide>()));
+            DependencyProperty.Register(nameof(PrayerSlides), typeof(List<PrayerSlide>), typeof(CarouselUserControl),
+                new PropertyMetadata(new List<PrayerSlide>()));
 
         /// <summary>
         /// The collection of slides to display in the carousel.
         /// </summary>
-        public ObservableCollection<PrayerSlide> PrayerSlides
+        public List<PrayerSlide> PrayerSlides
         {
-            get => (ObservableCollection<PrayerSlide>)GetValue(PrayerSlidesProperty);
+            get => (List<PrayerSlide>)GetValue(PrayerSlidesProperty);
             set => SetValue(PrayerSlidesProperty, value);
         }
         #endregion

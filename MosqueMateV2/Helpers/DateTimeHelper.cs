@@ -1,4 +1,5 @@
-﻿using Resources;
+﻿using MosqueMateV2.Domain.DTOs;
+using Resources;
 
 namespace MosqueMateV2.Helpers
 {
@@ -12,7 +13,17 @@ namespace MosqueMateV2.Helpers
                 return App.LocalizationService[AppLocalization.GoodMorning];
             else
                 return App.LocalizationService[AppLocalization.GoodEvening];
+        }
+        public static string GetNightOfDay(DateTime magribTime)
+        {
+            //if (magribTime is not null)
+            //    return "pack://application:,,,/Assets/night.png";
 
+            var currentHour = DateTime.Now.Hour;
+            if (currentHour >= magribTime.Hour)
+                return "pack://application:,,,/Assets/night.png";
+            else
+                return "pack://application:,,,/Assets/sunny.png";
         }
     }
 }

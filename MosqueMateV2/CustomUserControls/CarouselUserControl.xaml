@@ -7,7 +7,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <!-- Main Slide Container -->
-        <Grid x:Name="SlideContainer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid x:Name="SlideContainer"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <ItemsControl x:Name="ItemsControlSlides" 
                     ItemsSource="{Binding PrayerSlides, RelativeSource={RelativeSource AncestorType=UserControl}}"
                     HorizontalAlignment="Stretch"
@@ -20,30 +20,20 @@
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Grid >
-                            <!-- Background Image -->
-                            <Image Source="{Binding ImagePath}" Stretch="UniformToFill" />
-
-                            <!-- Semi-transparent overlay -->
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Image Source="{Binding ImagePath}" Stretch="UniformToFill"  />
                             <Rectangle Fill="Black" Opacity="0.6" />
-
-                            <!-- Overlay content -->
                             <Grid>
                                 <!-- StackPanel for TextBoxes -->
-                                <StackPanel x:Name="CurrentPrayerTmeSlide" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10">
-                                    <TextBlock Text="....." Width="200" Margin="5" />
-                                    <TextBlock Text="......" Width="200" Margin="5" />
-                                    <TextBlock Text="........" Width="200" Margin="5" />
-                                </StackPanel>
-                                <StackPanel x:Name="NextPrayerTmeSlide" VerticalAlignment="Top"  Margin="300 10 0 0">
-                                    <TextBlock Text="....." Width="200" Margin="5" />
-                                    <TextBlock Text="......" Width="200" Margin="5" />
-                                    <TextBlock Text="........" Width="200" Margin="5" />
-                                </StackPanel>
+                                <!--<StackPanel x:Name="CurrentPrayerTmeSlide" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10">
+                                    <TextBlock Text="{Binding CurrentPrayerTitle}"  Width="200" Margin="5" />
+                                    <TextBlock FontWeight="UltraBold" FontSize="20" Text="{Binding CurrentPrayerName}"  Width="200" Margin="5" />
+                                    <TextBlock Text="{Binding CurrentPrayerTime}"  Width="200" Margin="5" />
+                                </StackPanel>-->
                                 <!-- Bottom Overlay -->
-                                <StackPanel VerticalAlignment="Bottom" Background="#80000000">
-                                    <TextBlock Text="{Binding Title}" FontSize="16" Foreground="White" />
-                                    <TextBlock Text="{Binding Description}" FontSize="12" Foreground="White" />
+                                <StackPanel VerticalAlignment="Bottom" Background="#80000000" >
+                                    <TextBlock Text="{Binding CurrentPrayerName}" FontSize="16" Padding="10 0 0 10" FontWeight="UltraBold" Foreground="White" />
+                                    <TextBlock Text="{Binding CurrentPrayerTime}" FontSize="12" Padding="10 0 0 10" Foreground="White" />
                                 </StackPanel>
                             </Grid>
                         </Grid>
@@ -54,10 +44,10 @@
 
         <!-- Navigation Buttons -->
         <Button Cursor="Hand" Content="❮" Width="40" Height="40" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
+                HorizontalAlignment="Left" VerticalAlignment="Stretch"
                 Click="PrevButton_Click" />
         <Button Cursor="Hand" Content="❯" Width="40" Height="40" 
-                HorizontalAlignment="Right" VerticalAlignment="Center"
+                HorizontalAlignment="Right" VerticalAlignment="Stretch"
                 Click="NextButton_Click" />
     </Grid>
 </UserControl>
