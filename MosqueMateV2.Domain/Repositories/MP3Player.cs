@@ -3,25 +3,51 @@ using NAudio.Wave;
 
 namespace MosqueMateV2.Domain.Repositories
 {
+    using NAudio.Wave;
+    using System.IO;
+
     public class MP3Player : IMP3Player
     {
-        public bool IsPlaying { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         private IWavePlayer? waveOutDevice;
         private WaveStream? waveStream;
-        public MP3Player()
+        private bool isPaused;
+
+        public bool IsPlaying { get; set; }
+
+        public void Play(byte[]? fileData = null)
         {
-        }
-        public void Pause()
-        {
-            waveOutDevice?.Pause();
+            if (isPaused && waveOutDevice != null && waveStream != null)
+            {
+                // Resume playback from the current position
+                waveOutDevice.Play();
+                IsPlaying = true;
+                isPaused = false;
+            }
+            else
+            {
+                if (fileData == null)
+                    return;
+
+                Stop(); // Stop any existing playback
+
+                waveOutDevice = new WaveOutEvent();
+                waveStream = new Mp3FileReader(new MemoryStream(fileData));
+                waveOutDevice.Init(waveStream);
+                waveOutDevice.Play();
+
+                IsPlaying = true;
+                isPaused = false;
+            }
         }
 
-        public void Play(byte[] fileData)
+        public void Pause()
         {
-            waveOutDevice = new WaveOutEvent();
-            waveStream = new Mp3FileReader(new MemoryStream(fileData));
-            waveOutDevice.Init(waveStream);
-            waveOutDevice.Play();
+            if (waveOutDevice != null && waveStream != null && IsPlaying)
+            {
+                waveOutDevice.Pause();
+                IsPlaying = false;
+                isPaused = true;
+            }
         }
 
         public void Stop()
@@ -29,6 +55,13 @@ namespace MosqueMateV2.Domain.Repositories
             waveOutDevice?.Stop();
             waveOutDevice?.Dispose();
             waveStream?.Dispose();
+
+            waveOutDevice = null;
+            waveStream = null;
+
+            IsPlaying = false;
+            isPaused = false;
         }
     }
+
 }

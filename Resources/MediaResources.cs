@@ -4,23 +4,26 @@ namespace Resources
 {
     public class MediaResources
     {
-        
+        private readonly static string AppResourcePath = Path.Combine(Environment.CurrentDirectory, "AppResources");
         public string[] AdhanNames { get; set; } = [];
-        public MediaResources()
-        {
-           
-        }
         public static Dictionary<string, byte[]> GetAdhanFiles()
         {
-            string dirPath = Path.Combine(Environment.CurrentDirectory, "AppResources", "Adhan");
+            var dirPath = Path.Combine(AppResourcePath, "Adhan");
             if (!Directory.Exists(dirPath))
-            {
-                throw new DirectoryNotFoundException($"The directory '{dirPath}' does not exist.");
-            }
+                return [];
+
 
             return Directory.GetFiles(dirPath)
                             .ToDictionary(file => Path.GetFileName(file),
                                           file => File.ReadAllBytes(file));
+        }
+        public static byte[] GetFontToByteArray()
+        {
+            var fontPath = Path.Combine(AppResourcePath, "VIP-Hakm-Regular-2016.ttf");
+            if (!File.Exists(fontPath))
+                return [];
+         
+            return File.ReadAllBytes(fontPath);
         }
     }
 }

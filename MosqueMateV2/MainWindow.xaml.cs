@@ -70,8 +70,8 @@ namespace MosqueMateV2
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-          var adhan =   MediaResources.GetAdhanFiles();
-            App.mP3Player.Play(adhan.Values.FirstOrDefault());
+            //var adhan = MediaResources.GetAdhanFiles();
+            //App.mP3Player.Play(adhan.Values.Skip(5).FirstOrDefault());
             this.Loader.Visibility = Visibility.Visible;
             this.IsEnabled = false;
             TaskHelper.RunBackgroundTaskOnUI(
@@ -95,7 +95,7 @@ namespace MosqueMateV2
         {
             this.Focusable = true;
             this.Focus();
-            this.Title = App.LocalizationService[AppLocalization.MainMenu];
+            this.Title = App.LocalizationService[AppLocalization.AppName];
             this.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
                                                     FlowDirection.RightToLeft :
                                                     FlowDirection.LeftToRight;
@@ -127,13 +127,15 @@ namespace MosqueMateV2
             WelcomeBuilder.Append(DateTimeHelper.PrintGreeting());
             #endregion
 
+            #region WindowControls
             this.welcomeLBL.Content = WelcomeBuilder.ToString();
             this.hijiriDateLBL.Content = hijriDate.ToString();
-            this.timeNow.Source  = new BitmapImage(new 
+            this.timeNow.Source = new BitmapImage(new
                 Uri(DateTimeHelper.
                 GetNightOfDay(App.Api_Response.Data.Timings.Maghrib))
                 );
             toggleAdhan.Content = App.LocalizationService[AppLocalization.Pause];
+            #endregion
 
         }
 
@@ -157,27 +159,23 @@ namespace MosqueMateV2
                     PrayerSlidesData[i].CurrentPrayerName = App.LocalizationService[prayers[i].Prayer.ToString()];
                     PrayerSlidesData[i].CurrentPrayerTime = prayers[i].Timing.ToString("hh:mm tt");
                 }
-
-
                 this.DataContext = this;
             }
         }
 
-        private void toggleAdhan_Checked(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void toggleAdhan_Click(object sender, RoutedEventArgs e)
         {
             if (toggleAdhan.IsChecked == true)
             {
                 toggleAdhan.Content = App.LocalizationService[AppLocalization.Play];
+                App.mP3Player.Pause();
             }
             else if (toggleAdhan.IsChecked == false)
             {
                 toggleAdhan.Content = App.LocalizationService[AppLocalization.Pause];
-
+                App.mP3Player.Play();
             }
         }
     }
