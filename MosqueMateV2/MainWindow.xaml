@@ -6,31 +6,11 @@
         xmlns:xag="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif" 
         xmlns:local="clr-namespace:MosqueMateV2.CustomUserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="800"
-        MinWidth="700" MinHeight="400" 
+        Title="MainWindow" Height="700" Width="850"
+        MinWidth="750" MinHeight="400" 
         WindowStartupLocation="CenterScreen" 
         Loaded="Window_Loaded" ThemeMode="System">
-    <Window.Resources>
-        <!-- Define a DataTemplate for each carousel item -->
-        <DataTemplate x:Key="CarouselItemTemplate">
-            <Border BorderThickness="1" CornerRadius="10" Background="#f8f9fa" Margin="10">
-                <StackPanel>
-                    <!-- Image -->
-                    <Image Source="{Binding ImageSource}" Height="150" Stretch="UniformToFill" Margin="5" />
 
-                    <!-- Title -->
-                    <TextBlock Text="{Binding Title}" FontWeight="Bold" Foreground="#27ae60" 
-                               FontSize="16" Margin="10,5,10,0" />
-
-                    <!-- Description -->
-                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap" FontSize="14" Margin="10,5,10,10" />
-
-                    <!-- Date -->
-                    <TextBlock Text="{Binding Date}" FontSize="12" Foreground="#7f8c8d" Margin="10,0,10,5" />
-                </StackPanel>
-            </Border>
-        </DataTemplate>
-    </Window.Resources>
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="100*"/>
@@ -56,10 +36,39 @@
             Grid.RowSpan="2"
             Margin="10,10,10,0"                     
             >
-            <local:CarouselUserControl PrayerSlides="{Binding PrayerSlidesData}" 
+            <Grid Grid.Row="1">
+                <local:CarouselUserControl PrayerSlides="{Binding PrayerSlidesData}" 
                                        HorizontalAlignment="Stretch" 
                                        VerticalAlignment="Stretch"/>
+            </Grid>
+
         </Grid>
-        <Image x:Name="Loader" Visibility="Visible" Panel.ZIndex="1" Margin="353,121,353,20" Grid.RowSpan="2" Grid.Row="1"/>
+        <Image x:Name="Loader" 
+               Visibility="Visible" 
+               Panel.ZIndex="1" 
+               Margin="281,121,319,78" 
+               Grid.RowSpan="2"
+               Grid.Row="1"/>
+        <Grid Grid.Row="2" Margin="118,141,100,10" Grid.RowSpan="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250*"></ColumnDefinition>
+                <ColumnDefinition Width="250*"/>
+                <ColumnDefinition Width="250*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100*"></RowDefinition>
+                <RowDefinition Height="100*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="60" Height="60" Margin="0,0,10,12">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Assets/tasbih (1).png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button Content="............" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="60" Margin="0,0,10,12"/>
+            <Button Content="............" Grid.Column="2" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="60" Margin="0,0,10,12"/>
+            <Button Content="............" Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="60" Margin="0,0,10,12"/>
+            <Button Content="............" Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="60" Margin="0,0,10,12"/>
+            <Button Content="............" Grid.Column="2" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="60" Margin="0,0,10,12"/>
+        </Grid>
     </Grid>
 </Window>

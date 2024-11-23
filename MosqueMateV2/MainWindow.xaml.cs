@@ -163,8 +163,6 @@ namespace MosqueMateV2
             }
         }
 
-
-
         private void toggleAdhan_Click(object sender, RoutedEventArgs e)
         {
             if (toggleAdhan.IsChecked == true)

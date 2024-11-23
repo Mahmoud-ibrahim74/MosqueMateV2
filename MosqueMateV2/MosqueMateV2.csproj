@@ -10,6 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\**" />
+    <Compile Remove="Windows\**" />
+    <EmbeddedResource Remove="Pages\**" />
+    <EmbeddedResource Remove="Windows\**" />
+    <None Remove="Pages\**" />
+    <None Remove="Windows\**" />
+    <Page Remove="Pages\**" />
+    <Page Remove="Windows\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Assets\Asha.png" />
     <None Remove="Assets\Asr.jpg" />
     <None Remove="Assets\Dhur.jpg" />
@@ -19,6 +30,8 @@
     <None Remove="Assets\night.png" />
     <None Remove="Assets\sunny.png" />
     <None Remove="loading.gif" />
+    <None Remove="quran.png" />
+    <None Remove="tasbih %281%29.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,7 +40,6 @@
 
   <ItemGroup>
     <PackageReference Include="System.Reactive" Version="6.0.1" />
-    <PackageReference Include="System.Reactive.Windows.Threading" Version="6.0.1" />
     <PackageReference Include="XamlAnimatedGif" Version="2.3.0" />
   </ItemGroup>
 
@@ -69,11 +81,8 @@
     <Resource Include="Assets\Sunrise.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\" />
-    <Folder Include="Windows\" />
+    <Resource Include="quran.png" />
+    <Resource Include="Assets\tasbih %281%29.png" />
   </ItemGroup>
 
 </Project>
