@@ -24,10 +24,15 @@
     <None Remove="Assets\Asr.jpg" />
     <None Remove="Assets\Dhur.jpg" />
     <None Remove="Assets\Fajr.jpeg" />
+    <None Remove="Assets\hadith.png" />
     <None Remove="Assets\Isha.jpg" />
     <None Remove="Assets\loader.gif" />
     <None Remove="Assets\night.png" />
+    <None Remove="Assets\quran.png" />
+    <None Remove="Assets\quranGif.gif" />
+    <None Remove="Assets\shalat.png" />
     <None Remove="Assets\sunny.png" />
+    <None Remove="Assets\zekr.png" />
     <None Remove="loading.gif" />
     <None Remove="quran.png" />
     <None Remove="tasbih %281%29.png" />
@@ -59,6 +64,7 @@
     <Resource Include="Assets\Fajr.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\hadith.png" />
     <Resource Include="Assets\Isha.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -74,14 +80,18 @@
     <Resource Include="Assets\night.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\quran.png" />
+    <Resource Include="Assets\quranGif.gif" />
+    <Resource Include="Assets\shalat.png" />
     <Resource Include="Assets\sunny.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Sunrise.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\zekr.png" />
     <Resource Include="quran.png" />
-    <Resource Include="Assets\tasbih %281%29.png" />
+    <Resource Include="Assets\tasbih.png" />
   </ItemGroup>
 
 </Project>
