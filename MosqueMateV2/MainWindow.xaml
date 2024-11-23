@@ -6,8 +6,8 @@
         xmlns:xag="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif" 
         xmlns:local="clr-namespace:MosqueMateV2.CustomUserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="850"
-        MinWidth="750" MinHeight="400" 
+        Title="MainWindow" Height="750" Width="850"
+        MinWidth="750" MinHeight="450" 
         WindowStartupLocation="CenterScreen" 
         Loaded="Window_Loaded" ThemeMode="System">
 
@@ -59,10 +59,29 @@
                 <RowDefinition Height="100*"></RowDefinition>
                 <RowDefinition Height="100*"/>
             </Grid.RowDefinitions>
-            <Button Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="60" Height="60" Margin="0,0,10,12">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Assets/tasbih (1).png" Stretch="Uniform"/>
-                </Button.Background>
+            <Button Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="60" Height="60" Margin="0,0,10,12">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Margin="0,0,0,-30">
+                            <!-- Background Image -->
+                            <Rectangle>
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="/Assets/tasbih (1).png" Stretch="Uniform"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <!-- Label -->
+                            <TextBlock 
+                                   Text="Tasbih" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Bottom" 
+                                   Foreground="White" 
+                                   FontSize="12" 
+                                   FontWeight="Bold" 
+                                   TextAlignment="Center"
+                            />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
             <Button Content="............" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="60" Margin="0,0,10,12"/>
             <Button Content="............" Grid.Column="2" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="60" Margin="0,0,10,12"/>

@@ -30,13 +30,13 @@ namespace MosqueMateV2
                    [
                         new(){
                             id = 1,
-                            ImagePath = "pack://application:,,,/Assets/Fajr.png",
+                            ImagePath = "pack://application:,,,/Assets/Fajr.jpeg",
                             CurrentPrayerName = string.Empty,
                             CurrentPrayerTime = string.Empty,
                         },
                         new(){
                             id = 2,
-                            ImagePath = "pack://application:,,,/Assets/Sunrise.png",
+                            ImagePath = "pack://application:,,,/Assets/Sunrise.jpg",
                             CurrentPrayerName = string.Empty,
                             CurrentPrayerTime = string.Empty,
                         },
@@ -60,7 +60,7 @@ namespace MosqueMateV2
                         },
                         new(){
                             id=6,
-                            ImagePath = "pack://application:,,,/Assets/Asha.png",
+                            ImagePath = "pack://application:,,,/Assets/Isha.jpg",
                             CurrentPrayerName = string.Empty,
                             CurrentPrayerTime = string.Empty,
                         },

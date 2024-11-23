@@ -21,12 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Assets\Asha.png" />
     <None Remove="Assets\Asr.jpg" />
     <None Remove="Assets\Dhur.jpg" />
-    <None Remove="Assets\Fajr.png" />
+    <None Remove="Assets\Fajr.jpeg" />
+    <None Remove="Assets\Isha.jpg" />
     <None Remove="Assets\loader.gif" />
-    <None Remove="Assets\Magrib.jpg" />
     <None Remove="Assets\night.png" />
     <None Remove="Assets\sunny.png" />
     <None Remove="loading.gif" />
@@ -51,16 +50,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\Asha.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Assets\Asr.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Dhur.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Fajr.png">
+    <Resource Include="Assets\Fajr.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Isha.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\loader.gif">
@@ -78,7 +77,7 @@
     <Resource Include="Assets\sunny.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Sunrise.png">
+    <Resource Include="Assets\Sunrise.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="quran.png" />
