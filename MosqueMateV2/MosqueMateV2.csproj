@@ -50,7 +50,6 @@
   <ItemGroup>
     <ProjectReference Include="..\MosqueMateV2.DataAccess\MosqueMateV2.DataAccess.csproj" />
     <ProjectReference Include="..\MosqueMateV2.Domain\MosqueMateV2.Domain.csproj" />
-    <ProjectReference Include="..\MosqueMateV2.Helpers\MosqueMateV2.Helpers.csproj" />
     <ProjectReference Include="..\Resources\Resources.csproj" />
   </ItemGroup>
 

@@ -3,7 +3,6 @@ using MosqueMateV2.Domain.APIService;
 using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Helpers;
-using MosqueMateV2.Helpers.AppHelpers;
 using Newtonsoft.Json;
 using Resources;
 using System.Text;
@@ -25,7 +24,7 @@ namespace MosqueMateV2
         public MainWindow()
         {
             InitializeComponent();
-            ApiClient.Configure("cairo", "egypt", 2);
+            ApiClient.Configure("cairo", "egypt", 8); // for cairo
             PrayerSlidesData =
                    [
                         new(){
