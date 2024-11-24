@@ -199,6 +199,36 @@
     "en": "Isha",
     "fr": "Isha"
   },
+  "Azkar": {
+    "en": "Azkar",
+    "ar": "الأذكار",
+    "fr": "Azkar"
+  },
+  "Quran": {
+    "en": "Quran",
+    "ar": "القرآن الكريم",
+    "fr": "Quran"
+  },
+  "Home": {
+    "ar": "الرئيسية",
+    "en": "Home",
+    "fr": "Accueil"
+  },
+  "Profile": {
+    "ar": "الملف الشخصى",
+    "en": "Profile",
+    "fr": "Profil"
+  },
+  "contactUs": {
+    "ar": "تواصل معنا",
+    "en": "Contact Us",
+    "fr": "Contactez-nous"
+  },
+  "Settings": {
+    "ar": "الإعدادت",
+    "en": "Settings",
+    "fr": "Paramètres"
+  },
   "TimeForPrayer": {
     "ar": "حان الان موعد صلاة ",
     "en": "Now is the time for prayer ",
@@ -276,39 +306,6 @@
     "en": "The method goes back to the method of calculating the time allocated to the most famous Arab and foreign countries.",
     "fr": "La méthode est due à la méthode de calcul du temps allouée aux pays arabes et étrangers les plus connus."
   },
-
-  "SideBar": {
-    "Home": {
-      "ar": "الرئيسية",
-      "en": "Home",
-      "fr": "Accueil"
-    },
-    "Profile": {
-      "ar": "الملف الشخصى",
-      "en": "Profile",
-      "fr": "Profil"
-    },
-    "contactUs": {
-      "ar": "تواصل معنا",
-      "en": "Contact Us",
-      "fr": "Contactez-nous"
-    },
-    "Adhkar": {
-      "en": "Adhkar",
-      "ar": "الأذكار",
-      "fr": "Adhkar"
-    },
-    "Quran": {
-      "en": "Quran",
-      "ar": "القرآن الكريم",
-      "fr": "Quran"
-    },
-    "Settings": {
-      "ar": "الإعدادت",
-      "en": "Settings",
-      "fr": "Paramètres"
-    }
-  },
   "TabControlAppSetting": {
     "GeneralSettingsTab": {
       "ar": "إعدادت عامة",
@@ -352,10 +349,20 @@
     "en": "how often",
     "fr": "à quelle fréquence"
   },
-  "Hadith": {
+  "HadithNawawi": {
     "ar": "الأحاديث النووية",
     "en": "The Nawawi Hadiths ",
     "fr": "Les Nawawi Hadiths"
+  },
+  "Hadith": {
+    "ar": "الأحاديث",
+    "en": "The Hadiths",
+    "fr": "Les Hadiths"
+  },
+  "PrayerLearning": {
+    "ar": "تعليم الصلاة",
+    "en": "Prayer Learning",
+    "fr": "apprentissage de la prière"
   },
   "bukhari": {
     "ar": "الإمام البخاري",
@@ -470,7 +477,7 @@
     "fr": "Play Adhan"
   },
   "Pause": {
-    "ar": "ايقاف الأذان",
+    "ar": "ايقاف تشغيل",
     "en": "Pause Adhan",
     "fr": "Pause Adhan"
   }

@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using Resources;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using XamlAnimatedGif;
 
@@ -101,6 +102,7 @@ namespace MosqueMateV2
 
 
             BindingCarusel();
+            BindingBottmPanel();    
 
             #region hijriDateBuilder
             StringBuilder hijriDate = new();
@@ -136,6 +138,8 @@ namespace MosqueMateV2
             toggleAdhan.Content = App.LocalizationService[AppLocalization.Pause];
             #endregion
 
+
+
         }
 
         private void BindingCarusel()
@@ -160,6 +164,23 @@ namespace MosqueMateV2
                 }
                 this.DataContext = this;
             }
+        }
+        private void BindingBottmPanel()
+        {
+            var quranTxt = QuranBtn.Template.FindName("quranTxt", QuranBtn) as TextBlock;
+            var azkarTxt = azkarBtn.Template.FindName("azkarTxt", azkarBtn) as TextBlock;
+            var hadithTxt = hadithBtn.Template.FindName("hadithTxt", hadithBtn) as TextBlock;
+            var prayerLearningTxt = prayerLearningBtn.Template.FindName("prayerLearningTxt", prayerLearningBtn) as TextBlock;
+
+
+            if(quranTxt is not null )
+                quranTxt.Text =  App.LocalizationService[AppLocalization.Quran];
+            if (azkarTxt is not null)
+                azkarTxt.Text = App.LocalizationService[AppLocalization.Azkar];
+            if (hadithTxt is not null)
+                hadithTxt.Text = App.LocalizationService[AppLocalization.Hadith];
+            if (prayerLearningTxt is not null)
+                prayerLearningTxt.Text = App.LocalizationService[AppLocalization.PrayerLearning];
         }
 
         private void toggleAdhan_Click(object sender, RoutedEventArgs e)

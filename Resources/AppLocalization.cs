@@ -5,14 +5,21 @@
         public const string AppName = "AppName";
         public const string WeclomeApp = "WeclomeApp";
         public const string Arabic = "ar";
+        public const string English = "en";
+        public const string Frensh = "fr";
+
         public const string IsNotExisted = "IsNotExisted";
         public const string Play = "Play";
         public const string Pause = "Pause";
         public const string MainMenu = "MainMenu";
         public const string itIsTime = "itIsTime";
+        public const string Quran = "Quran";
+        public const string Hadith = "Hadith";
+        public const string Azkar = "Azkar";
+        public const string PrayerLearning = "PrayerLearning";
+
         public const string NextPrayer = "NextPrayer";
         public const string SomethingWrong = "SomethingWrong";
-        public const string English = "en";
         public const string NotClinic = "NotClinic";
         public const string CourseLevel = "CourseLevel";
         public const string DoctorExperience = "DoctorExperience";
