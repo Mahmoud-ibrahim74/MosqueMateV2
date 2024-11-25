@@ -1,9 +1,11 @@
 ﻿using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Enums;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 namespace MosqueMateV2.Helpers
 {
     public class AdhanHelper
     {
+        public static bool IsAlertForNextAdhan { get; set; }
         public static PrayerEnum? GetCurrentAdhan(Timings _timings)
         {
             TimeSpan tolerance = TimeSpan.FromMinutes(1); // Allow ±1 minute
@@ -62,15 +64,14 @@ namespace MosqueMateV2.Helpers
                 .FirstOrDefault();
 
             if (nextPrayer.Key > DateTime.MinValue)
+            {
+                var res = nextPrayer.Key - DateTime.Now;
+                IsAlertForNextAdhan = Math.Round(res.TotalMinutes, 1) == 10; // Make it Optional Settings
                 return nextPrayer.Key - DateTime.Now;
+            }
 
 
             return null; // No more Adhan times today
-        }
-        public static bool IsAlertForNextAdhan(TimeSpan timeLeft)
-        {
-            var curreTime = DateTime.Now.TimeOfDay;
-            return Math.Abs((curreTime - timeLeft).TotalMinutes) == 10; // check if diff = 10min
         }
         private static bool IsTimeEqual(DateTime currentTime, DateTime prayerTime, TimeSpan tolerance)
         {

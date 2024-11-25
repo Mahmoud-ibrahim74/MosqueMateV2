@@ -202,7 +202,7 @@ namespace MosqueMateV2
 
         private void AlertForPrayer(TimeSpan timeLeft)
         {
-            if (AdhanHelper.IsAlertForNextAdhan(timeLeft))
+            if (AdhanHelper.IsAlertForNextAdhan)
             {
                 var alertMsg = App.LocalizationService[AppLocalization.PrayerLeft]
                                + " " +
