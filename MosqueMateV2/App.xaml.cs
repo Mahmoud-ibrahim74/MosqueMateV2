@@ -16,35 +16,24 @@ namespace MosqueMateV2
         public static string AppLanguage { get; private set; }
         public static DTOPrayerTimesResponse Api_Response { get; set; }
         public static IMP3Player mP3Player { get; set; }
-        private RxTaskScheduler _scheduler;
 
         protected override void OnStartup(StartupEventArgs e)
         {
             #region New Instance
             mP3Player = new MP3Player();
             LocalizationService = new JsonLocalizationService();
-            _scheduler = new RxTaskScheduler();
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(AppLocalization.English); 
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(AppLocalization.Arabic); 
             #endregion
 
             AppLanguage = Thread.CurrentThread.CurrentUICulture.Name;
 
 
-            // Start the background task directly in the Start method
-            _scheduler.Start(() =>
-            {
-                // Direct task logic here
-                Console.WriteLine($"Task executed at {DateTime.Now}");
-                return Task.CompletedTask;  // Return a completed Task
-            }, TimeSpan.FromSeconds(10)); // Task will be triggered every 5 seconds
 
             base.OnStartup(e);
 
         }
         protected override void OnExit(ExitEventArgs e)
         {
-            // Stop and clean up the scheduler
-            _scheduler.Stop();
 
             base.OnExit(e);
         }

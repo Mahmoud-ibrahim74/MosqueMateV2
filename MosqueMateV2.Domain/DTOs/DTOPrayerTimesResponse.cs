@@ -28,37 +28,37 @@ namespace MosqueMateV2.Domain.DTOs
 
     public class Timings
     {
-        [JsonProperty("Fajr")]
+        [JsonProperty(nameof(Fajr))]
         public DateTime Fajr { get; set; }
 
-        [JsonProperty("Sunrise")]
+        [JsonProperty(nameof(Sunrise))]
         public DateTime Sunrise { get; set; }
 
-        [JsonProperty("Dhuhr")]
+        [JsonProperty(nameof(Dhuhr))]
         public DateTime Dhuhr { get; set; }
 
-        [JsonProperty("Asr")]
+        [JsonProperty(nameof(Asr))]
         public DateTime Asr { get; set; }
 
-        [JsonProperty("Sunset")]
+        [JsonProperty(nameof(Sunset))]
         public DateTime Sunset { get; set; }
 
-        [JsonProperty("Maghrib")]
+        [JsonProperty(nameof(Maghrib))]
         public DateTime Maghrib { get; set; }
 
-        [JsonProperty("Isha")]
+        [JsonProperty(nameof(Isha))]
         public DateTime Isha { get; set; }
 
-        [JsonProperty("Imsak")]
+        [JsonProperty(nameof(Imsak))]
         public DateTime Imsak { get; set; }
 
-        [JsonProperty("Midnight")]
+        [JsonProperty(nameof(Midnight))]
         public DateTime Midnight { get; set; }
 
-        [JsonProperty("Firstthird")]
+        [JsonProperty(nameof(Firstthird))]
         public DateTime Firstthird { get; set; }
 
-        [JsonProperty("Lastthird")]
+        [JsonProperty(nameof(Lastthird))]
         public DateTime Lastthird { get; set; }
     }
 

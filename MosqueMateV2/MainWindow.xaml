@@ -6,17 +6,17 @@
         xmlns:xag="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif" 
         xmlns:local="clr-namespace:MosqueMateV2.CustomUserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="750" Width="850"
-        MinWidth="750" MinHeight="450" 
+        Title="MainWindow" Height="750" Width="800"
+        MinWidth="800" MinHeight="600" 
         WindowStartupLocation="CenterScreen" 
         Loaded="Window_Loaded" ThemeMode="System">
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100*"/>
-            <RowDefinition Height="243*"/>
-            <RowDefinition Height="141*"/>
-            <RowDefinition Height="200*"/>
+            <RowDefinition Height="115*"/>
+            <RowDefinition Height="253*"/>
+            <RowDefinition Height="151*"/>
+            <RowDefinition Height="215*"/>
         </Grid.RowDefinitions>
         <Border CornerRadius="10" 
                 Margin="10,10,10,0" 
@@ -24,9 +24,20 @@
                 BorderThickness="0.1"
                 Grid.Row="0">
             <Grid>
-                <Label x:Name="welcomeLBL" Content="....." Grid.Row="0" FontSize="12"  Padding="10 15 0 0" Margin="0,0,390,50"/>
-                <Label x:Name="hijiriDateLBL" Content="....." Grid.Row="0" FontWeight="Bold" FontSize="15" Padding="10 2 0 0" Margin="0,44,390,6"/>
-                <ToggleButton x:Name="toggleAdhan" Cursor="Hand" Visibility="Hidden" FontWeight="ExtraBold"  FontSize="15" HorizontalAlignment="Stretch" Margin="350,0,163,0" Click="toggleAdhan_Click" Height="60">....</ToggleButton>
+                <Label x:Name="welcomeLBL" Content="....." Grid.Row="0" FontSize="12"  Padding="10 15 0 0" Margin="0,0,390,58"/>
+                <Label x:Name="hijiriDateLBL" Content="....." Grid.Row="0" FontWeight="Bold" FontSize="15" Padding="10 2 0 0" Margin="0,39,494,33"/>
+                <Label x:Name="miladiDateLBL" Content="....." Grid.Row="0" FontWeight="Bold" FontSize="15" Padding="10 2 0 0" Margin="0,69,494,3"/>
+                <ToggleButton x:Name="toggleAdhan" Cursor="Hand"
+                              Visibility="Hidden"
+                              FontWeight="ExtraBold"
+                              FontSize="15" HorizontalAlignment="Stretch"
+                              Margin="586,17,102,0"
+                              Click="toggleAdhan_Click" 
+                              Height="60" 
+                              VerticalAlignment="Top"
+                              >
+                </ToggleButton>
+                <Label x:Name="nextPrayerLBL" Content="....." Grid.Row="0" FontWeight="Bold" FontSize="15" Padding="10 2 0 0" Margin="335,69,183,4"/>
                 <Image x:Name="timeNow" Stretch="UniformToFill"  Width="40" Height="40" HorizontalAlignment="Right" Margin="0,15,16,25"></Image>
             </Grid>
         </Border>
@@ -49,7 +60,7 @@
                Margin="281,121,319,78" 
                Grid.RowSpan="2"
                Grid.Row="1"/>
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="2" Margin="0,151,0,0" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250*"></ColumnDefinition>
                 <ColumnDefinition Width="250*"/>

@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
     <Grid>
         <!-- Main Slide Container -->
         <Grid x:Name="SlideContainer"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -20,16 +20,10 @@
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid Width="800">
                             <Image Source="{Binding ImagePath}" Stretch="UniformToFill"  />
                             <Rectangle Fill="Black" Opacity="0.6" />
                             <Grid>
-                                <!-- StackPanel for TextBoxes -->
-                                <!--<StackPanel x:Name="CurrentPrayerTmeSlide" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10">
-                                    <TextBlock Text="{Binding CurrentPrayerTitle}"  Width="200" Margin="5" />
-                                    <TextBlock FontWeight="UltraBold" FontSize="20" Text="{Binding CurrentPrayerName}"  Width="200" Margin="5" />
-                                    <TextBlock Text="{Binding CurrentPrayerTime}"  Width="200" Margin="5" />
-                                </StackPanel>-->
                                 <!-- Bottom Overlay -->
                                 <StackPanel VerticalAlignment="Bottom" Background="#80000000" >
                                     <TextBlock Text="{Binding CurrentPrayerName}" FontSize="16" Padding="10 0 0 10" FontWeight="UltraBold" Foreground="White" />

@@ -1,4 +1,6 @@
 ﻿using MosqueMateV2.DataAccess.Models;
+using MosqueMateV2.Helpers;
+using Resources;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -68,6 +70,9 @@ namespace MosqueMateV2.CustomUserControls
                                               .ToArray();
             ItemsControlSlides.ItemsSource = reorderedSlides;
         }
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }

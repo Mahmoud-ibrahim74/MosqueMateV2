@@ -2,6 +2,7 @@
 using MosqueMateV2.Domain.APIService;
 using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Enums;
+using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using Newtonsoft.Json;
 using Resources;
@@ -21,60 +22,22 @@ namespace MosqueMateV2
 
         public string apiContent { get; set; } = string.Empty;
         public List<PrayerSlide> PrayerSlidesData { get; set; }
-
+        RxTaskManger rxTaskManger;
         public MainWindow()
         {
             InitializeComponent();
+            rxTaskManger = new();
             ApiClient.Configure("cairo", "egypt", 8); // for cairo
-            PrayerSlidesData =
-                   [
-                        new(){
-                            id = 1,
-                            ImagePath = "pack://application:,,,/Assets/Fajr.jpeg",
-                            CurrentPrayerName = string.Empty,
-                            CurrentPrayerTime = string.Empty,
-                        },
-                        new(){
-                            id = 2,
-                            ImagePath = "pack://application:,,,/Assets/Sunrise.jpg",
-                            CurrentPrayerName = string.Empty,
-                            CurrentPrayerTime = string.Empty,
-                        },
-                        new(){
-                            id = 3,
-                            ImagePath = "pack://application:,,,/Assets/Dhur.jpg",
-                            CurrentPrayerName = string.Empty,
-                            CurrentPrayerTime = string.Empty,
-                        },
-                        new(){
-                            id=4,
-                            ImagePath = "pack://application:,,,/Assets/Asr.jpg",
-                            CurrentPrayerName = string.Empty,
-                            CurrentPrayerTime = string.Empty,
-                        },
-                        new(){
-                            id = 5,
-                            ImagePath = "pack://application:,,,/Assets/Magrib.jpg",
-                            CurrentPrayerName = string.Empty,
-                            CurrentPrayerTime = string.Empty,
-                        },
-                        new(){
-                            id=6,
-                            ImagePath = "pack://application:,,,/Assets/Isha.jpg",
-                            CurrentPrayerName = string.Empty,
-                            CurrentPrayerTime = string.Empty,
-                        },
-                    ];
+            PrayerSlidesData = [];
             AnimationBehavior.SetSourceUri(Loader, new Uri("pack://application:,,,/Assets/loader.gif"));
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //var adhan = MediaResources.GetAdhanFiles();
-            //App.mP3Player.Play(adhan.Values.Skip(5).FirstOrDefault());
+
             this.Loader.Visibility = Visibility.Visible;
             this.IsEnabled = false;
-            TaskHelper.RunBackgroundTaskOnUI(
+            rxTaskManger.RunBackgroundTaskOnUI(
                  backgroundTask: () => ApiClient.GetAsync(),
                  onSuccess: result =>
                  {
@@ -90,6 +53,7 @@ namespace MosqueMateV2
                  {
 
                  });
+
         }
         private void RenderWindowWithData()
         {
@@ -102,7 +66,7 @@ namespace MosqueMateV2
 
 
             BindingCarusel();
-            BindingBottmPanel();    
+            BindingBottmPanel();
 
             #region hijriDateBuilder
             StringBuilder hijriDate = new();
@@ -131,39 +95,60 @@ namespace MosqueMateV2
             #region WindowControls
             this.welcomeLBL.Content = WelcomeBuilder.ToString();
             this.hijiriDateLBL.Content = hijriDate.ToString();
+            this.miladiDateLBL.Content = DateTime.Now.ToLocalizedDate(AppLocalization.Arabic);
             this.timeNow.Source = new BitmapImage(new
                 Uri(DateTimeHelper.
                 GetNightOfDay(App.Api_Response.Data.Timings.Maghrib))
                 );
-            toggleAdhan.Content = App.LocalizationService[AppLocalization.Pause];
             #endregion
 
-
+            rxTaskManger.StartUITaskScheduler(async () => await Task.CompletedTask, TimeSpan.FromSeconds(1), UpdateNextPrayerLabel);
 
         }
 
         private void BindingCarusel()
         {
-            if (App.Api_Response is not null)
+
+            try
             {
-                var prayers = new (PrayerEnum Prayer, DateTime Timing)[]
+                if (App.Api_Response is not null)
                 {
+                    var prayers = new (PrayerEnum Prayer, DateTime Timing)[]
+                    {
                     (PrayerEnum.Fajr, App.Api_Response.Data.Timings.Fajr),
                     (PrayerEnum.Sunrise, App.Api_Response.Data.Timings.Sunrise),
                     (PrayerEnum.Dhuhr, App.Api_Response.Data.Timings.Dhuhr),
                     (PrayerEnum.Asr, App.Api_Response.Data.Timings.Asr),
                     (PrayerEnum.Maghrib, App.Api_Response.Data.Timings.Maghrib),
                     (PrayerEnum.Isha, App.Api_Response.Data.Timings.Isha)
-                };
+                    };
 
-                // Update PrayerSlidesData using the prayer array
-                for (int i = 0; i < prayers.Length; i++)
-                {
-                    PrayerSlidesData[i].CurrentPrayerName = App.LocalizationService[prayers[i].Prayer.ToString()];
-                    PrayerSlidesData[i].CurrentPrayerTime = prayers[i].Timing.ToString("hh:mm tt");
+                    var orderedPrayers = prayers
+                        .Where(p => p.Timing > DateTime.Now)
+                        .OrderBy(p => p.Timing)
+                        .Concat(prayers.Where(p => p.Timing <= DateTime.Now))
+                        .ToArray();
+
+
+                    foreach (var prayer in orderedPrayers)
+                    {
+                        PrayerSlidesData.Add(new()
+                        {
+                            CurrentPrayerName = App.LocalizationService[prayer.Prayer.ToString()],
+                            CurrentPrayerTime = prayer.Timing.ToString("hh:mm tt"),
+                            ImagePath = $"pack://application:,,,/Assets/{prayer.Prayer}.jpg"
+                        });
+                    }
+                    this.DataContext = this;
                 }
-                this.DataContext = this;
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            
         }
         private void BindingBottmPanel()
         {
@@ -172,29 +157,42 @@ namespace MosqueMateV2
             var hadithTxt = hadithBtn.Template.FindName("hadithTxt", hadithBtn) as TextBlock;
             var prayerLearningTxt = prayerLearningBtn.Template.FindName("prayerLearningTxt", prayerLearningBtn) as TextBlock;
 
-
-            if(quranTxt is not null )
-                quranTxt.Text =  App.LocalizationService[AppLocalization.Quran];
+            if (quranTxt is not null)
+                quranTxt.Text = App.LocalizationService[AppLocalization.Quran];
             if (azkarTxt is not null)
                 azkarTxt.Text = App.LocalizationService[AppLocalization.Azkar];
             if (hadithTxt is not null)
                 hadithTxt.Text = App.LocalizationService[AppLocalization.Hadith];
             if (prayerLearningTxt is not null)
                 prayerLearningTxt.Text = App.LocalizationService[AppLocalization.PrayerLearning];
+
         }
+
+        public void UpdateNextPrayerLabel()
+        {
+            var nextAdhanEnum = AdhanHelper.GetNextAdhan(App.Api_Response.Data.Timings);
+            var localizationNextAdhan = App.LocalizationService[nextAdhanEnum.ToString() ?? PrayerEnum.Fajr.ToString()];
+            var nextPrayer = AdhanHelper.GetTimeLeftForNextAdhan(App.Api_Response.Data.Timings) ?? TimeSpan.MinValue;
+            nextPrayerLBL.Content = App.LocalizationService[AppLocalization.NextPrayer] + " " +
+                $"{nextPrayer.Hours}:{nextPrayer.Minutes}:{nextPrayer.Seconds}" +
+                 "     (" + localizationNextAdhan + ")";
+        }
+
 
         private void toggleAdhan_Click(object sender, RoutedEventArgs e)
         {
+            
             if (toggleAdhan.IsChecked == true)
             {
-                toggleAdhan.Content = App.LocalizationService[AppLocalization.Play];
+                toggleAdhan.AddImageToButton("pack://application:,,,/Assets/pause.png");
                 App.mP3Player.Pause();
             }
             else if (toggleAdhan.IsChecked == false)
             {
-                toggleAdhan.Content = App.LocalizationService[AppLocalization.Pause];
+                toggleAdhan.AddImageToButton("pack://application:,,,/Assets/play.png");
                 App.mP3Player.Play();
             }
         }
+
     }
 }

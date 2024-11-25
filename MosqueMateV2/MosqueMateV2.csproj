@@ -22,12 +22,12 @@
 
   <ItemGroup>
     <None Remove="Assets\Asr.jpg" />
-    <None Remove="Assets\Dhur.jpg" />
-    <None Remove="Assets\Fajr.jpeg" />
     <None Remove="Assets\hadith.png" />
     <None Remove="Assets\Isha.jpg" />
     <None Remove="Assets\loader.gif" />
     <None Remove="Assets\night.png" />
+    <None Remove="Assets\pause.png" />
+    <None Remove="Assets\play.png" />
     <None Remove="Assets\quran.png" />
     <None Remove="Assets\quranGif.gif" />
     <None Remove="Assets\shalat.png" />
@@ -55,17 +55,17 @@
 
   <ItemGroup>
     <Resource Include="Assets\Asr.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Dhur.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Resource Include="Assets\Dhuhr.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Fajr.jpeg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Resource Include="Assets\Fajr.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\hadith.png" />
     <Resource Include="Assets\Isha.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\loader.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -73,12 +73,14 @@
     <Resource Include="Assets\loading.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Magrib.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Resource Include="Assets\Maghrib.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\night.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\pause.png" />
+    <Resource Include="Assets\play.png" />
     <Resource Include="Assets\quran.png" />
     <Resource Include="Assets\quranGif.gif" />
     <Resource Include="Assets\shalat.png" />
@@ -86,7 +88,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Sunrise.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\zekr.png" />
     <Resource Include="quran.png" />

@@ -1,13 +1,50 @@
 ﻿using System.Reactive.Concurrency;
 using System.Reactive.Linq;
+using System.Windows;
+using System.Windows.Threading;
 
 namespace MosqueMateV2.Helpers
 {
-    /// <summary>
-    /// Provides utility methods for running asynchronous tasks in the background and handling their results on the UI thread.
-    /// </summary>
-    public class TaskHelper
+    public class RxTaskManger
     {
+        /// <summary>
+        /// Starts a periodic task using Rx.NET.
+        /// </summary>
+        /// <param name="taskToRun">The task to execute periodically.</param>
+        /// <param name="interval">The interval between task executions.</param>
+        public void StartTaskScheduler(Func<Task> taskToRun, TimeSpan interval)
+        {
+             Observable
+            .Interval(interval) 
+            .Select(_ => Observable.FromAsync(taskToRun)) 
+            .Concat() 
+            .Subscribe(
+                _ => { /* Task completed successfully */ },
+                ex => Console.WriteLine($"Task encountered an error: {ex.Message}")
+            );
+        }
+        /// <summary>
+        /// Starts a periodic task using Rx.NET that allows UI access.
+        /// </summary>
+        /// <param name="taskToRun">The task to execute periodically.</param>
+        /// <param name="interval">The interval between task executions.</param>
+        /// <param name="uiUpdateAction">An action to execute on the UI thread.</param>
+        public void StartUITaskScheduler(Func<Task> taskToRun, TimeSpan interval, Action uiUpdateAction)
+        {
+                Observable
+                .Interval(interval) 
+                .Select(_ => Observable.FromAsync(async () =>
+                {
+                    await taskToRun();
+                    Application.Current.Dispatcher.Invoke(uiUpdateAction); 
+                }))
+                .Concat() 
+                .Subscribe(
+                    _ => { /* Task completed successfully */ },
+                    ex => Console.WriteLine($"Task encountered an error: {ex.Message}")
+                );
+        }
+
         /// <summary>
         /// Executes an asynchronous task in the background and processes its result on the UI thread.
         /// </summary>
@@ -21,7 +58,7 @@ namespace MosqueMateV2.Helpers
         /// the success callback is invoked on the UI thread.
         /// Any errors encountered during task execution are logged to the console.
         /// </remarks>
-        public static void RunBackgroundTaskOnUI<T>(
+        public  void RunBackgroundTaskOnUI<T>(
             Func<Task<T>> backgroundTask,
             Action<T> onSuccess,
             int retryNumber = 3,
@@ -45,31 +82,10 @@ namespace MosqueMateV2.Helpers
                });
         }
 
+
         /// <summary>
-        /// Executes an asynchronous task in the background and ensures control returns to the UI thread upon completion.
+        /// Stops the running periodic task.
         /// </summary>
-        /// <param name="backgroundTask">A function that represents the asynchronous task to be executed in the background.</param>
-        /// <param name="onCompleted">An action to be executed on the UI thread upon successful completion of the task.</param>
-        /// <remarks>
-        /// This method is designed for tasks that do not return a result. 
-        /// It ensures that any completion logic is executed on the UI thread.
-        /// Errors encountered during task execution are logged to the console.
-        /// </remarks>
-        public static void RunBackgroundTaskOnUI(
-            Func<Task> backgroundTask,
-            Action onCompleted)
-        {
-            var uiScheduler = new SynchronizationContextScheduler(SynchronizationContext.Current);
-            Observable
-                .FromAsync(backgroundTask) // Run the asynchronous task
-                .ObserveOn(uiScheduler)    // Switch back to the UI thread
-                .Subscribe(
-                    _ => onCompleted(), // Handle successful completion
-                    error =>
-                    {
-                        Console.WriteLine($"Error: {error.Message}");
-                    });
-        }
 
     }
 }
