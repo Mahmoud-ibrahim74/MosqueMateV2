@@ -37,7 +37,7 @@
                               VerticalAlignment="Top"
                               >
                 </ToggleButton>
-                <Label x:Name="nextPrayerLBL" Content="....." Grid.Row="0" FontWeight="Bold" FontSize="15" Padding="10 2 0 0" Margin="335,69,183,4"/>
+                <Label x:Name="nextPrayerLBL" Content="....." Grid.Row="0" FontWeight="Bold" FontSize="15" Padding="10 2 0 0" Margin="335,69,117,4"/>
                 <Image x:Name="timeNow" Stretch="UniformToFill"  Width="40" Height="40" HorizontalAlignment="Right" Margin="0,15,16,25"></Image>
             </Grid>
         </Border>

@@ -17,6 +17,9 @@
         public const string Hadith = "Hadith";
         public const string Azkar = "Azkar";
         public const string PrayerLearning = "PrayerLearning";
+        public const string PrayerLeft = "PrayerLeft";
+        public const string Minutes = "Minutes";
+        public const string Alert = "Alert";
 
         public const string NextPrayer = "NextPrayer";
         public const string SomethingWrong = "SomethingWrong";

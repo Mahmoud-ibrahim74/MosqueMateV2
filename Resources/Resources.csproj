@@ -23,6 +23,9 @@
     <None Update="AppResources\Adhan\Fajr\عبد الباسط عبدالصمد - الفجر.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="AppResources\Adhan\prayerNow.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="AppResources\Adhan\أبو ياسر الجزائري.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

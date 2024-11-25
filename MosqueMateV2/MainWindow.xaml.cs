@@ -34,7 +34,6 @@ namespace MosqueMateV2
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
             this.Loader.Visibility = Visibility.Visible;
             this.IsEnabled = false;
             rxTaskManger.RunBackgroundTaskOnUI(
@@ -66,7 +65,7 @@ namespace MosqueMateV2
 
 
             BindingCarusel();
-            BindingBottmPanel();
+            BindingBottomPanel();
 
             #region hijriDateBuilder
             StringBuilder hijriDate = new();
@@ -95,7 +94,7 @@ namespace MosqueMateV2
             #region WindowControls
             this.welcomeLBL.Content = WelcomeBuilder.ToString();
             this.hijiriDateLBL.Content = hijriDate.ToString();
-            this.miladiDateLBL.Content = DateTime.Now.ToLocalizedDate(AppLocalization.Arabic);
+            this.miladiDateLBL.Content = DateTime.Now.ToLocalizedDate(App.AppLanguage);
             this.timeNow.Source = new BitmapImage(new
                 Uri(DateTimeHelper.
                 GetNightOfDay(App.Api_Response.Data.Timings.Maghrib))
@@ -148,9 +147,9 @@ namespace MosqueMateV2
                 throw;
             }
 
-            
+
         }
-        private void BindingBottmPanel()
+        private void BindingBottomPanel()
         {
             var quranTxt = QuranBtn.Template.FindName("quranTxt", QuranBtn) as TextBlock;
             var azkarTxt = azkarBtn.Template.FindName("azkarTxt", azkarBtn) as TextBlock;
@@ -171,17 +170,24 @@ namespace MosqueMateV2
         public void UpdateNextPrayerLabel()
         {
             var nextAdhanEnum = AdhanHelper.GetNextAdhan(App.Api_Response.Data.Timings);
-            var localizationNextAdhan = App.LocalizationService[nextAdhanEnum.ToString() ?? PrayerEnum.Fajr.ToString()];
-            var nextPrayer = AdhanHelper.GetTimeLeftForNextAdhan(App.Api_Response.Data.Timings) ?? TimeSpan.MinValue;
+
+            var localizationNextAdhan = App.LocalizationService[nextAdhanEnum.ToString() ??
+                PrayerEnum.Fajr.ToString()];
+            var nextPrayer = AdhanHelper.GetTimeLeftForNextAdhan(App.Api_Response.Data.Timings) ??
+                TimeSpan.MinValue;
+
             nextPrayerLBL.Content = App.LocalizationService[AppLocalization.NextPrayer] + " " +
                 $"{nextPrayer.Hours}:{nextPrayer.Minutes}:{nextPrayer.Seconds}" +
-                 "     (" + localizationNextAdhan + ")";
+                 "\t(" + localizationNextAdhan + ")";
+
+            BindingCarusel();
+            AlertForPrayer(nextPrayer);
         }
 
 
         private void toggleAdhan_Click(object sender, RoutedEventArgs e)
         {
-            
+
             if (toggleAdhan.IsChecked == true)
             {
                 toggleAdhan.AddImageToButton("pack://application:,,,/Assets/pause.png");
@@ -191,6 +197,28 @@ namespace MosqueMateV2
             {
                 toggleAdhan.AddImageToButton("pack://application:,,,/Assets/play.png");
                 App.mP3Player.Play();
+            }
+        }
+
+        private void AlertForPrayer(TimeSpan timeLeft)
+        {
+            if (AdhanHelper.IsAlertForNextAdhan(timeLeft))
+            {
+                var alertMsg = App.LocalizationService[AppLocalization.PrayerLeft]
+                               + " " +
+                               +timeLeft.Minutes + " "
+                               + App.LocalizationService[AppLocalization.Minutes];
+
+                ToastNotificationsHelper.
+                    SendAlertPrayerNotification(App.LocalizationService[AppLocalization.Alert], alertMsg,
+                    Notification.Wpf.NotificationType.Warning);
+
+                App.mP3Player.Stop();
+                var file = MediaResources.GetAdhanFiles().
+                    Where(x => x.Key.Contains("prayerNow")).
+                    Select(x => x.Value).
+                    FirstOrDefault();
+                App.mP3Player.Play(file);
             }
         }
 
