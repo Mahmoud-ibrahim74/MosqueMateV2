@@ -25,31 +25,27 @@ namespace MosqueMateV2.Extensions
                     Width = 24,
                     Height = 24,
                 };
-
-                button.Content = image;
                 button.Background = null;
                 button.BorderBrush = null;
+                button.Content = image;
             }
             catch (Exception ex)
             {
-                // Handle any exceptions (e.g., invalid URI)
                 MessageBox.Show($"Error adding image to button: {ex.Message}");
             }
         }
+        public static void AddToolTipToButton(this ButtonBase button, string tooltip)
+        {
+            if (button == null || string.IsNullOrEmpty(tooltip))
+                return;
 
-        //public static void ChangeWindowFont(this Window window, byte[] fontData)
-        //{
-        //    using (var stream = new MemoryStream(fontData))
-        //    {
-        //        // Create a PrivateFontCollection to load the font
-        //        PrivateFontCollection privateFonts = new PrivateFontCollection();
-        //        privateFonts.AddMemoryFont(stream); // Add font from stream
-
-        //        // Get the font family name
-        //        string fontFamilyName = privateFonts.Families[0].Name;
-
-        //        window.FontFamily = privateFonts
-        //    }
-        //}
+            try
+            {
+                button.ToolTip = tooltip;
+            }
+            catch (Exception ex)
+            {
+            }
+        }
     }
 }

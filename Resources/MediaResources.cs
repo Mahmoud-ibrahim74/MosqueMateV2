@@ -17,6 +17,19 @@ namespace Resources
                             .ToDictionary(file => Path.GetFileName(file),
                                           file => File.ReadAllBytes(file));
         }
+        public static byte[] SearchOnAdhanFiles(string word)
+        {
+            var dirPath = Path.Combine(AppResourcePath, "Adhan");
+            if (!Directory.Exists(dirPath))
+                return [];
+
+            var file = Directory.GetFiles(dirPath).
+                Where(x => x.Contains(word)).
+                Select(file => File.ReadAllBytes(file)).
+                FirstOrDefault() ?? [];
+
+            return file;                     
+        }
         public static byte[] GetFontToByteArray()
         {
             var fontPath = Path.Combine(AppResourcePath, "VIP-Hakm-Regular-2016.ttf");

@@ -1,9 +1,10 @@
 ﻿using MosqueMateV2.DataAccess.Models;
+using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using Resources;
-using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace MosqueMateV2.CustomUserControls
 {
@@ -12,9 +13,12 @@ namespace MosqueMateV2.CustomUserControls
     /// </summary>
     public partial class CarouselUserControl : UserControl
     {
+        private readonly RxTaskManger _taskManger;
+        private bool IsNighSet { get; set; }
         public CarouselUserControl()
         {
             InitializeComponent();
+            _taskManger = new();
         }
         #region Dependency Property
         // Dependency Property for PrayerSlides
@@ -72,7 +76,54 @@ namespace MosqueMateV2.CustomUserControls
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            _taskManger.StartUITaskScheduler(
+                async()=> await Task.CompletedTask,
+                TimeSpan.FromSeconds(1),
+                CheckAdhanNow
+                );
+            _taskManger.StartUITaskScheduler(
+                        async () => await Task.CompletedTask,
+                        TimeSpan.FromSeconds(1),
+                        NightMode
+                        );
+        }
+        private void CheckAdhanNow()
+        {
+            if (AdhanHelper.IsAdhanNow)
+            {
+                toggleAdhan.Visibility = Visibility.Visible;
+                var adhan = MediaResources.SearchOnAdhanFiles("احمد الكردي");
+                App.mP3Player.Play(adhan);
+            }
+        }
+        private void NightMode()
+        {
+            if (App.Api_Response is not null)
+            {
+                if (!IsNighSet)
+                {
+                    var img = new BitmapImage(new Uri(DateTimeHelper.GetNightOfDay(App.Api_Response.Data.Timings.Maghrib)));
+                    this.timeNow.Source = img;
+                    IsNighSet = true;
+                }
+            }
+        }
+        private void toggleAdhan_Click(object sender, RoutedEventArgs e)
+        {
 
+            if (toggleAdhan.IsChecked == true)
+            {
+                toggleAdhan.AddImageToButton("pack://application:,,,/Assets/pause.png");
+                App.mP3Player.Pause();
+                toggleAdhan.ToolTip = App.LocalizationService[AppLocalization.Pause];
+            }
+            else if (toggleAdhan.IsChecked == false)
+            {
+                toggleAdhan.AddImageToButton("pack://application:,,,/Assets/play.png");
+                App.mP3Player.Play();
+                toggleAdhan.ToolTip = App.LocalizationService[AppLocalization.Play];
+
+            }
         }
     }
 }

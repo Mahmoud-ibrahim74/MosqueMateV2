@@ -6,9 +6,9 @@ using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using Newtonsoft.Json;
 using Resources;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using XamlAnimatedGif;
 
@@ -27,7 +27,7 @@ namespace MosqueMateV2
         {
             InitializeComponent();
             rxTaskManger = new();
-            ApiClient.Configure("cairo", "egypt", 8); // for cairo
+            ApiClient.Configure("cairo", "egypt", 8);
             PrayerSlidesData = [];
             AnimationBehavior.SetSourceUri(Loader, new Uri("pack://application:,,,/Assets/loader.gif"));
         }
@@ -59,46 +59,39 @@ namespace MosqueMateV2
             this.Focusable = true;
             this.Focus();
             this.Title = App.LocalizationService[AppLocalization.AppName];
-            this.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
-                                                    FlowDirection.RightToLeft :
-                                                    FlowDirection.LeftToRight;
 
 
             BindingCarusel();
             BindingBottomPanel();
 
             #region hijriDateBuilder
-            StringBuilder hijriDate = new();
-            hijriDate.Append(App.Api_Response.Data.Date.Hijri.Day);
-            hijriDate.Append(" - ");
-            hijriDate.Append(App.AppLanguage == AppLocalization.Arabic ?
-                                            App.Api_Response.Data.Date.Hijri.Weekday.Arabic :
-                                            App.Api_Response.Data.Date.Hijri.Weekday.English
-                            );
-            hijriDate.Append(" ");
-            hijriDate.Append(App.AppLanguage == AppLocalization.Arabic ?
-                                App.Api_Response.Data.Date.Hijri.Month.Arabic :
-                                App.Api_Response.Data.Date.Hijri.Month.English
-                );
-            hijriDate.Append(" ");
-            hijriDate.Append(App.Api_Response.Data.Date.Hijri.Year);
+            var hijriDate = StringHelper.AppendString(
+                 App.Api_Response.Data.Date.Hijri.Day,
+                 " - ",
+                 App.AppLanguage == AppLocalization.Arabic ?
+                 App.Api_Response.Data.Date.Hijri.Weekday.Arabic :
+                 App.Api_Response.Data.Date.Hijri.Weekday.English,
+                 " ",
+                 App.AppLanguage == AppLocalization.Arabic ?
+                 App.Api_Response.Data.Date.Hijri.Month.Arabic :
+                 App.Api_Response.Data.Date.Hijri.Month.English,
+                 " ",
+                 App.Api_Response.Data.Date.Hijri.Year);
             #endregion
 
             #region WelcomeBuilder
-            StringBuilder WelcomeBuilder = new();
-            WelcomeBuilder.Append(App.LocalizationService[AppLocalization.WeclomeApp]);
-            WelcomeBuilder.Append(" , ");
-            WelcomeBuilder.Append(DateTimeHelper.PrintGreeting());
+            var WelcomeBuilder = StringHelper.AppendString(
+                App.LocalizationService[AppLocalization.WeclomeApp],
+                " , ",
+                DateTimeHelper.PrintGreeting()
+                );
             #endregion
 
             #region WindowControls
+
             this.welcomeLBL.Content = WelcomeBuilder.ToString();
             this.hijiriDateLBL.Content = hijriDate.ToString();
             this.miladiDateLBL.Content = DateTime.Now.ToLocalizedDate(App.AppLanguage);
-            this.timeNow.Source = new BitmapImage(new
-                Uri(DateTimeHelper.
-                GetNightOfDay(App.Api_Response.Data.Timings.Maghrib))
-                );
             #endregion
 
             rxTaskManger.StartUITaskScheduler(async () => await Task.CompletedTask, TimeSpan.FromSeconds(1), UpdateNextPrayerLabel);
@@ -107,7 +100,6 @@ namespace MosqueMateV2
 
         private void BindingCarusel()
         {
-
             try
             {
                 if (App.Api_Response is not null)
@@ -146,8 +138,6 @@ namespace MosqueMateV2
 
                 throw;
             }
-
-
         }
         private void BindingBottomPanel()
         {
@@ -155,7 +145,7 @@ namespace MosqueMateV2
             var azkarTxt = azkarBtn.Template.FindName("azkarTxt", azkarBtn) as TextBlock;
             var hadithTxt = hadithBtn.Template.FindName("hadithTxt", hadithBtn) as TextBlock;
             var prayerLearningTxt = prayerLearningBtn.Template.FindName("prayerLearningTxt", prayerLearningBtn) as TextBlock;
-
+           
             if (quranTxt is not null)
                 quranTxt.Text = App.LocalizationService[AppLocalization.Quran];
             if (azkarTxt is not null)
@@ -176,42 +166,41 @@ namespace MosqueMateV2
             var nextPrayer = AdhanHelper.GetTimeLeftForNextAdhan(App.Api_Response.Data.Timings) ??
                 TimeSpan.MinValue;
 
-            nextPrayerLBL.Content = App.LocalizationService[AppLocalization.NextPrayer] + " " +
-                $"{nextPrayer.Hours}:{nextPrayer.Minutes}:{nextPrayer.Seconds}" +
-                 "\t(" + localizationNextAdhan + ")";
+            nextPrayerLBL.Content = StringHelper.AppendString(
+                  App.LocalizationService[AppLocalization.NextPrayer],
+                  " ",
+                  $"{nextPrayer.Hours}:{nextPrayer.Minutes}:{nextPrayer.Seconds}",
+                  "\t(" + localizationNextAdhan + ")"
+                );
 
             BindingCarusel();
             AlertForPrayer(nextPrayer);
         }
 
 
-        private void toggleAdhan_Click(object sender, RoutedEventArgs e)
+        private void CloseSlider_Click(object sender, RoutedEventArgs e)
         {
-
-            if (toggleAdhan.IsChecked == true)
-            {
-                toggleAdhan.AddImageToButton("pack://application:,,,/Assets/pause.png");
-                App.mP3Player.Pause();
-            }
-            else if (toggleAdhan.IsChecked == false)
-            {
-                toggleAdhan.AddImageToButton("pack://application:,,,/Assets/play.png");
-                App.mP3Player.Play();
-            }
+            Storyboard slideOut = (Storyboard)FindResource("SlideOutAnimation");
+            slideOut.Begin(SlidingPanel);
+            toggleSidebar.IsChecked = false;
         }
 
         private void AlertForPrayer(TimeSpan timeLeft)
         {
             if (AdhanHelper.IsAlertForNextAdhan)
             {
-                var alertMsg = App.LocalizationService[AppLocalization.PrayerLeft]
-                               + " " +
-                               +timeLeft.Minutes + " "
-                               + App.LocalizationService[AppLocalization.Minutes];
+                var alertMsg = StringHelper.AppendString(
+                    App.LocalizationService[AppLocalization.PrayerLeft],
+                                " ",
+                                timeLeft.Minutes.ToString(), 
+                                " ",
+                                App.LocalizationService[AppLocalization.Minutes]);
 
                 ToastNotificationsHelper.
-                    SendAlertPrayerNotification(App.LocalizationService[AppLocalization.Alert], alertMsg,
-                    Notification.Wpf.NotificationType.Warning);
+                SendAlertPrayerNotification(
+                App.LocalizationService[AppLocalization.Alert],
+                alertMsg,
+                Notification.Wpf.NotificationType.Warning);
 
                 App.mP3Player.Stop();
                 var file = MediaResources.GetAdhanFiles().
@@ -221,6 +210,24 @@ namespace MosqueMateV2
                 App.mP3Player.Play(file);
             }
         }
+        private void toggleSidebar_Click(object sender, RoutedEventArgs e)
+        {
 
+            if (toggleSidebar.IsChecked == true)
+            {
+                Storyboard slideIn = (Storyboard)FindResource("SlideInAnimation");
+                slideIn.Begin(SlidingPanel);
+            }
+            else if (toggleSidebar.IsChecked == false)
+            {
+                Storyboard slideOut = (Storyboard)FindResource("SlideOutAnimation");
+                slideOut.Begin(SlidingPanel);
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

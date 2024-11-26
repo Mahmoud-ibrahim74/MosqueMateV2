@@ -25,6 +25,7 @@
     <None Remove="Assets\hadith.png" />
     <None Remove="Assets\Isha.jpg" />
     <None Remove="Assets\loader.gif" />
+    <None Remove="Assets\menu-bar.png" />
     <None Remove="Assets\night.png" />
     <None Remove="Assets\pause.png" />
     <None Remove="Assets\play.png" />
@@ -39,6 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\pray.ico" />
     <Content Include="pray.ico" />
   </ItemGroup>
 
@@ -77,6 +79,7 @@
     <Resource Include="Assets\Maghrib.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\menu-bar.png" />
     <Resource Include="Assets\night.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -94,6 +97,10 @@
     <Resource Include="Assets\zekr.png" />
     <Resource Include="quran.png" />
     <Resource Include="Assets\tasbih.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Testing\" />
   </ItemGroup>
 
 </Project>

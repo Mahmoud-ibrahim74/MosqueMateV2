@@ -10,14 +10,94 @@
         MinWidth="800" MinHeight="600" 
         WindowStartupLocation="CenterScreen" 
         Loaded="Window_Loaded" ThemeMode="System">
+    <!-- Resources for Animations -->
+    <Window.Resources>
+        <!-- Slide-in Animation -->
+        <Storyboard x:Key="SlideInAnimation">
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" 
+                                Duration="0:0:0.5"
+                                From="-300,0,0,0" 
+                                To="0,0,0,0" />
+        </Storyboard>
 
-    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <!-- Slide-out Animation -->
+        <Storyboard x:Key="SlideOutAnimation">
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" 
+                                Duration="0:0:0.5"
+                                From="0,0,0,0" 
+                                To="-300,0,0,0" />
+        </Storyboard>
+    </Window.Resources>
+
+    <Grid x:Name="GridContainer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="115*"/>
             <RowDefinition Height="253*"/>
             <RowDefinition Height="151*"/>
             <RowDefinition Height="215*"/>
         </Grid.RowDefinitions>
+        <!-- Sliding Panel -->
+        <Border x:Name="SlidingPanel"
+                Grid.RowSpan="4"
+                Opacity="0.95"
+                Width="300"
+                Panel.ZIndex="1"
+                HorizontalAlignment="Left"
+                Margin="-300,0,0,0">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#134E5E"/>
+                    <GradientStop Color="#71B380" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*"></RowDefinition>
+                    <RowDefinition Height="205*"/>
+                    <RowDefinition Height="137*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="V2"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           Width="39" 
+                           Padding="10 10 0 0" 
+                           FontWeight="UltraBold"
+                           Margin="220,-3,0,23"
+                           >
+                    <TextBlock.Effect>
+                        <DropShadowEffect 
+                                  ShadowDepth="2"
+                                  Opacity="0.8"
+                                  BlurRadius="10" />
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBlock Text="Mosque Mate"
+                           Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           FontSize="25" 
+                           Width="187"
+                           Padding="5 10 00 0"
+                           Margin="0,10,0,0"
+                           FontWeight="UltraBold"
+                           FontFamily="NativePrinterFontB"
+                           >
+                    <TextBlock.Effect>
+                        <DropShadowEffect 
+                                  ShadowDepth="2"
+                                  Opacity="0.8"
+                                  BlurRadius="10" />
+                    </TextBlock.Effect>
+                </TextBlock>
+                <Image x:Name="logo" Stretch="UniformToFill" Width="40" Height="40" Source="/Assets/pray.ico" Margin="5,4,244,3"></Image>
+                <Button 
+                    Content="x" Click="CloseSlider_Click"
+                    Margin="264,1,0,0" VerticalAlignment="Top" 
+                    Width="39" 
+                    Background="{x:Null}"
+                    BorderBrush="{x:Null}" Height="29"
+                    />
+            </Grid>
+        </Border>
         <Border CornerRadius="10" 
                 Margin="10,10,10,0" 
                 BorderBrush="Azure" 
@@ -27,18 +107,24 @@
                 <Label x:Name="welcomeLBL" Content="....." Grid.Row="0" FontSize="12"  Padding="10 15 0 0" Margin="0,0,390,58"/>
                 <Label x:Name="hijiriDateLBL" Content="....." Grid.Row="0" FontWeight="Bold" FontSize="15" Padding="10 2 0 0" Margin="0,39,494,33"/>
                 <Label x:Name="miladiDateLBL" Content="....." Grid.Row="0" FontWeight="Bold" FontSize="15" Padding="10 2 0 0" Margin="0,69,494,3"/>
-                <ToggleButton x:Name="toggleAdhan" Cursor="Hand"
-                              Visibility="Hidden"
-                              FontWeight="ExtraBold"
-                              FontSize="15" HorizontalAlignment="Stretch"
-                              Margin="586,17,102,0"
-                              Click="toggleAdhan_Click" 
-                              Height="60" 
-                              VerticalAlignment="Top"
-                              >
-                </ToggleButton>
                 <Label x:Name="nextPrayerLBL" Content="....." Grid.Row="0" FontWeight="Bold" FontSize="15" Padding="10 2 0 0" Margin="335,69,117,4"/>
-                <Image x:Name="timeNow" Stretch="UniformToFill"  Width="40" Height="40" HorizontalAlignment="Right" Margin="0,15,16,25"></Image>
+                <ToggleButton
+                    x:Name="toggleSidebar" 
+                    Click="toggleSidebar_Click"
+                    Grid.Row="0"
+                    FontWeight="Bold"
+                    FontSize="15" Margin="10" 
+                    VerticalAlignment="Top"
+                    Cursor="Hand"
+                    Width="32"
+                    HorizontalAlignment="Right"
+                    Height="32"
+                    BorderBrush="{x:Null}"
+                    >
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="/Assets/menu-bar.png"/>
+                    </ToggleButton.Background>
+                </ToggleButton>
             </Grid>
         </Border>
         <Grid 
@@ -70,6 +156,8 @@
                 <RowDefinition Height="20*"></RowDefinition>
                 <RowDefinition Height="20*"/>
             </Grid.RowDefinitions>
+
+
             <Button x:Name="QuranBtn" Grid.Column="0" Width="60" Height="60" Margin="107,2,0,0" VerticalAlignment="Top" Cursor="Hand">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -82,10 +170,10 @@
                             </Rectangle>
                             <!-- Label -->
                             <TextBlock x:Name="quranTxt" 
-                                   Text="Quran" 
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Bottom" 
                                    FontSize="10" 
+                                   FontWeight="DemiBold"
                                    TextAlignment="Center"
                             />
                         </Grid>
@@ -104,10 +192,10 @@
                             </Rectangle>
                             <!-- Label -->
                             <TextBlock x:Name="tasbihTxt" 
-                                   Text="Tasbih" 
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Bottom" 
                                    FontSize="10" 
+                                   FontWeight="DemiBold"                                   
                                    TextAlignment="Center"
                             />
                         </Grid>
@@ -126,9 +214,9 @@
                             </Rectangle>
                             <!-- Label -->
                             <TextBlock x:Name="hadithTxt" 
-                                   Text="Hadith" 
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Top" 
+                                   FontWeight="DemiBold"                                 
                                    FontSize="10" 
                                    TextAlignment="Center" Margin="0,77,0,0" Width="60"
                             />
@@ -148,16 +236,16 @@
                             </Rectangle>
                             <!-- Label -->
                             <TextBlock x:Name="prayerLearningTxt" 
-                                   Text="Prayer Learning" 
                                    VerticalAlignment="Top" 
                                    FontSize="10" 
+                                   FontWeight="DemiBold"                           
                                    TextAlignment="Center" Margin="0,75,0,0"
                             />
                         </Grid>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Grid.Column="2" Grid.Row="1" Width="60" Height="60" Margin="106,-50,0,0" Cursor="Hand">
+            <Button Grid.Column="2" Grid.Row="1" Width="60" Height="60" Margin="106,-50,0,0" Cursor="Hand" Click="Button_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid Margin="0,0,0,-30">
@@ -169,10 +257,10 @@
                             </Rectangle>
                             <!-- Label -->
                             <TextBlock 
-                                   Text="Tasbih" 
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Bottom" 
                                    FontSize="10" 
+                                   FontWeight="DemiBold"                          
                                    TextAlignment="Center"
                             />
                         </Grid>
@@ -191,10 +279,10 @@
                             </Rectangle>
                             <!-- Label -->
                             <TextBlock x:Name="azkarTxt" 
-                                   Text="Azkar" 
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Bottom" 
                                    FontSize="10" 
+                                   FontWeight="DemiBold"                                   
                                    TextAlignment="Center"
                             />
                         </Grid>

@@ -8,6 +8,28 @@
     <Grid>
         <!-- Main Slide Container -->
         <Grid x:Name="SlideContainer"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Image x:Name="timeNow"
+                   Stretch="UniformToFill"
+                   Width="40" Height="40"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="11,15,0,0"
+                   Panel.ZIndex="1"
+                   FlowDirection="LeftToRight"
+                   >
+            </Image>
+            <ToggleButton x:Name="toggleAdhan" Cursor="Hand"
+                              Visibility="Visible"
+                              FontWeight="ExtraBold"
+                              FontSize="15" 
+                              VerticalAlignment="Bottom"
+                              HorizontalAlignment="Stretch"
+                              Click="toggleAdhan_Click" 
+                              Height="60" 
+                              Background="Transparent"
+                              BorderBrush="Transparent"
+                              Panel.ZIndex="1"
+                              />
             <ItemsControl x:Name="ItemsControlSlides" 
                     ItemsSource="{Binding PrayerSlides, RelativeSource={RelativeSource AncestorType=UserControl}}"
                     HorizontalAlignment="Stretch"

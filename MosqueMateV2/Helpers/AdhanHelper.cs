@@ -5,7 +5,9 @@ namespace MosqueMateV2.Helpers
 {
     public class AdhanHelper
     {
-        public static bool IsAlertForNextAdhan { get; set; }
+        public static bool IsAlertForNextAdhan { get; private set; }
+
+        public static bool IsAdhanNow { get; private set; }
         public static PrayerEnum? GetCurrentAdhan(Timings _timings)
         {
             TimeSpan tolerance = TimeSpan.FromMinutes(1); // Allow ±1 minute
@@ -66,7 +68,10 @@ namespace MosqueMateV2.Helpers
             if (nextPrayer.Key > DateTime.MinValue)
             {
                 var res = nextPrayer.Key - DateTime.Now;
-                IsAlertForNextAdhan = Math.Round(res.TotalMinutes, 1) == 10; // Make it Optional Settings
+                var roundTime = Math.Round(res.TotalMinutes,2);
+                IsAlertForNextAdhan = roundTime == 10.58; // Make it Optional Settings
+                IsAdhanNow = ((nextPrayer.Key - DateTime.Now).Hours) == 0
+                               && ((nextPrayer.Key - DateTime.Now).Minutes) == 0;
                 return nextPrayer.Key - DateTime.Now;
             }
 
