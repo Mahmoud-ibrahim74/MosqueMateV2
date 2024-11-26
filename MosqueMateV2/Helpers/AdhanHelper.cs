@@ -45,40 +45,59 @@ namespace MosqueMateV2.Helpers
                 .OrderBy(pt => pt.Key)            // Sort by the nearest time
                 .FirstOrDefault();
 
-            return nextPrayer.Key > DateTime.MinValue ? nextPrayer.Value : (PrayerEnum?)null;
-        }
-        public static TimeSpan? GetTimeLeftForNextAdhan(Timings _timings)
-        {
-            var prayerTimes = new Dictionary<DateTime, PrayerEnum>
-            {
-                { _timings.Fajr, PrayerEnum.Fajr },
-                { _timings.Sunrise, PrayerEnum.Sunrise },
-                { _timings.Dhuhr, PrayerEnum.Dhuhr },
-                { _timings.Asr, PrayerEnum.Asr },
-                { _timings.Maghrib, PrayerEnum.Maghrib },
-                { _timings.Isha, PrayerEnum.Isha }
-            };
 
-            // Find the next prayer time
+            if (nextPrayer.Key > DateTime.MinValue)
+            {
+                // Return the next prayer for today
+                return nextPrayer.Value;
+            }
+
+            // If no prayer remains for today, return Fajr of the next day
+            return PrayerEnum.Fajr;
+        }
+        public static TimeSpan? GetTimeLeftForNextAdhan(Timings timings)
+        {
+            var now = DateTime.Now;
+
+            // Create a dictionary of prayer times for today
+            var prayerTimes = new Dictionary<DateTime, PrayerEnum>
+                    {
+                        { timings.Fajr, PrayerEnum.Fajr },
+                        { timings.Sunrise, PrayerEnum.Sunrise },
+                        { timings.Dhuhr, PrayerEnum.Dhuhr },
+                        { timings.Asr, PrayerEnum.Asr },
+                        { timings.Maghrib, PrayerEnum.Maghrib },
+                        { timings.Isha, PrayerEnum.Isha }
+                    };
+
+            // Find the next prayer for today
             var nextPrayer = prayerTimes
-                .Where(pt => pt.Key > DateTime.Now) // Only future prayer times
-                .OrderBy(pt => pt.Key)            // Sort by the nearest time
+                .Where(pt => pt.Key > now) // Only future prayer times for today
+                .OrderBy(pt => pt.Key)    // Sort by the nearest time
                 .FirstOrDefault();
 
             if (nextPrayer.Key > DateTime.MinValue)
             {
-                var res = nextPrayer.Key - DateTime.Now;
-                var roundTime = Math.Round(res.TotalMinutes,2);
-                IsAlertForNextAdhan = roundTime == 10.8; // Make it Optional Settings
-                IsAdhanNow =        ((nextPrayer.Key - DateTime.Now).Hours) == 0
-                                    && ((nextPrayer.Key - DateTime.Now).Minutes) == 0
-                                    && ((nextPrayer.Key - DateTime.Now).Seconds) == 0;
-                return nextPrayer.Key - DateTime.Now;
+                // Calculate time left for the next prayer
+                var timeLeft = nextPrayer.Key - now;
+
+                // Optional settings
+                IsAlertForNextAdhan = Math.Round(timeLeft.TotalMinutes, 2) == 10.8; // Example setting
+                IsAdhanNow = timeLeft.Hours == 0 && timeLeft.Minutes == 0 && timeLeft.Seconds == 0;
+                return timeLeft;
             }
 
+            // If no prayer remains for today, calculate time left for Fajr of the next day
+            var fajrTomorrow = timings.Fajr.AddDays(1);
+            var timeLeftForFajr = fajrTomorrow - now;
 
-            return null; // No more Adhan times today
+            // Optional settings for Fajr
+            IsAlertForNextAdhan = Math.Round(timeLeftForFajr.TotalMinutes, 2) == 10.8; // Example setting
+            IsAdhanNow = timeLeftForFajr.Hours == 0 && timeLeftForFajr.Minutes == 0 && timeLeftForFajr.Seconds == 0;
+
+            return timeLeftForFajr;
         }
+
         private static bool IsTimeEqual(DateTime currentTime, DateTime prayerTime, TimeSpan tolerance)
         {
             return Math.Abs((currentTime - prayerTime).TotalMinutes) <= tolerance.TotalMinutes;

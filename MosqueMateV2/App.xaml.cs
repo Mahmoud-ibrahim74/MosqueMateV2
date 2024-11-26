@@ -1,7 +1,6 @@
 ﻿using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
-using MosqueMateV2.Helpers;
 using Resources;
 using System.Globalization;
 using System.Windows;
@@ -22,7 +21,7 @@ namespace MosqueMateV2
             #region New Instance
             mP3Player = new MP3Player();
             LocalizationService = new JsonLocalizationService();
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(AppLocalization.English); 
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(AppLocalization.Arabic); 
             #endregion
 
             AppLanguage = Thread.CurrentThread.CurrentUICulture.Name;

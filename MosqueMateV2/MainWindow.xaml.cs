@@ -167,22 +167,25 @@ namespace MosqueMateV2
 
         public void UpdateNextPrayerLabel()
         {
-            var nextAdhanEnum = AdhanHelper.GetNextAdhan(App.Api_Response.Data.Timings);
+            if (App.Api_Response is not null)
+            {
+                var nextAdhanEnum = AdhanHelper.GetNextAdhan(App.Api_Response.Data.Timings);
 
-            var localizationNextAdhan = App.LocalizationService[nextAdhanEnum.ToString() ??
-                PrayerEnum.Fajr.ToString()];
-            var nextPrayer = AdhanHelper.GetTimeLeftForNextAdhan(App.Api_Response.Data.Timings) ??
-                TimeSpan.MinValue;
+                var localizationNextAdhan = App.LocalizationService[nextAdhanEnum.ToString() ??
+                    PrayerEnum.Fajr.ToString()];
+                var nextPrayer = AdhanHelper.GetTimeLeftForNextAdhan(App.Api_Response.Data.Timings) ??
+                    TimeSpan.MinValue;
 
-            nextPrayerLBL.Content = StringHelper.AppendString(
-                  App.LocalizationService[AppLocalization.NextPrayer],
-                  " ",
-                  $"{nextPrayer.Hours}:{nextPrayer.Minutes}:{nextPrayer.Seconds}",
-                  "  (" + localizationNextAdhan + ")"
-                );
+                nextPrayerLBL.Content = StringHelper.AppendString(
+                      App.LocalizationService[AppLocalization.NextPrayer],
+                      " ",
+                      $"{nextPrayer.Hours}:{nextPrayer.Minutes}:{nextPrayer.Seconds}",
+                      "  ( " + localizationNextAdhan + " )"
+                    );
 
-            BindingCarusel();
-            AlertForPrayer(nextPrayer);
+                BindingCarusel();
+                AlertForPrayer(nextPrayer);
+            }
         }
 
 
