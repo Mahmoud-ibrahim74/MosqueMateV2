@@ -24,6 +24,7 @@
     <None Remove="Assets\Asr.jpg" />
     <None Remove="Assets\hadith.png" />
     <None Remove="Assets\Isha.jpg" />
+    <None Remove="Assets\letter-v.png" />
     <None Remove="Assets\loader.gif" />
     <None Remove="Assets\menu-bar.png" />
     <None Remove="Assets\night.png" />
@@ -33,6 +34,8 @@
     <None Remove="Assets\quranGif.gif" />
     <None Remove="Assets\shalat.png" />
     <None Remove="Assets\sunny.png" />
+    <None Remove="Assets\two.png" />
+    <None Remove="Assets\version.png" />
     <None Remove="Assets\zekr.png" />
     <None Remove="loading.gif" />
     <None Remove="quran.png" />
@@ -40,6 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\letter-v.png" />
     <Resource Include="Assets\pray.ico" />
     <Content Include="pray.ico" />
   </ItemGroup>
@@ -94,6 +98,8 @@
     <Resource Include="Assets\Sunrise.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\two.png" />
+    <Resource Include="Assets\version.png" />
     <Resource Include="Assets\zekr.png" />
     <Resource Include="quran.png" />
     <Resource Include="Assets\tasbih.png" />

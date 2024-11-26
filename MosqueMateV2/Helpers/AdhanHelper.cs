@@ -69,9 +69,10 @@ namespace MosqueMateV2.Helpers
             {
                 var res = nextPrayer.Key - DateTime.Now;
                 var roundTime = Math.Round(res.TotalMinutes,2);
-                IsAlertForNextAdhan = roundTime == 10.58; // Make it Optional Settings
-                IsAdhanNow = ((nextPrayer.Key - DateTime.Now).Hours) == 0
-                               && ((nextPrayer.Key - DateTime.Now).Minutes) == 0;
+                IsAlertForNextAdhan = roundTime == 10.8; // Make it Optional Settings
+                IsAdhanNow =        ((nextPrayer.Key - DateTime.Now).Hours) == 0
+                                    && ((nextPrayer.Key - DateTime.Now).Minutes) == 0
+                                    && ((nextPrayer.Key - DateTime.Now).Seconds) == 0;
                 return nextPrayer.Key - DateTime.Now;
             }
 

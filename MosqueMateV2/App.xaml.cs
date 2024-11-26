@@ -22,7 +22,7 @@ namespace MosqueMateV2
             #region New Instance
             mP3Player = new MP3Player();
             LocalizationService = new JsonLocalizationService();
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(AppLocalization.Arabic); 
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(AppLocalization.English); 
             #endregion
 
             AppLanguage = Thread.CurrentThread.CurrentUICulture.Name;

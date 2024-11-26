@@ -59,7 +59,13 @@ namespace MosqueMateV2
             this.Focusable = true;
             this.Focus();
             this.Title = App.LocalizationService[AppLocalization.AppName];
+            this.topGrid.FlowDirection = App.AppLanguage == AppLocalization.Arabic ? 
+                FlowDirection.RightToLeft : 
+                FlowDirection.LeftToRight;
 
+            this.centerGrid.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
+                FlowDirection.RightToLeft :
+                FlowDirection.LeftToRight;
 
             BindingCarusel();
             BindingBottomPanel();
