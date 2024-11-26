@@ -1,4 +1,5 @@
-﻿using MosqueMateV2.DataAccess.Models;
+﻿using ModernWpf.Controls;
+using MosqueMateV2.DataAccess.Models;
 using MosqueMateV2.Domain.APIService;
 using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Enums;
@@ -6,6 +7,7 @@ using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using Newtonsoft.Json;
 using Resources;
+using System.Configuration;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
@@ -176,20 +178,13 @@ namespace MosqueMateV2
                   App.LocalizationService[AppLocalization.NextPrayer],
                   " ",
                   $"{nextPrayer.Hours}:{nextPrayer.Minutes}:{nextPrayer.Seconds}",
-                  "\t(" + localizationNextAdhan + ")"
+                  "  (" + localizationNextAdhan + ")"
                 );
 
             BindingCarusel();
             AlertForPrayer(nextPrayer);
         }
 
-
-        private void CloseSlider_Click(object sender, RoutedEventArgs e)
-        {
-            Storyboard slideOut = (Storyboard)FindResource("SlideOutAnimation");
-            slideOut.Begin(SlidingPanel);
-            toggleSidebar.IsChecked = false;
-        }
 
         private void AlertForPrayer(TimeSpan timeLeft)
         {
@@ -219,21 +214,42 @@ namespace MosqueMateV2
         private void toggleSidebar_Click(object sender, RoutedEventArgs e)
         {
 
-            if (toggleSidebar.IsChecked == true)
-            {
-                Storyboard slideIn = (Storyboard)FindResource("SlideInAnimation");
-                slideIn.Begin(SlidingPanel);
-            }
-            else if (toggleSidebar.IsChecked == false)
-            {
-                Storyboard slideOut = (Storyboard)FindResource("SlideOutAnimation");
-                slideOut.Begin(SlidingPanel);
-            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void NavView_SelectionChanged(object sender, NavigationViewSelectionChangedEventArgs e)
+        {
+            if (e.SelectedItem is NavigationViewItem selectedItem)
+            {
+                string pageTag = selectedItem.Tag?.ToString();
+                if (e.IsSettingsSelected) // Check if the Settings button is selected
+                {
+                    Console.WriteLine("Setting");
+                    return;
+                }
+
+                // Navigate to the appropriate page
+                switch (pageTag)
+                {
+                    case "SchedulePage":
+                        Console.WriteLine("SchedulePage");
+                        //MainFrame.Navigate(new SchedulePage());
+                        break;
+                    case "GradesPage":
+                        Console.WriteLine("GradesPage");
+                        //MainFrame.Navigate(new GradesPage());
+                        break;
+                    case "TutorsPage":
+                        Console.WriteLine("TutorsPage");
+                        //MainFrame.Navigate(new TutorsPage());
+                        break;
+                }
+            }
         }
     }
 }
