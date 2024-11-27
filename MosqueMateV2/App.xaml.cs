@@ -2,6 +2,7 @@
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
+using MosqueMateV2.Resources;
 using Resources;
 using System.Globalization;
 using System.IO;
@@ -29,7 +30,8 @@ namespace MosqueMateV2
             #endregion
 
             AppLanguage = Thread.CurrentThread.CurrentUICulture.Name;
-            fontPath = AppHelper.ChangeAppFont(FontResources.ArbFONTS_Noon);
+            if (AppLanguage == AppLocalization.Arabic)
+                fontPath = AppHelper.ChangeAppFont(FontResources.alfont_com_ArabicPoetry_Medium);
 
             base.OnStartup(e);
 
@@ -38,7 +40,6 @@ namespace MosqueMateV2
         {
             if (File.Exists(fontPath))
                 File.Delete(fontPath);
-
             base.OnExit(e);
         }
     }

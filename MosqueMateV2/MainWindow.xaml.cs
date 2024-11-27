@@ -5,13 +5,11 @@ using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
+using MosqueMateV2.Resources;
 using Newtonsoft.Json;
 using Resources;
-using System.Configuration;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
 using XamlAnimatedGif;
 
 namespace MosqueMateV2
@@ -36,6 +34,10 @@ namespace MosqueMateV2
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            using ResourceManagerRepository res = new(ResourceTypeEnum.MediaResources);
+            var data = res.GetAllResourcesInfoFromResx();  
+
+
             this.Loader.Visibility = Visibility.Visible;
             this.IsEnabled = false;
             rxTaskManger.RunBackgroundTaskOnUI(

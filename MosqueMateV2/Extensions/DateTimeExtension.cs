@@ -1,4 +1,4 @@
-﻿using Resources;
+﻿using MosqueMateV2.Resources;
 using System.Globalization;
 
 namespace MosqueMateV2.Extensions

@@ -7,7 +7,8 @@
         xmlns:local="clr-namespace:MosqueMateV2.CustomUserControls"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         mc:Ignorable="d"
-        Title="MainWindow" Height="770" Width="800"
+        Title="MainWindow" Height="770" 
+        Width="1000"
         MinWidth="800" MinHeight="600" 
         WindowStartupLocation="CenterScreen" 
         FontWeight="UltraBlack" 
@@ -103,15 +104,15 @@
                 Margin="10,10,10,0" 
                 Grid.Row="0">
             <Label x:Name="welcomeLBL"  Grid.Row="0"  FontSize="25"  Padding="10 2 0 0" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top"  />
-            <Label x:Name="hijiriDateLBL"  Grid.Row="0" FontWeight="Bold" FontSize="20" Padding="10 2 0 0" Margin="0,67,494,33"/>
-            <Label x:Name="miladiDateLBL"  Grid.Row="0" FontWeight="Bold" FontSize="20" Padding="10 2 0 0" Margin="0,99,494,3"/>
+            <Label x:Name="hijiriDateLBL"  Grid.Row="0" FontWeight="Bold" FontSize="18" Padding="10 2 0 0" Margin="0,67,494,33"/>
+            <Label x:Name="miladiDateLBL"  Grid.Row="0" FontWeight="Bold" FontSize="18" Padding="10 2 0 0" Margin="0,99,494,3"/>
             <Label x:Name="nextPrayerLBL"  Grid.Row="0" FontWeight="Bold" FontSize="17"  HorizontalAlignment="Center" Margin="0 50 0 0 "   Content="....." VerticalAlignment="Top" />
             <ToggleButton
                     x:Name="toggleSidebar" 
                     Click="toggleSidebar_Click"
                     Grid.Row="0"
                     FontWeight="Bold"
-                    FontSize="15" Margin="10" 
+                    FontSize="13" Margin="10" 
                     VerticalAlignment="Top"
                     Cursor="Hand"
                     Visibility="Hidden"
@@ -171,7 +172,7 @@
                             <TextBlock x:Name="quranTxt" 
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Bottom" 
-                                   FontSize="15"
+                                   FontSize="13"
                                    FontWeight="DemiBold"
                                    TextAlignment="Center"
                             />
@@ -193,7 +194,7 @@
                             <TextBlock x:Name="tasbihTxt" 
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Bottom" 
-                                   FontSize="15" 
+                                   FontSize="13" 
                                    FontWeight="DemiBold"                                   
                                    TextAlignment="Center"
                             />
@@ -216,7 +217,7 @@
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Top" 
                                    FontWeight="DemiBold"                                 
-                                   FontSize="15" 
+                                   FontSize="13" 
                                    TextAlignment="Center" Margin="0,77,0,0" Width="60"
                             />
                         </Grid>
@@ -236,7 +237,7 @@
                             <!-- Label -->
                             <TextBlock x:Name="prayerLearningTxt" 
                                    VerticalAlignment="Top" 
-                                   FontSize="15" 
+                                   FontSize="13" 
                                    FontWeight="DemiBold"                           
                                    TextAlignment="Center" Margin="0,75,0,0"
                             />
@@ -258,7 +259,7 @@
                             <TextBlock 
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Bottom" 
-                                   FontSize="15" 
+                                   FontSize="13" 
                                    FontWeight="DemiBold"                          
                                    TextAlignment="Center"
                             />
@@ -280,7 +281,7 @@
                             <TextBlock x:Name="azkarTxt" 
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Bottom" 
-                                   FontSize="15" 
+                                   FontSize="13" 
                                    FontWeight="DemiBold"                                   
                                    TextAlignment="Center"
                             />

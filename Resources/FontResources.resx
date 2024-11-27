@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Alameen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Alameen.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alfont_com_ArabicPoetry-Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\alfont_com_ArabicPoetry-Medium.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="ArbFONTS-Amiri" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\ArbFONTS-Amiri.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

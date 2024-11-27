@@ -1,4 +1,4 @@
-﻿namespace Resources
+﻿namespace MosqueMateV2.Resources
 {
     public static class AppLocalization
     {

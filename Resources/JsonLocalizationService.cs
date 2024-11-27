@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using MosqueMateV2.Resources;
+using Newtonsoft.Json.Linq;
 using System.Globalization;
 using System.Text;
 

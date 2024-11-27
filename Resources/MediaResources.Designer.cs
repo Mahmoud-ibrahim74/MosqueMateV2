@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Resources {
+namespace MosqueMateV2.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Resources.MediaResources", typeof(MediaResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MosqueMateV2.Resources.MediaResources", typeof(MediaResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -83,23 +83,12 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static byte[] AdhamElShrarkawy {
-            get {
-                object obj = ResourceManager.GetObject("AdhamElShrarkawy", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         public static byte[] AhmedElKordy {
             get {
                 object obj = ResourceManager.GetObject("AhmedElKordy", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>

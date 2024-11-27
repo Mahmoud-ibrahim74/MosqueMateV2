@@ -5,7 +5,7 @@ VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MosqueMateV2", "MosqueMateV2\MosqueMateV2.csproj", "{35FB85DA-3114-4062-89CB-DA44AA43CCB3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resources", "Resources\Resources.csproj", "{1802B1B1-6A7E-4F09-B40D-6A7F6227BE3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MosqueMateV2.Resources", "Resources\MosqueMateV2.Resources.csproj", "{1802B1B1-6A7E-4F09-B40D-6A7F6227BE3F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MosqueMateV2.Domain", "MosqueMateV2.Domain\MosqueMateV2.Domain.csproj", "{2AF6C04E-5686-4A66-8E4D-ABF49C53D854}"
 EndProject

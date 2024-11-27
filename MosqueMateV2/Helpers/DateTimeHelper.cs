@@ -1,5 +1,5 @@
 ﻿using MosqueMateV2.Domain.DTOs;
-using Resources;
+using MosqueMateV2.Resources;
 
 namespace MosqueMateV2.Helpers
 {

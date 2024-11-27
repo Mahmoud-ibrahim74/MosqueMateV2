@@ -126,10 +126,6 @@
     <value>Resources\أبو ياسر الجزائري.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     <comment>أبو ياسر الجزائري</comment>
   </data>
-  <data name="AdhamElShrarkawy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\أدهم شرقاوي.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    <comment>أدهم شرقاوي</comment>
-  </data>
   <data name="AhmedElKordy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\احمد الكردي.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     <comment>احمد الكردي</comment>
