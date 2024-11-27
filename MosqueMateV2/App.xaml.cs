@@ -20,7 +20,9 @@ namespace MosqueMateV2
         public static DTOPrayerTimesResponse Api_Response { get; set; }
         public static IMP3Player mP3Player { get; set; }
 
-
+        public App()
+        {
+        }
         protected override void OnStartup(StartupEventArgs e)
         {
             #region New Instance
@@ -28,7 +30,7 @@ namespace MosqueMateV2
             LocalizationService = new();
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(AppLocalization.Arabic);
             #endregion
-
+            Application.Current.ThemeMode = ThemeMode.System;
             AppLanguage = Thread.CurrentThread.CurrentUICulture.Name;
             if (AppLanguage == AppLocalization.Arabic)
                 fontPath = AppHelper.ChangeAppFont(FontResources.alfont_com_ArabicPoetry_Medium);

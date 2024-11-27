@@ -12,6 +12,8 @@
         public const string Play = "Play";
         public const string Pause = "Pause";
         public const string MainMenu = "MainMenu";
+        public const string Home = "Home";
+        public const string HomeTag = "HomePage";
         public const string itIsTime = "itIsTime";
         public const string Quran = "Quran";
         public const string Hadith = "Hadith";

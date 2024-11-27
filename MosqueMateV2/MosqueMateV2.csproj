@@ -7,19 +7,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>pray.ico</ApplicationIcon>
+	  <NoWarn>$(NoWarn);WPF0001</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Pages\**" />
     <Compile Remove="Testing\**" />
     <Compile Remove="Windows\**" />
-    <EmbeddedResource Remove="Pages\**" />
     <EmbeddedResource Remove="Testing\**" />
     <EmbeddedResource Remove="Windows\**" />
-    <None Remove="Pages\**" />
     <None Remove="Testing\**" />
     <None Remove="Windows\**" />
-    <Page Remove="Pages\**" />
     <Page Remove="Testing\**" />
     <Page Remove="Windows\**" />
   </ItemGroup>

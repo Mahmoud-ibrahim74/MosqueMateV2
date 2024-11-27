@@ -1,0 +1,260 @@
+﻿<ui:Page x:Class="MosqueMateV2.Pages.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xag="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif" 
+        xmlns:local="clr-namespace:MosqueMateV2.CustomUserControls"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+         ui:ThemeManager.RequestedTheme="Default"
+        FontFamily="Bahnschrift Condensed"
+        Loaded="Window_Loaded">
+    <!-- Resources for Animations -->
+    <Page.Resources>
+        <!-- Slide-in Animation -->
+        <Storyboard x:Key="SlideInAnimation">
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" 
+                                Duration="0:0:0.5"
+                                From="-300,0,0,0" 
+                                To="0,0,0,0" />
+        </Storyboard>
+        <!-- Slide-out Animation -->
+        <Storyboard x:Key="SlideOutAnimation">
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" 
+                                Duration="0:0:0.5"
+                                From="0,0,0,0" 
+                                To="-300,0,0,0" />
+        </Storyboard>
+
+        <!-- Button Style with Active Trigger -->
+        <Style x:Key="MenuButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="Margin" Value="0,5" />
+
+            <!-- Hover Effect -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <!-- Trigger for Active Button -->
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="True">
+                    <Setter Property="Background" Value="#FF4A56CC" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+
+    <Grid x:Name="GridContainer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="144*"/>
+            <RowDefinition Height="224*"/>
+            <RowDefinition Height="151*"/>
+            <RowDefinition Height="215*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="topGrid"
+                Margin="10,10,10,0" 
+                Grid.Row="0">
+            <Label x:Name="welcomeLBL"  Grid.Row="0"  FontSize="25"  Padding="10 2 0 0" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top"  />
+            <Label x:Name="hijiriDateLBL"  Grid.Row="0" FontWeight="Bold" FontSize="18" Padding="10 2 0 0" Margin="0,67,494,33"/>
+            <Label x:Name="miladiDateLBL"  Grid.Row="0" FontWeight="Bold" FontSize="18" Padding="10 2 0 0" Margin="0,99,494,3"/>
+            <Label x:Name="nextPrayerLBL"  Grid.Row="0" FontWeight="Bold" FontSize="17"  HorizontalAlignment="Center" Margin="0 50 0 0 "   Content="....." VerticalAlignment="Top" />
+            <ToggleButton
+                    x:Name="toggleSidebar" 
+                    Click="toggleSidebar_Click"
+                    Grid.Row="0"
+                    FontWeight="Bold"
+                    FontSize="13" Margin="10" 
+                    VerticalAlignment="Top"
+                    Cursor="Hand"
+                    Visibility="Hidden"
+                    Width="32"
+                    HorizontalAlignment="Right"
+                    Height="32"
+                    BorderBrush="{x:Null}"
+                    >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="/Assets/menu-bar.png"/>
+                </ToggleButton.Background>
+            </ToggleButton>
+        </Grid>
+        <Grid 
+            x:Name="carouselContainer"
+            Grid.Row="1" 
+            Grid.RowSpan="2"
+            Margin="10,10,10,0"                     
+            >
+            <Grid x:Name="centerGrid" Grid.Row="1">
+                <local:CarouselUserControl PrayerSlides="{Binding PrayerSlidesData}" 
+                                       HorizontalAlignment="Stretch" 
+                                       VerticalAlignment="Stretch"/>
+            </Grid>
+
+        </Grid>
+        <Image x:Name="Loader" 
+               Visibility="Visible" 
+               Panel.ZIndex="1" 
+               Margin="281,121,319,78" 
+               Grid.RowSpan="2"
+               Grid.Row="1"/>
+        <Grid Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250*"></ColumnDefinition>
+                <ColumnDefinition Width="250*"/>
+                <ColumnDefinition Width="250*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*"></RowDefinition>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+
+
+            <!--#region ButtonsBottom -->
+            <Button x:Name="QuranBtn" Grid.Column="0" Width="80" Height="60" Margin="107,2,0,0" VerticalAlignment="Top" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Margin="0,0,0,-30">
+                            <!-- Background Image -->
+                            <Rectangle Margin="0,0,0,20">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="/Assets/quran.png" Stretch="Uniform"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <!-- Label -->
+                            <TextBlock x:Name="quranTxt" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Bottom" 
+                                   FontSize="13"
+                                   FontWeight="DemiBold"
+                                   TextAlignment="Center"
+                            />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="tasbihBtn" Grid.Column="2" Width="80" Height="60" Margin="107,2,0,0" VerticalAlignment="Top" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Margin="0,0,0,-30">
+                            <!-- Background Image -->
+                            <Rectangle Margin="0,0,0,20">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="/Assets/zekr.png" Stretch="Uniform"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <!-- Label -->
+                            <TextBlock x:Name="tasbihTxt" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Bottom" 
+                                   FontSize="13" 
+                                   FontWeight="DemiBold"                                   
+                                   TextAlignment="Center"
+                            />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="hadithBtn" Grid.Column="0" Grid.Row="1" Width="80" Height="60" Margin="107,5,0,0" VerticalAlignment="Top" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Margin="0,0,0,-30">
+                            <!-- Background Image -->
+                            <Rectangle Margin="0,0,0,20">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="/Assets/hadith.png" Stretch="Uniform"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <!-- Label -->
+                            <TextBlock x:Name="hadithTxt" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Top" 
+                                   FontWeight="DemiBold"                                 
+                                   FontSize="13" 
+                                   TextAlignment="Center" Margin="0,77,0,0" Width="60"
+                            />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="prayerLearningBtn" Grid.Column="1" Grid.Row="1" Width="120" Height="70" Margin="84,5,0,0" VerticalAlignment="Top" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Margin="0,0,0,-30">
+                            <!-- Background Image -->
+                            <Rectangle Margin="0,0,0,30">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="/Assets/shalat.png" Stretch="Uniform"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <!-- Label -->
+                            <TextBlock x:Name="prayerLearningTxt" 
+                                   VerticalAlignment="Top" 
+                                   FontSize="13" 
+                                   FontWeight="DemiBold"                           
+                                   TextAlignment="Center" Margin="0,75,0,0"
+                            />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Column="2" Grid.Row="1" Width="80" Height="60" Margin="106,-50,0,0" Cursor="Hand" Click="Button_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Margin="0,0,0,-30">
+                            <!-- Background Image -->
+                            <Rectangle Margin="0,0,0,20">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="/Assets/tasbih.png" Stretch="Uniform"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <!-- Label -->
+                            <TextBlock 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Bottom" 
+                                   FontSize="13" 
+                                   FontWeight="DemiBold"                          
+                                   TextAlignment="Center"
+                            />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="azkarBtn" Grid.Column="1" Width="80" Height="60" Margin="107,2,0,0" VerticalAlignment="Top" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Margin="0,0,0,-30">
+                            <!-- Background Image -->
+                            <Rectangle Margin="0,0,0,20">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="/Assets/tasbih.png" Stretch="Uniform"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <!-- Label -->
+                            <TextBlock x:Name="azkarTxt" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Bottom" 
+                                   FontSize="13" 
+                                   FontWeight="DemiBold"                                   
+                                   TextAlignment="Center"
+                            />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <!--#endregion-->
+        </Grid>
+    </Grid>
+</ui:Page>
