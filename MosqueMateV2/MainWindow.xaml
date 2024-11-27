@@ -80,10 +80,10 @@
             SelectionChanged="NavView_SelectionChanged">
             <!-- Navigation Menu Items -->
             <ui:NavigationView.MenuItems>
-                <ui:NavigationViewItem x:Name="homeItem"   Tag="HomePage" Icon="Home">
+                <ui:NavigationViewItem x:Name="homeItem"  Icon="Home">
                 </ui:NavigationViewItem>
 
-                <ui:NavigationViewItem Content="Grades" Tag="GradesPage" Icon="Calendar">
+                <ui:NavigationViewItem Content="Grades" Icon="Mail">
                 </ui:NavigationViewItem>
 
                 <ui:NavigationViewItem Content="Tutors" Tag="TutorsPage" Icon="People" />
