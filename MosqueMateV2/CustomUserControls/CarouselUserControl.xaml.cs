@@ -92,7 +92,7 @@ namespace MosqueMateV2.CustomUserControls
             if (AdhanHelper.IsAdhanNow)
             {
                 toggleAdhan.Visibility = Visibility.Visible;
-                var adhan = MediaResources.SearchOnAdhanFiles("احمد الكردي");
+                var adhan = MediaResources.AbdelBastAbdelSamd;
                 App.mP3Player.Play(adhan);
             }
         }

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Globalization;
+using System.Text;
 
 namespace Resources
 {
@@ -9,11 +10,10 @@ namespace Resources
 
         public JsonLocalizationService()
         {
-            string jsonFilePath = Path.Combine(Environment.CurrentDirectory, "AppResources", "SharedResource.json");
-            if (!File.Exists(jsonFilePath))
-                throw new FileNotFoundException($"Localization file not found: {jsonFilePath}");
+            if (FileResources.SharedResource.Length == 0)
+                throw new FileNotFoundException($"Localization file not found on resources");
 
-            var jsonContent = File.ReadAllText(jsonFilePath);
+            string jsonContent = Encoding.UTF8.GetString(FileResources.SharedResource);
             _localizationData = JObject.Parse(jsonContent);
         }
         public string this[string key]

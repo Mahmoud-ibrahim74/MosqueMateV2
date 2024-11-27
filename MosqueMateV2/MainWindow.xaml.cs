@@ -207,11 +207,7 @@ namespace MosqueMateV2
                 Notification.Wpf.NotificationType.Warning);
 
                 App.mP3Player.Stop();
-                var file = MediaResources.GetAdhanFiles().
-                    Where(x => x.Key.Contains("prayerNow")).
-                    Select(x => x.Value).
-                    FirstOrDefault();
-                App.mP3Player.Play(file);
+                App.mP3Player.Play(MediaResources.prayerNow);
             }
         }
         private void toggleSidebar_Click(object sender, RoutedEventArgs e)

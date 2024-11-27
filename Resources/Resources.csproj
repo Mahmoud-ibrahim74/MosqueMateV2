@@ -11,66 +11,36 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="AppResources\Adhan\Fajr\أذان الفجر القاهرة - الحرم المدني.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\Fajr\أذان الفجر القاهرة - الحرم المكي.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\Fajr\أذان الفجر القاهرة.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\Fajr\عبد الباسط عبدالصمد - الفجر.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\prayerNow.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\أبو ياسر الجزائري.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\أدهم شرقاوي.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\احمد الطربلسي - الكويت.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\احمد الكردي.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\اذان الجزائر.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\الدوكالى محمد العالم.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\حمزة المجالى.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\عبدالباسط عبدالصمد.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\محمد الكريني.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\محمد رفعت.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\محمد رمضان سعد.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\محمد صلاح الدين.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\Adhan\محمود على البنا.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\loading.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="AppResources\SharedResource.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Compile Update="FileResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FileResources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="FontResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FontResources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="MediaResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="FileResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FileResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FontResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FontResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MediaResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MediaResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

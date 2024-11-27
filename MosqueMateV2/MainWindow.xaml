@@ -162,7 +162,7 @@
                     <ControlTemplate TargetType="Button">
                         <Grid Margin="0,0,0,-30">
                             <!-- Background Image -->
-                            <Rectangle>
+                            <Rectangle Margin="0,0,0,20">
                                 <Rectangle.Fill>
                                     <ImageBrush ImageSource="/Assets/quran.png" Stretch="Uniform"/>
                                 </Rectangle.Fill>
@@ -172,7 +172,6 @@
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Bottom" 
                                    FontSize="15"
-                                   Text="............."
                                    FontWeight="DemiBold"
                                    TextAlignment="Center"
                             />
@@ -185,7 +184,7 @@
                     <ControlTemplate TargetType="Button">
                         <Grid Margin="0,0,0,-30">
                             <!-- Background Image -->
-                            <Rectangle>
+                            <Rectangle Margin="0,0,0,20">
                                 <Rectangle.Fill>
                                     <ImageBrush ImageSource="/Assets/zekr.png" Stretch="Uniform"/>
                                 </Rectangle.Fill>
@@ -207,7 +206,7 @@
                     <ControlTemplate TargetType="Button">
                         <Grid Margin="0,0,0,-30">
                             <!-- Background Image -->
-                            <Rectangle>
+                            <Rectangle Margin="0,0,0,20">
                                 <Rectangle.Fill>
                                     <ImageBrush ImageSource="/Assets/hadith.png" Stretch="Uniform"/>
                                 </Rectangle.Fill>
@@ -229,7 +228,7 @@
                     <ControlTemplate TargetType="Button">
                         <Grid Margin="0,0,0,-30">
                             <!-- Background Image -->
-                            <Rectangle Margin="0,0,0,34">
+                            <Rectangle Margin="0,0,0,30">
                                 <Rectangle.Fill>
                                     <ImageBrush ImageSource="/Assets/shalat.png" Stretch="Uniform"/>
                                 </Rectangle.Fill>
@@ -250,7 +249,7 @@
                     <ControlTemplate TargetType="Button">
                         <Grid Margin="0,0,0,-30">
                             <!-- Background Image -->
-                            <Rectangle>
+                            <Rectangle Margin="0,0,0,20">
                                 <Rectangle.Fill>
                                     <ImageBrush ImageSource="/Assets/tasbih.png" Stretch="Uniform"/>
                                 </Rectangle.Fill>
@@ -272,7 +271,7 @@
                     <ControlTemplate TargetType="Button">
                         <Grid Margin="0,0,0,-30">
                             <!-- Background Image -->
-                            <Rectangle>
+                            <Rectangle Margin="0,0,0,20">
                                 <Rectangle.Fill>
                                     <ImageBrush ImageSource="/Assets/tasbih.png" Stretch="Uniform"/>
                                 </Rectangle.Fill>
