@@ -19,8 +19,8 @@ namespace MosqueMateV2.Helpers
             //if (magribTime is not null)
             //    return "pack://application:,,,/Assets/night.png";
 
-            var currentHour = DateTime.Now.Hour;
-            if (currentHour >= magribTime.Hour)
+            var currentHour = DateTime.Now;
+            if (currentHour > magribTime)
                 return "pack://application:,,,/Assets/night.png";
             else
                 return "pack://application:,,,/Assets/sunny.png";
