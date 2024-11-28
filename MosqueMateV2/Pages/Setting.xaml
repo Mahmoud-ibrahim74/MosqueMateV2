@@ -1,0 +1,75 @@
+﻿<ui:Page xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  x:Class="MosqueMateV2.Pages.Setting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xag="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif" 
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        mc:Ignorable="d"
+        Loaded="Page_Loaded">
+    <materialDesign:Card >
+        <Grid x:Name="GridContainer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="600" Height="600">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="323*"/>
+                <ColumnDefinition Width="277*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="110*"></RowDefinition>
+                <RowDefinition Height="74*"/>
+                <RowDefinition Height="79*"/>
+                <RowDefinition Height="102*"/>
+                <RowDefinition Height="114*"/>
+                <RowDefinition Height="121*"/>
+            </Grid.RowDefinitions>
+
+            <!--#region Reminder-Area -->
+            <Label x:Name="reminderTimeLBL" Grid.Column="0" Grid.Row="0"  Padding="10 0 0 0" FontSize="15" Margin="5,0,179,78">...........</Label>
+            <Label x:Name="hoursLBL" Grid.Column="0" Grid.Row="0"  Padding="10 0 0 0" FontSize="15" Margin="5,44,179,44">...........</Label>
+            <TextBox x:Name="hoursTxt" 
+                     HorizontalAlignment="Left"
+                     Margin="5,72,0,0"
+                     TextWrapping="Wrap"
+                     VerticalAlignment="Top"
+                     FontSize="15"
+                     PreviewTextInput="hoursTxt_PreviewTextInput"
+                     Width="115" Height="33"/>
+            <Label Grid.Column="0" Grid.Row="0"   FontSize="15" Margin="125,79,152,9" Padding="10 0 0 0">:</Label>
+            <Label x:Name="minutesLBL" Grid.Column="0" Grid.Row="0"  Padding="10 0 0 0" FontSize="15" Margin="154,44,51,44">...........</Label>
+            <TextBox x:Name="minutesTxt" 
+                     HorizontalAlignment="Left"
+                     Margin="150,72,0,0"
+                     TextWrapping="Wrap"
+                     VerticalAlignment="Top"
+                     FontSize="15"
+                     PreviewTextInput="hoursTxt_PreviewTextInput"
+                     Width="115" Height="33"/>
+            <!--#endregion-->
+
+            <!--#region Country-Area -->
+            <Label x:Name="regionLBL" Grid.Column="1" Grid.Row="0"  Padding="10 0 0 0" FontSize="15" Margin="5,0,179,78">...........</Label>
+            <Label x:Name="countryLBL" Grid.Column="1" Grid.Row="0"  Padding="10 0 0 0" FontSize="15" Margin="5,44,179,44">...........</Label>
+            <ComboBox x:Name="countryBox"
+                 Margin="5,72,0,0"
+                 Grid.Column="1"  
+                 IsEditable="True"
+                 KeyUp="countryBox_KeyUp"
+                 FontSize="13"
+         Width="262" Height="33"/>
+            <Label Grid.Column="1" Grid.Row="0"   FontSize="15" Margin="125,79,152,9" Padding="10 0 0 0">:</Label>
+            <!--#endregion-->
+
+
+            <!--#region City -->
+            <Label x:Name="cityLBL" Grid.Column="1" Grid.Row="1"  Padding="10 0 0 0" FontSize="15" Margin="5,5,179,45">...........</Label>
+            <ComboBox x:Name="cityBox"
+                 Grid.Column="1"  
+                 Grid.Row="1"  
+                 IsEditable="True"
+                 KeyUp="countryBox_KeyUp"
+                 FontSize="13"
+                 Width="262" Height="33" Margin="5,34,0,0"/>
+            <!--#endregion-->
+
+        </Grid>
+    </materialDesign:Card>
+</ui:Page>

@@ -24,6 +24,12 @@
     "ar": "تنبيه",
     "fr": "alerte"
   },
+  "ReminderTime": {
+    "en": "Reminder time",
+    "ar": "وقت التذكير",
+    "fr": "Heure de rappel"
+  },
+
   "HadithNo": {
     "en": "Hadith No.",
     "ar": "الحديث رقم",
@@ -33,6 +39,16 @@
     "en": "Adhan",
     "ar": "الآذان",
     "fr": "Adhan"
+  },
+  "Hours": {
+    "en": "Hours",
+    "ar": "ساعات",
+    "fr": "Heures"
+  },
+  "Minutes": {
+    "en": "Minutes",
+    "ar": "دقائق",
+    "fr": "Minutes"
   },
   "CloseApp": {
     "en": "Close App",
@@ -148,11 +164,6 @@
     "ar": "التاريخ الميلادى",
     "en": "Gregorian Date",
     "fr": "Date grégorienne,"
-  },
-  "Minutes": {
-    "ar": "دقائق",
-    "en": "Minutes",
-    "fr": "Minutes"
   },
   "Muezzin": {
     "ar": "المؤذن",
@@ -275,6 +286,11 @@
       "en": "Please select Calculation Method",
       "fr": "Veuillez sélectionner la méthode de calcul"
     }
+  },
+  "regionLBL": {
+    "ar": "المنطقة",
+    "en": "Region",
+    "fr": "Région"
   },
   "countryLBL": {
     "ar": "البلد",

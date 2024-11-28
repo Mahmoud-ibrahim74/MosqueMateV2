@@ -15,12 +15,12 @@
         public const string Home = "Home";
         public const string HomeTag = "HomePage";
         public const string itIsTime = "itIsTime";
+        public const string ReminderTime = "ReminderTime";
         public const string Quran = "Quran";
         public const string Hadith = "Hadith";
         public const string Azkar = "Azkar";
         public const string PrayerLearning = "PrayerLearning";
         public const string PrayerLeft = "PrayerLeft";
-        public const string Minutes = "Minutes";
         public const string Alert = "Alert";
 
         public const string NextPrayer = "NextPrayer";
@@ -32,6 +32,7 @@
         public const string Specializations = "Specializations";
         public const string DeepSpecializations = "DeepSpecializations";
         public const string SendValue = "SendValue";
+        public const string Settings = "Settings";
         public const string ApartmentRequired = "ApartmentRequired";
         public const string FloorRequired = "FloorRequired";
         public const string City = "City";
@@ -39,5 +40,10 @@
         public const string OfficialVacationIsExist = "OfficialVacationIsExist";
         public const string GoodMorning = "GoodMorning";
         public const string GoodEvening = "GoodEvening";
+        public const string Hours = "Hours";
+        public const string Minutes = "Minutes";
+        public const string countryLBL = "countryLBL";
+        public const string cityLBL = "cityLBL";
+        public const string regionLBL = "regionLBL";
     }
 }

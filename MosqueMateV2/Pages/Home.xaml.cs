@@ -1,8 +1,8 @@
-﻿using ModernWpf.Controls;
-using MosqueMateV2.DataAccess.Models;
+﻿using MosqueMateV2.DataAccess.Models;
 using MosqueMateV2.Domain.APIService;
 using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Enums;
+using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
@@ -35,7 +35,7 @@ namespace MosqueMateV2.Pages
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            using ResourceManagerRepository res = new(ResourceTypeEnum.MediaResources);
+            using IResourceManagerRepository res = new ResourceManagerRepository(ResourceTypeEnum.MediaResources);
             var data = res.GetAllResourcesInfoFromResx();
 
 

@@ -12,7 +12,7 @@ namespace Resources
         public JsonLocalizationService()
         {
             if (FileResources.SharedResource.Length == 0)
-                throw new FileNotFoundException($"Localization file not found on resources");
+                return;
 
             string jsonContent = Encoding.UTF8.GetString(FileResources.SharedResource);
             _localizationData = JObject.Parse(jsonContent);

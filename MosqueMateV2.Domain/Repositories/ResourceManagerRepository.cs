@@ -1,14 +1,12 @@
-﻿using MosqueMateV2.Resources;
+﻿using MosqueMateV2.Domain.Interfaces;
+using MosqueMateV2.Resources;
 using System.Collections;
-using System.ComponentModel.Design;
 using System.Globalization;
-using System.Reflection;
 using System.Resources;
-using System.Resources.NetStandard;
 
 namespace Resources
 {
-    public class ResourceManagerRepository : IDisposable
+    public class ResourceManagerRepository : IResourceManagerRepository
     {
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all

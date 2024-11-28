@@ -38,8 +38,8 @@ namespace MosqueMateV2
             NavView.PaneTitle = App.LocalizationService[AppLocalization.MainMenu];
             homeItem.Content = App.LocalizationService[AppLocalization.Home];
             homeItem.Tag = AppLocalization.HomeTag;
-            NavView.SelectedItem = homeItem;
-            MainFrame.Navigate(new Home());
+            NavView.SelectedItem = NavView.SettingsItem;
+            MainFrame.Navigate(new Setting());
 
         }
         public void BindNavMenu()
@@ -53,7 +53,7 @@ namespace MosqueMateV2
                 string pageTag = selectedItem.Tag?.ToString();
                 if (e.IsSettingsSelected) // Check if the Settings button is selected
                 {
-                    Console.WriteLine("Setting");
+                    MainFrame.Navigate(new Setting());
                     return;
                 }
 
