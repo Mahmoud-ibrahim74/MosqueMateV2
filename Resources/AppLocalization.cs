@@ -46,5 +46,6 @@
         public const string countryLBL = "countryLBL";
         public const string cityLBL = "cityLBL";
         public const string regionLBL = "regionLBL";
+        public const string calculationMethod = "calculationMethod";
     }
 }

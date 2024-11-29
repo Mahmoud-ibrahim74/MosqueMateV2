@@ -20,8 +20,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="110*"></RowDefinition>
             <RowDefinition Height="74*" />
-            <RowDefinition Height="79*" />
-            <RowDefinition Height="102*" />
+            <RowDefinition Height="74*" />
+            <RowDefinition Height="107*" />
             <RowDefinition Height="114*" />
             <RowDefinition Height="121*" />
         </Grid.RowDefinitions>
@@ -128,23 +128,56 @@
         <RadioButton x:Name="arabicRadioBtn"
                      Grid.Row="1"
                      VerticalAlignment="Bottom"
-                     Width="30"
+                     Width="120"
                      Content="ع"
-                     Margin="7,0,0,0" />
+                     Margin="7,0,0,0"
+                     Height="32" />
         <RadioButton x:Name="frenshRadioBtn"
                      Grid.Row="1"
-                     Content="fr"                    
+                     Content="fr"
                      VerticalAlignment="Bottom"
-                     Width="30"
+                     Width="120"
                      Margin="218,0,0,0"
-                     Grid.ColumnSpan="2" />
+                     Grid.ColumnSpan="2"
+                     Height="32" />
         <RadioButton x:Name="englishRadioBtn"
                      Grid.Row="1"
-                     Content="en"             
+                     Content="en"
                      VerticalAlignment="Top"
-                     Width="74"
+                     Width="120"
                      Margin="0,42,0,0"
-                     HorizontalAlignment="Center" />
+                     HorizontalAlignment="Center"
+                     Height="32" />
         <!--#endregion-->
+
+        <!--#region Calculation-Area -->
+        <Label x:Name="calcLBL"
+               Grid.Column="1"
+               Grid.Row="2"
+               Padding="10 0 0 0"
+               FontSize="15"
+               Margin="5,5,179,45"></Label>
+        <ComboBox x:Name="calcBox"
+                  Grid.Column="1"
+                  Grid.Row="2"
+                  IsEditable="True"
+                  FontSize="15"
+                  FontWeight="UltraBold"
+                  Width="262"
+                  Height="33"
+                  Margin="5,34,0,0"
+                  SelectionChanged="calcBox_SelectionChanged" />
+        <!--#endregion-->
+
+
+
+
+
+
+
+
+
+
+
     </Grid>
 </ui:Page>

@@ -1,4 +1,5 @@
-﻿using MosqueMateV2.Domain.Interfaces;
+﻿using MosqueMateV2.Domain.Enums;
+using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
@@ -37,6 +38,7 @@ namespace MosqueMateV2.Pages
             this.cityLBL.Content = App.LocalizationService[AppLocalization.cityLBL];
             this.regionLBL.Content = App.LocalizationService[AppLocalization.regionLBL];
             this.LanguageLBL.Content = App.LocalizationService[AppLocalization.Language];
+            this.calcLBL.Content = App.LocalizationService[AppLocalization.calculationMethod];
             #endregion
 
             this.countryBox.IsEnabled = false;
@@ -46,6 +48,7 @@ namespace MosqueMateV2.Pages
                  {
                      this.countryBox.IsEnabled = true;
                      this.countryBox.ItemsSource = result;
+                     FillCalc();
                  },
                  retryNumber: 2,
                  () => // handle an error
@@ -77,6 +80,23 @@ namespace MosqueMateV2.Pages
             else
             {
                 cityBox.ItemsSource = null; // Clear the cityBox if no data is available
+            }
+        }
+        private void FillCalc()
+        {
+            var data = EnumHelper<CalculationMethods>.ConvertEnumToFormattedList();
+            if(data is not null && data.Any())
+            {
+                calcBox.ItemsSource = data; 
+            }
+        }
+
+        private void calcBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (calcBox.SelectedValue is not null)
+            {
+                var selected = calcBox.SelectedValue as string ?? string.Empty;
+                var res = EnumHelper<CalculationMethods>.GetEnumValue(selected);
             }
         }
     }
