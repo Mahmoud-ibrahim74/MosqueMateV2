@@ -1,6 +1,4 @@
-﻿using MosqueMateV2.DataAccess.Models;
-using MosqueMateV2.Domain.APIService;
-using MosqueMateV2.Domain.Interfaces;
+﻿using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
@@ -18,12 +16,14 @@ namespace MosqueMateV2.Pages
 
         public string apiContent { get; set; } = string.Empty;
         IJsonCountryRepository jsonCountry;
+        IJsonCityRepository jsonCity;
         RxTaskManger rxTaskManger;
         public Setting()
         {
             InitializeComponent();
-            rxTaskManger = new();  
+            rxTaskManger = new();
             jsonCountry = new JsonCountryRepository();
+            jsonCity = new JsonCityRepository();
         }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
@@ -35,12 +35,12 @@ namespace MosqueMateV2.Pages
             this.minutesLBL.Content = App.LocalizationService[AppLocalization.Minutes];
             this.countryLBL.Content = App.LocalizationService[AppLocalization.countryLBL];
             this.cityLBL.Content = App.LocalizationService[AppLocalization.cityLBL];
-            this.regionLBL.Content = App.LocalizationService[AppLocalization.regionLBL]; 
+            this.regionLBL.Content = App.LocalizationService[AppLocalization.regionLBL];
             #endregion
 
             this.countryBox.IsEnabled = false;
             rxTaskManger.RunBackgroundTaskOnUI(
-                 backgroundTask: () => jsonCountry.GetAllCountiresLocalization(),
+                 backgroundTask: () => jsonCountry.GetAllCountires(),
                  onSuccess: result =>
                  {
                      this.countryBox.IsEnabled = true;
@@ -54,12 +54,29 @@ namespace MosqueMateV2.Pages
         }
         private void hoursTxt_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
-            e.Handled = !NumberHelper.IsTextNumeric(e.Text); 
+            e.Handled = !NumberHelper.IsTextNumeric(e.Text);
+        }
+        private void countryBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (countryBox.SelectedValue is not null)
+            {
+                var city = countryBox.SelectedValue.ToString() ?? string.Empty;
+                var res = jsonCity.SearchOnCountry(city);
+                ReFillCityBox(res);
+            }
         }
 
-        private void countryBox_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        private void ReFillCityBox(List<string> data)
         {
-
+            if (data is not null && data.Any())
+            {
+                cityBox.ItemsSource = null; // Clear the existing ItemsSource
+                cityBox.ItemsSource = data; // Set the new ItemsSource
+            }
+            else
+            {
+                cityBox.ItemsSource = null; // Clear the cityBox if no data is available
+            }
         }
     }
 }

@@ -52,9 +52,9 @@
                  Margin="5,72,0,0"
                  Grid.Column="1"  
                  IsEditable="True"
-                 KeyUp="countryBox_KeyUp"
-                 FontSize="13"
-         Width="262" Height="33"/>
+                 FontSize="15"
+                 FontWeight="UltraBold"
+         Width="262" Height="33" SelectionChanged="countryBox_SelectionChanged"/>
             <Label Grid.Column="1" Grid.Row="0"   FontSize="15" Margin="125,79,152,9" Padding="10 0 0 0">:</Label>
             <!--#endregion-->
 
@@ -65,8 +65,8 @@
                  Grid.Column="1"  
                  Grid.Row="1"  
                  IsEditable="True"
-                 KeyUp="countryBox_KeyUp"
-                 FontSize="13"
+                 FontSize="15"
+                 FontWeight="UltraBold"
                  Width="262" Height="33" Margin="5,34,0,0"/>
             <!--#endregion-->
 

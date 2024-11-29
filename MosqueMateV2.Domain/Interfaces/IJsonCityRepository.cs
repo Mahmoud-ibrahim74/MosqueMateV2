@@ -2,7 +2,7 @@
 {
     public interface IJsonCityRepository : IDisposable
     {
-        public Task<List<string>> GetAllCountiresLocalization();
-        public string SearchOnCountry(string word);
+        public Task<List<string>> GetAllCities();
+        public List<string> SearchOnCountry(string word);
     }
 }

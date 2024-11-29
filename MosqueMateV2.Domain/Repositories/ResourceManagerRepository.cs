@@ -4,7 +4,7 @@ using System.Collections;
 using System.Globalization;
 using System.Resources;
 
-namespace Resources
+namespace MosqueMateV2.Domain.Repositories
 {
     public class ResourceManagerRepository : IResourceManagerRepository
     {
@@ -59,7 +59,7 @@ namespace Resources
                 if (obj is null)
                     return [];
 
-                return ((byte[])(obj));
+                return (byte[])obj;
             }
             catch (Exception)
             {

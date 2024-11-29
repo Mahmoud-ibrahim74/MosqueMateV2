@@ -2,8 +2,6 @@
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Resources;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
 using System.Text;
 
 namespace MosqueMateV2.Domain.Repositories
@@ -26,7 +24,7 @@ namespace MosqueMateV2.Domain.Repositories
            
         }
 
-        public Task<List<string>> GetAllCountiresLocalization()
+        public Task<List<string>> GetAllCountires()
         {
             var res = _countryObj.
                         Select(x => x.english_name)

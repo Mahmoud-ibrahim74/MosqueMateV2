@@ -2,7 +2,7 @@
 {
     public interface IJsonCountryRepository:IDisposable
     {
-        public Task<List<string>> GetAllCountiresLocalization();
+        public Task<List<string>> GetAllCountires();
         public string SearchOnCountry(string word);
     }
 }

@@ -6,7 +6,7 @@
         public string country { get; init; }
         public List<PopulationCount> populationCounts { get; init; }
     }
-    public class PopulationCount
+    public record PopulationCount
     {
         public string year { get; init; }
         public string value { get; init; }
