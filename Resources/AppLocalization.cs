@@ -22,6 +22,7 @@
         public const string PrayerLearning = "PrayerLearning";
         public const string PrayerLeft = "PrayerLeft";
         public const string Alert = "Alert";
+        public const string Language = "Language";
 
         public const string NextPrayer = "NextPrayer";
         public const string SomethingWrong = "SomethingWrong";

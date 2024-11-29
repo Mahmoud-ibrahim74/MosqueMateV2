@@ -36,6 +36,7 @@ namespace MosqueMateV2.Pages
             this.countryLBL.Content = App.LocalizationService[AppLocalization.countryLBL];
             this.cityLBL.Content = App.LocalizationService[AppLocalization.cityLBL];
             this.regionLBL.Content = App.LocalizationService[AppLocalization.regionLBL];
+            this.LanguageLBL.Content = App.LocalizationService[AppLocalization.Language];
             #endregion
 
             this.countryBox.IsEnabled = false;
