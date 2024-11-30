@@ -33,12 +33,13 @@ namespace MosqueMateV2.Domain.Repositories
                 _ => new ResourceManager($"{projName}.{ResourceTypeEnum.MediaResources}", typeof(MediaResources).Assembly),
             };
         }
-        public List<ResourceEntry> GetAllResourcesInfoFromResx()
+        public Task<List<ResourceEntry>> GetAllResourcesInfoFromResxAsync()
         {
+            List<ResourceEntry> resources = [];
             if (resourceManager is null)
-                return [];
+                return Task.FromResult(resources);
 
-            var result = resourceManager
+            resources = resourceManager
                    .GetResourceSet(CultureInfo.InvariantCulture, true, true)?
                    .Cast<DictionaryEntry>()
                    .Select(entry =>
@@ -48,8 +49,7 @@ namespace MosqueMateV2.Domain.Repositories
                                Name = entry.Key.ToString(),
                            };
                        }).ToList() ?? [];
-
-            return result;
+            return Task.FromResult(resources);
         }
         public byte[] GetResourceByte(string key)
         {

@@ -170,6 +170,11 @@
     "en": "The muezzin",
     "fr": "Le muezzin"
   },
+  "adhanFajr": {
+    "ar": "أذان الفجر",
+    "en": "Fajr Adhan",
+    "fr": "Fajr Adhan"
+  },
   "PrayerLeft": {
     "ar": "باقى على صلاة",
     "en": "Remaining in prayer",
@@ -308,9 +313,9 @@
     "fr": "Notifications"
   },
   "notificationDesc": {
-    "ar": " عند تشغيل هذه الميزة ستصلك إشعارات مثل تنبيه قبل الآذان بساعة أو إشعارات الآذان الآن وإشعارات التحديثات",
-    "en": "When this feature is turned on, you will receive notifications such as an alert one hour before the call to prayer or notifications of the call to prayer now and Updates Notifications",
-    "fr": "Lorsque cette fonctionnalité est activée, vous recevrez des notifications telles qu'une alerte une heure avant l'appel à la prière ou des notifications de l'appel à la prière maintenant"
+    "ar": " عند تشغيل هذه الميزة ستصلك إشعارات مثل تنبيه قبل الآذان  أو إشعارات الآذان الآن وإشعارات التحديثات",
+    "en": "When this feature is turned on, you will receive notifications such as an alert  before the call to prayer or notifications of the call to prayer now and Updates Notifications",
+    "fr": "Lorsque cette fonctionnalité est activée, vous recevrez des notifications telles qu'une alerte  avant l'appel à la prière ou des notifications de l'appel à la prière maintenant"
   },
   "calculationMethod": {
     "ar": "الطريقة",

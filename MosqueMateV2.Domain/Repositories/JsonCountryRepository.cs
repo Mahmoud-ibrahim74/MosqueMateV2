@@ -24,7 +24,7 @@ namespace MosqueMateV2.Domain.Repositories
            
         }
 
-        public Task<List<string>> GetAllCountires()
+        public Task<List<string>> GetAllCountiresAsync()
         {
             var res = _countryObj.
                         Select(x => x.english_name)

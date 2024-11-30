@@ -46,6 +46,12 @@
         public const string countryLBL = "countryLBL";
         public const string cityLBL = "cityLBL";
         public const string regionLBL = "regionLBL";
+        public const string notificationLBL = "notificationLBL";
         public const string calculationMethod = "calculationMethod";
+        public const string autoStartUp = "autoStartUp";
+        public const string Muezzin = "Muezzin";
+        public const string adhanFajr = "adhanFajr";
+        public const string notificationDesc = "notificationDesc";
+        public const string Save = "Save";
     }
 }

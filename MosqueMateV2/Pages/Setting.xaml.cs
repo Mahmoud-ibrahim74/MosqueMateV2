@@ -1,10 +1,12 @@
 ﻿using MosqueMateV2.Domain.Enums;
+using MosqueMateV2.Domain.Extensions;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using Page = ModernWpf.Controls.Page;
 
 namespace MosqueMateV2.Pages
@@ -18,6 +20,7 @@ namespace MosqueMateV2.Pages
         public string apiContent { get; set; } = string.Empty;
         IJsonCountryRepository jsonCountry;
         IJsonCityRepository jsonCity;
+        IResourceManagerRepository resourceManager;
         RxTaskManger rxTaskManger;
         public Setting()
         {
@@ -25,6 +28,7 @@ namespace MosqueMateV2.Pages
             rxTaskManger = new();
             jsonCountry = new JsonCountryRepository();
             jsonCity = new JsonCityRepository();
+            resourceManager = new ResourceManagerRepository(ResourceTypeEnum.MediaResources);
         }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
@@ -39,22 +43,55 @@ namespace MosqueMateV2.Pages
             this.regionLBL.Content = App.LocalizationService[AppLocalization.regionLBL];
             this.LanguageLBL.Content = App.LocalizationService[AppLocalization.Language];
             this.calcLBL.Content = App.LocalizationService[AppLocalization.calculationMethod];
+            this.calcLBL.Content = App.LocalizationService[AppLocalization.calculationMethod];
+            this.startupToggleLBL.Content = App.LocalizationService[AppLocalization.autoStartUp];
+            this.adhanLBL.Content = App.LocalizationService[AppLocalization.Muezzin];
+            this.adhanFajrLBL.Content = App.LocalizationService[AppLocalization.adhanFajr];
+            this.notificationLBL.Content = App.LocalizationService[AppLocalization.notificationLBL];
+            this.save.Content = App.LocalizationService[AppLocalization.Save];
+
             #endregion
 
             this.countryBox.IsEnabled = false;
-            rxTaskManger.RunBackgroundTaskOnUI(
-                 backgroundTask: () => jsonCountry.GetAllCountires(),
-                 onSuccess: result =>
-                 {
-                     this.countryBox.IsEnabled = true;
-                     this.countryBox.ItemsSource = result;
-                     FillCalc();
-                 },
-                 retryNumber: 2,
-                 () => // handle an error
-                 {
+            this.adhanBox.IsEnabled = false;
+            this.adhanFajrBox.IsEnabled = false;
 
-                 });
+            #region BackgroundWorker-Area
+            rxTaskManger.RunBackgroundTaskOnUI(
+                         backgroundTask: () => jsonCountry.GetAllCountiresAsync(),
+                         onSuccess: result =>
+                         {
+                             this.countryBox.IsEnabled = true;
+                             this.countryBox.ItemsSource = result;
+                             FillCalc();
+                         },
+                         retryNumber: 2,
+                         () => // handle an error
+                         {
+
+                         });
+            rxTaskManger.RunBackgroundTaskOnUI(
+                         backgroundTask: () => resourceManager.GetAllResourcesInfoFromResxAsync(),
+                         onSuccess: result =>
+                         {
+                             this.adhanBox.IsEnabled = true;
+                             this.adhanFajrBox.IsEnabled = true;
+                             this.adhanBox.ItemsSource = result.
+                                                          Select(x => x.Name).
+                                                          Where(x => !x.Contains(PrayerEnum.Fajr.ToString()) && !x.Contains("Now"))
+                                                         .AddSpacesBetweenWords();
+                             this.adhanFajrBox.ItemsSource = result.
+                                                          Select(x => x.Name).
+                                                          Where(x => x.Contains(PrayerEnum.Fajr.ToString()) && !x.Contains("Now"))
+                                                         .AddSpacesBetweenWords();
+                         },
+                         retryNumber: 2,
+                         () => // handle an error
+                         {
+
+                         });
+            #endregion
+
         }
         private void hoursTxt_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
@@ -85,10 +122,14 @@ namespace MosqueMateV2.Pages
         private void FillCalc()
         {
             var data = EnumHelper<CalculationMethods>.ConvertEnumToFormattedList();
-            if(data is not null && data.Any())
+            if (data is not null && data.Any())
             {
-                calcBox.ItemsSource = data; 
+                calcBox.ItemsSource = data;
             }
+        }
+        private void FillAdhan()
+        {
+
         }
 
         private void calcBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -98,6 +139,35 @@ namespace MosqueMateV2.Pages
                 var selected = calcBox.SelectedValue as string ?? string.Empty;
                 var res = EnumHelper<CalculationMethods>.GetEnumValue(selected);
             }
+        }
+        private void notificationToggle_Click(object sender, RoutedEventArgs e)
+        {
+            if (notificationToggle.IsChecked is true)
+            {
+                notificationAlertTxt.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
+                    FlowDirection.RightToLeft : FlowDirection.LeftToRight; 
+                notificationAlertTxt.Text = App.LocalizationService[AppLocalization.notificationDesc];
+            }
+            else if (notificationToggle.IsChecked is false)
+            {
+                notificationAlertTxt.Text = string.Empty;
+            }
+        }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            SaveProfile();  
+        }
+        private void SaveProfile()
+        {
+            string lang = arabicRadioBtn.IsChecked == true ? AppLocalization.Arabic :
+                          englishRadioBtn.IsChecked == true ? AppLocalization.English :
+                          frenshRadioBtn.IsChecked == true ? AppLocalization.Frensh :
+                          AppLocalization.Arabic;
+
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Lang)] = lang;     
+            Properties.AppSettings.Default.Save();
+            MessageBox.Show("saved");
         }
     }
 }

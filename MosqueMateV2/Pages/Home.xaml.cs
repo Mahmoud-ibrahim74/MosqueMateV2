@@ -35,10 +35,6 @@ namespace MosqueMateV2.Pages
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            using IResourceManagerRepository res = new ResourceManagerRepository(ResourceTypeEnum.MediaResources);
-            var data = res.GetAllResourcesInfoFromResx();
-
-
             Loader.Visibility = Visibility.Visible;
             IsEnabled = false;
             rxTaskManger.RunBackgroundTaskOnUI(

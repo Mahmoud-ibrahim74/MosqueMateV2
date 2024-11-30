@@ -8,6 +8,14 @@
          xmlns:ui="http://schemas.modernwpf.com/2019"
          mc:Ignorable="d"
          Loaded="Page_Loaded">
+    <ui:Page.Resources>
+        <!-- Include only the required style for MaterialDesignSwitchToggleButton -->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ui:Page.Resources>
     <Grid x:Name="GridContainer"
           HorizontalAlignment="Stretch"
           VerticalAlignment="Stretch"
@@ -76,7 +84,7 @@
                Grid.Row="0"
                Padding="10 0 0 0"
                FontSize="15"
-               Margin="5,5,179,73"></Label>
+               Margin="6,0,178,78"></Label>
         <Label x:Name="countryLBL"
                Grid.Column="1"
                Grid.Row="0"
@@ -169,15 +177,93 @@
                   SelectionChanged="calcBox_SelectionChanged" />
         <!--#endregion-->
 
+        <!--#region Notification-Area -->
+        <Label x:Name="startupToggleLBL"
+               Grid.Column="0"
+               Grid.Row="2"
+               Padding="10 0 0 0"
+               FontSize="15"
+               Margin="53,37,38,7">
+        </Label>
+        <ToggleButton x:Name="startupTogle"
+                      Grid.Row="2"
+                      Style="{StaticResource MaterialDesignSwitchToggleButton}"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Height="30"
+                      Cursor="Hand"
+                      Margin="10,34,0,0"
+                      Width="38" />
+        <!--#endregion-->
 
+        <!--#region AdhanSound-Area -->
+        <Label x:Name="adhanLBL"
+               Grid.Column="0"
+               Grid.Row="3"
+               Padding="10 15 0 0"
+               FontSize="15"
+               Margin="5,29,179,35"></Label>
+        <ComboBox x:Name="adhanBox"
+                  Margin="-25,72,0,0"
+                  Grid.Row="3"
+                  Width="275"
+                  Height="33" />
+        <!--#endregion-->
 
+        <!--#region AdhanFajrSound-Area -->
+        <Label x:Name="adhanFajrLBL"
+               Grid.Column="1"
+               Grid.Row="3"
+               Padding="10 15 0 0"
+               FontSize="15"
+               Margin="5,29,179,35"></Label>
+        <ComboBox x:Name="adhanFajrBox"
+                  Margin="0,72,0,0"
+                  Grid.Row="3"
+                  Width="257"
+                  Height="33"
+                  Grid.Column="1"
+                  HorizontalAlignment="Center" />
+        <!--#endregion-->
 
+        <!--#region Notification-Area -->
+        <Label x:Name="notificationLBL"
+               Grid.Column="0"
+               Grid.Row="4"
+               Padding="10 15 0 0"
+               FontSize="15"
+               Cursor="Hand"          
+               Margin="7,10,177,54"></Label>
 
+        <ToggleButton x:Name="notificationToggle"
+                      Style="{StaticResource MaterialDesignSwitchToggleButton}"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Bottom"
+                      Grid.Column="0"
+                      Grid.Row="4"
+                      Margin="28,0,0,25"
+                      Height="24"
+                      Width="48"
+                      Click="notificationToggle_Click" />
+        <TextBlock x:Name="notificationAlertTxt"
+                   Grid.Column="0"
+                   Grid.Row="5"
+                   LineHeight="40"
+                   FontWeight="UltraBold"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="yellow"
+                   Padding="10 15 0 0"
+                   FontSize="20" />
+        <!--#endregion-->
 
-
-
-
-
+        <Button x:Name="save"
+                Grid.Column="1"
+                Grid.Row="5"
+                Width="257"
+                Height="60"
+                Cursor="Hand"
+                HorizontalAlignment="Center"
+                Click="save_Click" />
 
     </Grid>
 </ui:Page>
