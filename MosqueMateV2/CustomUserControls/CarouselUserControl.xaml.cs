@@ -1,4 +1,6 @@
 ﻿using MosqueMateV2.DataAccess.Models;
+using MosqueMateV2.Domain.Interfaces;
+using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
@@ -77,7 +79,7 @@ namespace MosqueMateV2.CustomUserControls
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             _taskManger.StartUITaskScheduler(
-                async()=> await Task.CompletedTask,
+                async () => await Task.CompletedTask,
                 TimeSpan.FromSeconds(1),
                 CheckAdhanNow
                 );
@@ -91,8 +93,8 @@ namespace MosqueMateV2.CustomUserControls
         {
             if (AdhanHelper.IsAdhanNow)
             {
-                toggleAdhan.Visibility = Visibility.Visible;
-                var adhan = MediaResources.AbdelBastAbdelSamd;
+                using IResourceManagerRepository resource = new ResourceManagerRepository(ResourceTypeEnum.MediaResources);
+                var adhan = resource.GetResourceByte(Properties.AppSettings.Default.Adhan);
                 App.mP3Player.Play(adhan);
             }
         }

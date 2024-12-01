@@ -200,7 +200,7 @@ namespace MosqueMateV2.Pages
                                 App.LocalizationService[AppLocalization.Minutes]);
 
                 ToastNotificationsHelper.
-                SendAlertPrayerNotification(
+                SendNotification(
                 App.LocalizationService[AppLocalization.Alert],
                 alertMsg,
                 Notification.Wpf.NotificationType.Warning);

@@ -7,7 +7,7 @@ namespace MosqueMateV2.Helpers
         /// <summary>
         /// Provides functionality to display toast notifications in a WPF application.
         /// </summary>
-        public static void SendAlertPrayerNotification(string title,string message, NotificationType type)
+        public static void SendNotification(string title,string message, NotificationType type)
         {
             NotificationManager notificationManager = new();
             notificationManager.Show(new NotificationContent

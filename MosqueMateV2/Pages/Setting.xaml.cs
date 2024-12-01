@@ -6,14 +6,10 @@ using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using Page = ModernWpf.Controls.Page;
 
 namespace MosqueMateV2.Pages
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class Setting : Page
     {
 
@@ -90,6 +86,17 @@ namespace MosqueMateV2.Pages
                          {
 
                          });
+            rxTaskManger.RunBackgroundTaskOnUI(
+                         backgroundTask: () => LoadProfile(),
+                         onSuccess: result =>
+                         {
+
+                         },
+                         retryNumber: 2,
+                         () => // handle an error
+                         {
+
+                         });
             #endregion
 
         }
@@ -127,11 +134,6 @@ namespace MosqueMateV2.Pages
                 calcBox.ItemsSource = data;
             }
         }
-        private void FillAdhan()
-        {
-
-        }
-
         private void calcBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (calcBox.SelectedValue is not null)
@@ -142,32 +144,125 @@ namespace MosqueMateV2.Pages
         }
         private void notificationToggle_Click(object sender, RoutedEventArgs e)
         {
-            if (notificationToggle.IsChecked is true)
-            {
-                notificationAlertTxt.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
-                    FlowDirection.RightToLeft : FlowDirection.LeftToRight; 
-                notificationAlertTxt.Text = App.LocalizationService[AppLocalization.notificationDesc];
-            }
-            else if (notificationToggle.IsChecked is false)
-            {
-                notificationAlertTxt.Text = string.Empty;
-            }
+            //if (notificationToggle.IsChecked is true)
+            //{
+            //    notificationAlertTxt.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
+            //        FlowDirection.RightToLeft : FlowDirection.LeftToRight;
+            //    notificationAlertTxt.Text = App.LocalizationService[AppLocalization.notificationDesc];
+            //}
+            //else if (notificationToggle.IsChecked is false)
+            //{
+            //    notificationAlertTxt.Text = string.Empty;
+            //}
         }
 
         private void save_Click(object sender, RoutedEventArgs e)
         {
-            SaveProfile();  
+            SaveProfile();
         }
         private void SaveProfile()
         {
+            #region Remainder-Area
+            var hours = int.Parse(hoursTxt.Text);
+            var min = int.Parse(minutesTxt.Text);
+            var remainderTime = new TimeSpan(hours, min, 0);
+            #endregion
+
+            #region Region-Area
+            var country = countryBox.SelectedValue as string;
+            var city = cityBox.SelectedValue as string;
+            var calc = calcBox.SelectedValue as string;
+            #endregion
+
+            #region Lang-Area
+
+
             string lang = arabicRadioBtn.IsChecked == true ? AppLocalization.Arabic :
                           englishRadioBtn.IsChecked == true ? AppLocalization.English :
                           frenshRadioBtn.IsChecked == true ? AppLocalization.Frensh :
                           AppLocalization.Arabic;
+            #endregion
 
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Lang)] = lang;     
+            #region AutoStart
+            var autoStart = startupTogle.IsChecked;
+            //var notification = notificationToggle.IsChecked;
+            #endregion
+
+            #region TheMuzzein
+            var adhan = adhanBox.SelectedValue as string;
+            var adhanFajr = adhanFajrBox.SelectedValue as string;
+
+            #endregion
+
+
+            #region Set-Value-Settings
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Lang)] = lang;
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.TimeRemainder)] = remainderTime;
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.country)] = country;
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.city)] = city;
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.method)] = calc;
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.AutoStartUp)] = autoStart;
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Adhan)] = adhan;
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.AdhanFajr)] = adhanFajr;
+            //Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.NotificationEnabled)] = notification;
+            #endregion
+
+
             Properties.AppSettings.Default.Save();
-            MessageBox.Show("saved");
+
+            ToastNotificationsHelper.
+            SendNotification(
+            App.LocalizationService[AppLocalization.Sucsess],
+            App.LocalizationService[AppLocalization.SavedSucsessfully],
+            Notification.Wpf.NotificationType.Success);
+        }
+        private async Task<bool> LoadProfile()
+        {
+            try
+            {                    
+
+                this.hoursTxt.Text = Properties.AppSettings.Default.TimeRemainder.Hours.ToString();
+                this.minutesTxt.Text = Properties.AppSettings.Default.TimeRemainder.Minutes.ToString();
+                this.countryBox.SelectedValue = Properties.AppSettings.Default.country;
+                this.cityBox.SelectedValue = Properties.AppSettings.Default.city;
+                this.calcBox.SelectedValue = Properties.AppSettings.Default.method;
+
+
+                this.arabicRadioBtn.IsChecked = Properties.AppSettings.Default.Lang == AppLocalization.Arabic;
+                this.englishRadioBtn.IsChecked = Properties.AppSettings.Default.Lang == AppLocalization.English;
+                this.frenshRadioBtn.IsChecked = Properties.AppSettings.Default.Lang == AppLocalization.Frensh;
+
+                this.startupTogle.IsChecked = Properties.AppSettings.Default.AutoStartUp;
+                this.adhanBox.SelectedValue = Properties.AppSettings.Default.Adhan;
+                this.adhanFajrBox.SelectedValue = Properties.AppSettings.Default.AdhanFajr;
+                //this.notificationToggle.IsChecked = Properties.AppSettings.Default.NotificationEnabled;
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+
+            }
+        }
+
+        private void notificationToggle_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+        private async void show_Click(object sender, RoutedEventArgs e)
+        {
+           //// Get the parent MetroWindow and cast it
+           // var metroWindow = Application.Current.MainWindow as MetroWindow;
+           // if (metroWindow != null)
+           // {
+           //     await ShowPopupAsync(metroWindow);
+           // }
+           // else
+           // {
+           //     MessageBox.Show("The main window is not a MetroWindow.");
+           // }
         }
     }
 }

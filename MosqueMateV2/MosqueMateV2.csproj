@@ -12,13 +12,9 @@
 
   <ItemGroup>
     <Compile Remove="Testing\**" />
-    <Compile Remove="Windows\**" />
     <EmbeddedResource Remove="Testing\**" />
-    <EmbeddedResource Remove="Windows\**" />
     <None Remove="Testing\**" />
-    <None Remove="Windows\**" />
     <Page Remove="Testing\**" />
-    <Page Remove="Windows\**" />
   </ItemGroup>
 
   <ItemGroup>

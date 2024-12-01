@@ -12,7 +12,7 @@ namespace MosqueMateV2.Domain.Repositories
 
         public JsonCityRepository()
         {
-            if (FileResources.countries.Length == 0)
+            if (FileResources.cities.Length == 0)
                 return;
 
             string jsonContent = Encoding.UTF8.GetString(FileResources.cities);

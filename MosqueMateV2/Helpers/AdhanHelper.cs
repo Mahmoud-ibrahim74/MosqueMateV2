@@ -1,5 +1,6 @@
 ﻿using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Enums;
+using MosqueMateV2.Properties;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 namespace MosqueMateV2.Helpers
 {
@@ -82,7 +83,7 @@ namespace MosqueMateV2.Helpers
                 var timeLeft = nextPrayer.Key - now;
 
                 // Optional settings
-                IsAlertForNextAdhan = Math.Round(timeLeft.TotalMinutes, 2) == 10.8; // Example setting
+                IsAlertForNextAdhan = Math.Round(timeLeft.TotalMinutes, 2) == AppSettings.Default.TimeRemainder.TotalMinutes;
                 IsAdhanNow = timeLeft.Hours == 0 && timeLeft.Minutes == 0 && timeLeft.Seconds == 0;
                 return timeLeft;
             }
@@ -92,7 +93,7 @@ namespace MosqueMateV2.Helpers
             var timeLeftForFajr = fajrTomorrow - now;
 
             // Optional settings for Fajr
-            IsAlertForNextAdhan = Math.Round(timeLeftForFajr.TotalMinutes, 2) == 10.8; // Example setting
+            IsAlertForNextAdhan = Math.Round(timeLeftForFajr.TotalMinutes, 2) == AppSettings.Default.TimeRemainder.TotalMinutes;
             IsAdhanNow = timeLeftForFajr.Hours == 0 && timeLeftForFajr.Minutes == 0 && timeLeftForFajr.Seconds == 0;
 
             return timeLeftForFajr;

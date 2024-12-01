@@ -51,7 +51,10 @@
         public const string autoStartUp = "autoStartUp";
         public const string Muezzin = "Muezzin";
         public const string adhanFajr = "adhanFajr";
+        public const string RestartAppWarning = "RestartAppWarning";
         public const string notificationDesc = "notificationDesc";
         public const string Save = "Save";
+        public const string Sucsess = "Sucsess";
+        public const string SavedSucsessfully = "SavedSucsessfully";
     }
 }

@@ -5,7 +5,8 @@
          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:xag="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif"
-         xmlns:ui="http://schemas.modernwpf.com/2019"
+         xmlns:ui="http://schemas.modernwpf.com/2019" 
+         xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
          mc:Ignorable="d"
          Loaded="Page_Loaded">
     <ui:Page.Resources>
@@ -207,6 +208,8 @@
                   Margin="-25,72,0,0"
                   Grid.Row="3"
                   Width="275"
+                   FontSize="15"
+                  FontWeight="UltraBold"
                   Height="33" />
         <!--#endregion-->
 
@@ -223,6 +226,8 @@
                   Width="257"
                   Height="33"
                   Grid.Column="1"
+                  FontSize="15"
+                  FontWeight="UltraBold"
                   HorizontalAlignment="Center" />
         <!--#endregion-->
 
@@ -248,11 +253,11 @@
         <TextBlock x:Name="notificationAlertTxt"
                    Grid.Column="0"
                    Grid.Row="5"
-                   LineHeight="40"
+                   LineHeight="30"
                    FontWeight="UltraBold"
                    TextWrapping="WrapWithOverflow"
                    Foreground="yellow"
-                   Padding="10 15 0 0"
+                   Padding="10 5 0 0"
                    FontSize="20" />
         <!--#endregion-->
 
@@ -260,10 +265,12 @@
                 Grid.Column="1"
                 Grid.Row="5"
                 Width="257"
+                FontSize="25"
                 Height="60"
                 Cursor="Hand"
                 HorizontalAlignment="Center"
                 Click="save_Click" />
+
 
     </Grid>
 </ui:Page>

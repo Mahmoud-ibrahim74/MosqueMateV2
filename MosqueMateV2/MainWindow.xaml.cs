@@ -1,17 +1,10 @@
 ﻿using ModernWpf.Controls;
 using MosqueMateV2.DataAccess.Models;
 using MosqueMateV2.Domain.APIService;
-using MosqueMateV2.Domain.DTOs;
-using MosqueMateV2.Domain.Enums;
-using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Pages;
 using MosqueMateV2.Resources;
-using Newtonsoft.Json;
-using Resources;
 using System.Windows;
-using System.Windows.Controls;
-using XamlAnimatedGif;
 
 namespace MosqueMateV2
 {
@@ -30,20 +23,6 @@ namespace MosqueMateV2
             rxTaskManger = new();
             ApiClient.Configure("cairo", "egypt", 8);
             PrayerSlidesData = [];
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.Title = App.LocalizationService[AppLocalization.AppName];
-            NavView.PaneTitle = App.LocalizationService[AppLocalization.MainMenu];
-            homeItem.Content = App.LocalizationService[AppLocalization.Home];
-            homeItem.Tag = AppLocalization.HomeTag;
-            NavView.SelectedItem = NavView.SettingsItem;
-            MainFrame.Navigate(new Setting());
-
-        }
-        public void BindNavMenu()
-        {
         }
 
         private void NavView_SelectionChanged(object sender, NavigationViewSelectionChangedEventArgs e)
@@ -72,6 +51,18 @@ namespace MosqueMateV2
                         //MainFrame.Navigate(new TutorsPage());
                         break;
                 }
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            {
+                Title = App.LocalizationService[AppLocalization.AppName];
+                NavView.PaneTitle = App.LocalizationService[AppLocalization.MainMenu];
+                homeItem.Content = App.LocalizationService[AppLocalization.Home];
+                homeItem.Tag = AppLocalization.HomeTag;
+                NavView.SelectedItem = homeItem;
+                MainFrame.Navigate(new Home());
             }
         }
     }

@@ -24,6 +24,16 @@
     "ar": "تنبيه",
     "fr": "alerte"
   },
+  "Sucsess": {
+    "en": "Sucsess",
+    "ar": "نجاح",
+    "fr": "Succès"
+  },
+  "SavedSucsessfully": {
+    "en": "Saved Sucsessfully",
+    "ar": "تم الحفظ بنجاح",
+    "fr": "Enregistré avec succès"
+  },
   "ReminderTime": {
     "en": "Reminder time",
     "ar": "وقت التذكير",
