@@ -15,7 +15,7 @@ namespace MosqueMateV2.Domain.APIService
             _httpClient.DefaultRequestHeaders.Add("User-Agent", "ApiClient");
         }
 
-        public static void Configure(string city, string country, int method)
+        public static void Configure(string country, string city, int method)
         {
             _baseUrl = $"https://api.aladhan.com/v1/timingsByCity/" +
                        $"{DateTime.Now:dd-MM-yyyy}?" +

@@ -2,14 +2,14 @@
 {
     public enum CalculationMethods
     {
-        EgyptianGeneralAuthorityOfSurvey = 0,
+        GulfRegion = 0,
         UniversityOfIslamicSciencesKarachi = 1,
         IslamicSocietyOfNorthAmerica = 2,
         MuslimWorldLeague = 3,
         UmmAlQuraUniversityMakkah = 4,
         ShiaIthnaAshari = 5,
         InstituteOfGeophysicsUniversityOfTehran = 7,
-        GulfRegion = 8,
+        EgyptianGeneralAuthorityOfSurvey = 8,
         Kuwait = 9,
         Qatar = 10,
         MajlisUgamaIslamSingapuraSingapore = 11,

@@ -1,4 +1,5 @@
 ﻿using MaterialDesignThemes.Wpf;
+using Notifications.Wpf.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,5 +26,18 @@ namespace MosqueMateV2.Windows
             InitializeComponent();
         }
 
+        private void ConfirmationDialog_Loaded(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Dialog11.IsOpen = true; 
+        }
+
+        private void PowerButton_Click(object sender, RoutedEventArgs e)
+        {
+            Dialog11.IsOpen = true;
+        }
     }
 }

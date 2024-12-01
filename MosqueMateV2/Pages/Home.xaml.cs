@@ -6,6 +6,7 @@ using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
+using MosqueMateV2.Properties;
 using MosqueMateV2.Resources;
 using Newtonsoft.Json;
 using System.Windows;
@@ -28,9 +29,12 @@ namespace MosqueMateV2.Pages
         {
             InitializeComponent();
             rxTaskManger = new();
-            ApiClient.Configure("cairo", "egypt", 8);
+            var method = (int)EnumHelper<CalculationMethods>.GetEnumValue(AppSettings.Default.method);
+            ApiClient.Configure(AppSettings.Default.country.ToLowerInvariant(),
+                AppSettings.Default.city.ToLowerInvariant(),
+                method);
             PrayerSlidesData = [];
-            AnimationBehavior.SetSourceUri(Loader, new Uri("pack://application:,,,/Assets/loader.gif"));
+            AnimationBehavior.SetSourceUri(Loader, new Uri(AppLocalization.loaderPath));
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
