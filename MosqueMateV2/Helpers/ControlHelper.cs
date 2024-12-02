@@ -125,44 +125,17 @@ namespace MosqueMateV2.Helpers
 
         public static void PulseCard(Card card)
         {
-            // Create a ScaleTransform
-            ScaleTransform scaleTransform = new ScaleTransform();
-            card.RenderTransformOrigin = new Point(0.5, 0.5); // Set the origin to the center
-            card.RenderTransform = scaleTransform;
+            ColorAnimation animation;
+            animation = new ColorAnimation();
+            animation.To = Color.FromRgb(111, 80, 80);
+            animation.Duration = new Duration(TimeSpan.FromSeconds(.4));
+            animation.AutoReverse = true;
+            animation.RepeatBehavior = RepeatBehavior.Forever;
 
-            // Create the first animation (ScaleX)
-            DoubleAnimation scaleXAnimation = new DoubleAnimation
-            {
-                From = 1.0,
-                To = 1.2,
-                Duration = new Duration(TimeSpan.FromSeconds(0.5)),
-                AutoReverse = true,
-                RepeatBehavior = RepeatBehavior.Forever
-            };
+            var clonedBackgroundBrush = card.Background.Clone();
+            card.Background = clonedBackgroundBrush;
 
-            // Create the second animation (ScaleY)
-            DoubleAnimation scaleYAnimation = new DoubleAnimation
-            {
-                From = 1.0,
-                To = 1.2,
-                Duration = new Duration(TimeSpan.FromSeconds(0.5)),
-                AutoReverse = true,
-                RepeatBehavior = RepeatBehavior.Forever
-            };
-
-            // Create a Storyboard to contain the animations
-            Storyboard storyboard = new Storyboard();
-            storyboard.Children.Add(scaleXAnimation);
-            storyboard.Children.Add(scaleYAnimation);
-
-            // Set the target properties
-            Storyboard.SetTarget(scaleXAnimation, scaleTransform);
-            Storyboard.SetTarget(scaleYAnimation, scaleTransform);
-            Storyboard.SetTargetProperty(scaleXAnimation, new PropertyPath(ScaleTransform.ScaleXProperty));
-            Storyboard.SetTargetProperty(scaleYAnimation, new PropertyPath(ScaleTransform.ScaleYProperty));
-
-            // Start the Storyboard
-            storyboard.Begin();
+            clonedBackgroundBrush.BeginAnimation(SolidColorBrush.ColorProperty, animation);
         }
 
         public class ControlBinding<T>
