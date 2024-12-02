@@ -58,5 +58,6 @@
         public const string Save = "Save";
         public const string Sucsess = "Sucsess";
         public const string SavedSucsessfully = "SavedSucsessfully";
+        public const string calculationMethodToolTip = "calculationMethodToolTip";
     }
 }

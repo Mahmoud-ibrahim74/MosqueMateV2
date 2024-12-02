@@ -71,7 +71,7 @@
             <Label x:Name="welcomeLBL"  Grid.Row="0"  FontSize="25"  Padding="10 2 0 0" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top"  />
             <Label x:Name="hijiriDateLBL"  Grid.Row="0" FontWeight="Bold" FontSize="18" Padding="10 2 0 0" Margin="0,67,494,33"/>
             <Label x:Name="miladiDateLBL"  Grid.Row="0" FontWeight="Bold" FontSize="18" Padding="10 2 0 0" Margin="0,99,494,3"/>
-            <Label x:Name="nextPrayerLBL"  Grid.Row="0" FontWeight="Bold" FontSize="17"  HorizontalAlignment="Center" Margin="0 50 0 0 "   Content="....." VerticalAlignment="Top" />
+            <Label x:Name="nextPrayerLBL"  Grid.Row="0" FontWeight="Bold" FontSize="17"  HorizontalAlignment="Center" Margin="0 50 0 0 " VerticalAlignment="Top" />
             <ToggleButton
                     x:Name="toggleSidebar" 
                     Click="toggleSidebar_Click"

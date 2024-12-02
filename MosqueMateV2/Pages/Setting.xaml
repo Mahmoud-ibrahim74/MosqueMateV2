@@ -237,12 +237,13 @@
                Grid.Row="4"
                Padding="10 15 0 0"
                FontSize="15"
-               Cursor="Hand"          
-               Margin="7,10,177,54"></Label>
+               Cursor="Hand"
+               Margin="102,52,83,12"></Label>
 
         <ToggleButton x:Name="notificationToggle"
                       Style="{StaticResource MaterialDesignSwitchToggleButton}"
                       HorizontalAlignment="Left"
+                      Cursor="Hand"
                       VerticalAlignment="Bottom"
                       Grid.Column="0"
                       Grid.Row="4"

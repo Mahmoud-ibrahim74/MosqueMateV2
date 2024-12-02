@@ -114,7 +114,6 @@ namespace MosqueMateV2.Pages
                 ReFillCityBox(res);
             }
         }
-
         private void ReFillCityBox(List<string> data)
         {
             if (data is not null && data.Any())
@@ -166,7 +165,6 @@ namespace MosqueMateV2.Pages
                 notificationAlertTxt.Text = string.Empty;
             }
         }
-
         private void save_Click(object sender, RoutedEventArgs e)
         {
             SaveProfile();
@@ -237,7 +235,7 @@ namespace MosqueMateV2.Pages
                 this.countryBox.SelectedValue = Properties.AppSettings.Default.country;
                 this.cityBox.SelectedValue = Properties.AppSettings.Default.city;
                 this.calcBox.SelectedValue = Properties.AppSettings.Default.method;
-
+                this.calcBox.ToolTip = App.LocalizationService[AppLocalization.calculationMethodToolTip];
 
                 this.arabicRadioBtn.IsChecked = Properties.AppSettings.Default.Lang == AppLocalization.Arabic;
                 this.englishRadioBtn.IsChecked = Properties.AppSettings.Default.Lang == AppLocalization.English;
@@ -255,13 +253,10 @@ namespace MosqueMateV2.Pages
 
             }
         }
-
         private void notificationToggle_Checked(object sender, RoutedEventArgs e)
         {
 
         }
-
-
         private async void show_Click(object sender, RoutedEventArgs e)
         {
            //// Get the parent MetroWindow and cast it
