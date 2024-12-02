@@ -1,63 +1,16 @@
 ﻿<ui:Page x:Class="MosqueMateV2.Pages.Home"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:xag="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif" 
-        xmlns:local="clr-namespace:MosqueMateV2.CustomUserControls"
-        xmlns:ui="http://schemas.modernwpf.com/2019"
-        mc:Ignorable="d"
-        Title="MainWindow" 
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:xag="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif"
+         xmlns:local="clr-namespace:MosqueMateV2.CustomUserControls"
+         xmlns:ui="http://schemas.modernwpf.com/2019"
+         mc:Ignorable="d"
+         Title="MainWindow"
          ui:ThemeManager.RequestedTheme="Default"
-        FontFamily="Bahnschrift Condensed"
-        Loaded="Window_Loaded">
-    <!-- Resources for Animations -->
-    <Page.Resources>
-        <!-- Slide-in Animation -->
-        <Storyboard x:Key="SlideInAnimation">
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" 
-                                Duration="0:0:0.5"
-                                From="-300,0,0,0" 
-                                To="0,0,0,0" />
-        </Storyboard>
-        <!-- Slide-out Animation -->
-        <Storyboard x:Key="SlideOutAnimation">
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" 
-                                Duration="0:0:0.5"
-                                From="0,0,0,0" 
-                                To="-300,0,0,0" />
-        </Storyboard>
-
-        <!-- Button Style with Active Trigger -->
-        <Style x:Key="MenuButtonStyle" TargetType="Button">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="HorizontalAlignment" Value="Left" />
-            <Setter Property="Padding" Value="10,5" />
-            <Setter Property="Margin" Value="0,5" />
-
-            <!-- Hover Effect -->
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" />
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-
-            <!-- Trigger for Active Button -->
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="True">
-                    <Setter Property="Background" Value="#FF4A56CC" />
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-    </Page.Resources>
-
+         FontFamily="Bahnschrift Condensed"
+         Loaded="Window_Loaded">
     <Grid x:Name="GridContainer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="144*"/>

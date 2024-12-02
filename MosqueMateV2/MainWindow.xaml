@@ -86,8 +86,18 @@
                 <ui:NavigationViewItem x:Name="homeItem"  Icon="Home">
                 </ui:NavigationViewItem>
 
-                <ui:NavigationViewItem Content="Grades" Icon="Mail">
+                <ui:NavigationViewItem x:Name="quraanItem">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:FontIcon Glyph="&#xE736;" />
+                    </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
+                
+                <ui:NavigationViewItem x:Name="adhkarItem">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:FontIcon Glyph="&#xE95E;" />
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+
 
                 <ui:NavigationViewItem Content="Tutors" Tag="TutorsPage" Icon="People" />
             </ui:NavigationView.MenuItems>

@@ -42,13 +42,11 @@ namespace MosqueMateV2
                     case AppLocalization.HomeTag:
                         MainFrame.Navigate(new Home());
                         break;
-                    case "GradesPage":
-                        Console.WriteLine("GradesPage");
+                    case AppLocalization.QuranTag:
                         //MainFrame.Navigate(new GradesPage());
                         break;
-                    case "TutorsPage":
-                        Console.WriteLine("TutorsPage");
-                        //MainFrame.Navigate(new TutorsPage());
+                    case AppLocalization.AdhkarTag:
+                        MainFrame.Navigate(new Adhkar());
                         break;
                 }
             }
@@ -56,14 +54,18 @@ namespace MosqueMateV2
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            {
-                Title = App.LocalizationService[AppLocalization.AppName];
-                NavView.PaneTitle = App.LocalizationService[AppLocalization.MainMenu];
-                homeItem.Content = App.LocalizationService[AppLocalization.Home];
-                homeItem.Tag = AppLocalization.HomeTag;
-                NavView.SelectedItem = homeItem;
-                MainFrame.Navigate(new Home());
-            }
+
+            Title = App.LocalizationService[AppLocalization.AppName];
+            NavView.PaneTitle = App.LocalizationService[AppLocalization.MainMenu];
+            homeItem.Content = App.LocalizationService[AppLocalization.Home];
+            quraanItem.Content = App.LocalizationService[AppLocalization.Quran];
+            adhkarItem.Content = App.LocalizationService[AppLocalization.Azkar];
+            homeItem.Tag = AppLocalization.HomeTag;
+            quraanItem.Tag = AppLocalization.QuranTag;
+            adhkarItem.Tag = AppLocalization.AdhkarTag;
+            NavView.SelectedItem = homeItem;
+            MainFrame.Navigate(new Home());
+
         }
     }
 }

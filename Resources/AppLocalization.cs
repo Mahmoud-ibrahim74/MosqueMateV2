@@ -15,7 +15,6 @@
         public const string Pause = "Pause";
         public const string MainMenu = "MainMenu";
         public const string Home = "Home";
-        public const string HomeTag = "HomePage";
         public const string itIsTime = "itIsTime";
         public const string ReminderTime = "ReminderTime";
         public const string Quran = "Quran";
@@ -59,5 +58,13 @@
         public const string Sucsess = "Sucsess";
         public const string SavedSucsessfully = "SavedSucsessfully";
         public const string calculationMethodToolTip = "calculationMethodToolTip";
+
+
+        #region Tags
+        public const string HomeTag = "HomePage";
+        public const string QuranTag = "QuranPage";
+        public const string AdhkarTag = "AdhkarPage";
+
+        #endregion
     }
 }
