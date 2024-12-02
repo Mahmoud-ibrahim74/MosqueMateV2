@@ -6,6 +6,7 @@ using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using Page = ModernWpf.Controls.Page;
 
 namespace MosqueMateV2.Pages
@@ -144,16 +145,26 @@ namespace MosqueMateV2.Pages
         }
         private void notificationToggle_Click(object sender, RoutedEventArgs e)
         {
-            //if (notificationToggle.IsChecked is true)
-            //{
-            //    notificationAlertTxt.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
-            //        FlowDirection.RightToLeft : FlowDirection.LeftToRight;
-            //    notificationAlertTxt.Text = App.LocalizationService[AppLocalization.notificationDesc];
-            //}
-            //else if (notificationToggle.IsChecked is false)
-            //{
-            //    notificationAlertTxt.Text = string.Empty;
-            //}
+            if (notificationToggle.IsChecked is true)
+            {
+                if(Application.Current.ThemeMode == ThemeMode.Light)
+                {
+                    notificationAlertTxt.FlowDirection = App.AppLanguage == AppLocalization.Arabic ? 
+                        FlowDirection.RightToLeft : FlowDirection.LeftToRight;
+                    notificationAlertTxt.Foreground = new SolidColorBrush(Colors.DarkOrange);
+                }
+                else
+                {
+                    notificationAlertTxt.FlowDirection  = FlowDirection.LeftToRight;    
+                }
+                    notificationAlertTxt.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
+                    FlowDirection.RightToLeft : FlowDirection.LeftToRight;
+                notificationAlertTxt.Text = App.LocalizationService[AppLocalization.notificationDesc];
+            }
+            else if (notificationToggle.IsChecked is false)
+            {
+                notificationAlertTxt.Text = string.Empty;
+            }
         }
 
         private void save_Click(object sender, RoutedEventArgs e)
@@ -185,7 +196,7 @@ namespace MosqueMateV2.Pages
 
             #region AutoStart
             var autoStart = startupTogle.IsChecked;
-            //var notification = notificationToggle.IsChecked;
+            var notification = notificationToggle.IsChecked;
             #endregion
 
             #region TheMuzzein
@@ -204,7 +215,7 @@ namespace MosqueMateV2.Pages
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.AutoStartUp)] = autoStart;
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Adhan)] = adhan;
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.AdhanFajr)] = adhanFajr;
-            //Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.NotificationEnabled)] = notification;
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.NotificationEnabled)] = notification;
             #endregion
 
 
@@ -235,7 +246,7 @@ namespace MosqueMateV2.Pages
                 this.startupTogle.IsChecked = Properties.AppSettings.Default.AutoStartUp;
                 this.adhanBox.SelectedValue = Properties.AppSettings.Default.Adhan;
                 this.adhanFajrBox.SelectedValue = Properties.AppSettings.Default.AdhanFajr;
-                //this.notificationToggle.IsChecked = Properties.AppSettings.Default.NotificationEnabled;
+                this.notificationToggle.IsChecked = Properties.AppSettings.Default.NotificationEnabled;
                 return true;
             }
             catch (Exception)
