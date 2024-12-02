@@ -1,7 +1,10 @@
-﻿namespace MosqueMateV2.Domain.Interfaces
+﻿using MosqueMateV2.Domain.DTOs;
+
+namespace MosqueMateV2.Domain.Interfaces
 {
     public interface IJsonAdhkarRepository:IDisposable
     {
-        public Task<List<string>> GetAllAdhkarsAsync();
+        public Task<List<DTOAdhkar>> GetAllAdhkarsAsync();
+        public Task<int> GetAllAdhkarsCountAsync();
     }
 }

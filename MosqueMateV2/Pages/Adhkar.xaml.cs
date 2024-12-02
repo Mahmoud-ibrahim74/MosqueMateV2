@@ -22,20 +22,35 @@ namespace MosqueMateV2.Pages
     public partial class Adhkar : Page
     {
 
-        public string apiContent { get; set; } = string.Empty;
-        public List<PrayerSlide> PrayerSlidesData { get; set; }
         RxTaskManger rxTaskManger;
+        public IJsonAdhkarRepository jsonAdhkar;
         public Adhkar()
         {
             InitializeComponent();
             rxTaskManger = new();
+            jsonAdhkar = new JsonAdhkarRepository();   
 
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             var main = Application.Current.MainWindow;
-           // main.MainFrame.Navigate(new Home());
+
+            rxTaskManger.RunBackgroundTaskOnUI(
+                 backgroundTask: () => jsonAdhkar.GetAllAdhkarsAsync(),
+                 onSuccess: result =>
+                 {
+                     GridCardContainer.GenerateMaterialDesignCards(result);
+                 },
+                 retryNumber: 2,
+                 () => // handle an error
+                 {
+
+                 });
+        }
+
+        private void AdhkarSearchTxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
     }

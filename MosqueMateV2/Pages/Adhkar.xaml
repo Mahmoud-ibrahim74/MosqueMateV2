@@ -12,25 +12,30 @@
          ui:ThemeManager.RequestedTheme="Default"
          FontFamily="Bahnschrift Condensed"
          Loaded="Window_Loaded">
-
-
-    <Grid x:Name="GridContainer"
-          HorizontalAlignment="Stretch"
-          Width="400"
-          Height="300"
-          VerticalAlignment="Stretch">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition Height="0*" />
-            <RowDefinition Height="0*" />
-            <RowDefinition Height="0*" />
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="25*" />
         </Grid.RowDefinitions>
-        <materialDesign:Card Grid.Row="0"
-                             Margin="0,100,0,100" />
-        <materialDesign:Card Grid.Row="1"
-                             Grid.RowSpan="3" />
-        <materialDesign:Card Grid.Row="2"
-                             Grid.RowSpan="2" />
-        <materialDesign:Card Grid.Row="3" />
+        <Grid Grid.Row="0">
+            <TextBox x:Name="AdhkarSearchTxt"
+                     materialDesign:HintAssist.HelperText="ddd"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Width="400"
+                     Height="40"
+                     Padding="10"
+                     FontSize="18"
+                     FlowDirection="RightToLeft"
+                     TextChanged="AdhkarSearchTxt_TextChanged"></TextBox>
+        </Grid>
+        <ScrollViewer Grid.Row="1">
+            <Grid x:Name="GridCardContainer"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                  ScrollViewer.CanContentScroll="True"
+                  ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                  Grid.RowSpan="2">
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </ui:Page>

@@ -20,13 +20,9 @@ namespace MosqueMateV2.Domain.Repositories
             _adhkarObj = JsonConvert.DeserializeObject<List<DTOAdhkar>>(jsonContent);
         }
 
-        public Task<List<string>> GetAllAdhkarsAsync()
+        public Task<List<DTOAdhkar>> GetAllAdhkarsAsync()
         {
-            var res = _adhkarObj.
-                        Select(x => x.category)
-                        .ToList();
-
-            return Task.FromResult(res);
+            return Task.FromResult(_adhkarObj);
         }
 
         protected virtual void Dispose(bool disposing)
@@ -57,6 +53,11 @@ namespace MosqueMateV2.Domain.Repositories
             // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
+        }
+
+        public Task<int> GetAllAdhkarsCountAsync()
+        {
+            return Task.FromResult(_adhkarObj.Count);
         }
     }
 }
