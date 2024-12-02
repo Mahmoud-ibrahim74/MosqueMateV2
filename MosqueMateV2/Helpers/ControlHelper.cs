@@ -5,7 +5,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace MosqueMateV2.Helpers
 {
@@ -25,7 +27,7 @@ namespace MosqueMateV2.Helpers
             {
                 Card card = new()
                 {
-                    Width = 200,
+                    Width = 250,
                     Height = 150,
                     Margin = new Thickness(10),
                     Background = CreateGradientBackground(),
@@ -54,7 +56,7 @@ namespace MosqueMateV2.Helpers
                     TextWrapping = TextWrapping.WrapWithOverflow,
                     FlowDirection = FlowDirection.RightToLeft,
                     TextAlignment = TextAlignment.Center,
-                    Padding = new Thickness(0, 20, 0, 0),
+                    Padding = new Thickness(0, 40, 0, 0),
                     LineHeight = 30
                 };
                 contentPanel.Children.Add(title);
@@ -63,6 +65,49 @@ namespace MosqueMateV2.Helpers
             }
             grid.Children.Add(cardPanel);
         }
+        public static ControlBinding<Card> GetOffsetChildOfElement(this Grid grid, string childName)
+        {
+            if (grid == null || string.IsNullOrWhiteSpace(childName))
+                return new()
+                {
+                    ControlPosition = new Point(10, 10),
+                };
+
+            var wrapPanel = grid.Children.OfType<WrapPanel>().FirstOrDefault();
+            if (wrapPanel == null)
+                return new()
+                {
+                    ControlPosition = new Point(10, 10),
+                };
+            foreach (var card in wrapPanel.Children)
+            {
+                if (card is Card cardPanel)
+                {
+                    // Look for the StackPanel inside the card
+                    var stackPanel = cardPanel.Content as StackPanel;
+                    if (stackPanel is not null)
+                    {
+                        // Look for the TextBlock inside the StackPanel
+                        var textBlock = stackPanel.Children.OfType<TextBlock>()
+                            .FirstOrDefault(tb => tb.Text.Contains(childName));
+                        if (textBlock is not null)
+                        {
+
+                            return new()
+                            {
+                                ControlPosition = textBlock.TranslatePoint(new Point(0, 0), grid),
+                                SelectedElement = cardPanel
+                            };
+                        }
+                    }
+                }
+            }
+            return new()
+            {
+                ControlPosition = new Point(10, 10),
+            };
+        }
+
 
         private static LinearGradientBrush CreateGradientBackground()
         {
@@ -78,5 +123,57 @@ namespace MosqueMateV2.Helpers
             };
         }
 
+        public static void PulseCard(Card card)
+        {
+            // Create a ScaleTransform
+            ScaleTransform scaleTransform = new ScaleTransform();
+            card.RenderTransformOrigin = new Point(0.5, 0.5); // Set the origin to the center
+            card.RenderTransform = scaleTransform;
+
+            // Create the first animation (ScaleX)
+            DoubleAnimation scaleXAnimation = new DoubleAnimation
+            {
+                From = 1.0,
+                To = 1.2,
+                Duration = new Duration(TimeSpan.FromSeconds(0.5)),
+                AutoReverse = true,
+                RepeatBehavior = RepeatBehavior.Forever
+            };
+
+            // Create the second animation (ScaleY)
+            DoubleAnimation scaleYAnimation = new DoubleAnimation
+            {
+                From = 1.0,
+                To = 1.2,
+                Duration = new Duration(TimeSpan.FromSeconds(0.5)),
+                AutoReverse = true,
+                RepeatBehavior = RepeatBehavior.Forever
+            };
+
+            // Create a Storyboard to contain the animations
+            Storyboard storyboard = new Storyboard();
+            storyboard.Children.Add(scaleXAnimation);
+            storyboard.Children.Add(scaleYAnimation);
+
+            // Set the target properties
+            Storyboard.SetTarget(scaleXAnimation, scaleTransform);
+            Storyboard.SetTarget(scaleYAnimation, scaleTransform);
+            Storyboard.SetTargetProperty(scaleXAnimation, new PropertyPath(ScaleTransform.ScaleXProperty));
+            Storyboard.SetTargetProperty(scaleYAnimation, new PropertyPath(ScaleTransform.ScaleYProperty));
+
+            // Start the Storyboard
+            storyboard.Begin();
+        }
+
+        public class ControlBinding<T>
+        {
+            public Point? ControlPosition { get; set; }
+            public T? SelectedElement { get; set; }
+        }
+
     }
 }
+
+
+
+

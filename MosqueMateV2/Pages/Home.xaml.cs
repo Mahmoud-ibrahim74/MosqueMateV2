@@ -2,9 +2,9 @@
 using MosqueMateV2.Domain.APIService;
 using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Enums;
+using MosqueMateV2.Domain.Extensions;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
-using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Properties;
 using MosqueMateV2.Resources;

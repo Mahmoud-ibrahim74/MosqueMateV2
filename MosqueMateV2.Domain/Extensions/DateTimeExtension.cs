@@ -1,7 +1,7 @@
 ﻿using MosqueMateV2.Resources;
 using System.Globalization;
 
-namespace MosqueMateV2.Extensions
+namespace MosqueMateV2.Domain.Extensions
 {
     public static class DateTimeExtension
     {

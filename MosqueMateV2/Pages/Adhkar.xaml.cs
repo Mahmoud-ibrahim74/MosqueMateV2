@@ -1,17 +1,10 @@
-﻿using MosqueMateV2.DataAccess.Models;
-using MosqueMateV2.Domain.APIService;
+﻿using MaterialDesignThemes.Wpf;
 using MosqueMateV2.Domain.DTOs;
-using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
-using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
-using MosqueMateV2.Properties;
-using MosqueMateV2.Resources;
-using Newtonsoft.Json;
 using System.Windows;
 using System.Windows.Controls;
-using XamlAnimatedGif;
 using Page = ModernWpf.Controls.Page;
 
 namespace MosqueMateV2.Pages
@@ -24,11 +17,12 @@ namespace MosqueMateV2.Pages
 
         RxTaskManger rxTaskManger;
         public IJsonAdhkarRepository jsonAdhkar;
+
         public Adhkar()
         {
             InitializeComponent();
             rxTaskManger = new();
-            jsonAdhkar = new JsonAdhkarRepository();   
+            jsonAdhkar = new JsonAdhkarRepository();
 
         }
 
@@ -51,7 +45,16 @@ namespace MosqueMateV2.Pages
 
         private void AdhkarSearchTxt_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (!string.IsNullOrWhiteSpace(AdhkarSearchTxt.Text))
+            {
+                var offest = GridCardContainer.GetOffsetChildOfElement(AdhkarSearchTxt.Text);
+                if (offest.ControlPosition is not null)
+                {
+                    adhkarScrollViewer.ScrollToVerticalOffset(offest.ControlPosition.Value.Y - 300);
+                    if (offest.SelectedElement is not null)
+                        ControlHelper.PulseCard(offest.SelectedElement);
+                }
+            }
         }
     }
 }

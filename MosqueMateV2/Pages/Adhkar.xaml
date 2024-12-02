@@ -22,14 +22,15 @@
                      materialDesign:HintAssist.HelperText="ddd"
                      HorizontalAlignment="Center"
                      VerticalAlignment="Center"
-                     Width="400"
+                     Width="450"
                      Height="40"
                      Padding="10"
                      FontSize="18"
                      FlowDirection="RightToLeft"
                      TextChanged="AdhkarSearchTxt_TextChanged"></TextBox>
         </Grid>
-        <ScrollViewer Grid.Row="1">
+        <ScrollViewer x:Name="adhkarScrollViewer"
+                      Grid.Row="1">
             <Grid x:Name="GridCardContainer"
                   ScrollViewer.VerticalScrollBarVisibility="Visible"
                   ScrollViewer.CanContentScroll="True"

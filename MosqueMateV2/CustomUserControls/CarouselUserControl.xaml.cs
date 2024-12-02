@@ -94,7 +94,8 @@ namespace MosqueMateV2.CustomUserControls
             if (AdhanHelper.IsAdhanNow)
             {
                 using IResourceManagerRepository resource = new ResourceManagerRepository(ResourceTypeEnum.MediaResources);
-                var adhan = resource.GetResourceByte(Properties.AppSettings.Default.Adhan);
+                var originValue = Properties.AppSettings.Default.Adhan.Replace(" ","");
+                var adhan = resource.GetResourceByte(originValue);
                 App.mP3Player.Play(adhan);
             }
         }
@@ -116,13 +117,13 @@ namespace MosqueMateV2.CustomUserControls
             if (toggleAdhan.IsChecked == true)
             {
                 toggleAdhan.AddImageToButton("pack://application:,,,/Assets/pause.png");
-                App.mP3Player.Pause();
+                //App.mP3Player.Pause();
                 toggleAdhan.ToolTip = App.LocalizationService[AppLocalization.Pause];
             }
             else if (toggleAdhan.IsChecked == false)
             {
                 toggleAdhan.AddImageToButton("pack://application:,,,/Assets/play.png");
-                App.mP3Player.Play();
+                //App.mP3Player.Play();
                 toggleAdhan.ToolTip = App.LocalizationService[AppLocalization.Play];
 
             }
