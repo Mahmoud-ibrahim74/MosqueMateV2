@@ -32,6 +32,15 @@ namespace MosqueMateV2
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(AppSettings.Default.Lang);
             #endregion
 
+
+            #region App-StartUp
+            if (AppSettings.Default.AutoStartUp)
+                AppHelper.AddApplicationToStartup();
+            else
+                AppHelper.RemoveApplicationFromStartup();
+            #endregion
+
+
             AppLanguage = Thread.CurrentThread.CurrentUICulture.Name;
             if (AppLanguage == AppLocalization.Arabic)
                 fontPath = AppHelper.ChangeAppFont(FontResources.alfont_com_ArabicPoetry_Medium);

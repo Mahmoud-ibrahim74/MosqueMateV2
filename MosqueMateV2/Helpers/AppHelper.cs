@@ -1,4 +1,7 @@
-﻿using System.IO;
+﻿using Microsoft.Win32;
+using MosqueMateV2.Resources;
+using System.IO;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -31,6 +34,26 @@ namespace MosqueMateV2.Helpers
             Application.Current.Resources.Add(typeof(Control), controlStyle);
             Application.Current.Resources.Add(typeof(TextBlock), textBlockStyle);
             return tempFontPath;
+        }
+        public static void AddApplicationToStartup()
+        {
+            string appName = Assembly.GetExecutingAssembly().GetName().Name ?? AppLocalization.AppAssemblyName;
+            string appPath = Application.ResourceAssembly.Location.Replace(".dll", ".exe");
+            if (File.Exists(appPath))
+            {
+                using var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+                key.SetValue(appName, appPath);
+            }
+
+        }
+        public static void RemoveApplicationFromStartup()
+        {
+            string appName = Assembly.GetExecutingAssembly().GetName().Name ?? AppLocalization.AppAssemblyName;
+            using var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            if (key.GetValue(appName) != null)
+            {
+                key.DeleteValue(appName);
+            }
         }
     }
 }

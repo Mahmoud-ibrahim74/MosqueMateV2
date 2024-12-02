@@ -3,6 +3,7 @@
     public static class AppLocalization
     {
         public const string AppName = "AppName";
+        public const string AppAssemblyName = "MosqueMateV2";
         public const string WeclomeApp = "WeclomeApp";
         public const string Arabic = "ar";
         public const string English = "en";
