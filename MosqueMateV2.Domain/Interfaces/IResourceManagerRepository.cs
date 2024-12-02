@@ -8,5 +8,7 @@ namespace MosqueMateV2.Domain.Interfaces
         public byte[] GetResourceByte(string key);
         public string GetStringResource(string key);
         public UnmanagedMemoryStream GetStreamResource(string key);
+        public void AddResourceToFile(string filePath);
+
     }
 }

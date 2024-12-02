@@ -4,6 +4,8 @@ using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
+using NAudio.CoreAudioApi;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -146,18 +148,18 @@ namespace MosqueMateV2.Pages
         {
             if (notificationToggle.IsChecked is true)
             {
-                if(Application.Current.ThemeMode == ThemeMode.Light)
+                if (Application.Current.ThemeMode == ThemeMode.Light)
                 {
-                    notificationAlertTxt.FlowDirection = App.AppLanguage == AppLocalization.Arabic ? 
+                    notificationAlertTxt.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
                         FlowDirection.RightToLeft : FlowDirection.LeftToRight;
                     notificationAlertTxt.Foreground = new SolidColorBrush(Colors.DarkOrange);
                 }
                 else
                 {
-                    notificationAlertTxt.FlowDirection  = FlowDirection.LeftToRight;    
+                    notificationAlertTxt.FlowDirection = FlowDirection.LeftToRight;
                 }
-                    notificationAlertTxt.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
-                    FlowDirection.RightToLeft : FlowDirection.LeftToRight;
+                notificationAlertTxt.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
+                FlowDirection.RightToLeft : FlowDirection.LeftToRight;
                 notificationAlertTxt.Text = App.LocalizationService[AppLocalization.notificationDesc];
             }
             else if (notificationToggle.IsChecked is false)
@@ -228,7 +230,7 @@ namespace MosqueMateV2.Pages
         private async Task<bool> LoadProfile()
         {
             try
-            {                    
+            {
 
                 this.hoursTxt.Text = Properties.AppSettings.Default.TimeRemainder.Hours.ToString();
                 this.minutesTxt.Text = Properties.AppSettings.Default.TimeRemainder.Minutes.ToString();
@@ -259,16 +261,16 @@ namespace MosqueMateV2.Pages
         }
         private async void show_Click(object sender, RoutedEventArgs e)
         {
-           //// Get the parent MetroWindow and cast it
-           // var metroWindow = Application.Current.MainWindow as MetroWindow;
-           // if (metroWindow != null)
-           // {
-           //     await ShowPopupAsync(metroWindow);
-           // }
-           // else
-           // {
-           //     MessageBox.Show("The main window is not a MetroWindow.");
-           // }
+            //// Get the parent MetroWindow and cast it
+            // var metroWindow = Application.Current.MainWindow as MetroWindow;
+            // if (metroWindow != null)
+            // {
+            //     await ShowPopupAsync(metroWindow);
+            // }
+            // else
+            // {
+            //     MessageBox.Show("The main window is not a MetroWindow.");
+            // }
         }
     }
 }

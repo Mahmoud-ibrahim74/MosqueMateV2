@@ -3,6 +3,7 @@ using MosqueMateV2.Resources;
 using System.Collections;
 using System.Globalization;
 using System.Resources;
+using System.Resources.NetStandard;
 
 namespace MosqueMateV2.Domain.Repositories
 {
@@ -101,6 +102,14 @@ namespace MosqueMateV2.Domain.Repositories
             {
                 return null;
             }
+        }
+        public void AddResourceToFile(string filePath)
+        {
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string resxFilePath = Path.Combine(baseDirectory, @$"..\..\..\{ResourceTypeEnum.MediaResources}.resx");
+            using ResXResourceWriter resxWriter = new(resxFilePath);
+            resxWriter.AddResource(Path.GetFileName(filePath), File.ReadAllBytes(filePath));
+            resxWriter.Generate();
         }
         public void Dispose() => resourceManager.ReleaseAllResources();
     }

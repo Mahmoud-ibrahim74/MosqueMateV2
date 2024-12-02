@@ -63,6 +63,16 @@ namespace MosqueMateV2.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] adhkar {
+            get {
+                object obj = ResourceManager.GetObject("adhkar", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] cities {
             get {
                 object obj = ResourceManager.GetObject("cities", resourceCulture);

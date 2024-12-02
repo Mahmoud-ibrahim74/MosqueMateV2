@@ -89,6 +89,7 @@ namespace MosqueMateV2.Resources {
                 return ((byte[])(obj));
             }
         }
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
