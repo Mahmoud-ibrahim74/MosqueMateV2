@@ -44,9 +44,6 @@
         <ScrollViewer x:Name="adhkarScrollViewer"
                       Grid.Row="1">
             <Grid x:Name="GridCardContainer"
-                  ScrollViewer.VerticalScrollBarVisibility="Visible"
-                  ScrollViewer.CanContentScroll="True"
-                  ScrollViewer.HorizontalScrollBarVisibility="Visible"
                   Grid.RowSpan="2">
             </Grid>
         </ScrollViewer>

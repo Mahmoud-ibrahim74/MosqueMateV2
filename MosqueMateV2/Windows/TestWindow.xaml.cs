@@ -29,15 +29,10 @@ namespace MosqueMateV2.Windows
         private void ConfirmationDialog_Loaded(object sender, RoutedEventArgs e)
         {
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Dialog11.IsOpen = true; 
-        }
-
         private void PowerButton_Click(object sender, RoutedEventArgs e)
         {
-            Dialog11.IsOpen = true;
+            AdhkarModalPopup modalPopup = new();
+            modalPopup.ShowModal();
         }
     }
 }

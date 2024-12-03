@@ -4,41 +4,23 @@
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
          xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
          xmlns:system="clr-namespace:System;assembly=System.Runtime"
+         xmlns:local="clr-namespace:MosqueMateV2.CustomUserControls"
          Title="Exit Confirmation Example"
          ThemeMode="Light"
          Height="600"
-         Width="800" Loaded="ConfirmationDialog_Loaded">
+         Width="800"
+         Loaded="ConfirmationDialog_Loaded">
     <Grid>
-        <md:DialogHost x:Name="Dialog11">
-        <md:DialogHost.DialogContent>
-            <StackPanel Margin="15">
-                <TextBlock Margin="10"
-                           Text="My First dialog" />
-                <CheckBox Name="Check_Me"
-                          Content="Check me" />
-                <Button Margin="10"
-                        Name="Close_ME"
-                        Content="Close" />
-            </StackPanel>
-        </md:DialogHost.DialogContent>
-        <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
-            <Button Name="Show"
-                    Content="Show Dialog"
-                    Margin="0,0,0,10" />
-        </StackPanel>
-        </md:DialogHost>
-
-        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <Button x:Name="PowerButton"
-                    
-                    Margin="134,338,0,0"
-                    VerticalAlignment="Top"
-                    Height="42"
-                    Content="Open"
-                    Width="197"
-                    Click="PowerButton_Click" />
+        <Grid HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
         </Grid>
+        <Button x:Name="PowerButton"
+                Margin="271,457,0,0"
+                VerticalAlignment="Top"
+                Height="42"
+                Content="Open"
+                Width="197"
+                Click="PowerButton_Click" />
 
     </Grid>
 </Window>
