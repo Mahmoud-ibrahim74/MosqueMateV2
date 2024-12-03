@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using MosqueMateV2.Resources;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Windows;
@@ -54,6 +55,16 @@ namespace MosqueMateV2.Helpers
             {
                 key.DeleteValue(appName);
             }
+        }
+
+        public static void RestartApp()
+        {
+            // Get the current process information
+            Process currentProcess = Process.GetCurrentProcess();
+            // Start a new instance of the WPF application
+            Process.Start(currentProcess.MainModule.FileName);
+            // Close the current instance
+            currentProcess.Kill();
         }
     }
 }

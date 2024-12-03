@@ -223,9 +223,15 @@ namespace MosqueMateV2.Pages
 
             ToastNotificationsHelper.
             SendNotification(
-            App.LocalizationService[AppLocalization.Sucsess],
-            App.LocalizationService[AppLocalization.SavedSucsessfully],
-            Notification.Wpf.NotificationType.Success);
+                        title: App.LocalizationService[AppLocalization.Sucsess],
+                        message: App.LocalizationService[AppLocalization.SavedSucsessfully],
+                        duration: new TimeSpan(0, 0, AppLocalization.NotificatonDuration),
+                        onClose: () =>
+                        {
+                            AppHelper.RestartApp();
+                        },
+           type: Notification.Wpf.NotificationType.Success);
+            
         }
         private async Task<bool> LoadProfile()
         {

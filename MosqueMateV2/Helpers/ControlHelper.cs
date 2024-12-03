@@ -27,6 +27,7 @@ namespace MosqueMateV2.Helpers
             {
                 Card card = new()
                 {
+                    Name = $"card_{item.id}",
                     Width = 250,
                     Height = 150,
                     Margin = new Thickness(10),
@@ -35,16 +36,6 @@ namespace MosqueMateV2.Helpers
                     Foreground = new SolidColorBrush(Colors.White),
                     Cursor = Cursors.Hand
                 };
-                //card.Effect = new DropShadowEffect
-                //{
-                //    Color = Colors.White, // rgba(0, 0, 0, 0.12) in WPF format
-                //    Opacity = 0.8,
-                //    BlurRadius = 25,
-                //    ShadowDepth = 4,
-                //    Direction = 270 
-                //};
-
-
                 // Create card content
                 StackPanel contentPanel = new();
                 TextBlock title = new()
@@ -123,29 +114,16 @@ namespace MosqueMateV2.Helpers
             };
         }
 
-        public static void PulseCard(Card card)
-        {
-            ColorAnimation animation;
-            animation = new ColorAnimation();
-            animation.To = Color.FromRgb(111, 80, 80);
-            animation.Duration = new Duration(TimeSpan.FromSeconds(.4));
-            animation.AutoReverse = true;
-            animation.RepeatBehavior = RepeatBehavior.Forever;
+    }
 
-            var clonedBackgroundBrush = card.Background.Clone();
-            card.Background = clonedBackgroundBrush;
 
-            clonedBackgroundBrush.BeginAnimation(SolidColorBrush.ColorProperty, animation);
-        }
-
-        public class ControlBinding<T>
-        {
-            public Point? ControlPosition { get; set; }
-            public T? SelectedElement { get; set; }
-        }
-
+    public class ControlBinding<T>
+    {
+        public Point? ControlPosition { get; set; }
+        public T? SelectedElement { get; set; }
     }
 }
+
 
 
 

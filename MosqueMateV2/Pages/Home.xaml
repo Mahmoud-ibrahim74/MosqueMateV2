@@ -27,7 +27,6 @@
             <Label x:Name="nextPrayerLBL"  Grid.Row="0" FontWeight="Bold" FontSize="17"  HorizontalAlignment="Center" Margin="0 50 0 0 " VerticalAlignment="Top" />
             <ToggleButton
                     x:Name="toggleSidebar" 
-                    Click="toggleSidebar_Click"
                     Grid.Row="0"
                     FontWeight="Bold"
                     FontSize="13" Margin="10" 

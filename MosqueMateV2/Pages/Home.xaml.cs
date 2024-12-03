@@ -203,20 +203,18 @@ namespace MosqueMateV2.Pages
                                 " ",
                                 App.LocalizationService[AppLocalization.Minutes]);
 
-                ToastNotificationsHelper.
-                SendNotification(
-                App.LocalizationService[AppLocalization.Alert],
-                alertMsg,
-                Notification.Wpf.NotificationType.Warning);
 
-                App.mP3Player.Stop();
-                App.mP3Player.Play(MediaResources.prayerNow);
+                ToastNotificationsHelper.SendNotification(
+                            title: App.LocalizationService[AppLocalization.Alert],
+                            message: alertMsg,
+                            duration: new TimeSpan(0, 0, AppLocalization.NotificatonDuration),
+                            onClose: () =>
+                            {
+                                App.mP3Player.Stop();
+                                App.mP3Player.Play(MediaResources.prayerNow);
+                            },
+            type: Notification.Wpf.NotificationType.Warning);
             }
-        }
-        private void toggleSidebar_Click(object sender, RoutedEventArgs e)
-        {
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

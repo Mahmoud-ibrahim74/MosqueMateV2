@@ -12,6 +12,8 @@
 
         public const string IsNotExisted = "IsNotExisted";
         public const string Play = "Play";
+        public const int AnimationDuration = 2;
+        public const int NotificatonDuration = 2;
         public const string Pause = "Pause";
         public const string MainMenu = "MainMenu";
         public const string Home = "Home";

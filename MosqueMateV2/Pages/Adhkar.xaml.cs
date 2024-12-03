@@ -1,8 +1,7 @@
-﻿using MaterialDesignThemes.Wpf;
-using MosqueMateV2.Domain.DTOs;
-using MosqueMateV2.Domain.Interfaces;
+﻿using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
+using MosqueMateV2.Resources;
 using System.Windows;
 using System.Windows.Controls;
 using Page = ModernWpf.Controls.Page;
@@ -42,8 +41,7 @@ namespace MosqueMateV2.Pages
 
                  });
         }
-
-        private void AdhkarSearchTxt_TextChanged(object sender, TextChangedEventArgs e)
+        private void searchOnAdhan_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(AdhkarSearchTxt.Text))
             {
@@ -52,7 +50,11 @@ namespace MosqueMateV2.Pages
                 {
                     adhkarScrollViewer.ScrollToVerticalOffset(offest.ControlPosition.Value.Y - 300);
                     if (offest.SelectedElement is not null)
-                        ControlHelper.PulseCard(offest.SelectedElement);
+                    {
+                        AnimationHelper animation = new(AppLocalization.AnimationDuration);
+                        animation.CreatePulseAnimation(offest.SelectedElement);
+                        animation.StartPulseAnimation();
+                    }
                 }
             }
         }
