@@ -24,6 +24,11 @@ namespace MosqueMateV2.Domain.Repositories
         {
             return Task.FromResult(_adhkarObj);
         }
+        public Task<DTOAdhkar> GetZekrByIdAsync(int id)
+        {
+            var res = _adhkarObj.FirstOrDefault(x => x.id == id) ?? new();
+            return Task.FromResult(res);
+        }
 
         protected virtual void Dispose(bool disposing)
         {

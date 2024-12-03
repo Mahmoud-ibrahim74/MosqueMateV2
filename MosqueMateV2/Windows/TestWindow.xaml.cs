@@ -31,7 +31,7 @@ namespace MosqueMateV2.Windows
         }
         private void PowerButton_Click(object sender, RoutedEventArgs e)
         {
-            AdhkarModalPopup modalPopup = new();
+            AdhkarModalPopup modalPopup = new(1);
             modalPopup.ShowModal();
         }
     }
