@@ -9,7 +9,6 @@ using MosqueMateV2.Resources;
 using Newtonsoft.Json;
 using System.Windows;
 using System.Windows.Controls;
-using XamlAnimatedGif;
 using Page = ModernWpf.Controls.Page;
 
 namespace MosqueMateV2.Pages
@@ -32,7 +31,6 @@ namespace MosqueMateV2.Pages
                 AppSettings.Default.city.ToLowerInvariant(),
                 method);
             PrayerSlidesData = [];
-            AnimationBehavior.SetSourceUri(Loader, new Uri(AppLocalization.loaderPath));
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -46,11 +44,10 @@ namespace MosqueMateV2.Pages
                      apiContent = result;
                      IsEnabled = true;
                      Loader.Visibility = Visibility.Hidden;
-                     Loader.Source = null;
                      App.Api_Response = JsonConvert.DeserializeObject<DTOPrayerTimesResponse>(apiContent);
                      RenderWindowWithData();
                  },
-                 retryNumber: 2,
+                 retryNumber: 5,
                  () => // handle an error
                  {
 

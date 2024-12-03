@@ -5,6 +5,7 @@
          xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
          xmlns:system="clr-namespace:System;assembly=System.Runtime"
          xmlns:local="clr-namespace:MosqueMateV2.CustomUserControls"
+         xmlns:hc="https://handyorg.github.io/handycontrol"
          Title="Exit Confirmation Example"
          ThemeMode="Light"
          Height="600"
@@ -13,7 +14,34 @@
     <Grid>
         <Grid HorizontalAlignment="Stretch"
               VerticalAlignment="Stretch">
+            <hc:ComboBox HorizontalAlignment="Left"
+                         Margin="100,68,0,0"
+                         VerticalAlignment="Top"
+                         Width="120" />
+            <hc:LoadingCircle HorizontalAlignment="Left"
+                              Margin="38,398,0,0"
+                              Width="200"
+                              DotBorderThickness="10"
+                              
+                              VerticalAlignment="Top"
+                              Height="94" />
+            <hc:LoadingLine HorizontalAlignment="Left"
+                            Margin="656,35,0,0"
+                            VerticalAlignment="Top" />
+            <hc:LoadingLine HorizontalAlignment="Left"
+                            Margin="122,101,0,0"
+                            VerticalAlignment="Top"
+                            Height="28"
+                            Width="320" />
         </Grid>
+        <hc:CircleProgressBar Width="200"
+                              Value="50"
+                              ArcThickness="10"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              Height="142"
+                              Margin="448,310,0,0" />
+
         <Button x:Name="PowerButton"
                 Margin="271,457,0,0"
                 VerticalAlignment="Top"
