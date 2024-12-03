@@ -58,7 +58,7 @@
 
             <Button Background="#6897a7"
                     BorderBrush="{x:Null}"
-                    Margin="477,455,0,0"
+                    Margin="535,407,0,0"
                     Height="29"
                     Width="34"
                     VerticalAlignment="Top">
