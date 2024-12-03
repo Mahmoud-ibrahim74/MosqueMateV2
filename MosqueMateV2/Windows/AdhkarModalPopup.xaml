@@ -50,7 +50,7 @@
         <!--#region Wave-Images -->
         <Image Stretch="UniformToFill"
                Source="/Assets/wave1.png"
-               Margin="0,10,0,2"
+               Margin="0,9,0,3"
                Grid.Row="1" />
         <!--#endregion-->
 

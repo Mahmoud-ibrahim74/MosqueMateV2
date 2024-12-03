@@ -1,13 +1,9 @@
 ﻿using MaterialDesignThemes.Wpf;
 using MosqueMateV2.Domain.DTOs;
-using MosqueMateV2.Resources;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Effects;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace MosqueMateV2.Helpers
 {
@@ -65,6 +61,7 @@ namespace MosqueMateV2.Helpers
                 };
 
             var wrapPanel = grid.Children.OfType<WrapPanel>().FirstOrDefault();
+            
             if (wrapPanel == null)
                 return new()
                 {
