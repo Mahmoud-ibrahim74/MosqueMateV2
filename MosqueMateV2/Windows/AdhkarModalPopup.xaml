@@ -107,7 +107,8 @@
                        Margin="0,166,0,0"
                        Height="282"
                        Width="548" />
-            <hc:CircleProgressBar Margin="240,444,230,0"
+            <hc:CircleProgressBar x:Name="zekrCounter"
+                                  Margin="240,444,230,0"
                                   VerticalAlignment="Top"
                                   FontSize="15"
                                   Value="20"

@@ -52,6 +52,7 @@ namespace MosqueMateV2.Windows
                              ZekrContent = result;
                              this.zekrTitle.Text = result.category;
                              this.zekrDescription.Text = result.zekrContent[0].text;
+                             this.zekrCounter.Value = result.zekrContent[0].count;
                          },
                          retryNumber: 2,
                          () => // handle an error
