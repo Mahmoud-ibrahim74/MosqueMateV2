@@ -19,6 +19,11 @@
 
   <ItemGroup>
     <None Remove="Assets\Asr.jpg" />
+    <None Remove="Assets\Fonts\ArbFONTS-Al-Kharashi-20.ttf" />
+    <None Remove="Assets\Fonts\ArbFONTS-MCS Hijaz S_U adorn..ttf" />
+    <None Remove="Assets\Fonts\ArbFONTS-MCS Jaly S_U adorn..ttf" />
+    <None Remove="Assets\Fonts\arfonts-motken-unicode-claseec.ttf" />
+    <None Remove="Assets\Fonts\Ya-ModernPro-Bold.otf" />
     <None Remove="Assets\hadith.png" />
     <None Remove="Assets\Isha.jpg" />
     <None Remove="Assets\islamic-pattern.png" />
@@ -43,6 +48,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Fonts\ArbFONTS-Al-Kharashi-20.ttf" />
+    <Resource Include="Assets\Fonts\ArbFONTS-MCS Hijaz S_U adorn..ttf" />
+    <Resource Include="Assets\Fonts\ArbFONTS-MCS Jaly S_U adorn..ttf" />
+    <Resource Include="Assets\Fonts\arfonts-motken-unicode-claseec.ttf" />
+    <Resource Include="Assets\Fonts\Ya-ModernPro-Bold.otf" />
     <Resource Include="Assets\islamic-pattern.png" />
     <Resource Include="Assets\islamic.png" />
     <Resource Include="Assets\letter-v.png" />

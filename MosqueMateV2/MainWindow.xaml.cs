@@ -21,7 +21,6 @@ namespace MosqueMateV2
         {
             InitializeComponent();
             rxTaskManger = new();
-            ApiClient.Configure("cairo", "egypt", 8);
             PrayerSlidesData = [];
         }
 

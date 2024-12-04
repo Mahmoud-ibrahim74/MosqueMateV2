@@ -9,8 +9,8 @@
         Width="1000"
         MinWidth="800" MinHeight="600" 
         WindowStartupLocation="CenterScreen" 
-        FontWeight="UltraBlack" 
-        FontFamily="Bahnschrift Condensed"
+        FontWeight="UltraBlack"
+        FontFamily="{StaticResource AlKharashi}"
         ThemeMode="System" Loaded="Window_Loaded">
     <!-- Resources for Animations -->
     <Window.Resources>
@@ -71,7 +71,7 @@
                                     Opacity="0.95"
                                     Panel.ZIndex="1"
                                     ToolTip="Menu"
-                                    FontFamily="Bahnschrift Condensed"                  
+                                    FontFamily="{StaticResource Alameen}"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Stretch"
                                     IsBackButtonVisible="Collapsed"

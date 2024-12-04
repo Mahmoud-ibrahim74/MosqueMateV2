@@ -6,11 +6,13 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Media;
+using Control = System.Windows.Controls.Control;
 
 namespace MosqueMateV2.Helpers
 {
-    public class AppHelper
+    public static class AppHelper
     {
         public static string ChangeAppFont(byte[] fontData)
         {
@@ -31,15 +33,34 @@ namespace MosqueMateV2.Helpers
             var textBlockStyle = new Style(typeof(TextBlock));
             textBlockStyle.Setters.Add(new Setter(TextBlock.FontFamilyProperty, fontFamily));
 
-            Application.Current.Resources.Add(typeof(TextElement), fontStyle);
-            Application.Current.Resources.Add(typeof(Control), controlStyle);
-            Application.Current.Resources.Add(typeof(TextBlock), textBlockStyle);
+            System.Windows.Application.Current.Resources.Add(typeof(TextElement), fontStyle);
+            System.Windows.Application.Current.Resources.Add(typeof(Control), controlStyle);
+            System.Windows.Application.Current.Resources.Add(typeof(TextBlock), textBlockStyle);
             return tempFontPath;
+        }
+        public static void ChangeAppFontFromResource(Window window, string fontName)
+        {
+            var font = (FontFamily)System.Windows.Application.Current.Resources[fontName];
+            if (font is not null)
+                window.FontFamily = font;
+        }
+        public static void ChangeAppFontFromResource(this Control control, string fontName)
+        {
+            var font = (FontFamily)System.Windows.Application.Current.Resources[fontName];
+            if (font is not null)
+                control.FontFamily = font;
+        }
+        public static FontFamily GetResourceFont(string fontName)
+        {
+            var font = (FontFamily)System.Windows.Application.Current.Resources[fontName];
+            if (font is not null)
+                return font;
+            return null;
         }
         public static void AddApplicationToStartup()
         {
             string appName = Assembly.GetExecutingAssembly().GetName().Name ?? AppLocalization.AppAssemblyName;
-            string appPath = Application.ResourceAssembly.Location.Replace(".dll", ".exe");
+            string appPath = System.Windows.Application.ResourceAssembly.Location.Replace(".dll", ".exe");
             if (File.Exists(appPath))
             {
                 using var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);

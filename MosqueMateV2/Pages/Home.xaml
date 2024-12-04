@@ -9,7 +9,7 @@
          mc:Ignorable="d"
          Title="MainWindow"
          ui:ThemeManager.RequestedTheme="Default"
-         FontFamily="Bahnschrift Condensed"
+         FontFamily="{StaticResource ModernPro}"
          Loaded="Window_Loaded">
     <Grid x:Name="GridContainer"
           HorizontalAlignment="Stretch"
@@ -70,7 +70,7 @@
                             HorizontalAlignment="Left"
                             Margin="101,3,0,0"
                             VerticalAlignment="Top"
-                            Visibility="Visible"
+                            Visibility="Hidden"
                             Height="16"
                             Width="457" />
         </Grid>

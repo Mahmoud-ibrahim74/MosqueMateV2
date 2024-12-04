@@ -15,6 +15,12 @@
                 <ui:ThemeResources />
                 <ui:XamlControlsResources />
             </ResourceDictionary.MergedDictionaries>
+            <FontFamily x:Key="AlKharashi">Assets/Fonts/ArbFONTS-Al-Kharashi-20.ttf#Al-Kharashi</FontFamily>
+            <FontFamily x:Key="Hijaz">Assets/Fonts/ArbFONTS-MCS Hijaz S_U adorn.ttf#Hijaz</FontFamily>
+            <FontFamily x:Key="HijazAdorn">Assets/Fonts/ArbFONTS-MCS-Hijaz-S_I-adorn.ttf#HijazAdorn</FontFamily>
+            <FontFamily x:Key="Motken">Assets/Fonts/arfonts-motken-unicode-claseec.ttf#Motken</FontFamily>
+            <FontFamily x:Key="Alameen">Assets/Fonts/Alameen.ttf#Alameen</FontFamily>
+            <FontFamily x:Key="ModernPro">Assets/Fonts/Ya-ModernPro-Bold.ttf#ModernPro</FontFamily>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

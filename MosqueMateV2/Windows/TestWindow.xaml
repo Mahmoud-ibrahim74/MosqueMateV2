@@ -14,33 +14,28 @@
     <Grid>
         <Grid HorizontalAlignment="Stretch"
               VerticalAlignment="Stretch">
-            <hc:ComboBox HorizontalAlignment="Left"
-                         Margin="100,68,0,0"
-                         VerticalAlignment="Top"
-                         Width="120" />
-            <hc:LoadingCircle HorizontalAlignment="Left"
-                              Margin="38,398,0,0"
-                              Width="200"
-                              DotBorderThickness="10"
-                              
-                              VerticalAlignment="Top"
-                              Height="94" />
             <hc:LoadingLine HorizontalAlignment="Left"
                             Margin="656,35,0,0"
                             VerticalAlignment="Top" />
-            <hc:LoadingLine HorizontalAlignment="Left"
-                            Margin="122,101,0,0"
-                            VerticalAlignment="Top"
-                            Height="28"
-                            Width="320" />
+
+            <hc:Carousel HorizontalAlignment="Stretch"
+                         Margin="0,135,0,145"
+                         Width="800">
+                <hc:Carousel.Items>
+                    <Image Source="/Assets/Asr.jpg"
+                           Stretch="Fill"
+                           StretchDirection="DownOnly"
+                           Width="387" />
+                    <Image Source="/Assets/Asr.jpg"
+                           Stretch="UniformToFill"
+                           StretchDirection="DownOnly" />
+                    <Image Source="/Assets/Asr.jpg"
+                           Stretch="UniformToFill"
+                           StretchDirection="DownOnly" />
+                </hc:Carousel.Items>
+            </hc:Carousel>
+
         </Grid>
-        <hc:CircleProgressBar Width="200"
-                              Value="50"
-                              ArcThickness="10"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Height="142"
-                              Margin="448,310,0,0" />
 
         <Button x:Name="PowerButton"
                 Margin="271,457,0,0"
@@ -49,6 +44,5 @@
                 Content="Open"
                 Width="197"
                 Click="PowerButton_Click" />
-
     </Grid>
 </Window>

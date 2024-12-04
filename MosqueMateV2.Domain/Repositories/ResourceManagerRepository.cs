@@ -30,7 +30,6 @@ namespace MosqueMateV2.Domain.Repositories
             {
                 ResourceTypeEnum.FileResources => new ResourceManager($"{projName}.{ResourceTypeEnum.FileResources}", typeof(FileResources).Assembly),
                 ResourceTypeEnum.MediaResources => new ResourceManager($"{projName}.{ResourceTypeEnum.MediaResources}", typeof(MediaResources).Assembly),
-                ResourceTypeEnum.FontResources => new ResourceManager($"{projName}.{ResourceTypeEnum.FontResources}", typeof(FontResources).Assembly),
                 _ => new ResourceManager($"{projName}.{ResourceTypeEnum.MediaResources}", typeof(MediaResources).Assembly),
             };
         }

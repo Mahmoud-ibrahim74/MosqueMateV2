@@ -6,7 +6,6 @@ using MosqueMateV2.Properties;
 using MosqueMateV2.Resources;
 using Resources;
 using System.Globalization;
-using System.IO;
 using System.Windows;
 namespace MosqueMateV2
 {
@@ -17,7 +16,6 @@ namespace MosqueMateV2
     {
         public static JsonLocalizationService LocalizationService { get; private set; }
         public static string AppLanguage { get; private set; }
-        private static string fontPath { get; set; }
         public static DTOPrayerTimesResponse Api_Response { get; set; }
         public static IMP3Player mP3Player { get; set; }
 
@@ -40,19 +38,13 @@ namespace MosqueMateV2
                 AppHelper.RemoveApplicationFromStartup();
             #endregion
 
-
             AppLanguage = Thread.CurrentThread.CurrentUICulture.Name;
-            if (AppLanguage == AppLocalization.Arabic)
-                fontPath = AppHelper.ChangeAppFont(FontResources.alfont_com_ArabicPoetry_Medium);
-
             base.OnStartup(e);
 
         }
         protected override void OnExit(ExitEventArgs e)
         {
-            if (File.Exists(fontPath))
-                File.Delete(fontPath);
-            base.OnExit(e);
+
         }
     }
 

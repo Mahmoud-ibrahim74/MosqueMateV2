@@ -59,10 +59,10 @@ namespace MosqueMateV2.Pages
             Focusable = true;
             Focus();
             Title = App.LocalizationService[AppLocalization.AppName];
-            topGrid.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
-                FlowDirection.RightToLeft :
-                FlowDirection.LeftToRight;
 
+            topGrid.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
+                                       FlowDirection.RightToLeft :
+                                       FlowDirection.LeftToRight;
             centerGrid.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
                 FlowDirection.RightToLeft :
                 FlowDirection.LeftToRight;
@@ -173,6 +173,7 @@ namespace MosqueMateV2.Pages
                     PrayerEnum.Fajr.ToString()];
                 var nextPrayer = AdhanHelper.GetTimeLeftForNextAdhan(App.Api_Response.Data.Timings) ??
                     TimeSpan.MinValue;
+
 
                 nextPrayerLBL.Content = StringHelper.AppendString(
                       App.LocalizationService[AppLocalization.NextPrayer],
