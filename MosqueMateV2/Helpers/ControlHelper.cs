@@ -1,5 +1,8 @@
 ﻿using MaterialDesignThemes.Wpf;
 using MosqueMateV2.Domain.DTOs;
+using MosqueMateV2.Domain.Enums;
+using MosqueMateV2.Windows;
+using NAudio.CoreAudioApi.Interfaces;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -32,6 +35,8 @@ namespace MosqueMateV2.Helpers
                     Foreground = new SolidColorBrush(Colors.White),
                     Cursor = Cursors.Hand
                 };
+                card.MouseLeftButtonDown += (sender, e) => Card_MouseLeftButtonDown(sender, e);
+
                 // Create card content
                 StackPanel contentPanel = new();
                 TextBlock title = new()
@@ -52,6 +57,17 @@ namespace MosqueMateV2.Helpers
             }
             grid.Children.Add(cardPanel);
         }
+        private static void Card_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var selectedCard = sender as Card;
+            if (selectedCard is not null)
+            {
+                var id = NumberHelper.IsTextHasDigit(selectedCard.Name) ?
+                    NumberHelper.GetTextFromDigit(selectedCard.Name) : 1;
+                new AdhkarModalPopup(id).ShowModal();
+            }
+        }
+
         public static ControlBinding<Card> GetOffsetChildOfElement(this Grid grid, string childName)
         {
             if (grid == null || string.IsNullOrWhiteSpace(childName))
@@ -61,7 +77,7 @@ namespace MosqueMateV2.Helpers
                 };
 
             var wrapPanel = grid.Children.OfType<WrapPanel>().FirstOrDefault();
-            
+
             if (wrapPanel == null)
                 return new()
                 {

@@ -18,6 +18,7 @@ namespace MosqueMateV2.Windows
         DTOAdhkar _zekr { get; set; }
         private int zekrCategoryCount;
         private int ZekrIndex = 0;
+        private int progressIncrement = 0;
         RxTaskManger rxTaskManger;
         IJsonAdhkarRepository jsonAdhkar;
 
@@ -31,19 +32,28 @@ namespace MosqueMateV2.Windows
         }
         private void NextZekr()
         {
-            if (ZekrIndex == _zekr.zekrContent.Count - 1)
-                return;
-            zekrDescription.Text = _zekr.zekrContent[ZekrIndex].text;
-            zekrCounter.Value = _zekr.zekrContent[ZekrIndex].count;
             ZekrIndex++;
+            if (ZekrIndex > _zekr.zekrContent.Count-1)
+            {
+                ZekrIndex = 0;
+            }
+            if (ZekrIndex < _zekr.zekrContent.Count)
+            {
+                zekrDescription.Text = _zekr.zekrContent[ZekrIndex].text;
+                zekrCounterTxt.Text = _zekr.zekrContent[ZekrIndex].count.ToString();
+                ResetCounter(); 
+            }
         }
         private void PrevZekr()
         {
+
             if (ZekrIndex == 0)
-                return;
-            zekrDescription.Text = _zekr.zekrContent[ZekrIndex].text;
-            zekrCounter.Value = _zekr.zekrContent[ZekrIndex].count;
+                ZekrIndex = _zekr.zekrContent.Count - 1;
             ZekrIndex--;
+            zekrDescription.Text = _zekr.zekrContent[ZekrIndex].text;
+            zekrCounterTxt.Text = _zekr.zekrContent[ZekrIndex].count.ToString();
+            ResetCounter();
+
         }
         // Show the modal with popup animation
         public void ShowModal()
@@ -71,7 +81,7 @@ namespace MosqueMateV2.Windows
                              _zekr = result;
                              this.zekrTitle.Text = result.category;
                              this.zekrDescription.Text = result.zekrContent[ZekrIndex].text;
-                             this.zekrCounter.Value = result.zekrContent[ZekrIndex].count;
+                             this.zekrCounterTxt.Text = _zekr.zekrContent[ZekrIndex].count.ToString();
                          },
                          retryNumber: 2,
                          () => // handle an error
@@ -88,6 +98,18 @@ namespace MosqueMateV2.Windows
         private void perviousZekr_Click(object sender, RoutedEventArgs e)
         {
             PrevZekr();
+        }
+
+        private void zekrDescription_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var currentZekr = _zekr.zekrContent[ZekrIndex];
+            progressIncrement = 100 / currentZekr.count;
+            zekrCounter.Value += progressIncrement;
+        }
+        private void ResetCounter()
+        {
+            progressIncrement = 0;
+            zekrCounter.Value = 0;
         }
     }
 }

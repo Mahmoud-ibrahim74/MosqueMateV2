@@ -50,7 +50,7 @@
         <!--#region Wave-Images -->
         <Image Stretch="UniformToFill"
                Source="/Assets/wave1.png"
-               Margin="0,9,0,3"
+               Margin="0,23,0,-11"
                Grid.Row="1" />
         <!--#endregion-->
 
@@ -83,7 +83,7 @@
 
             <!--#region Title-Area -->
             <TextBlock x:Name="zekrTitle"
-                       Text="Title !"
+                       Text=""
                        HorizontalAlignment="Center"
                        VerticalAlignment="Top"
                        TextAlignment="Center"
@@ -118,27 +118,40 @@
 
             <!--#region Description -->
             <TextBlock x:Name="zekrDescription"
-                       Text="تست !"
+                       Text=""
                        TextWrapping="WrapWithOverflow"
                        LineHeight="40"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Top"
                        TextAlignment="Center"
                        FontSize="18"
+                       Cursor="Hand"
                        Padding="0 20 0 0"
                        Margin="0,166,0,0"
                        Height="261"
                        Width="548"
-                      />
+                       MouseLeftButtonDown="zekrDescription_PreviewMouseLeftButtonDown" />
             <hc:CircleProgressBar x:Name="zekrCounter"
                                   Margin="240,444,230,0"
                                   VerticalAlignment="Top"
+                                  ShowText="False"
                                   FontSize="15"
-                                  Value="0"
-                                  ArcThickness="10"
                                   FontWeight="UltraBold"
                                   Height="98"
-                                  Foreground="#FF7CA8AF" />
+                                  Foreground="Orange">
+
+            </hc:CircleProgressBar>
+            <TextBlock x:Name="zekrCounterTxt"
+                       Text="1"
+                       FontSize="20"
+                       Padding="0 20 0 0"
+                       TextAlignment="Center"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Center"
+                       Width="100"
+                       Height="50"
+                       FontWeight="DemiBold"
+                       Margin="255,463,245,0" />
             <!--#endregion-->
 
 
