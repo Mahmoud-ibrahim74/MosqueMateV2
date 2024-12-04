@@ -14,7 +14,10 @@ namespace MosqueMateV2.Windows
     public partial class AdhkarModalPopup : Window
     {
         int zekr_id { get; set; }
-        DTOAdhkar ZekrContent { get; set; }
+        DTOAdhkar _zekr { get; set; }
+        private int zekrCategoryCount;
+        private int ZekrIndex = 1;
+        private int ZekrIndexCount = 1;
         RxTaskManger rxTaskManger;
         IJsonAdhkarRepository jsonAdhkar;
 
@@ -25,7 +28,24 @@ namespace MosqueMateV2.Windows
             this.zekr_id = zekId;
             jsonAdhkar = new JsonAdhkarRepository();
         }
+        private void NextZekr()
+        {
+            if (ZekrIndex == _zekr.zekrContent.Count)
+                return;
+            ZekrIndex++;
+            zekrDescription.Text = _zekr.zekrContent[ZekrIndex].text;
+            ZekrIndexCount = _zekr.zekrContent.Count;
 
+
+        }
+        private void PrevZekr()
+        {
+            if (ZekrIndex == 1)
+                return;
+            ZekrIndex--;
+            zekrDescription.Text = _zekr.zekrContent[ZekrIndex].text;
+            ZekrIndexCount = _zekr.zekrContent.Count;
+        }
         // Show the modal with popup animation
         public void ShowModal()
         {
@@ -49,7 +69,7 @@ namespace MosqueMateV2.Windows
                          backgroundTask: () => jsonAdhkar.GetZekrByIdAsync(zekr_id),
                          onSuccess: result =>
                          {
-                             ZekrContent = result;
+                             _zekr = result;
                              this.zekrTitle.Text = result.category;
                              this.zekrDescription.Text = result.zekrContent[0].text;
                              this.zekrCounter.Value = result.zekrContent[0].count;
@@ -59,6 +79,16 @@ namespace MosqueMateV2.Windows
                          {
 
                          });
+        }
+
+        private void nextZekr_Click(object sender, RoutedEventArgs e)
+        {
+            NextZekr();
+        }
+
+        private void perviousZekr_Click(object sender, RoutedEventArgs e)
+        {
+            PrevZekr(); 
         }
     }
 }

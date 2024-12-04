@@ -57,6 +57,7 @@
         <Grid Grid.Row="0">
 
             <Button x:Name="nextZekr"
+                    Click="nextZekr_Click"
                     Background="#6897a7"
                     BorderBrush="{x:Null}"
                     Margin="535,470,0,0"
@@ -69,6 +70,7 @@
             </Button>
             <Button x:Name="perviousZekr"
                     Background="#6897a7"
+                    Click="perviousZekr_Click"
                     BorderBrush="{x:Null}"
                     Margin="15,473,0,0"
                     Height="29"
