@@ -136,6 +136,7 @@
                                   VerticalAlignment="Top"
                                   ShowText="False"
                                   FontSize="15"
+                                  ArcThickness="15"
                                   FontWeight="UltraBold"
                                   Height="98"
                                   Foreground="Orange">

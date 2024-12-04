@@ -62,8 +62,8 @@ namespace MosqueMateV2
             homeItem.Tag = AppLocalization.HomeTag;
             quraanItem.Tag = AppLocalization.QuranTag;
             adhkarItem.Tag = AppLocalization.AdhkarTag;
-            NavView.SelectedItem = adhkarItem;
-            MainFrame.Navigate(new Adhkar());
+            NavView.SelectedItem = homeItem;
+            MainFrame.Navigate(new Home());
 
         }
     }

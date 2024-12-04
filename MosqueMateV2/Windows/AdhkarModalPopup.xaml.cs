@@ -19,6 +19,7 @@ namespace MosqueMateV2.Windows
         private int zekrCategoryCount;
         private int ZekrIndex = 0;
         private int progressIncrement = 0;
+        private int zekrCountText = 0;
         RxTaskManger rxTaskManger;
         IJsonAdhkarRepository jsonAdhkar;
 
@@ -40,7 +41,6 @@ namespace MosqueMateV2.Windows
             if (ZekrIndex < _zekr.zekrContent.Count)
             {
                 zekrDescription.Text = _zekr.zekrContent[ZekrIndex].text;
-                zekrCounterTxt.Text = _zekr.zekrContent[ZekrIndex].count.ToString();
                 ResetCounter(); 
             }
         }
@@ -81,7 +81,7 @@ namespace MosqueMateV2.Windows
                              _zekr = result;
                              this.zekrTitle.Text = result.category;
                              this.zekrDescription.Text = result.zekrContent[ZekrIndex].text;
-                             this.zekrCounterTxt.Text = _zekr.zekrContent[ZekrIndex].count.ToString();
+                             zekrCounterTxt.Text = zekrCountText.ToString();
                          },
                          retryNumber: 2,
                          () => // handle an error
@@ -103,13 +103,16 @@ namespace MosqueMateV2.Windows
         private void zekrDescription_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             var currentZekr = _zekr.zekrContent[ZekrIndex];
-            progressIncrement = 100 / currentZekr.count;
+            progressIncrement = (int)Math.Ceiling(100.0 / currentZekr.count);
             zekrCounter.Value += progressIncrement;
+            zekrCountText++;
+            zekrCounterTxt.Text = zekrCountText.ToString();
         }
         private void ResetCounter()
         {
             progressIncrement = 0;
             zekrCounter.Value = 0;
+            zekrCountText = 0;
         }
     }
 }
