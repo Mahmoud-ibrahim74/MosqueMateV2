@@ -130,6 +130,7 @@
                        Margin="0,166,0,0"
                        Height="261"
                        Width="548"
+                       FlowDirection="RightToLeft"
                        MouseLeftButtonDown="zekrDescription_PreviewMouseLeftButtonDown" />
             <hc:CircleProgressBar x:Name="zekrCounter"
                                   Margin="240,444,230,0"

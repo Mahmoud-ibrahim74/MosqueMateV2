@@ -4,6 +4,7 @@ using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
+using MosqueMateV2.Resources;
 using System.Windows;
 using System.Windows.Media.Animation;
 
@@ -34,14 +35,14 @@ namespace MosqueMateV2.Windows
         private void NextZekr()
         {
             ZekrIndex++;
-            if (ZekrIndex > _zekr.zekrContent.Count-1)
+            if (ZekrIndex > _zekr.zekrContent.Count - 1)
             {
                 ZekrIndex = 0;
             }
             if (ZekrIndex < _zekr.zekrContent.Count)
             {
                 zekrDescription.Text = _zekr.zekrContent[ZekrIndex].text;
-                ResetCounter(); 
+                ResetCounter();
             }
         }
         private void PrevZekr()
@@ -103,9 +104,13 @@ namespace MosqueMateV2.Windows
         private void zekrDescription_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             var currentZekr = _zekr.zekrContent[ZekrIndex];
+
+            if (currentZekr.count == zekrCountText)
+                return;
+
             progressIncrement = (int)Math.Ceiling(100.0 / currentZekr.count);
-            zekrCounter.Value += progressIncrement;
             zekrCountText++;
+            zekrCounter.Value += progressIncrement;
             zekrCounterTxt.Text = zekrCountText.ToString();
         }
         private void ResetCounter()
@@ -113,6 +118,7 @@ namespace MosqueMateV2.Windows
             progressIncrement = 0;
             zekrCounter.Value = 0;
             zekrCountText = 0;
+            zekrCounterTxt.Text = "0";
         }
     }
 }
