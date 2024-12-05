@@ -19,9 +19,11 @@ namespace MosqueMateV2.Resources
                 dirContent = Directory.GetFiles(direPath);
 
         }
-        public Byte[] GetPageContent(string page_name)
+        public Byte[] GetPageContent(int pageIndex)
         {
-            var filePath = Path.Combine(direPath, page_name);
+            var formattedNumber = pageIndex.ToString("D3");
+            var fileName = $"quran_hafs_m_Page_{formattedNumber}.png";
+            var filePath = Path.Combine(direPath, fileName);
             if (File.Exists(filePath))
                 return File.ReadAllBytes(filePath);
 

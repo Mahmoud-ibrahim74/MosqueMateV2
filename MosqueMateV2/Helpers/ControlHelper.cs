@@ -72,7 +72,7 @@ namespace MosqueMateV2.Helpers
             {
                 Card card = new()
                 {
-                    Name = $"card_{item.index}",
+                    Name = $"card_{item.pageIndex}",
                     Width = 250,
                     Height = 150,
                     Margin = new Thickness(10),
@@ -192,12 +192,12 @@ namespace MosqueMateV2.Helpers
         }
         private static void OpenQuranModal(Card selectedCard)
         {
-            //if (selectedCard is not null)
-            //{
-            //    var id = NumberHelper.IsTextHasDigit(selectedCard.Name) ?
-            //        NumberHelper.GetTextFromDigit(selectedCard.Name) : 1;
-            //    new Quran().sh();
-            //}
+            if (selectedCard is not null)
+            {
+                var index = NumberHelper.IsTextHasDigit(selectedCard.Name) ?
+                    NumberHelper.GetTextFromDigit(selectedCard.Name) : 1;
+                new QuranModalPopup(index).ShowModal();
+            }
         }
     }
 
