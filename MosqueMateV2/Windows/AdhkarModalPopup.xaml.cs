@@ -1,10 +1,7 @@
-﻿using HandyControl.Tools.Extension;
-using MosqueMateV2.Domain.DTOs;
-using MosqueMateV2.Domain.Enums;
+﻿using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
-using MosqueMateV2.Resources;
 using System.Windows;
 using System.Windows.Media.Animation;
 

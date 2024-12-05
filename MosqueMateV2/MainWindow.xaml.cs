@@ -42,7 +42,7 @@ namespace MosqueMateV2
                         MainFrame.Navigate(new Home());
                         break;
                     case AppLocalization.QuranTag:
-                        //MainFrame.Navigate(new GradesPage());
+                        MainFrame.Navigate(new Quran());
                         break;
                     case AppLocalization.AdhkarTag:
                         MainFrame.Navigate(new Adhkar());
@@ -64,7 +64,6 @@ namespace MosqueMateV2
             adhkarItem.Tag = AppLocalization.AdhkarTag;
             NavView.SelectedItem = homeItem;
             MainFrame.Navigate(new Home());
-
         }
     }
 }

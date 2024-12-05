@@ -1,0 +1,572 @@
+﻿[
+  {
+    "index": 1,
+    "pageIndex": 1,
+    "name": "الفاتحة"
+  },
+  {
+    "index": 2,
+    "pageIndex": 2,
+    "name": "البقرة"
+  },
+  {
+    "index": 3,
+    "pageIndex": 50,
+    "name": "آل عمران"
+  },
+  {
+    "index": 4,
+    "pageIndex": 77,
+    "name": "النساء"
+  },
+  {
+    "index": 5,
+    "pageIndex": 106,
+    "name": "المائدة"
+  },
+  {
+    "index": 6,
+    "pageIndex": 128,
+    "name": "الأنعام"
+  },
+  {
+    "index": 7,
+    "pageIndex": 151,
+    "name": "الأعراف"
+  },
+  {
+    "index": 8,
+    "pageIndex": 177,
+    "name": "الأنفال"
+  },
+  {
+    "index": 9,
+    "pageIndex": 187,
+    "name": "التوبة"
+  },
+  {
+    "index": 10,
+    "pageIndex": 208,
+    "name": "يونس"
+  },
+  {
+    "index": 11,
+    "pageIndex": 221,
+    "name": "هود"
+  },
+  {
+    "index": 12,
+    "pageIndex": 235,
+    "name": "يوسف"
+  },
+  {
+    "index": 13,
+    "pageIndex": 249,
+    "name": "الرعد"
+  },
+  {
+    "index": 14,
+    "pageIndex": 255,
+    "name": "ابراهيم"
+  },
+  {
+    "index": 15,
+    "pageIndex": 262,
+    "name": "الحجر"
+  },
+  {
+    "index": 16,
+    "pageIndex": 267,
+    "name": "النحل"
+  },
+  {
+    "index": 17,
+    "pageIndex": 282,
+    "name": "الإسراء"
+  },
+  {
+    "index": 18,
+    "pageIndex": 293,
+    "name": "الكهف"
+  },
+  {
+    "index": 19,
+    "pageIndex": 305,
+    "name": "مريم"
+  },
+  {
+    "index": 20,
+    "pageIndex": 312,
+    "name": "طه"
+  },
+  {
+    "index": 21,
+    "pageIndex": 322,
+    "name": "الأنبياء"
+  },
+  {
+    "index": 22,
+    "pageIndex": 332,
+    "name": "الحج"
+  },
+  {
+    "index": 23,
+    "pageIndex": 342,
+    "name": "المؤمنون"
+  },
+  {
+    "index": 24,
+    "pageIndex": 350,
+    "name": "النور"
+  },
+  {
+    "index": 25,
+    "pageIndex": 359,
+    "name": "الفرقان"
+  },
+  {
+    "index": 26,
+    "pageIndex": 367,
+    "name": "الشعراء"
+  },
+  {
+    "index": 27,
+    "pageIndex": 377,
+    "name": "النمل"
+  },
+  {
+    "index": 28,
+    "pageIndex": 385,
+    "name": "القصص"
+  },
+  {
+    "index": 29,
+    "pageIndex": 396,
+    "name": "العنكبوت"
+  },
+  {
+    "index": 30,
+    "pageIndex": 404,
+    "name": "الروم"
+  },
+  {
+    "index": 31,
+    "pageIndex": 411,
+    "name": "لقمان"
+  },
+  {
+    "index": 32,
+    "pageIndex": 415,
+    "name": "السجدة"
+  },
+  {
+    "index": 33,
+    "pageIndex": 418,
+    "name": "الأحزاب"
+  },
+  {
+    "index": 34,
+    "pageIndex": 428,
+    "name": "سبأ"
+  },
+  {
+    "index": 35,
+    "pageIndex": 434,
+    "name": "فاطر"
+  },
+  {
+    "index": 36,
+    "pageIndex": 440,
+    "name": "يس"
+  },
+  {
+    "index": 37,
+    "pageIndex": 446,
+    "name": "الصافات"
+  },
+  {
+    "index": 38,
+    "pageIndex": 453,
+    "name": "ص"
+  },
+  {
+    "index": 39,
+    "pageIndex": 458,
+    "name": "الزمر"
+  },
+  {
+    "index": 40,
+    "pageIndex": 467,
+    "name": "غافر"
+  },
+  {
+    "index": 41,
+    "pageIndex": 477,
+    "name": "فصلت"
+  },
+  {
+    "index": 42,
+    "pageIndex": 483,
+    "name": "الشورى"
+  },
+  {
+    "index": 43,
+    "pageIndex": 489,
+    "name": "الزخرف"
+  },
+  {
+    "index": 44,
+    "pageIndex": 496,
+    "name": "الدخان"
+  },
+  {
+    "index": 45,
+    "pageIndex": 499,
+    "name": "الجاثية"
+  },
+  {
+    "index": 46,
+    "pageIndex": 502,
+    "name": "الأحقاف"
+  },
+  {
+    "index": 47,
+    "pageIndex": 507,
+    "name": "محمد"
+  },
+  {
+    "index": 48,
+    "pageIndex": 511,
+    "name": "الفتح"
+  },
+  {
+    "index": 49,
+    "pageIndex": 515,
+    "name": "الحجرات"
+  },
+  {
+    "index": 50,
+    "pageIndex": 518,
+    "name": "ق"
+  },
+  {
+    "index": 51,
+    "pageIndex": 520,
+    "name": "الذاريات"
+  },
+  {
+    "index": 52,
+    "pageIndex": 523,
+    "name": "الطور"
+  },
+  {
+    "index": 53,
+    "pageIndex": 526,
+    "name": "النجم"
+  },
+  {
+    "index": 54,
+    "pageIndex": 528,
+    "name": "القمر"
+  },
+  {
+    "index": 55,
+    "pageIndex": 531,
+    "name": "الرحمن"
+  },
+  {
+    "index": 56,
+    "pageIndex": 534,
+    "name": "الواقعة"
+  },
+  {
+    "index": 57,
+    "pageIndex": 537,
+    "name": "الحديد"
+  },
+  {
+    "index": 58,
+    "pageIndex": 542,
+    "name": "المجادلة"
+  },
+  {
+    "index": 59,
+    "pageIndex": 545,
+    "name": "الحشر"
+  },
+  {
+    "index": 60,
+    "pageIndex": 549,
+    "name": "الممتحنة"
+  },
+  {
+    "index": 61,
+    "pageIndex": 551,
+    "name": "الصف"
+  },
+  {
+    "index": 62,
+    "pageIndex": 553,
+    "name": "الجمعة"
+  },
+  {
+    "index": 63,
+    "pageIndex": 554,
+    "name": "المنافقون"
+  },
+  {
+    "index": 64,
+    "pageIndex": 556,
+    "name": "التغابن"
+  },
+  {
+    "index": 65,
+    "pageIndex": 558,
+    "name": "الطلاق"
+  },
+  {
+    "index": 66,
+    "pageIndex": 560,
+    "name": "التحريم"
+  },
+  {
+    "index": 67,
+    "pageIndex": 562,
+    "name": "الملك"
+  },
+  {
+    "index": 68,
+    "pageIndex": 564,
+    "name": "القلم"
+  },
+  {
+    "index": 69,
+    "pageIndex": 566,
+    "name": "الحاقة"
+  },
+  {
+    "index": 70,
+    "pageIndex": 568,
+    "name": "المعارج"
+  },
+  {
+    "index": 71,
+    "pageIndex": 570,
+    "name": "نوح"
+  },
+  {
+    "index": 72,
+    "pageIndex": 572,
+    "name": "الجن"
+  },
+  {
+    "index": 73,
+    "pageIndex": 574,
+    "name": "المزمل"
+  },
+  {
+    "index": 74,
+    "pageIndex": 575,
+    "name": "المدثر"
+  },
+  {
+    "index": 75,
+    "pageIndex": 577,
+    "name": "القيامة"
+  },
+  {
+    "index": 76,
+    "pageIndex": 578,
+    "name": "الإنسان"
+  },
+  {
+    "index": 77,
+    "pageIndex": 580,
+    "name": "المرسلات"
+  },
+  {
+    "index": 78,
+    "pageIndex": 582,
+    "name": "النبإ"
+  },
+  {
+    "index": 79,
+    "pageIndex": 583,
+    "name": "النازعات"
+  },
+  {
+    "index": 80,
+    "pageIndex": 585,
+    "name": "عبس"
+  },
+  {
+    "index": 81,
+    "pageIndex": 586,
+    "name": "التكوير"
+  },
+  {
+    "index": 82,
+    "pageIndex": 587,
+    "name": "الإنفطار"
+  },
+  {
+    "index": 83,
+    "pageIndex": 587,
+    "name": "المطففين"
+  },
+  {
+    "index": 84,
+    "pageIndex": 589,
+    "name": "الإنشقاق"
+  },
+  {
+    "index": 85,
+    "pageIndex": 590,
+    "name": "البروج"
+  },
+  {
+    "index": 86,
+    "pageIndex": 591,
+    "name": "الطارق"
+  },
+  {
+    "index": 87,
+    "pageIndex": 591,
+    "name": "الأعلى"
+  },
+  {
+    "index": 88,
+    "pageIndex": 592,
+    "name": "الغاشية"
+  },
+  {
+    "index": 89,
+    "pageIndex": 593,
+    "name": "الفجر"
+  },
+  {
+    "index": 90,
+    "pageIndex": 594,
+    "name": "البلد"
+  },
+  {
+    "index": 91,
+    "pageIndex": 595,
+    "name": "الشمس"
+  },
+  {
+    "index": 92,
+    "pageIndex": 595,
+    "name": "الليل"
+  },
+  {
+    "index": 93,
+    "pageIndex": 596,
+    "name": "الضحى"
+  },
+  {
+    "index": 94,
+    "pageIndex": 596,
+    "name": "الشرح"
+  },
+  {
+    "index": 95,
+    "pageIndex": 597,
+    "name": "التين"
+  },
+  {
+    "index": 96,
+    "pageIndex": 597,
+    "name": "العلق"
+  },
+  {
+    "index": 97,
+    "pageIndex": 598,
+    "name": "القدر"
+  },
+  {
+    "index": 98,
+    "pageIndex": 598,
+    "name": "البينة"
+  },
+  {
+    "index": 99,
+    "pageIndex": 599,
+    "name": "الزلزلة"
+  },
+  {
+    "index": 100,
+    "pageIndex": 599,
+    "name": "العاديات"
+  },
+  {
+    "index": 101,
+    "pageIndex": 600,
+    "name": "القارعة"
+  },
+  {
+    "index": 102,
+    "pageIndex": 600,
+    "name": "التكاثر"
+  },
+  {
+    "index": 103,
+    "pageIndex": 601,
+    "name": "العصر"
+  },
+  {
+    "index": 104,
+    "pageIndex": 601,
+    "name": "الهمزة"
+  },
+  {
+    "index": 105,
+    "pageIndex": 601,
+    "name": "الفيل"
+  },
+  {
+    "index": 106,
+    "pageIndex": 602,
+    "name": "قريش"
+  },
+  {
+    "index": 107,
+    "pageIndex": 602,
+    "name": "الماعون"
+  },
+  {
+    "index": 108,
+    "pageIndex": 602,
+    "name": "الكوثر"
+  },
+  {
+    "index": 109,
+    "pageIndex": 603,
+    "name": "الكافرون"
+  },
+  {
+    "index": 110,
+    "pageIndex": 603,
+    "name": "النصر"
+  },
+  {
+    "index": 111,
+    "pageIndex": 603,
+    "name": "المسد"
+  },
+  {
+    "index": 112,
+    "pageIndex": 604,
+    "name": "الإخلاص"
+  },
+  {
+    "index": 113,
+    "pageIndex": 604,
+    "name": "الفلق"
+  },
+  {
+    "index": 114,
+    "pageIndex": 604,
+    "name": "الناس"
+  }
+]

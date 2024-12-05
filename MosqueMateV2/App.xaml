@@ -21,6 +21,7 @@
             <FontFamily x:Key="Motken">Assets/Fonts/arfonts-motken-unicode-claseec.ttf#Motken</FontFamily>
             <FontFamily x:Key="Alameen">Assets/Fonts/Alameen.ttf#Alameen</FontFamily>
             <FontFamily x:Key="ModernPro">Assets/Fonts/Ya-ModernPro-Bold.ttf#ModernPro</FontFamily>
+            <FontFamily x:Key="Elgharib">Assets/Fonts/Elgharib-A516.ttf#Elgharib</FontFamily>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
