@@ -79,7 +79,8 @@ namespace MosqueMateV2.Helpers
                     Background = CreateGradientBackground(),
                     Padding = new Thickness(16),
                     Foreground = new SolidColorBrush(Colors.White),
-                    Cursor = Cursors.Hand
+                    Cursor = Cursors.Hand,
+                    FlowDirection = FlowDirection.RightToLeft
                 };
                 card.MouseLeftButtonDown += (sender, e) => Card_MouseLeftButtonDown(sender, e,ServiceTypeEnum.Quran);
 

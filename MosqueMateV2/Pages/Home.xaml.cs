@@ -209,7 +209,7 @@ namespace MosqueMateV2.Pages
                                 App.mP3Player.Stop();
                                 App.mP3Player.Play(MediaResources.prayerNow);
                             },
-            type: Notification.Wpf.NotificationType.Warning);
+            type: Notification.Wpf.NotificationType.Notification);
             }
         }
 

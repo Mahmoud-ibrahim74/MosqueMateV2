@@ -48,6 +48,8 @@ namespace MosqueMateV2.Windows
             if (ZekrIndex == 0)
                 ZekrIndex = _zekr.zekrContent.Count - 1;
             ZekrIndex--;
+            if (ZekrIndex == -1)
+                ZekrIndex = 0;
             zekrDescription.Text = _zekr.zekrContent[ZekrIndex].text;
             zekrCounterTxt.Text = _zekr.zekrContent[ZekrIndex].count.ToString();
             ResetCounter();
