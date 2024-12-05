@@ -33,7 +33,7 @@ namespace MosqueMateV2.Pages
                  backgroundTask: () => jsonAdhkar.GetAllAdhkarsAsync(),
                  onSuccess: result =>
                  {
-                     GridCardContainer.GenerateMaterialDesignCards(result);
+                     GridCardContainer.GenerateMaterialDesignCardsForAdhkar(result);
                  },
                  retryNumber: 2,
                  () => // handle an error

@@ -3,7 +3,6 @@ using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
 using System.Windows;
-using System.Windows.Controls;
 using Page = ModernWpf.Controls.Page;
 
 namespace MosqueMateV2.Pages
@@ -15,13 +14,13 @@ namespace MosqueMateV2.Pages
     {
 
         RxTaskManger rxTaskManger;
-        public IJsonAdhkarRepository jsonAdhkar;
+        public ISuraRepository  _suraRepository;
 
         public Quran()
         {
             InitializeComponent();
             rxTaskManger = new();
-            jsonAdhkar = new JsonAdhkarRepository();
+            _suraRepository = new SuraRepository();
 
         }
 
@@ -30,10 +29,10 @@ namespace MosqueMateV2.Pages
             var main = Application.Current.MainWindow;
 
             rxTaskManger.RunBackgroundTaskOnUI(
-                 backgroundTask: () => jsonAdhkar.GetAllAdhkarsAsync(),
+                 backgroundTask: () => _suraRepository.GetAllSuraNames(),
                  onSuccess: result =>
                  {
-                     GridCardContainer.GenerateMaterialDesignCards(result);
+                     GridCardContainer.GenerateMaterialDesignCardsForQuran(result);
                  },
                  retryNumber: 2,
                  () => // handle an error
@@ -41,14 +40,14 @@ namespace MosqueMateV2.Pages
 
                  });
         }
-        private void searchOnAdhan_Click(object sender, RoutedEventArgs e)
+        private void searchOnQuran_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(AdhkarSearchTxt.Text))
             {
                 var offest = GridCardContainer.GetOffsetChildOfElement(AdhkarSearchTxt.Text);
                 if (offest.ControlPosition is not null)
                 {
-                    adhkarScrollViewer.ScrollToVerticalOffset(offest.ControlPosition.Value.Y - 300);
+                    quranScrollViewer.ScrollToVerticalOffset(offest.ControlPosition.Value.Y - 300);
                     if (offest.SelectedElement is not null)
                     {
                         AnimationHelper animation = new(AppLocalization.AnimationDuration);
