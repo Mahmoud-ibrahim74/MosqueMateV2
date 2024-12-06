@@ -50,5 +50,20 @@ namespace MosqueMateV2.Helpers
             bitmap.Freeze(); // Freeze to make it thread-safe and immutable
             return bitmap;
         }
+        public static BitmapFrame ConvertBytesToBitmapFrame(byte[] byteArray)
+        {
+            if (byteArray == null || byteArray.Length == 0)
+                return null;
+
+            using var memoryStream = new MemoryStream(byteArray);
+            memoryStream.Seek(0, SeekOrigin.Begin);
+            BitmapFrame bitmapFrame = BitmapFrame.Create(
+                memoryStream,
+                BitmapCreateOptions.PreservePixelFormat,
+                BitmapCacheOption.OnLoad
+            );
+
+            return bitmapFrame;
+        }
     }
 }

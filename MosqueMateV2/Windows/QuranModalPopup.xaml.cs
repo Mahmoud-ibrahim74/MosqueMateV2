@@ -1,6 +1,7 @@
 ﻿using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media.Animation;
 
 namespace MosqueMateV2.Windows
@@ -11,6 +12,7 @@ namespace MosqueMateV2.Windows
     public partial class QuranModalPopup : Window
     {
         int pageIndex { get; set; }
+        QuranResource quranRes;
         RxTaskManger rxTaskManger;
 
         public QuranModalPopup(int pageIndex)
@@ -18,15 +20,36 @@ namespace MosqueMateV2.Windows
             InitializeComponent();
             rxTaskManger = new();
             this.pageIndex = pageIndex;
+            quranRes = new QuranResource();
 
         }
-        private void NextZekr()
+        private void NextPage()
         {
+            if (imgViewer.ImageSource is not null)
+            {
+                if (pageIndex == 604)
+                    pageIndex = 1;
 
+
+                imgViewer.ImageSource = null;
+                pageIndex++;
+                var resByte = quranRes.GetPageContent(pageIndex);
+                imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
+            }
         }
-        private void PrevZekr()
+        private void PrevPage()
         {
+            if (imgViewer.ImageSource is not null)
+            {
+                if (pageIndex == 1)
+                    pageIndex = 604;
 
+
+                imgViewer.ImageSource = null;
+                pageIndex--;
+                var resByte = quranRes.GetPageContent(pageIndex);
+                imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
+            }
 
         }
         // Show the modal with popup animation
@@ -48,40 +71,26 @@ namespace MosqueMateV2.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var resByte = new QuranResource().GetPageContent(pageIndex);
-            //zekrImage.Source = ImageHelper.ConvertBytesToImage(resByte);
-
-            CoverFlowMain.AddRange(
-            [
-                ImageHelper.ConvertBytesToImage(resByte),
-                new Uri(@"pack://application:,,,/Assets/pause.png"),
-                new Uri(@"pack://application:,,,/Assets/pause.png"),
-                new Uri(@"pack://application:,,,/Assets/pause.png"),
-                new Uri(@"pack://application:,,,/Assets/pause.png"),
-                new Uri(@"pack://application:,,,/Assets/pause.png"),
-                new Uri(@"pack://application:,,,/Assets/pause.png"),
-                new Uri(@"pack://application:,,,/Assets/pause.png"),
-                new Uri(@"pack://application:,,,/Assets/pause.png") ,
-                new Uri(@"pack://application:,,,/Assets/pause.png")
-             ]);
-            CoverFlowMain.Add(new Uri("pack://application:,,,/Assets/pause.png"));
-            CoverFlowMain.Add(new Uri("pack://application:,,,/Assets/pause.png"));
-            CoverFlowMain.Add(new Uri("pack://application:,,,/Assets/pause.png"));
-            CoverFlowMain.Add(new Uri("pack://application:,,,/Assets/pause.png"));
-            CoverFlowMain.Add(new Uri("pack://application:,,,/Assets/pause.png"));
-            CoverFlowMain.Add(new Uri("pack://application:,,,/Assets/pause.png"));
+            var resByte = quranRes.GetPageContent(pageIndex);
+            imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
         }
-
-        private void nextZekr_Click(object sender, RoutedEventArgs e)
+        private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            NextZekr();
+            if (e.Key == Key.Left)
+            {
+                e.Handled = true;
+                PrevPage();
+            }
+            else if (e.Key == Key.Right)
+            {
+                e.Handled = true;
+                NextPage();
+            }
+            else if (e.Key == Key.Escape)
+            {
+                this.Close();
+            }
         }
-
-        private void perviousZekr_Click(object sender, RoutedEventArgs e)
-        {
-            PrevZekr();
-        }
-
         private void zekrDescription_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
 

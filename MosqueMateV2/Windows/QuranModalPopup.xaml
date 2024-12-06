@@ -8,6 +8,7 @@
         mc:Ignorable="d"
         Width="800"
         Height="800"
+        KeyDown="Window_KeyDown"
         FontFamily="{StaticResource ModernPro}"
         ResizeMode="NoResize"
         ShowInTaskbar="False"
@@ -45,12 +46,9 @@
 
         <!--#region Description -->
 
-        <hc:CoverFlow  x:Name="CoverFlowMain"
-                       Margin="32"
-                       Background="Red"
-                       Width="500"
-                       Height="300" />
-
+        <hc:ImageViewer x:Name="imgViewer"
+                        Background="{DynamicResource SecondaryRegionBrush}"
+                         />
 
 
 
