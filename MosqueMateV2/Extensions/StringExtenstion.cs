@@ -1,18 +1,19 @@
-﻿using System.Text;
+﻿using MosqueMateV2.Resources;
+using System.Text;
 
-namespace MosqueMateV2.Helpers
+namespace MosqueMateV2.Extensions
 {
     /// <summary>
     /// Provides utility methods for string operations such as appending and manipulating strings.
     /// </summary>
-    public class StringHelper
+    public static class StringExtenstion
     {
         /// <summary>
         /// Concatenates the specified string values into a single string without line breaks.
         /// </summary>
         /// <param name="values">An array of strings to concatenate.</param>
         /// <returns>A single concatenated string.</returns>
-        public static string AppendString(params string[] values)
+        public static string AppendString( params string[] values)
         {
             StringBuilder stringBuilder = new();
             foreach (string value in values)
@@ -34,6 +35,11 @@ namespace MosqueMateV2.Helpers
                 stringBuilder.AppendLine(value);
             }
             return stringBuilder.ToString();
+        }
+        public static string AppendDuration(this string input, TimeSpan duration)
+        {
+            string formattedDuration = $"{App.LocalizationService[AppLocalization.Duration]} : {duration.Hours:D2}:{duration.Minutes:D2}:{duration.Seconds:D2}";
+            return $"{input} {formattedDuration}".Trim();
         }
     }
 }

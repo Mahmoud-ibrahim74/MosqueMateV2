@@ -182,6 +182,9 @@
     <value>Resources\محمد صلاح الدين.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     <comment>محمد صلاح الدين</comment>
   </data>
+  <data name="pick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\pick.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="prayerNow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\prayerNow.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

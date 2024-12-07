@@ -97,37 +97,49 @@ namespace MosqueMateV2.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string country {
+        [global::System.Configuration.DefaultSettingValueAttribute("egypt")]
+        public string Country {
             get {
-                return ((string)(this["country"]));
+                return ((string)(this["Country"]));
             }
             set {
-                this["country"] = value;
+                this["Country"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("cairo")]
+        public string City {
+            get {
+                return ((string)(this["City"]));
+            }
+            set {
+                this["City"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string city {
+        public string Method {
             get {
-                return ((string)(this["city"]));
+                return ((string)(this["Method"]));
             }
             set {
-                this["city"] = value;
+                this["Method"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string method {
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int ContinueReading {
             get {
-                return ((string)(this["method"]));
+                return ((int)(this["ContinueReading"]));
             }
             set {
-                this["method"] = value;
+                this["ContinueReading"] = value;
             }
         }
     }

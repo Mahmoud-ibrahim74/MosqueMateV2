@@ -76,16 +76,12 @@ namespace MosqueMateV2.Helpers
                {
                    if (!string.IsNullOrEmpty(error.Message))
                    {
+                       Console.WriteLine(error.Message);    
                        if (onError != null)
                            onError();
                    }
                });
         }
-
-
-        /// <summary>
-        /// Stops the running periodic task.
-        /// </summary>
 
     }
 }

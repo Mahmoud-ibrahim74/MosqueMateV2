@@ -3,9 +3,11 @@ using MosqueMateV2.Domain.APIService;
 using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Domain.Extensions;
+using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Properties;
 using MosqueMateV2.Resources;
+using MosqueMateV2.Windows;
 using Newtonsoft.Json;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,9 +28,9 @@ namespace MosqueMateV2.Pages
         {
             InitializeComponent();
             rxTaskManger = new();
-            var method = (int)EnumHelper<CalculationMethods>.GetEnumValue(AppSettings.Default.method);
-            ApiClient.Configure(AppSettings.Default.country.ToLowerInvariant(),
-                AppSettings.Default.city.ToLowerInvariant(),
+            var method = (int)EnumHelper<CalculationMethods>.GetEnumValue(AppSettings.Default.Method);
+            ApiClient.Configure(AppSettings.Default.Country.ToLowerInvariant(),
+                AppSettings.Default.City.ToLowerInvariant(),
                 method);
             PrayerSlidesData = [];
         }
@@ -53,7 +55,7 @@ namespace MosqueMateV2.Pages
 
                  });
 
-        }
+        }  
         private void RenderWindowWithData()
         {
             Focusable = true;
@@ -71,7 +73,7 @@ namespace MosqueMateV2.Pages
             BindingBottomPanel();
 
             #region hijriDateBuilder
-            var hijriDate = StringHelper.AppendString(
+            var hijriDate = StringExtenstion.AppendString(
                  App.Api_Response.Data.Date.Hijri.Day,
                  " - ",
                  App.AppLanguage == AppLocalization.Arabic ?
@@ -86,7 +88,7 @@ namespace MosqueMateV2.Pages
             #endregion
 
             #region WelcomeBuilder
-            var WelcomeBuilder = StringHelper.AppendString(
+            var WelcomeBuilder = StringExtenstion.AppendString(
                 App.LocalizationService[AppLocalization.WeclomeApp],
                 " , ",
                 DateTimeHelper.PrintGreeting()
@@ -153,9 +155,9 @@ namespace MosqueMateV2.Pages
             var prayerLearningTxt = prayerLearningBtn.Template.FindName("prayerLearningTxt", prayerLearningBtn) as TextBlock;
 
             if (quranTxt is not null)
-                quranTxt.Text = App.LocalizationService[AppLocalization.Quran];
+                quranTxt.Text = App.LocalizationService[AppLocalization.ContinueReading];
             if (azkarTxt is not null)
-                azkarTxt.Text = App.LocalizationService[AppLocalization.Azkar];
+                azkarTxt.Text = App.LocalizationService[AppLocalization.ZekrReminder];
             if (hadithTxt is not null)
                 hadithTxt.Text = App.LocalizationService[AppLocalization.Hadith];
             if (prayerLearningTxt is not null)
@@ -175,7 +177,7 @@ namespace MosqueMateV2.Pages
                     TimeSpan.MinValue;
 
 
-                nextPrayerLBL.Content = StringHelper.AppendString(
+                nextPrayerLBL.Content = StringExtenstion.AppendString(
                       App.LocalizationService[AppLocalization.NextPrayer],
                       " ",
                       $"{nextPrayer.Hours}:{nextPrayer.Minutes}:{nextPrayer.Seconds}",
@@ -192,7 +194,7 @@ namespace MosqueMateV2.Pages
         {
             if (AdhanHelper.IsAlertForNextAdhan)
             {
-                var alertMsg = StringHelper.AppendString(
+                var alertMsg = StringExtenstion.AppendString(
                     App.LocalizationService[AppLocalization.PrayerLeft],
                                 " ",
                                 timeLeft.Minutes.ToString(),
@@ -218,5 +220,14 @@ namespace MosqueMateV2.Pages
 
         }
 
+        private void QuranBtn_Click(object sender, RoutedEventArgs e)
+        {
+             new QuranModalPopup(AppSettings.Default.ContinueReading).ShowModal();
+        }
+
+        private void azkarBtn_Click(object sender, RoutedEventArgs e)
+        {
+            new AdhkarModalPopup(new Random().Next(1, 100)).ShowModal();
+        }
     }
 }

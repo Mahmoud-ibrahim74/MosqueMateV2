@@ -2,6 +2,7 @@
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
+using MosqueMateV2.Resources;
 using System.Windows;
 using System.Windows.Media.Animation;
 
@@ -14,7 +15,6 @@ namespace MosqueMateV2.Windows
     {
         int zekr_id { get; set; }
         DTOAdhkar _zekr { get; set; }
-        private int zekrCategoryCount;
         private int ZekrIndex = 0;
         private int progressIncrement = 0;
         private int zekrCountText = 0;
@@ -107,6 +107,7 @@ namespace MosqueMateV2.Windows
             if (currentZekr.count == zekrCountText)
                 return;
 
+            App.mP3Player.Play(MediaResources.pick);
             progressIncrement = (int)Math.Ceiling(100.0 / currentZekr.count);
             zekrCountText++;
             zekrCounter.Value += progressIncrement;

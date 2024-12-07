@@ -28,7 +28,7 @@ namespace MosqueMateV2.Domain.Repositories
         }
         public DTOSuraNames GetSuraById(int id)
         {
-            return _suraObj.FirstOrDefault(x => x.index == id);
+            return _suraObj.FirstOrDefault(x => x.pageIndex == id);
 
         }
     }

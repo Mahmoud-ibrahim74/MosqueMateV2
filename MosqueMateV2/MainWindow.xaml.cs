@@ -58,12 +58,12 @@ namespace MosqueMateV2
             NavView.PaneTitle = App.LocalizationService[AppLocalization.MainMenu];
             homeItem.Content = App.LocalizationService[AppLocalization.Home];
             quraanItem.Content = App.LocalizationService[AppLocalization.Quran];
-            adhkarItem.Content = App.LocalizationService[AppLocalization.Azkar];
+            adhkarItem.Content = App.LocalizationService[AppLocalization.AzkarDoaa];
             homeItem.Tag = AppLocalization.HomeTag;
             quraanItem.Tag = AppLocalization.QuranTag;
             adhkarItem.Tag = AppLocalization.AdhkarTag;
             NavView.SelectedItem = homeItem;
-            MainFrame.Navigate(new Home());
+            MainFrame.Navigate(new ProphetsStories());
         }
     }
 }

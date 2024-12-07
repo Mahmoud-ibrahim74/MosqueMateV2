@@ -100,6 +100,11 @@
     "en": "Continue Reading",
     "fr": "Continuer la lecture"
   },
+  "ZekrReminder": {
+    "ar": "ارزقني الذكر",
+    "en": "Grant Me Remembrance",
+    "fr": "Accorde-moi le souvenir"
+  },
   "PrayerTime": {
     "ar": "أوقات الصلاة",
     "en": "Prayer Time",
@@ -230,6 +235,11 @@
     "ar": "الأذكار",
     "fr": "Azkar"
   },
+  "AzkarDoaa": {
+    "en": "Azkar and Doaa",
+    "ar": "اذكار وأدعية",
+    "fr": "Azkar et Doaa"
+  },
   "Quran": {
     "en": "Quran",
     "ar": "القرآن الكريم",
@@ -254,6 +264,11 @@
     "ar": "الإعدادت",
     "en": "Settings",
     "fr": "Paramètres"
+  },
+  "Duration": {
+    "ar": "المدة",
+    "en": "Duration",
+    "fr": "Durée"
   },
   "TimeForPrayer": {
     "ar": "حان الان موعد صلاة ",

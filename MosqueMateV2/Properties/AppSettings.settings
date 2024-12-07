@@ -20,14 +20,17 @@
     <Setting Name="NotificationEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="country" Type="System.String" Scope="User">
+    <Setting Name="Country" Type="System.String" Scope="User">
+      <Value Profile="(Default)">egypt</Value>
+    </Setting>
+    <Setting Name="City" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cairo</Value>
+    </Setting>
+    <Setting Name="Method" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="city" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="method" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="ContinueReading" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
     </Setting>
   </Settings>
 </SettingsFile>

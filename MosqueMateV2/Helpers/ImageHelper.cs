@@ -21,14 +21,9 @@ namespace MosqueMateV2.Helpers
         public static BitmapImage ConvertBitmapToBitmapImage(Bitmap bitmap)
         {
             using MemoryStream memoryStream = new();
-            // Save the Bitmap to the MemoryStream as PNG or JPEG (you can choose the format)
             bitmap.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
-
-            // Reset the position of the stream before loading into BitmapImage
             memoryStream.Position = 0;
-
-            // Create a BitmapImage and load it from the MemoryStream
-            BitmapImage bitmapImage = new BitmapImage();
+            BitmapImage bitmapImage = new();
             bitmapImage.BeginInit();
             bitmapImage.StreamSource = memoryStream;
             bitmapImage.EndInit();

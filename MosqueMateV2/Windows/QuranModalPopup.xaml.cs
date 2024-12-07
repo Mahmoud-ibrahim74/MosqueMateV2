@@ -1,4 +1,7 @@
-﻿using MosqueMateV2.Helpers;
+﻿using MosqueMateV2.Domain.Interfaces;
+using MosqueMateV2.Domain.Repositories;
+using MosqueMateV2.Helpers;
+using MosqueMateV2.Properties;
 using MosqueMateV2.Resources;
 using System.Windows;
 using System.Windows.Input;
@@ -13,66 +16,24 @@ namespace MosqueMateV2.Windows
     {
         int pageIndex { get; set; }
         QuranResource quranRes;
-        RxTaskManger rxTaskManger;
-
+        ISuraRepository _sura;
         public QuranModalPopup(int pageIndex)
         {
             InitializeComponent();
-            rxTaskManger = new();
             this.pageIndex = pageIndex;
             quranRes = new QuranResource();
-
-        }
-        private void NextPage()
-        {
-            if (imgViewer.ImageSource is not null)
-            {
-                if (pageIndex == 604)
-                    pageIndex = 1;
-
-
-                imgViewer.ImageSource = null;
-                pageIndex++;
-                var resByte = quranRes.GetPageContent(pageIndex);
-                imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
-            }
-        }
-        private void PrevPage()
-        {
-            if (imgViewer.ImageSource is not null)
-            {
-                if (pageIndex == 1)
-                    pageIndex = 604;
-
-
-                imgViewer.ImageSource = null;
-                pageIndex--;
-                var resByte = quranRes.GetPageContent(pageIndex);
-                imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
-            }
-
-        }
-        // Show the modal with popup animation
-        public void ShowModal()
-        {
-            this.Visibility = Visibility.Visible;  // Ensure the modal is visible
-            this.Opacity = 0;  // Start as invisible
-
-            // Apply the animation
-            var popupAnimation = (Storyboard)Resources["PopupAnimation"];
-            popupAnimation.Begin(this);
-            this.ShowDialog();
-
+            _sura = new SuraRepository();
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            AppSettings.Default[nameof(AppSettings.Default.ContinueReading)] = pageIndex;
+            AppSettings.Default.Save();
         }
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             var resByte = quranRes.GetPageContent(pageIndex);
             imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
+            ChangeWindowTitle();
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
@@ -91,12 +52,53 @@ namespace MosqueMateV2.Windows
                 this.Close();
             }
         }
-        private void zekrDescription_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void ChangeWindowTitle()
         {
+            var suraName = _sura.GetSuraById(pageIndex);
+            if (suraName is not null)
+                this.Title = suraName.name;
+        }
+        private void NextPage()
+        {
+            if (imgViewer.ImageSource is not null)
+            {
+                if (pageIndex == 604)
+                    pageIndex = 1;
+
+
+                imgViewer.ImageSource = null;
+                pageIndex++;
+                var resByte = quranRes.GetPageContent(pageIndex);
+                imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
+                ChangeWindowTitle();
+            }
+        }
+        private void PrevPage()
+        {
+            if (imgViewer.ImageSource is not null)
+            {
+                if (pageIndex == 1)
+                    pageIndex = 604;
+
+
+                imgViewer.ImageSource = null;
+                pageIndex--;
+                var resByte = quranRes.GetPageContent(pageIndex);
+                imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
+                ChangeWindowTitle();
+            }
 
         }
-        private void ResetCounter()
+        // Show the modal with popup animation
+        public void ShowModal()
         {
+            this.Visibility = Visibility.Visible;  // Ensure the modal is visible
+            this.Opacity = 0;  // Start as invisible
+
+            // Apply the animation
+            var popupAnimation = (Storyboard)Resources["PopupAnimation"];
+            popupAnimation.Begin(this);
+            this.ShowDialog();
 
         }
     }

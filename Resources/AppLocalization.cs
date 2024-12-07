@@ -2,7 +2,11 @@
 {
     public static class AppLocalization
     {
+        public static string VideoDirectoryDownload = Path.Combine(Path.GetTempPath(), "video.mp4");
+
+
         public const string AppName = "AppName";
+        public const string PlayListUrl = "https://www.youtube.com/playlist?list=PLsabgwJDKALr2-EPjszQZ3eTQQ1yl81ui";
         public const string AppAssemblyName = "MosqueMateV2";
         public const string WeclomeApp = "WeclomeApp";
         public const string Arabic = "ar";
@@ -20,8 +24,12 @@
         public const string itIsTime = "itIsTime";
         public const string ReminderTime = "ReminderTime";
         public const string Quran = "Quran";
+        public const string Duration = "Duration";
+        public const string ContinueReading = "ContinueReading";
         public const string Hadith = "Hadith";
         public const string Azkar = "Azkar";
+        public const string ZekrReminder = "ZekrReminder";
+        public const string AzkarDoaa = "AzkarDoaa";
         public const string PrayerLearning = "PrayerLearning";
         public const string PrayerLeft = "PrayerLeft";
         public const string Alert = "Alert";

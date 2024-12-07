@@ -62,10 +62,14 @@
 
   <ItemGroup>
     <PackageReference Include="HandyControl" Version="3.5.1" />
+    <PackageReference Include="LibVLCSharp" Version="3.9.1" />
+    <PackageReference Include="LibVLCSharp.WPF" Version="3.9.1" />
     <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
     <PackageReference Include="ModernWpfUI" Version="0.9.6" />
     <PackageReference Include="Notification.Wpf" Version="8.0.0" />
     <PackageReference Include="System.Reactive" Version="6.0.1" />
+    <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.21" />
+    <PackageReference Include="YoutubeExplode" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -125,6 +129,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
       <DependentUpon>AppSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Windows\PlayListViewer.xaml.cs">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\QuranModalPopup.xaml.cs">
       <SubType>Code</SubType>

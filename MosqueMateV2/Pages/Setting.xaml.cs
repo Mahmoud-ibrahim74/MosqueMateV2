@@ -209,9 +209,9 @@ namespace MosqueMateV2.Pages
             #region Set-Value-Settings
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Lang)] = lang;
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.TimeRemainder)] = remainderTime;
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.country)] = country;
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.city)] = city;
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.method)] = calc;
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Country)] = country;
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.City)] = city;
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Method)] = calc;
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.AutoStartUp)] = autoStart;
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Adhan)] = adhan;
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.AdhanFajr)] = adhanFajr;
@@ -240,9 +240,9 @@ namespace MosqueMateV2.Pages
 
                 this.hoursTxt.Text = Properties.AppSettings.Default.TimeRemainder.Hours.ToString();
                 this.minutesTxt.Text = Properties.AppSettings.Default.TimeRemainder.Minutes.ToString();
-                this.countryBox.SelectedValue = Properties.AppSettings.Default.country;
-                this.cityBox.SelectedValue = Properties.AppSettings.Default.city;
-                this.calcBox.SelectedValue = Properties.AppSettings.Default.method;
+                this.countryBox.SelectedValue = Properties.AppSettings.Default.Country;
+                this.cityBox.SelectedValue = Properties.AppSettings.Default.City;
+                this.calcBox.SelectedValue = Properties.AppSettings.Default.Method;
                 this.calcBox.ToolTip = App.LocalizationService[AppLocalization.calculationMethodToolTip];
 
                 this.arabicRadioBtn.IsChecked = Properties.AppSettings.Default.Lang == AppLocalization.Arabic;

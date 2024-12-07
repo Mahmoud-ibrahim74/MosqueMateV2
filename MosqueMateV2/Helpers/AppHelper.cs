@@ -87,5 +87,7 @@ namespace MosqueMateV2.Helpers
             // Close the current instance
             currentProcess.Kill();
         }
+
+        public static string PlayListName {  get; set; }
     }
 }
