@@ -1,4 +1,5 @@
 ﻿using MosqueMateV2.Resources;
+using System.IO;
 using YoutubeExplode;
 using YoutubeExplode.Common;
 using YoutubeExplode.Playlists;
@@ -17,7 +18,7 @@ namespace MosqueMateV2.Helpers
                 var streamManifestCollection = await youtube.Videos.Streams.GetManifestAsync(videoUrl);
                 var streamInfo = streamManifestCollection.GetVideoStreams().FirstOrDefault();
                 if (streamInfo is not null)
-                {               
+                {
                     await youtube.Videos.Streams.DownloadAsync(streamInfo, AppLocalization.VideoDirectoryDownload);
                     return streamInfo;
                 }

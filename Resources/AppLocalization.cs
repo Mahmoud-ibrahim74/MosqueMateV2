@@ -2,7 +2,7 @@
 {
     public static class AppLocalization
     {
-        public static string VideoDirectoryDownload = Path.Combine(Path.GetTempPath(), "video.mp4");
+        public static string VideoDirectoryDownload = Path.Combine(Path.GetTempPath(),AppAssemblyName, $"{Guid.NewGuid()}.mp4");
 
 
         public const string AppName = "AppName";

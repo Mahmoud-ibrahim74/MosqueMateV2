@@ -75,7 +75,9 @@ namespace MosqueMateV2.Windows
         }
         private void PlayVideo()
         {
-            _mediaPlayer?.Play(new Media(_libVLC, AppLocalization.VideoDirectoryDownload, FromType.FromPath));
+            _mediaPlayer?.Play(new Media(_libVLC,
+                AppLocalization.VideoDirectoryDownload,
+                FromType.FromPath));
 
         }
         private void PauseVideo()
