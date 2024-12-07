@@ -42,10 +42,11 @@ namespace MosqueMateV2.Windows
                          {
                              this.loader.Visibility = Visibility.Hidden;
                              this.gridContainer.IsEnabled = true;
+                             PlayVideo();
                          },
                          onError: () => // handle an error
                          {
-                             
+
                          });
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)
@@ -65,11 +66,19 @@ namespace MosqueMateV2.Windows
 
         private void playVideo_Click(object sender, RoutedEventArgs e)
         {
-            _mediaPlayer?.Play(new Media(_libVLC, AppLocalization.VideoDirectoryDownload, FromType.FromPath));
-
+            PlayVideo();
         }
 
         private void pauseVideo_Click(object sender, RoutedEventArgs e)
+        {
+            _mediaPlayer?.Pause();
+        }
+        private void PlayVideo()
+        {
+            _mediaPlayer?.Play(new Media(_libVLC, AppLocalization.VideoDirectoryDownload, FromType.FromPath));
+
+        }
+        private void PauseVideo()
         {
             _mediaPlayer?.Pause();
         }
