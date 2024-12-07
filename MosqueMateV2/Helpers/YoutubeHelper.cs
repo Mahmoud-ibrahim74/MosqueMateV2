@@ -12,14 +12,15 @@ namespace MosqueMateV2.Helpers
 
         public static async Task<IVideoStreamInfo> DownloadYouTubeVideoAsync(string videoUrl)
         {
+            var youtube = new YoutubeClient();
             try
             {
-                var youtube = new YoutubeClient();
                 var streamManifestCollection = await youtube.Videos.Streams.GetManifestAsync(videoUrl);
                 var streamInfo = streamManifestCollection.GetVideoStreams().FirstOrDefault();
                 if (streamInfo is not null)
                 {
-                    await youtube.Videos.Streams.DownloadAsync(streamInfo, AppLocalization.VideoDirectoryDownload);
+                    AppHelper.currentVideoFullPath = Path.Combine(AppLocalization.VideoDirectoryDownload, AppHelper.currentVideoFileName ?? "video.mp4");
+                    await youtube.Videos.Streams.DownloadAsync(streamInfo, AppHelper.currentVideoFullPath);
                     return streamInfo;
                 }
                 return null;
@@ -28,6 +29,10 @@ namespace MosqueMateV2.Helpers
             {
                 Console.WriteLine(ex.Message);
                 return null;
+            }
+            finally
+            {
+                  
             }
 
         }

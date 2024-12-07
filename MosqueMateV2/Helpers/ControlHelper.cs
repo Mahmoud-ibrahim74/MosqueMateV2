@@ -132,9 +132,11 @@ namespace MosqueMateV2.Helpers
 
                 // Create card content
                 StackPanel contentPanel = new();
+                AppHelper.currentVideoFileName = DateTime.Now.ToString("yyyy-MM-dd") + ".mp4";
                 TextBlock title = new()
                 {
                     Text = item.Title,
+                   
                     FontSize = 18,
                     FontWeight = FontWeights.UltraBold,
                     Margin = new Thickness(0, 0, 0, 8),
@@ -268,7 +270,7 @@ namespace MosqueMateV2.Helpers
             {
                 var modal = new PlayListViewer(selectedCard.Uid)
                 {
-
+                    
                 };
                 modal.ShowModal();
 

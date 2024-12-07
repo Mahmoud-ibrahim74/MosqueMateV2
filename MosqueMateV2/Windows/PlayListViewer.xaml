@@ -6,6 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vlc="clr-namespace:LibVLCSharp.WPF;assembly=LibVLCSharp.WPF"
         xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:ffme="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
         mc:Ignorable="d"
         Width="800"
         Height="800"
@@ -51,10 +52,13 @@
         </Grid.RowDefinitions>
         <!--#region Player -->
 
+
         <vlc:VideoView x:Name="vlcVideoView"
-                       HorizontalAlignment="Stretch"
-                       VerticalAlignment="Bottom"
-                       Grid.Row="0" />
+                       Width="640"
+                      Height="360" />
+      
+
+
         <hc:LoadingCircle x:Name="loader"
                           DotSpeed="4"
                           DotCount="8"

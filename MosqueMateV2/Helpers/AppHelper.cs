@@ -89,5 +89,7 @@ namespace MosqueMateV2.Helpers
         }
 
         public static string PlayListName {  get; set; }
+        public static string? currentVideoFileName {  get; set; }
+        public static string? currentVideoFullPath {  get; set; }
     }
 }
