@@ -1,10 +1,5 @@
 ﻿using MosqueMateV2.Resources;
 using MosqueMateV2.Service.IServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MosqueMateV2.Service.Services
 {

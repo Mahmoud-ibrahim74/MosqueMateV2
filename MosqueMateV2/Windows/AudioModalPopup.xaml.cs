@@ -54,7 +54,7 @@ namespace MosqueMateV2.Windows
         {
             this.suraName.Text = sura.GetSuraById(suraIndex).name ?? AppLocalization.DefaultSura;
             var link  = linkRepository.GetLinkByName(this.suraName.Text).url;
-            var audioName = fileServices.CombinePathWithTemp(this.suraName.Text + ".mp3");
+            var audioName = fileServices.CombinePathWithTemp(this.suraName.Text + AppLocalization.Mp3_exe);
             this.Title = this.suraName.Text;
             if (File.Exists(audioName))
             {

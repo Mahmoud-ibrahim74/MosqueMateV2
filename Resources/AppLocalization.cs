@@ -13,6 +13,7 @@
         public const string English = "en";
         public const string Frensh = "fr";
         public const string loaderPath = "pack://application:,,,/Assets/loader.gif";
+        public const string Mp3_exe = ".mp3";
 
         public const string IsNotExisted = "IsNotExisted";
         public const string Play = "Play";
