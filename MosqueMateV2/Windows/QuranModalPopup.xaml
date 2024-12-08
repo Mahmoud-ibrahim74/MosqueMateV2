@@ -57,7 +57,7 @@
                 Click="downloadAudio_Click"
                 hc:IconElement.Geometry="{StaticResource DownloadGeometry}"
                 Height="30"
-                Width="105"
+                Width="132"
                 VerticalAlignment="Top" />
         <!--#endregion-->
     </Grid>

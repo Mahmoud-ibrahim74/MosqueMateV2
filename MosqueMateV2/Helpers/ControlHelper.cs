@@ -172,9 +172,6 @@ namespace MosqueMateV2.Helpers
                 case ServiceTypeEnum.Adhkar:
                     OpenHadithModal(sender as Card);
                     break;
-                case ServiceTypeEnum.ProphertStories:
-                    OpenPlayListModal(sender as Card);
-                    break;
                 default:
                     break;
             }
@@ -260,18 +257,6 @@ namespace MosqueMateV2.Helpers
 
                 };
                 modal.ShowModal();
-            }
-        }
-        private static void OpenPlayListModal(Card selectedCard)
-        {
-            if (selectedCard is not null)
-            {
-                var modal = new PlayListViewer(selectedCard.Uid)
-                {
-                    
-                };
-                modal.ShowModal();
-
             }
         }
     }

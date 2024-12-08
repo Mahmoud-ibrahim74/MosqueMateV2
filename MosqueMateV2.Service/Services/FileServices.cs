@@ -27,11 +27,13 @@ namespace MosqueMateV2.Service.Services
             return Path.Combine(AppTempPath, Path.Combine(pathes));
         }
 
-
         ~FileServices()
         {
             if (Directory.Exists(this.AppTempPath))
+            {
                 Directory.Delete(this.AppTempPath);
+                Console.WriteLine("temp is cleaned");
+            }
         }
     }
 }
