@@ -46,16 +46,19 @@
     <Grid>
 
         <!--#region Description -->
-
-        <hc:ImageViewer x:Name="imgViewer" 
+        <hc:ImageViewer x:Name="imgViewer"
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Stretch"
-                        Background="{DynamicResource SecondaryRegionBrush}"
-                         />
-
-
-
-
+                        Background="{DynamicResource SecondaryRegionBrush}" />
+        <Button x:Name="downloadAudio"
+                Style="{StaticResource ButtonPrimary}"
+                Margin="10,10,0,0"
+                HorizontalAlignment="Left"
+                Click="downloadAudio_Click"
+                hc:IconElement.Geometry="{StaticResource DownloadGeometry}"
+                Height="30"
+                Width="105"
+                VerticalAlignment="Top" />
         <!--#endregion-->
     </Grid>
 </Window>

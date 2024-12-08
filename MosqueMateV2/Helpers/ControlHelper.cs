@@ -3,12 +3,10 @@ using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Extensions;
 using MosqueMateV2.Windows;
-using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using YoutubeExplode.Playlists;
 
 namespace MosqueMateV2.Helpers
 {
@@ -105,64 +103,64 @@ namespace MosqueMateV2.Helpers
             }
             grid.Children.Add(cardPanel);
         }
-        public static void GenerateMaterialDesignCardsPlayList(this Grid grid, IReadOnlyList<PlaylistVideo> playlists)
+        public static void GenerateMaterialDesignCardsPlayList(this Grid grid, dynamic playlists)
         {
-            WrapPanel cardPanel = new()
-            {
-                Margin = new Thickness(10),
-                HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Top
-            };
+            //WrapPanel cardPanel = new()
+            //{
+            //    Margin = new Thickness(10),
+            //    HorizontalAlignment = HorizontalAlignment.Center,
+            //    VerticalAlignment = VerticalAlignment.Top
+            //};
 
-            foreach (var item in playlists)
-            {
-                Card card = new()
-                {
-                    Uid = item.Url,
-                    Width = 600,
-                    Height = 150,
-                    Margin = new Thickness(10),
-                    Background = CreateGradientBackground(),
-                    Padding = new Thickness(16),
-                    Foreground = new SolidColorBrush(Colors.White),
-                    Cursor = Cursors.Hand,
-                    FlowDirection = FlowDirection.RightToLeft
-                };
-                card.MouseLeftButtonDown += (sender, e) => Card_MouseLeftButtonDown(sender, e, ServiceTypeEnum.ProphertStories);
+            //foreach (var item in playlists)
+            //{
+            //    Card card = new()
+            //    {
+            //        Uid = item.Url,
+            //        Width = 600,
+            //        Height = 150,
+            //        Margin = new Thickness(10),
+            //        Background = CreateGradientBackground(),
+            //        Padding = new Thickness(16),
+            //        Foreground = new SolidColorBrush(Colors.White),
+            //        Cursor = Cursors.Hand,
+            //        FlowDirection = FlowDirection.RightToLeft
+            //    };
+            //    card.MouseLeftButtonDown += (sender, e) => Card_MouseLeftButtonDown(sender, e, ServiceTypeEnum.ProphertStories);
 
-                // Create card content
-                StackPanel contentPanel = new();
-                AppHelper.currentVideoFileName = DateTime.Now.ToString("yyyy-MM-dd") + ".mp4";
-                TextBlock title = new()
-                {
-                    Text = item.Title,
+            //    // Create card content
+            //    StackPanel contentPanel = new();
+            //    AppHelper.currentVideoFileName = DateTime.Now.ToString("yyyy-MM-dd") + ".mp4";
+            //    TextBlock title = new()
+            //    {
+            //        Text = item.Title,
                    
-                    FontSize = 18,
-                    FontWeight = FontWeights.UltraBold,
-                    Margin = new Thickness(0, 0, 0, 8),
-                    TextWrapping = TextWrapping.WrapWithOverflow,
-                    FlowDirection = FlowDirection.RightToLeft,
-                    TextAlignment = TextAlignment.Center,
-                    Padding = new Thickness(0, 10, 0, 0),
-                    LineHeight = 30,
-                };
-                TextBlock duration = new()
-                {
-                    Text = "".AppendDuration(item.Duration ?? TimeSpan.MinValue),
-                    FontSize = 18,
-                    FontWeight = FontWeights.UltraBold,
-                    Margin = new Thickness(0, 10, 0, 8),
-                    TextWrapping = TextWrapping.WrapWithOverflow,
-                    FlowDirection = FlowDirection.RightToLeft,
-                    TextAlignment = TextAlignment.Center,
-                    LineHeight = 30,
-                };
-                contentPanel.Children.Add(title);
-                contentPanel.Children.Add(duration);
-                card.Content = contentPanel;
-                cardPanel.Children.Add(card);
-            }
-            grid.Children.Add(cardPanel);
+            //        FontSize = 18,
+            //        FontWeight = FontWeights.UltraBold,
+            //        Margin = new Thickness(0, 0, 0, 8),
+            //        TextWrapping = TextWrapping.WrapWithOverflow,
+            //        FlowDirection = FlowDirection.RightToLeft,
+            //        TextAlignment = TextAlignment.Center,
+            //        Padding = new Thickness(0, 10, 0, 0),
+            //        LineHeight = 30,
+            //    };
+            //    TextBlock duration = new()
+            //    {
+            //        Text = "".AppendDuration(item.Duration ?? TimeSpan.MinValue),
+            //        FontSize = 18,
+            //        FontWeight = FontWeights.UltraBold,
+            //        Margin = new Thickness(0, 10, 0, 8),
+            //        TextWrapping = TextWrapping.WrapWithOverflow,
+            //        FlowDirection = FlowDirection.RightToLeft,
+            //        TextAlignment = TextAlignment.Center,
+            //        LineHeight = 30,
+            //    };
+            //    contentPanel.Children.Add(title);
+            //    contentPanel.Children.Add(duration);
+            //    card.Content = contentPanel;
+            //    cardPanel.Children.Add(card);
+            //}
+            //grid.Children.Add(cardPanel);
         }
         private static void Card_MouseLeftButtonDown(object sender, MouseButtonEventArgs e, ServiceTypeEnum service)
         {

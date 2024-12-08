@@ -31,6 +31,7 @@ namespace MosqueMateV2.Windows
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.downloadAudio.Content = App.LocalizationService[AppLocalization.DownloadAudio];
             var resByte = quranRes.GetPageContent(pageIndex);
             imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
             ChangeWindowTitle();
@@ -100,6 +101,12 @@ namespace MosqueMateV2.Windows
             popupAnimation.Begin(this);
             this.ShowDialog();
 
+        }
+
+        private void downloadAudio_Click(object sender, RoutedEventArgs e)
+        {
+            var modal = new AudioModalPopup("https://www.youtube.com/watch?v=pUb9EW770d0&ab_channel=Alafasy", 1);
+            modal.ShowModal();
         }
     }
 }

@@ -42,7 +42,7 @@ namespace MosqueMateV2.Windows
             //             {
             //                 this.loader.Visibility = Visibility.Hidden;
             //                 this.gridContainer.IsEnabled = true;
-            //                 videoPlayer.Source = new Uri(AppHelper.currentVideoFullPath);
+            //                 PlayVideo();
             //             },
             //             onError: () => // handle an error
             //             {
@@ -51,6 +51,8 @@ namespace MosqueMateV2.Windows
 
             AppHelper.currentVideoFullPath = Path.Combine(AppLocalization.VideoDirectoryDownload,
                 AppHelper.currentVideoFileName ?? "video.mp4");
+
+
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {

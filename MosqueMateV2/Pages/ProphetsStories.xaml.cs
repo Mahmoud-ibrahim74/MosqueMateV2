@@ -26,20 +26,20 @@ namespace MosqueMateV2.Pages
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var main = Application.Current.MainWindow;
-            this.loader.Visibility = Visibility.Visible;
-            rxTaskManger.RunBackgroundTaskOnUI(
-                 backgroundTask: () => YoutubeHelper.GetPlayListAsync(AppLocalization.PlayListUrl),
-                 onSuccess: result =>
-                 {
-                     GridCardContainer.GenerateMaterialDesignCardsPlayList(result);
-                     this.loader.Visibility = Visibility.Hidden;
-                 },
-                 retryNumber: 2,
-                 () => // handle an error
-                 {
-                     this.loader.Visibility = Visibility.Hidden;
-                 });
+           // var main = Application.Current.MainWindow;
+           // this.loader.Visibility = Visibility.Visible;
+           //rxTaskManger.RunBackgroundTaskOnUI(
+           //      backgroundTask: () => YoutubeHelper.GetPlayListAsync(AppLocalization.PlayListUrl),
+           //      onSuccess: result =>
+           //      {
+           //          GridCardContainer.GenerateMaterialDesignCardsPlayList(result);
+           //          this.loader.Visibility = Visibility.Hidden;
+           //      },
+           //      retryNumber: 2,
+           //      () => // handle an error
+           //      {
+           //          this.loader.Visibility = Visibility.Hidden;
+           //      });
         }
         private async void searchOnAdhan_Click(object sender, RoutedEventArgs e)
         {

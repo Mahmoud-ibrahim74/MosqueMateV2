@@ -61,6 +61,7 @@
         public const string calculationMethod = "calculationMethod";
         public const string autoStartUp = "autoStartUp";
         public const string Muezzin = "Muezzin";
+        public const string DownloadAudio = "DownloadAudio";
         public const string adhanFajr = "adhanFajr";
         public const string RestartAppWarning = "RestartAppWarning";
         public const string notificationDesc = "notificationDesc";

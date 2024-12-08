@@ -29,6 +29,11 @@
     "ar": "نجاح",
     "fr": "Succès"
   },
+  "DownloadAudio": {
+    "en": "Download Audio",
+    "ar": "تنزيل الصوت",
+    "fr": "Télécharger l'audio"
+  },
   "SavedSucsessfully": {
     "en": "Saved Sucsessfully",
     "ar": "تم الحفظ بنجاح",
