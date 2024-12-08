@@ -54,7 +54,8 @@
                Grid.Row="1" />
         <!--#endregion-->
 
-        <Grid Grid.Row="0">
+        <Grid x:Name="gridTools"
+              Grid.Row="0">
 
             <!--#region Title-Area -->
             <TextBlock x:Name="suraName"

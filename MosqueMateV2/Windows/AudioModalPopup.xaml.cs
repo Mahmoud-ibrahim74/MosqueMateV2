@@ -93,8 +93,8 @@ namespace MosqueMateV2.Windows
         {
             playAudio.IsEnabled = true;
             stopAudio.IsEnabled = true;
-            loader.Visibility = Visibility.Collapsed;
-            loadingTxt.Visibility = Visibility.Collapsed;   
+            gridTools.Children.Remove(loader);
+            gridTools.Children.Remove(loadingTxt);
         }
         private void DisableControls()
         {
