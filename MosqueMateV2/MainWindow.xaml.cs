@@ -1,6 +1,5 @@
 ﻿using ModernWpf.Controls;
 using MosqueMateV2.DataAccess.Models;
-using MosqueMateV2.Domain.APIService;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Pages;
 using MosqueMateV2.Resources;

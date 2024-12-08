@@ -24,6 +24,7 @@
         public const string itIsTime = "itIsTime";
         public const string ReminderTime = "ReminderTime";
         public const string Quran = "Quran";
+        public const string DefaultSura = "الفاتحة";
         public const string Duration = "Duration";
         public const string ContinueReading = "ContinueReading";
         public const string Hadith = "Hadith";
