@@ -24,6 +24,11 @@
     "ar": "تنبيه",
     "fr": "alerte"
   },
+  "Connection": {
+    "en": "Connecting to Server , please wait ....",
+    "ar": "جاري الإتصال بالخادم , برجاء الإنتظار",
+    "fr": "Connexion au serveur, veuillez patienter"
+  },
   "Sucsess": {
     "en": "Sucsess",
     "ar": "نجاح",

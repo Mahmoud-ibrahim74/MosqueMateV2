@@ -34,6 +34,7 @@
         public const string PrayerLeft = "PrayerLeft";
         public const string Alert = "Alert";
         public const string Language = "Language";
+        public const string Connection = "Connection";
 
         public const string NextPrayer = "NextPrayer";
         public const string SomethingWrong = "SomethingWrong";

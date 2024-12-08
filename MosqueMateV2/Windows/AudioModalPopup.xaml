@@ -115,16 +115,20 @@
                                          Width="29"></materialDesign:PackIcon>
             </Button>
             <!--#endregion-->
-
+            <hc:HighlightTextBlock x:Name="loadingTxt"
+                                   TextAlignment="Center"
+                Visibility="Collapsed"
+                Margin="97,174,77,350"
+                                   />
             <hc:LoadingCircle x:Name="loader"
                               DotSpeed="4"
                               DotCount="8"
                               Width="150"
                               Height="150"
                               HorizontalAlignment="Left"
-                              VerticalAlignment="Center"
+                              VerticalAlignment="Top"
                               Visibility="Collapsed"
-                              Margin="216,0,0,0" />
+                              Margin="216,267,0,0" />
 
         </Grid>
     </Grid>

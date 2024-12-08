@@ -15,24 +15,26 @@ namespace MosqueMateV2.Windows
     public partial class QuranModalPopup : Window
     {
         int pageIndex { get; set; }
+        int index { get; set; }
         QuranResource quranRes;
         ISuraRepository _sura;
         public QuranModalPopup(int pageIndex)
         {
             InitializeComponent();
-            this.pageIndex = pageIndex;
+            this.index = pageIndex;
+            this.pageIndex = pageIndex; 
             quranRes = new QuranResource();
             _sura = new SuraRepository();
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            AppSettings.Default[nameof(AppSettings.Default.ContinueReading)] = pageIndex;
+            AppSettings.Default[nameof(AppSettings.Default.ContinueReading)] = index;
             AppSettings.Default.Save();
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             this.downloadAudio.Content = App.LocalizationService[AppLocalization.DownloadAudio];
-            var resByte = quranRes.GetPageContent(pageIndex);
+            var resByte = quranRes.GetPageContent(index);
             imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
             ChangeWindowTitle();
         }
@@ -55,7 +57,7 @@ namespace MosqueMateV2.Windows
         }
         private void ChangeWindowTitle()
         {
-            var suraName = _sura.GetSuraById(pageIndex);
+            var suraName = _sura.GetSuraById(index);
             if (suraName is not null)
                 this.Title = suraName.name;
         }
@@ -63,13 +65,13 @@ namespace MosqueMateV2.Windows
         {
             if (imgViewer.ImageSource is not null)
             {
-                if (pageIndex == 604)
-                    pageIndex = 1;
+                if (index == 604)
+                    index = 1;
 
 
                 imgViewer.ImageSource = null;
-                pageIndex++;
-                var resByte = quranRes.GetPageContent(pageIndex);
+                index++;
+                var resByte = quranRes.GetPageContent(index);
                 imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
                 ChangeWindowTitle();
             }
@@ -78,13 +80,13 @@ namespace MosqueMateV2.Windows
         {
             if (imgViewer.ImageSource is not null)
             {
-                if (pageIndex == 1)
-                    pageIndex = 604;
+                if (index == 1)
+                    index = 604;
 
 
                 imgViewer.ImageSource = null;
-                pageIndex--;
-                var resByte = quranRes.GetPageContent(pageIndex);
+                index--;
+                var resByte = quranRes.GetPageContent(index);
                 imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
                 ChangeWindowTitle();
             }
@@ -105,7 +107,7 @@ namespace MosqueMateV2.Windows
 
         private void downloadAudio_Click(object sender, RoutedEventArgs e)
         {
-            var modal = new AudioModalPopup("https://www.youtube.com/watch?v=pUb9EW770d0&ab_channel=Alafasy", 1);
+            var modal = new AudioModalPopup(pageIndex);
             modal.ShowModal();
         }
     }

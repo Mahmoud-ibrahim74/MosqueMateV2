@@ -1,6 +1,7 @@
 ﻿using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
+using MosqueMateV2.Resources;
 using MosqueMateV2.Service.IServices;
 using MosqueMateV2.Service.Services;
 using System.IO;
@@ -14,22 +15,23 @@ namespace MosqueMateV2.Windows
     /// </summary>
     public partial class AudioModalPopup : Window
     {
-        string url { get; set; }
         int suraIndex { get; set; }
         RxTaskManger rxTaskManger { get; set; }
         ISuraRepository sura;
+        ILinkRepository linkRepository { get; set; }
         IYoutubeService youtubeService { get; set; }
         IFileServices fileServices { get; set; }
         INAudioService audioService { get; set; }
-        public AudioModalPopup(string url, int suraIndex)
+        
+        public AudioModalPopup(int suraIndex)
         {
             InitializeComponent();
-            this.url = url;
             this.suraIndex = suraIndex;
             rxTaskManger = new();
             sura = new SuraRepository();
             youtubeService = new YoutubeService();
             fileServices = new FileServices();
+            linkRepository = new LinkRepository();
         }
 
         // Show the modal with popup animation
@@ -51,6 +53,7 @@ namespace MosqueMateV2.Windows
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             this.suraName.Text = sura.GetSuraById(suraIndex).name;
+            var link  = linkRepository.GetLinkByName(suraName.Text).url;
             var audioName = fileServices.CombinePathWithTemp(suraName.Text + ".mp3");
             this.Title = this.suraName.Text;
             if (File.Exists(audioName))
@@ -62,7 +65,7 @@ namespace MosqueMateV2.Windows
             {
                 DisableControls();
                 rxTaskManger.RunBackgroundTaskOnUI(
-                             backgroundTask: () => youtubeService.DownloadYouTubeAudioAsync(url, audioName),
+                             backgroundTask: () => youtubeService.DownloadYouTubeAudioAsync(link, audioName),
                              onSuccess: result =>
                              {
                                  audioService = new NAudioService(audioName);
@@ -91,13 +94,15 @@ namespace MosqueMateV2.Windows
             playAudio.IsEnabled = true;
             stopAudio.IsEnabled = true;
             loader.Visibility = Visibility.Collapsed;
+            loadingTxt.Visibility = Visibility.Collapsed;   
         }
         private void DisableControls()
         {
             playAudio.IsEnabled = false;
             stopAudio.IsEnabled = false;
             loader.Visibility = Visibility.Visible;
-
+            this.loadingTxt.Text = App.LocalizationService[AppLocalization.Connection];
+            this.loadingTxt.Visibility = Visibility.Visible;
         }
     }
 }

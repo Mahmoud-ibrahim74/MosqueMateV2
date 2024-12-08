@@ -1,4 +1,5 @@
 ﻿using MosqueMateV2.Domain.DTOs;
+using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Resources;
 using Newtonsoft.Json;
@@ -9,7 +10,6 @@ namespace MosqueMateV2.Domain.Repositories
     public class SuraRepository: ISuraRepository
     {
         private readonly List<DTOSuraNames> _suraObj;
-
         public SuraRepository()
         {
             if (FileResources.countries.Length == 0)
@@ -29,7 +29,6 @@ namespace MosqueMateV2.Domain.Repositories
         public DTOSuraNames GetSuraById(int id)
         {
             return _suraObj.FirstOrDefault(x => x.pageIndex == id);
-
         }
     }
 }
