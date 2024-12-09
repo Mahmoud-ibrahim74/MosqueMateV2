@@ -17,6 +17,7 @@
 
         public const string IsNotExisted = "IsNotExisted";
         public const string Play = "Play";
+        public const string Stop = "Stop";
         public const int AnimationDuration = 2;
         public const int NotificatonDuration = 2;
         public const string Pause = "Pause";

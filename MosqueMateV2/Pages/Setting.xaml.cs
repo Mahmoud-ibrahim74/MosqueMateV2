@@ -57,7 +57,7 @@ namespace MosqueMateV2.Pages
 
             #region BackgroundWorker-Area
             rxTaskManger.RunBackgroundTaskOnUI(
-                         backgroundTask: () => jsonCountry.GetAllCountiresAsync(),
+                         backgroundTask: token => jsonCountry.GetAllCountiresAsync(),
                          onSuccess: result =>
                          {
                              this.countryBox.IsEnabled = true;
@@ -70,7 +70,7 @@ namespace MosqueMateV2.Pages
 
                          });
             rxTaskManger.RunBackgroundTaskOnUI(
-                         backgroundTask: () => resourceManager.GetAllResourcesInfoFromResxAsync(),
+                         backgroundTask: token => resourceManager.GetAllResourcesInfoFromResxAsync(),
                          onSuccess: result =>
                          {
                              this.adhanBox.IsEnabled = true;
@@ -90,7 +90,7 @@ namespace MosqueMateV2.Pages
 
                          });
             rxTaskManger.RunBackgroundTaskOnUI(
-                         backgroundTask: () => LoadProfile(),
+                         backgroundTask: token => LoadProfile(),
                          onSuccess: result =>
                          {
 

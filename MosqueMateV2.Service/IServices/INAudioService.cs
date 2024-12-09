@@ -9,6 +9,7 @@ namespace MosqueMateV2.Service.IServices
 {
     public interface INAudioService:IDisposable
     {
+        public bool IsPlaying { get; }
         public void PlayAudio();
         public void PauseAudio();
         public void StopAudio();

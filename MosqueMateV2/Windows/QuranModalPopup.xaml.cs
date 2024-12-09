@@ -3,9 +3,13 @@ using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Properties;
 using MosqueMateV2.Resources;
+using MosqueMateV2.Service.IServices;
+using MosqueMateV2.Service.Services;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
+using static System.Windows.Forms.LinkLabel;
 
 namespace MosqueMateV2.Windows
 {
@@ -15,28 +19,53 @@ namespace MosqueMateV2.Windows
     public partial class QuranModalPopup : Window
     {
         int pageIndex { get; set; }
+        string suraName { get; set; }   
         int index { get; set; }
         QuranResource quranRes;
         ISuraRepository _sura;
+        RxTaskManger rxTaskManger { get; set; }
+        ILinkRepository linkRepository { get; set; }
+        IYoutubeService youtubeService { get; set; }
+        IFileServices fileServices { get; set; }
+        INAudioService audioService { get; set; }
+
         public QuranModalPopup(int pageIndex)
         {
             InitializeComponent();
             this.index = pageIndex;
-            this.pageIndex = pageIndex; 
+            this.pageIndex = pageIndex;
+            rxTaskManger = new RxTaskManger();
             quranRes = new QuranResource();
             _sura = new SuraRepository();
+            youtubeService = new YoutubeService();
+            fileServices = new FileServices();
+            linkRepository = new LinkRepository();
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             AppSettings.Default[nameof(AppSettings.Default.ContinueReading)] = index;
             AppSettings.Default.Save();
+
+
+            if (rxTaskManger._cancellationTokenSource is not null && !rxTaskManger._cancellationTokenSource.IsCancellationRequested)
+                rxTaskManger.StopBackgroundTask();
+
+            if (audioService is not null)
+                audioService?.Dispose();
+
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             this.downloadAudio.Content = App.LocalizationService[AppLocalization.DownloadAudio];
             var resByte = quranRes.GetPageContent(index);
             imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
+            playAudio.ToolTip = App.LocalizationService[AppLocalization.Play];
+            stopAudio.ToolTip = App.LocalizationService[AppLocalization.Stop];
+            connectionTxt.Text = App.LocalizationService[AppLocalization.Connection];
+
             ChangeWindowTitle();
+            LoadData();
+
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
@@ -59,7 +88,10 @@ namespace MosqueMateV2.Windows
         {
             var suraName = _sura.GetSuraById(index);
             if (suraName is not null)
+            {
                 this.Title = suraName.name;
+                this.suraName = suraName.name;
+            }
         }
         private void NextPage()
         {
@@ -107,8 +139,62 @@ namespace MosqueMateV2.Windows
 
         private void downloadAudio_Click(object sender, RoutedEventArgs e)
         {
-            var modal = new AudioModalPopup(pageIndex);
-            modal.ShowModal();
+            DownloadAudio();
+        }
+
+        private void playAudio_Click(object sender, RoutedEventArgs e)
+        {
+            audioService?.PlayAudio();
+        }
+        private void stopAudio_Click(object sender, RoutedEventArgs e)
+        {
+            audioService?.StopAudio();
+        }
+        private void DownloadAudio()
+        {
+            this.loader.Visibility = Visibility.Visible;
+            this.connectionTxt.Visibility = Visibility.Visible; 
+            this.IsEnabled = false;
+            this.imgViewer.Opacity = 0.2;
+            var link = linkRepository.GetLinkByName(this.suraName).url;
+            var audioName = fileServices.CombinePathWithTemp(this.suraName + AppLocalization.Mp3_exe);
+            rxTaskManger.RunBackgroundTaskOnUI(
+                      backgroundTask: token => youtubeService.DownloadYouTubeAudioAsync(link, audioName),
+                      onSuccess: result =>
+                      {
+                          if (File.Exists(audioName))
+                          {
+                              audioService?.Dispose();
+                              audioService = new NAudioService(audioName);
+                              downloadAudio.Visibility = Visibility.Collapsed;
+                              playAudio.Visibility = Visibility.Visible;
+                              stopAudio.Visibility = Visibility.Visible;
+                              gridContainer.Children.Remove(loader);
+                              gridContainer.Children.Remove(connectionTxt);    
+                              this.IsEnabled = true;
+                              this.imgViewer.Opacity = 1;
+
+                          }
+                      },
+                      retryNumber: 2,
+                      () => // handle an error
+                      {
+
+                      });
+        }
+
+        private void LoadData()
+        {
+            var suraName = _sura.GetSuraById(pageIndex).name ?? AppLocalization.DefaultSura;
+            var link = linkRepository.GetLinkByName(suraName).url;
+            var audioName = fileServices.CombinePathWithTemp(suraName + AppLocalization.Mp3_exe);
+            if (File.Exists(audioName))
+            {
+                audioService = new NAudioService(audioName);
+                downloadAudio.Visibility = Visibility.Collapsed;
+                playAudio.Visibility = Visibility.Visible;
+                stopAudio.Visibility = Visibility.Visible;
+            }
         }
     }
 }

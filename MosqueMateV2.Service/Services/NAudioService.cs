@@ -3,11 +3,14 @@ using NAudio.Wave;
 
 namespace MosqueMateV2.Service.Services
 {
-    public class NAudioService: INAudioService
+    public class NAudioService : INAudioService
     {
-        string _audioFile {  get; set; }
+        string _audioFile { get; set; }
         AudioFileReader audioFileReader { get; set; }
-        WaveOutEvent waveOutEvent { get; set; } 
+        WaveOutEvent waveOutEvent { get; set; }
+
+        public bool IsPlaying { get; private set; }
+
         private readonly string[] _allowedExtension = [".mp3", ".wav"];
         public NAudioService(string audioFile)
         {
@@ -26,6 +29,7 @@ namespace MosqueMateV2.Service.Services
         public void PlayAudio()
         {
             waveOutEvent?.Play();
+            IsPlaying = true;
         }
         public void PauseAudio()
         {
@@ -38,8 +42,10 @@ namespace MosqueMateV2.Service.Services
 
         public void Dispose()
         {
-            audioFileReader?.Dispose();  
+            StopAudio();
+            audioFileReader?.Dispose();
             waveOutEvent?.Dispose();
+            IsPlaying = false;
         }
     }
 }

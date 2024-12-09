@@ -10,7 +10,6 @@
         Height="800"
         Topmost="False"
         KeyDown="Window_KeyDown"
-        FontFamily="{StaticResource ModernPro}"
         ResizeMode="NoResize"
         ShowInTaskbar="True"
         WindowStartupLocation="CenterScreen"
@@ -43,13 +42,15 @@
         </Storyboard>
     </Window.Resources>
     <!-- Modal Content -->
-    <Grid>
+    <Grid x:Name="gridContainer">
 
         <!--#region Description -->
+
         <hc:ImageViewer x:Name="imgViewer"
                         HorizontalAlignment="Stretch"
-                        VerticalAlignment="Stretch"
-                        Background="{DynamicResource SecondaryRegionBrush}" />
+                        BorderBrush="{x:Null}"
+                        VerticalAlignment="Stretch" />
+
         <Button x:Name="downloadAudio"
                 Style="{StaticResource ButtonPrimary}"
                 Margin="10,10,0,0"
@@ -57,8 +58,86 @@
                 Click="downloadAudio_Click"
                 hc:IconElement.Geometry="{StaticResource DownloadGeometry}"
                 Height="30"
-                Width="132"
+                Width="201"
                 VerticalAlignment="Top" />
         <!--#endregion-->
+
+        <Button x:Name="playAudio"
+                Style="{StaticResource ButtonPrimary}"
+                Margin="124,59,0,0"
+                VerticalAlignment="Top"
+                Height="44"
+                Width="87"
+                Click="playAudio_Click"
+                Visibility="Collapsed"
+                HorizontalAlignment="Left">
+            <materialDesign:PackIcon Kind="PlayCircleFilled"
+                                     Height="22"
+                                     Width="29"></materialDesign:PackIcon>
+        </Button>
+        <Button x:Name="stopAudio"
+                Margin="10,59,0,0"
+                Style="{StaticResource ButtonPrimary}"
+                VerticalAlignment="Top"
+                Height="44"
+                Width="87"
+                Click="stopAudio_Click"
+                Background="#FF3F58FF"
+                Visibility="Collapsed"
+                HorizontalAlignment="Left">
+            <materialDesign:PackIcon Kind="StopCircle"
+                                     Height="22"
+                                     Width="29"></materialDesign:PackIcon>
+        </Button>
+        <hc:HighlightTextBlock x:Name="connectionTxt"
+                               Text="ddsdsds"
+                               TextAlignment="Center"
+                               FontSize="20"
+                               FontWeight="UltraBold"
+                               Margin="230,266,230,491"
+                               Visibility="Collapsed"></hc:HighlightTextBlock>
+        <hc:LoadingCircle x:Name="loader"
+                          DotSpeed="5"
+                          DotCount="5"
+                          Width="150"
+                          Height="150"
+                          Panel.ZIndex="2"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Visibility="Collapsed" />
+        
+        <hc:Card  MaxWidth="240"
+                  BorderThickness="0"
+                  Effect="{DynamicResource EffectShadow2}"
+                  Margin="8">
+            <!--Card content part-->
+            <Border CornerRadius="4,4,0,0"
+                    Width="160"
+                    Height="160">
+                <TextBlock TextWrapping="Wrap"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="Test" />
+            </Border>
+            <!--Card footer part-->
+            <hc:Card.Footer>
+                <StackPanel Margin="10"
+                            Width="160">
+                    <!--Card first-level content-->
+                    <TextBlock TextWrapping="NoWrap"
+                               Style="{DynamicResource TextBlockLargeBold}"
+                               TextTrimming="CharacterEllipsis"
+                               Text="Large title"
+                               HorizontalAlignment="Left" />
+                    <!--Secondary content of Card-->
+                    <TextBlock TextWrapping="NoWrap"
+                               Style="{DynamicResource TextBlockDefault}"
+                               TextTrimming="CharacterEllipsis"
+                               Text="Description information"
+                               Margin="0,6,0,0"
+                               HorizontalAlignment="Left" />
+                </StackPanel>
+            </hc:Card.Footer>
+        </hc:Card>
     </Grid>
 </Window>

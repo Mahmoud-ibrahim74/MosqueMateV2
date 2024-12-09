@@ -9,7 +9,6 @@
         Width="600"
         Height="700"
         Topmost="True"
-        FontFamily="{StaticResource ModernPro}"
         ResizeMode="NoResize"
         ShowInTaskbar="True"
         WindowStartupLocation="CenterScreen"

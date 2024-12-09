@@ -75,7 +75,7 @@ namespace MosqueMateV2.Windows
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             rxTaskManger.RunBackgroundTaskOnUI(
-                         backgroundTask: () => jsonAdhkar.GetZekrByIdAsync(zekr_id),
+                         backgroundTask: token => jsonAdhkar.GetZekrByIdAsync(zekr_id),
                          onSuccess: result =>
                          {
                              _zekr = result;

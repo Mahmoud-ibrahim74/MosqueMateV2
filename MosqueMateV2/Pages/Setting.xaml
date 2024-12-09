@@ -95,10 +95,10 @@
                   Margin="5,72,0,0"
                   Grid.Column="1"
                   IsEditable="True"
-                  FontSize="15"
-                  FontWeight="UltraBold"
+                  FontSize="13"
+                  FontWeight="DemiBold"
                   Width="262"
-                  Height="33"
+                  Height="37"
                   SelectionChanged="countryBox_SelectionChanged" />
         <Label Grid.Column="1"
                Grid.Row="0"
@@ -118,10 +118,10 @@
                   Grid.Column="1"
                   Grid.Row="1"
                   IsEditable="True"
-                  FontSize="15"
-                  FontWeight="UltraBold"
+                  FontSize="13"
+                  FontWeight="DemiBold"
                   Width="262"
-                  Height="33"
+                  Height="37"
                   Margin="5,34,0,0" />
         <!--#endregion-->
 
@@ -169,10 +169,10 @@
                   Grid.Column="1"
                   Grid.Row="2"
                   IsEditable="True"
-                  FontSize="15"
-                  FontWeight="UltraBold"
+                  FontSize="13"
+                  FontWeight="DemiBold"
                   Width="262"
-                  Height="33"
+                  Height="37"
                   Margin="5,34,0,0"
                   SelectionChanged="calcBox_SelectionChanged" />
         <!--#endregion-->
@@ -207,9 +207,9 @@
                   Margin="-25,72,0,0"
                   Grid.Row="3"
                   Width="275"
-                   FontSize="15"
-                  FontWeight="UltraBold"
-                  Height="33" />
+                  FontSize="13"
+                  FontWeight="DemiBold"
+                  Height="37" />
         <!--#endregion-->
 
         <!--#region AdhanFajrSound-Area -->
@@ -223,10 +223,10 @@
                   Margin="0,72,0,0"
                   Grid.Row="3"
                   Width="257"
-                  Height="33"
+                  Height="37"
                   Grid.Column="1"
-                  FontSize="15"
-                  FontWeight="UltraBold"
+                  FontSize="13"
+                  FontWeight="DemiBold"
                   HorizontalAlignment="Center" />
         <!--#endregion-->
 

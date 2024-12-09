@@ -9,7 +9,6 @@
          mc:Ignorable="d"
          Title="MainWindow"
          ui:ThemeManager.RequestedTheme="Default"
-         FontFamily="{StaticResource ModernPro}"
          Loaded="Window_Loaded">
     <Grid x:Name="GridContainer"
           HorizontalAlignment="Stretch"
@@ -104,9 +103,9 @@
             <!--#region ButtonsBottom -->
             <Button x:Name="QuranBtn"
                     Grid.Column="0"
-                    Width="80"
+                    Width="130"
                     Height="60"
-                    Margin="107,2,0,0"
+                    Margin="30,2,0,0"
                     VerticalAlignment="Top"
                     Cursor="Hand" Click="QuranBtn_Click">
                 <Button.Template>
@@ -132,9 +131,9 @@
             </Button>
             <Button x:Name="tasbihBtn"
                     Grid.Column="2"
-                    Width="80"
+                    Width="150"
                     Height="60"
-                    Margin="107,2,0,0"
+                    Margin="30,2,0,0"
                     VerticalAlignment="Top"
                     Cursor="Hand">
                 <Button.Template>
@@ -161,9 +160,9 @@
             <Button x:Name="hadithBtn"
                     Grid.Column="0"
                     Grid.Row="1"
-                    Width="80"
+                    Width="130"
                     Height="60"
-                    Margin="107,5,0,0"
+                    Margin="30,5,0,0"
                     VerticalAlignment="Top"
                     Cursor="Hand">
                 <Button.Template>
@@ -183,8 +182,9 @@
                                        FontWeight="DemiBold"
                                        FontSize="13"
                                        TextAlignment="Center"
-                                       Margin="0,77,0,0"
-                                       Width="60" />
+                                       Margin="0,75,0,0"
+                                       Height="40"
+                                       Width="70" />
                         </Grid>
                     </ControlTemplate>
                 </Button.Template>
@@ -192,9 +192,9 @@
             <Button x:Name="prayerLearningBtn"
                     Grid.Column="1"
                     Grid.Row="1"
-                    Width="120"
+                    Width="150"
                     Height="70"
-                    Margin="84,5,0,0"
+                    Margin="30,5,0,0"
                     VerticalAlignment="Top"
                     Cursor="Hand">
                 <Button.Template>
@@ -220,9 +220,9 @@
             </Button>
             <Button Grid.Column="2"
                     Grid.Row="1"
-                    Width="80"
+                    Width="150"
                     Height="60"
-                    Margin="106,-50,0,0"
+                    Margin="30,5,0,0"
                     Cursor="Hand"
                     Click="Button_Click">
                 <Button.Template>
@@ -247,9 +247,9 @@
             </Button>
             <Button x:Name="azkarBtn"
                     Grid.Column="1"
-                    Width="80"
+                    Width="150"
                     Height="60"
-                    Margin="107,2,0,0"
+                    Margin="30,2,0,0"
                     Click="azkarBtn_Click"
                     VerticalAlignment="Top"
                     Cursor="Hand">

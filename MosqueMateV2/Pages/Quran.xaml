@@ -9,7 +9,6 @@
          mc:Ignorable="d"
          Title="MainWindow"
          ui:ThemeManager.RequestedTheme="Default"
-         FontFamily="{StaticResource Elgharib}"
          Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>

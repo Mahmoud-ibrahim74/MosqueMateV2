@@ -29,7 +29,7 @@ namespace MosqueMateV2.Pages
             var main = Application.Current.MainWindow;
 
             rxTaskManger.RunBackgroundTaskOnUI(
-                 backgroundTask: () => _suraRepository.GetAllSuraNames(),
+                 backgroundTask: token => _suraRepository.GetAllSuraNames(),
                  onSuccess: result =>
                  {
                      GridCardContainer.GenerateMaterialDesignCardsForQuran(result);

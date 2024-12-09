@@ -40,7 +40,7 @@ namespace MosqueMateV2.Pages
             Loader.Visibility = Visibility.Visible;
             IsEnabled = false;
             rxTaskManger.RunBackgroundTaskOnUI(
-                 backgroundTask: () => ApiClient.GetAsync(),
+                 backgroundTask: token => ApiClient.GetAsync(),
                  onSuccess: result =>
                  {
                      apiContent = result;

@@ -30,7 +30,7 @@ namespace MosqueMateV2.Pages
             var main = Application.Current.MainWindow;
 
             rxTaskManger.RunBackgroundTaskOnUI(
-                 backgroundTask: () => jsonAdhkar.GetAllAdhkarsAsync(),
+                 backgroundTask: token => jsonAdhkar.GetAllAdhkarsAsync(),
                  onSuccess: result =>
                  {
                      GridCardContainer.GenerateMaterialDesignCardsForAdhkar(result);
