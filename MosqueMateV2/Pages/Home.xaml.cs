@@ -9,6 +9,7 @@ using MosqueMateV2.Properties;
 using MosqueMateV2.Resources;
 using MosqueMateV2.Windows;
 using Newtonsoft.Json;
+using System.Diagnostics.Metrics;
 using System.Windows;
 using System.Windows.Controls;
 using Page = ModernWpf.Controls.Page;
@@ -24,14 +25,19 @@ namespace MosqueMateV2.Pages
         public string apiContent { get; set; } = string.Empty;
         public List<PrayerSlide> PrayerSlidesData { get; set; }
         RxTaskManger rxTaskManger;
+        ApiClient api { get; set; }
         public Home()
         {
             InitializeComponent();
             rxTaskManger = new();
             var method = (int)EnumHelper<CalculationMethods>.GetEnumValue(AppSettings.Default.Method);
-            ApiClient.Configure(AppSettings.Default.Country.ToLowerInvariant(),
-                AppSettings.Default.City.ToLowerInvariant(),
-                method);
+
+            api = new ApiClient(
+                Country: AppSettings.Default.Country.ToLowerInvariant()
+                ,City: AppSettings.Default.City.ToLowerInvariant(),
+                method: method);
+
+
             PrayerSlidesData = [];
         }
 
@@ -40,7 +46,7 @@ namespace MosqueMateV2.Pages
             Loader.Visibility = Visibility.Visible;
             IsEnabled = false;
             rxTaskManger.RunBackgroundTaskOnUI(
-                 backgroundTask: token => ApiClient.GetAsync(),
+                 backgroundTask: token => api.GetAsync(),
                  onSuccess: result =>
                  {
                      apiContent = result;
@@ -55,7 +61,7 @@ namespace MosqueMateV2.Pages
 
                  });
 
-        }  
+        }
         private void RenderWindowWithData()
         {
             Focusable = true;
@@ -222,7 +228,7 @@ namespace MosqueMateV2.Pages
 
         private void QuranBtn_Click(object sender, RoutedEventArgs e)
         {
-             new QuranModalPopup(AppSettings.Default.ContinueReading).ShowModal();
+            new QuranModalPopup(AppSettings.Default.ContinueReading).ShowModal();
         }
 
         private void azkarBtn_Click(object sender, RoutedEventArgs e)

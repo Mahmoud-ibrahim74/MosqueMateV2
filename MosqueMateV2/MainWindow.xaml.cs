@@ -15,11 +15,9 @@ namespace MosqueMateV2
 
         public string apiContent { get; set; } = string.Empty;
         public List<PrayerSlide> PrayerSlidesData { get; set; }
-        RxTaskManger rxTaskManger;
         public MainWindow()
         {
             InitializeComponent();
-            rxTaskManger = new();
             PrayerSlidesData = [];
         }
 
@@ -44,7 +42,10 @@ namespace MosqueMateV2
                         MainFrame.Navigate(new Quran());
                         break;
                     case AppLocalization.AdhkarTag:
-                        MainFrame.Navigate(new Adhkar());
+                        MainFrame.Navigate(new Adhkar());  
+                        break;  
+                    case AppLocalization.Hadith:
+                        MainFrame.Navigate(new Hadith());
                         break;
                 }
             }
@@ -58,9 +59,11 @@ namespace MosqueMateV2
             homeItem.Content = App.LocalizationService[AppLocalization.Home];
             quraanItem.Content = App.LocalizationService[AppLocalization.Quran];
             adhkarItem.Content = App.LocalizationService[AppLocalization.AzkarDoaa];
+            hadithItem.Content = App.LocalizationService[AppLocalization.Hadith];
             homeItem.Tag = AppLocalization.HomeTag;
             quraanItem.Tag = AppLocalization.QuranTag;
             adhkarItem.Tag = AppLocalization.AdhkarTag;
+            hadithItem.Tag = AppLocalization.Hadith;
             NavView.SelectedItem = homeItem;
             MainFrame.Navigate(new Home());
         }

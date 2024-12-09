@@ -1,8 +1,11 @@
-﻿using MosqueMateV2.Domain.Enums;
+﻿using MosqueMateV2.Domain.APIService;
+using MosqueMateV2.Domain.DTOs;
+using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
+using Newtonsoft.Json;
 using System.Windows;
 using Page = ModernWpf.Controls.Page;
 
@@ -11,13 +14,14 @@ namespace MosqueMateV2.Pages
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Quran : Page
+    public partial class Hadith : Page
     {
 
         RxTaskManger rxTaskManger;
-        public ISuraRepository  _suraRepository;
+        public ISuraRepository _suraRepository;
+        DTOBookResponse hadithBooks { get; set; }
 
-        public Quran()
+        public Hadith()
         {
             InitializeComponent();
             rxTaskManger = new();
@@ -28,17 +32,25 @@ namespace MosqueMateV2.Pages
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             var main = Application.Current.MainWindow;
-
+            this.loader.Visibility = Visibility.Visible;  
             rxTaskManger.RunBackgroundTaskOnUI(
-                 backgroundTask: token => _suraRepository.GetAllSuraNames(),
+                 backgroundTask: token => new ApiClient(_baseUrl:AppLocalization.HadithApiLink).GetAsync(),
                  onSuccess: result =>
                  {
-                     GridCardContainer.GenerateMaterialDesignCards(
-                                   data: result,
-                                   getName: item => item.name,
-                                   getId: item => item.pageIndex,
-                                   serviceType: ServiceTypeEnum.Quran
-                               );
+                     hadithBooks = JsonConvert.DeserializeObject<DTOBookResponse>(result);
+                     if (hadithBooks?.status == 200)
+                     {
+                         GridCardContainer.GenerateMaterialDesignCards(
+                                               data: hadithBooks.books,
+                                               getName: item => item.bookName,
+                                               getId: item => item.id,
+                                               serviceType: ServiceTypeEnum.Hadith,
+                                               CardWidth:350,
+                                               CardHeight:100
+                                           );
+                         this.loader.Visibility = Visibility.Collapsed;
+
+                     }
                  },
                  retryNumber: 2,
                  () => // handle an error

@@ -1,7 +1,6 @@
 ﻿using MaterialDesignThemes.Wpf;
 using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Enums;
-using MosqueMateV2.Extensions;
 using MosqueMateV2.Windows;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,7 +11,28 @@ namespace MosqueMateV2.Helpers
 {
     public static class ControlHelper
     {
-        public static void GenerateMaterialDesignCardsForAdhkar(this Grid grid, List<DTOAdhkar> data)
+        /// <summary>
+        /// Generates Material Design cards for the given data and adds them to the specified Grid.
+        /// This method is designed to be generic and works for different types of data by utilizing
+        /// lambda functions to extract required properties and a service type to determine the card's behavior.
+        /// </summary>
+        /// <typeparam name="T">The type of the data items used to generate the cards.</typeparam>
+        /// <param name="grid">The Grid control where the cards will be added.</param>
+        /// <param name="data">The list of data items used to create the cards.</param>
+        /// <param name="getName">A function to extract the display name or title for each card from a data item.</param>
+        /// <param name="getId">A function to extract the unique identifier for each card from a data item.</param>
+        /// <param name="serviceType">An enum value indicating the type of service (e.g., Adhkar, Quran) for the cards.</param>
+        /// <param name="CardWidth">Determine width of card</param>
+        /// <param name="CardHeight">Determine height of card</param>
+        public static void GenerateMaterialDesignCards<T>(
+        this Grid grid,
+        List<T> data,
+        Func<T, string> getName,
+        Func<T, int> getId,
+        ServiceTypeEnum serviceType,
+        int CardWidth  = 250,
+        int CardHeight = 150
+            )
         {
             WrapPanel cardPanel = new()
             {
@@ -21,59 +41,13 @@ namespace MosqueMateV2.Helpers
                 VerticalAlignment = VerticalAlignment.Top
             };
 
-            // Generate 20 Material Design cards
             foreach (var item in data)
             {
                 Card card = new()
                 {
-                    Name = $"card_{item.id}",
-                    Width = 250,
-                    Height = 150,
-                    Margin = new Thickness(10),
-                    Background = CreateGradientBackground(),
-                    Padding = new Thickness(16),
-                    Foreground = new SolidColorBrush(Colors.White),
-                    Cursor = Cursors.Hand
-                };
-                card.MouseLeftButtonDown += (sender, e) => Card_MouseLeftButtonDown(sender, e, ServiceTypeEnum.Adhkar);
-
-                // Create card content
-                StackPanel contentPanel = new();
-                TextBlock title = new()
-                {
-                    Text = item.category,
-                    FontSize = 18,
-                    FontWeight = FontWeights.Bold,
-                    Margin = new Thickness(0, 0, 0, 8),
-                    TextWrapping = TextWrapping.WrapWithOverflow,
-                    FlowDirection = FlowDirection.RightToLeft,
-                    TextAlignment = TextAlignment.Center,
-                    Padding = new Thickness(0, 40, 0, 0),
-                    LineHeight = 30
-                };
-                contentPanel.Children.Add(title);
-                card.Content = contentPanel;
-                cardPanel.Children.Add(card);
-            }
-            grid.Children.Add(cardPanel);
-        }
-        public static void GenerateMaterialDesignCardsForQuran(this Grid grid, List<DTOSuraNames> data)
-        {
-            WrapPanel cardPanel = new()
-            {
-                Margin = new Thickness(10),
-                HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Top
-            };
-
-            // Generate 20 Material Design cards
-            foreach (var item in data)
-            {
-                Card card = new()
-                {
-                    Name = $"card_{item.pageIndex}",
-                    Width = 250,
-                    Height = 150,
+                    Name = $"card_{getId(item)}",
+                    Width = CardWidth,
+                    Height = CardHeight,
                     Margin = new Thickness(10),
                     Background = CreateGradientBackground(),
                     Padding = new Thickness(16),
@@ -81,13 +55,13 @@ namespace MosqueMateV2.Helpers
                     Cursor = Cursors.Hand,
                     FlowDirection = FlowDirection.RightToLeft
                 };
-                card.MouseLeftButtonDown += (sender, e) => Card_MouseLeftButtonDown(sender, e, ServiceTypeEnum.Quran);
+                card.MouseLeftButtonDown += (sender, e) => Card_MouseLeftButtonDown(sender, e, serviceType);
 
                 // Create card content
                 StackPanel contentPanel = new();
                 TextBlock title = new()
                 {
-                    Text = item.name,
+                    Text = getName(item),
                     FontSize = 18,
                     FontWeight = FontWeights.Bold,
                     Margin = new Thickness(0, 0, 0, 8),
@@ -101,67 +75,10 @@ namespace MosqueMateV2.Helpers
                 card.Content = contentPanel;
                 cardPanel.Children.Add(card);
             }
+
             grid.Children.Add(cardPanel);
         }
-        public static void GenerateMaterialDesignCardsPlayList(this Grid grid, dynamic playlists)
-        {
-            //WrapPanel cardPanel = new()
-            //{
-            //    Margin = new Thickness(10),
-            //    HorizontalAlignment = HorizontalAlignment.Center,
-            //    VerticalAlignment = VerticalAlignment.Top
-            //};
 
-            //foreach (var item in playlists)
-            //{
-            //    Card card = new()
-            //    {
-            //        Uid = item.Url,
-            //        Width = 600,
-            //        Height = 150,
-            //        Margin = new Thickness(10),
-            //        Background = CreateGradientBackground(),
-            //        Padding = new Thickness(16),
-            //        Foreground = new SolidColorBrush(Colors.White),
-            //        Cursor = Cursors.Hand,
-            //        FlowDirection = FlowDirection.RightToLeft
-            //    };
-            //    card.MouseLeftButtonDown += (sender, e) => Card_MouseLeftButtonDown(sender, e, ServiceTypeEnum.ProphertStories);
-
-            //    // Create card content
-            //    StackPanel contentPanel = new();
-            //    AppHelper.currentVideoFileName = DateTime.Now.ToString("yyyy-MM-dd") + ".mp4";
-            //    TextBlock title = new()
-            //    {
-            //        Text = item.Title,
-                   
-            //        FontSize = 18,
-            //        FontWeight = FontWeights.UltraBold,
-            //        Margin = new Thickness(0, 0, 0, 8),
-            //        TextWrapping = TextWrapping.WrapWithOverflow,
-            //        FlowDirection = FlowDirection.RightToLeft,
-            //        TextAlignment = TextAlignment.Center,
-            //        Padding = new Thickness(0, 10, 0, 0),
-            //        LineHeight = 30,
-            //    };
-            //    TextBlock duration = new()
-            //    {
-            //        Text = "".AppendDuration(item.Duration ?? TimeSpan.MinValue),
-            //        FontSize = 18,
-            //        FontWeight = FontWeights.UltraBold,
-            //        Margin = new Thickness(0, 10, 0, 8),
-            //        TextWrapping = TextWrapping.WrapWithOverflow,
-            //        FlowDirection = FlowDirection.RightToLeft,
-            //        TextAlignment = TextAlignment.Center,
-            //        LineHeight = 30,
-            //    };
-            //    contentPanel.Children.Add(title);
-            //    contentPanel.Children.Add(duration);
-            //    card.Content = contentPanel;
-            //    cardPanel.Children.Add(card);
-            //}
-            //grid.Children.Add(cardPanel);
-        }
         private static void Card_MouseLeftButtonDown(object sender, MouseButtonEventArgs e, ServiceTypeEnum service)
         {
             switch (service)

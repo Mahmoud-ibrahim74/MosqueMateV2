@@ -91,7 +91,12 @@
                         <ui:FontIcon Glyph="&#xE95E;" />
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
-
+                
+                <ui:NavigationViewItem x:Name="hadithItem">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:FontIcon Glyph="&#xE736;" />
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
 
                 <ui:NavigationViewItem Content="Tutors" Tag="TutorsPage" Icon="People" />
             </ui:NavigationView.MenuItems>

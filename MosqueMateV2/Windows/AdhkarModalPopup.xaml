@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Width="600"
         Height="700"
-        Topmost="True"
+        Topmost="False"
         ResizeMode="NoResize"
         ShowInTaskbar="True"
         WindowStartupLocation="CenterScreen"
