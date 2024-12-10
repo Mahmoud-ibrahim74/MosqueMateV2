@@ -7,4 +7,12 @@
         Adhkar = 3,
         ProphertStories = 4
     }
+    public enum PagesTypesEnum
+    {
+        Quran = 1,
+        Adhkar = 2,
+        Hadith = 3,
+        HadithChapter = 4,
+        HadithInfo = 5
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
+using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
 using System.Windows;
@@ -34,11 +35,12 @@ namespace MosqueMateV2.Pages
                  backgroundTask: token => jsonAdhkar.GetAllAdhkarsAsync(),
                  onSuccess: result =>
                  {
-                     GridCardContainer.GenerateMaterialDesignCards(
+                     GridCardContainer.GenerateCards(
                                     data: result,
                                     getName: item => item.category,
                                     getId: item => item.id,
-                                    serviceType: ServiceTypeEnum.Adhkar
+                                    PaddingTopTxt:50,
+                                    serviceType: PagesTypesEnum.Adhkar
                                 );
                  },
                  retryNumber: 2,

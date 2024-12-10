@@ -140,6 +140,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Pages\HadithChapters.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Quran.xaml">
       <SubType>Designer</SubType>
     </Page>

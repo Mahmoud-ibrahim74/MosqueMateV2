@@ -13,7 +13,7 @@ namespace MosqueMateV2.Extensions
         /// </summary>
         /// <param name="values">An array of strings to concatenate.</param>
         /// <returns>A single concatenated string.</returns>
-        public static string AppendString( params string[] values)
+        public static string AppendString(params string[] values)
         {
             StringBuilder stringBuilder = new();
             foreach (string value in values)

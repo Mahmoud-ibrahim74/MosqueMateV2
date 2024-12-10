@@ -1,6 +1,5 @@
 ﻿using ModernWpf.Controls;
 using MosqueMateV2.DataAccess.Models;
-using MosqueMateV2.Helpers;
 using MosqueMateV2.Pages;
 using MosqueMateV2.Resources;
 using System.Windows;
@@ -15,6 +14,7 @@ namespace MosqueMateV2
 
         public string apiContent { get; set; } = string.Empty;
         public List<PrayerSlide> PrayerSlidesData { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace MosqueMateV2
             if (e.SelectedItem is NavigationViewItem selectedItem)
             {
                 string pageTag = selectedItem.Tag?.ToString();
-                if (e.IsSettingsSelected) // Check if the Settings button is selected
+                if (e.IsSettingsSelected)
                 {
                     MainFrame.Navigate(new Setting());
                     return;
@@ -54,17 +54,24 @@ namespace MosqueMateV2
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
+            #region Labels
             Title = App.LocalizationService[AppLocalization.AppName];
             NavView.PaneTitle = App.LocalizationService[AppLocalization.MainMenu];
             homeItem.Content = App.LocalizationService[AppLocalization.Home];
             quraanItem.Content = App.LocalizationService[AppLocalization.Quran];
             adhkarItem.Content = App.LocalizationService[AppLocalization.AzkarDoaa];
             hadithItem.Content = App.LocalizationService[AppLocalization.Hadith];
+            #endregion
+
+            #region Tags
+
             homeItem.Tag = AppLocalization.HomeTag;
             quraanItem.Tag = AppLocalization.QuranTag;
             adhkarItem.Tag = AppLocalization.AdhkarTag;
             hadithItem.Tag = AppLocalization.Hadith;
-            NavView.SelectedItem = homeItem;
+            NavView.SelectedItem = homeItem; 
+            #endregion
+
             MainFrame.Navigate(new Home());
         }
     }

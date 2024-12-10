@@ -1,6 +1,7 @@
 ﻿using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
+using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
 using System.Windows;
@@ -33,11 +34,12 @@ namespace MosqueMateV2.Pages
                  backgroundTask: token => _suraRepository.GetAllSuraNames(),
                  onSuccess: result =>
                  {
-                     GridCardContainer.GenerateMaterialDesignCards(
+                     GridCardContainer.GenerateCards(
                                    data: result,
                                    getName: item => item.name,
                                    getId: item => item.pageIndex,
-                                   serviceType: ServiceTypeEnum.Quran
+                                   PaddingTopTxt:50,
+                                   serviceType: PagesTypesEnum.Quran
                                );
                  },
                  retryNumber: 2,

@@ -15,19 +15,20 @@ namespace MosqueMateV2.Pages
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Hadith : Page
+    public partial class HadithChapters : Page
     {
 
         RxTaskManger rxTaskManger;
         public ISuraRepository _suraRepository;
-        DTOBookResponse hadithBooks { get; set; }
-
-        public Hadith()
+        DTOChapter chapter { get; set; }
+        string _bookSlug {  get; set; }
+        public HadithChapters(string bookSlug)
         {
             InitializeComponent();
             rxTaskManger = new();
             _suraRepository = new SuraRepository();
-
+            this._bookSlug = bookSlug;  
+            HadithHelper.SelectedBook = bookSlug;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -35,21 +36,21 @@ namespace MosqueMateV2.Pages
             var main = Application.Current.MainWindow;
             this.loader.Visibility = Visibility.Visible;  
             rxTaskManger.RunBackgroundTaskOnUI(
-                 backgroundTask: token => new ApiClient(_baseUrl:AppLocalization.HadithApiLink).GetAsync(),
+                 backgroundTask: token => new ApiClient(_baseUrl:ApiRquestHelper.HadithChpterLink(this._bookSlug)).GetAsync(),
                  onSuccess: result =>
                  {
-                     hadithBooks = JsonConvert.DeserializeObject<DTOBookResponse>(result);
-                     if (hadithBooks?.status == 200)
+                     chapter = JsonConvert.DeserializeObject<DTOChapter>(result);
+                     if (chapter?.status == 200)
                      {
                          GridCardContainer.GenerateCards(
-                                               data: hadithBooks.books,
-                                               getName: item => item.bookName,
+                                               data: chapter.chapters,
+                                               getName: item =>App.AppLanguage == AppLocalization.Arabic ? 
+                                               item.chapterArabic : item.chapterEnglish,
                                                getId: item => item.id,
-                                               UidCard:item=> item.bookSlug,
-                                               serviceType: PagesTypesEnum.Hadith,
-                                               CardWidth:250,
+                                               serviceType: PagesTypesEnum.HadithChapter,
+                                               CardWidth:350,
                                                CardHeight:100,
-                                               PaddingTopTxt:20
+                                               PaddingTopTxt:15
                                            );
                          this.loader.Visibility = Visibility.Collapsed;
 

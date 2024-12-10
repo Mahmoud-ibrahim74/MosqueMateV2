@@ -8,7 +8,7 @@
          xmlns:hc="https://handyorg.github.io/handycontrol"
          Title="Exit Confirmation Example"
          ThemeMode="Light"
-         Height="600"
+         Height="900"
          Width="800"
          Loaded="ConfirmationDialog_Loaded">
     <Grid>
@@ -17,32 +17,71 @@
             <hc:LoadingLine HorizontalAlignment="Left"
                             Margin="656,35,0,0"
                             VerticalAlignment="Top" />
+            
+            <hc:Card HorizontalAlignment="Left"
+                     Margin="156,38,0,0"
+                     VerticalAlignment="Top"
+                     Height="800"
+                     Width="355">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="178*" />
+                        <RowDefinition Height="250*" />
+                        <RowDefinition Height="250*" />
+                        <RowDefinition Height="50*" />
+                    </Grid.RowDefinitions>
 
-            <hc:Carousel HorizontalAlignment="Stretch"
-                         Margin="0,135,0,145"
-                         Width="800">
-                <hc:Carousel.Items>
-                    <Image Source="/Assets/Asr.jpg"
-                           Stretch="Fill"
-                           StretchDirection="DownOnly"
-                           Width="387" />
-                    <Image Source="/Assets/Asr.jpg"
-                           Stretch="UniformToFill"
-                           StretchDirection="DownOnly" />
-                    <Image Source="/Assets/Asr.jpg"
-                           Stretch="UniformToFill"
-                           StretchDirection="DownOnly" />
-                </hc:Carousel.Items>
-            </hc:Carousel>
+                    <TextBlock x:Name="title1Txt"
+                               Grid.Row="0"
+                               Text="Title1"
+                               Padding="10"
+                               TextAlignment="Center"
+                               TextWrapping="WrapWithOverflow"
+                               Margin="0,0,0,99"></TextBlock>
+                    <hc:Divider Grid.Row="0"
+                                Margin="0,89,0,85"></hc:Divider>
+                    <TextBlock x:Name="title2Txt"
+                               Grid.Row="0"
+                               Text="Title2"
+                               Padding="10"
+                               TextAlignment="Center"
+                               TextWrapping="WrapWithOverflow"
+                               Margin="0,98,0,307"
+                               Grid.RowSpan="2"></TextBlock>
+                    <TextBlock x:Name="title3Txt"
+                               Grid.Row="1"
+                               Text="Title3"
+                               Padding="10"
+                               TextAlignment="Center"
+                               TextWrapping="WrapWithOverflow" />
+                    <TextBlock x:Name="title4Txt"
+                               Grid.Row="2"
+                               Text="Title4"
+                               Padding="10"
+                               TextAlignment="Center"
+                               TextWrapping="WrapWithOverflow" />
+
+                    <Button x:Name="copyToClipboard"
+                            Grid.Row="3"
+                            ToolTip="Copy Hadith"
+                            Background="{x:Null}"
+                            Margin="275,0,0,0"
+                            Height="35"
+                            Width="49">
+                        <md:PackIcon Kind="ContentCopy"></md:PackIcon>
+                    </Button>
+                    <Button x:Name="Share"
+                            Grid.Row="3"
+                            ToolTip="Copy Hadith"
+                            Background="{x:Null}"
+                            Margin="30,0,0,0"
+                            Height="35"
+                            Width="49">
+                        <md:PackIcon Kind="ShareOutline"></md:PackIcon>
+                    </Button>
+                </Grid>
+            </hc:Card>
 
         </Grid>
-
-        <Button x:Name="PowerButton"
-                Margin="271,457,0,0"
-                VerticalAlignment="Top"
-                Height="42"
-                Content="Open"
-                Width="197"
-                Click="PowerButton_Click" />
     </Grid>
 </Window>
