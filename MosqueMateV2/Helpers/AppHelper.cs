@@ -78,14 +78,20 @@ namespace MosqueMateV2.Helpers
             }
         }
 
-        public static void RestartApp()
+        public static bool RestartApp()
         {
-            // Get the current process information
-            Process currentProcess = Process.GetCurrentProcess();
-            // Start a new instance of the WPF application
-            Process.Start(currentProcess.MainModule.FileName);
-            // Close the current instance
-            currentProcess.Kill();
+            try
+            {
+                Process currentProcess = Process.GetCurrentProcess();
+                Process.Start(currentProcess.MainModule.FileName);
+                currentProcess.Kill();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;   
+            }
+
         }
 
         public static string PlayListName {  get; set; }

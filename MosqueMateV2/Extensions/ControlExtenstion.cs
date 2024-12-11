@@ -121,20 +121,24 @@ namespace MosqueMateV2.Extensions
                 card.MouseLeftButtonDown += (sender, e) => Card_MouseLeftButtonDown(sender, e, serviceType);
 
                 StackPanel contentPanel = new();
-                TextBlock header = new()
+                TextBlock header = new();
+                if (HeaderTxt is not null)
                 {
-                    Text = HeaderTxt(item),
-                    FontSize = 18,
-                    FontWeight = FontWeights.Bold,
-                    Margin = new Thickness(0, 0, 0, 8),
-                    TextWrapping = TextWrapping.WrapWithOverflow,
-                    TextAlignment = textAlignment,
-                    Padding = new Thickness(PaddingLeftTxt,
-                                   PaddingTopTxt,
-                                   PaddingRightTxt,
-                                   PaddingBottomTxt),
-                    LineHeight = 30
-                };
+                    header = new()
+                    {
+                        Text = HeaderTxt(item),
+                        FontSize = 18,
+                        FontWeight = FontWeights.Bold,
+                        Margin = new Thickness(0, 0, 0, 8),
+                        TextWrapping = TextWrapping.WrapWithOverflow,
+                        TextAlignment = textAlignment,
+                        Padding = new Thickness(PaddingLeftTxt,
+                                      PaddingTopTxt,
+                                      PaddingRightTxt,
+                                      PaddingBottomTxt),
+                        LineHeight = 30
+                    };
+                }
                 TextBlock title = new()
                 {
                     Text = getName(item),
@@ -326,7 +330,7 @@ namespace MosqueMateV2.Extensions
             {
                 Name = "title1Txt",
                 Text = title1,
-                Padding = new Thickness(10),
+                Padding = new Thickness(20),
                 TextAlignment = TextAlignment.Center,
                 TextWrapping = TextWrapping.WrapWithOverflow,
                 Margin = new Thickness(0, 0, 0, 99),
@@ -341,7 +345,7 @@ namespace MosqueMateV2.Extensions
                 TextAlignment = TextAlignment.Center,
                 TextWrapping = TextWrapping.WrapWithOverflow,
                 FontSize = 20,
-                Margin = new Thickness(0,-100,0,0),
+                Margin = new Thickness(0, -100, 0, 0),
                 FontWeight = FontWeights.UltraBold,
                 LineHeight = 40,
                 Foreground = Brushes.White,
@@ -355,7 +359,7 @@ namespace MosqueMateV2.Extensions
                 Name = "copyToClipboard",
                 ToolTip = "Copy Hadith",
                 Background = Brushes.Transparent,
-                Margin = new Thickness(470,90,0,0),
+                Margin = new Thickness(470, 90, 0, 0),
                 Height = 35,
                 Width = 49,
                 Content = new PackIcon
@@ -400,7 +404,7 @@ namespace MosqueMateV2.Extensions
             Clipboard.SetText(value);
             ToastNotificationsHelper.SendNotification(
                 title: "Clipboard",
-                message: "Copy Sucessfully to Clipboard",
+                message: "Text Copy Sucessfully",
                 duration: new TimeSpan(0, 0, 5),
                 type: Notification.Wpf.NotificationType.Success
                 );
@@ -442,7 +446,7 @@ namespace MosqueMateV2.Extensions
                 {
                     HorizontalAlignment = HorizontalAlignment.Stretch,
                     VerticalAlignment = VerticalAlignment.Stretch,
-                    Margin = new Thickness(220,30,0,0),
+                    Margin = new Thickness(220, 30, 0, 0),
                 };
                 foreach (var item in data)
                 {

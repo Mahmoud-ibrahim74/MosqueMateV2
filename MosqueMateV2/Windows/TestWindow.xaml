@@ -17,71 +17,16 @@
             <hc:LoadingLine HorizontalAlignment="Left"
                             Margin="656,35,0,0"
                             VerticalAlignment="Top" />
-            
-            <hc:Card HorizontalAlignment="Left"
-                     Margin="156,38,0,0"
-                     VerticalAlignment="Top"
-                     Height="800"
-                     Width="355">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="178*" />
-                        <RowDefinition Height="250*" />
-                        <RowDefinition Height="250*" />
-                        <RowDefinition Height="50*" />
-                    </Grid.RowDefinitions>
 
-                    <TextBlock x:Name="title1Txt"
-                               Grid.Row="0"
-                               Text="Title1"
-                               Padding="10"
-                               TextAlignment="Center"
-                               TextWrapping="WrapWithOverflow"
-                               Margin="0,0,0,99"></TextBlock>
-                    <hc:Divider Grid.Row="0"
-                                Margin="0,89,0,85"></hc:Divider>
-                    <TextBlock x:Name="title2Txt"
-                               Grid.Row="0"
-                               Text="Title2"
-                               Padding="10"
-                               TextAlignment="Center"
-                               TextWrapping="WrapWithOverflow"
-                               Margin="0,98,0,307"
-                               Grid.RowSpan="2"></TextBlock>
-                    <TextBlock x:Name="title3Txt"
-                               Grid.Row="1"
-                               Text="Title3"
-                               Padding="10"
-                               TextAlignment="Center"
-                               TextWrapping="WrapWithOverflow" />
-                    <TextBlock x:Name="title4Txt"
-                               Grid.Row="2"
-                               Text="Title4"
-                               Padding="10"
-                               TextAlignment="Center"
-                               TextWrapping="WrapWithOverflow" />
+            <Grid Margin="266,333,266,333">
+                <Button HorizontalAlignment="Center"
+                        Width="268"
+                        Height="78"
+                        Click="Button_Click"></Button>
+            </Grid>
 
-                    <Button x:Name="copyToClipboard"
-                            Grid.Row="3"
-                            ToolTip="Copy Hadith"
-                            Background="{x:Null}"
-                            Margin="275,0,0,0"
-                            Height="35"
-                            Width="49">
-                        <md:PackIcon Kind="ContentCopy"></md:PackIcon>
-                    </Button>
-                    <Button x:Name="Share"
-                            Grid.Row="3"
-                            ToolTip="Copy Hadith"
-                            Background="{x:Null}"
-                            Margin="30,0,0,0"
-                            Height="35"
-                            Width="49">
-                        <md:PackIcon Kind="ShareOutline"></md:PackIcon>
-                    </Button>
-                </Grid>
-            </hc:Card>
 
         </Grid>
+        
     </Grid>
 </Window>
