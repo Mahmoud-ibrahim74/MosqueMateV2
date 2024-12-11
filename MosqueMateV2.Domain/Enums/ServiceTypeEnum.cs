@@ -13,6 +13,7 @@
         Adhkar = 2,
         Hadith = 3,
         HadithChapter = 4,
-        HadithInfo = 5
+        HadithInfo = 5,
+        AllahNames = 6
     }
 }

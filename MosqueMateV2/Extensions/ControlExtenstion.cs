@@ -90,7 +90,9 @@ namespace MosqueMateV2.Extensions
         int PaddingRightTxt = 0,
         int PaddingTopTxt = 0,
         int PaddingBottomTxt = 0,
-        FlowDirection flowDirection = FlowDirection.LeftToRight
+        Func<T, string> HeaderTxt = null,
+        FlowDirection flowDirection = FlowDirection.LeftToRight,
+        TextAlignment textAlignment = TextAlignment.Center
        )
         {
             WrapPanel cardPanel = new()
@@ -119,6 +121,20 @@ namespace MosqueMateV2.Extensions
                 card.MouseLeftButtonDown += (sender, e) => Card_MouseLeftButtonDown(sender, e, serviceType);
 
                 StackPanel contentPanel = new();
+                TextBlock header = new()
+                {
+                    Text = HeaderTxt(item),
+                    FontSize = 18,
+                    FontWeight = FontWeights.Bold,
+                    Margin = new Thickness(0, 0, 0, 8),
+                    TextWrapping = TextWrapping.WrapWithOverflow,
+                    TextAlignment = textAlignment,
+                    Padding = new Thickness(PaddingLeftTxt,
+                                   PaddingTopTxt,
+                                   PaddingRightTxt,
+                                   PaddingBottomTxt),
+                    LineHeight = 30
+                };
                 TextBlock title = new()
                 {
                     Text = getName(item),
@@ -126,14 +142,17 @@ namespace MosqueMateV2.Extensions
                     FontWeight = FontWeights.Bold,
                     Margin = new Thickness(0, 0, 0, 8),
                     TextWrapping = TextWrapping.WrapWithOverflow,
-                    FlowDirection = FlowDirection.RightToLeft,
-                    TextAlignment = TextAlignment.Center,
+                    TextAlignment = textAlignment,
                     Padding = new Thickness(PaddingLeftTxt,
                                             PaddingTopTxt,
                                             PaddingRightTxt,
                                             PaddingBottomTxt),
                     LineHeight = 30
                 };
+
+
+                if (HeaderTxt is not null)
+                    contentPanel.Children.Add(header);
                 contentPanel.Children.Add(title);
                 card.Content = contentPanel;
                 cardPanel.Children.Add(card);
@@ -153,7 +172,7 @@ namespace MosqueMateV2.Extensions
             // Create the Card
             var card = new Card
             {
-              
+
                 BorderBrush = null,
                 Background = ColorHelper.CreateGradientBackgroundCode("#1E201E", "#021526"),
                 Foreground = Brushes.PapayaWhip,
@@ -277,12 +296,111 @@ namespace MosqueMateV2.Extensions
             return card;
         }
 
+        private static Card GenerateCardForAllahNames(
+        string title1 = "",
+        string title3 = ""
+         )
+        {
+            // Create the Card
+            var card = new Card
+            {
+
+                BorderBrush = null,
+                Background = ColorHelper.CreateGradientBackgroundCode("#1E201E", "#021526"),
+                Foreground = Brushes.PapayaWhip,
+                Height = 400,
+                Width = 550,
+                Margin = new Thickness(10),
+
+            };
+
+            // Create the Grid
+            var grid = new Grid();
+
+            // Define RowDefinitions
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(250, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(250, GridUnitType.Star) });
+
+            // Create TextBlocks
+            var title1Txt = new TextBlock
+            {
+                Name = "title1Txt",
+                Text = title1,
+                Padding = new Thickness(10),
+                TextAlignment = TextAlignment.Center,
+                TextWrapping = TextWrapping.WrapWithOverflow,
+                Margin = new Thickness(0, 0, 0, 99),
+                FontSize = 20,
+                Foreground = Brushes.Wheat,
+            };
+            Grid.SetRow(title1Txt, 0);
+            var title3Txt = new TextBlock
+            {
+                Name = "title3Txt",
+                Text = title3,
+                TextAlignment = TextAlignment.Center,
+                TextWrapping = TextWrapping.WrapWithOverflow,
+                FontSize = 20,
+                Margin = new Thickness(0,-100,0,0),
+                FontWeight = FontWeights.UltraBold,
+                LineHeight = 40,
+                Foreground = Brushes.White,
+
+            };
+            Grid.SetRow(title3Txt, 1);
+
+            // Create Buttons
+            var copyToClipboard = new Button
+            {
+                Name = "copyToClipboard",
+                ToolTip = "Copy Hadith",
+                Background = Brushes.Transparent,
+                Margin = new Thickness(470,90,0,0),
+                Height = 35,
+                Width = 49,
+                Content = new PackIcon
+                {
+                    Kind = PackIconKind.ContentCopy,
+                    Foreground = Brushes.Wheat,
+                }
+            };
+            var text3_and_4 = title3Txt.Text;
+            copyToClipboard.Click += (sender, e) => CopyToClipboard_Click(sender, e, text3_and_4);
+            Grid.SetRow(copyToClipboard, 3);
+
+            var shareButton = new Button
+            {
+                Name = "Share",
+                ToolTip = "Copy Hadith",
+                Background = Brushes.Transparent,
+                Margin = new Thickness(20, 80, 0, 0),
+                Height = 35,
+                Width = 49,
+                Content = new PackIcon
+                {
+                    Kind = PackIconKind.ShareOutline,
+                    Foreground = Brushes.Wheat,
+                }
+            };
+            shareButton.Click += (sender, e) => ShareButton_Click(sender, e, text3_and_4);
+
+            Grid.SetRow(shareButton, 3);
+            grid.Children.Add(title1Txt);
+            grid.Children.Add(title3Txt);
+            grid.Children.Add(copyToClipboard);
+            grid.Children.Add(shareButton);
+
+            // Add Grid to Card
+            card.Content = grid;
+            return card;
+        }
+
         private static void CopyToClipboard_Click(object sender, RoutedEventArgs e, string value)
         {
             Clipboard.SetText(value);
             ToastNotificationsHelper.SendNotification(
                 title: "Clipboard",
-                message: "Hadith Copy Sucessfully to Clipboard",
+                message: "Copy Sucessfully to Clipboard",
                 duration: new TimeSpan(0, 0, 5),
                 type: Notification.Wpf.NotificationType.Success
                 );
@@ -297,9 +415,9 @@ namespace MosqueMateV2.Extensions
             {
                 WrapPanel cardPanel = new()
                 {
-                    HorizontalAlignment = HorizontalAlignment.Left,
-                    VerticalAlignment = VerticalAlignment.Top,
-                    Margin = new Thickness(10),
+                    HorizontalAlignment = HorizontalAlignment.Stretch,
+                    VerticalAlignment = VerticalAlignment.Stretch,
+                    Margin = new Thickness(50),
                 };
                 foreach (var item in data)
                 {
@@ -310,6 +428,27 @@ namespace MosqueMateV2.Extensions
                            title2: head2,
                            title3: item.hadithArabic,
                            title4: item.hadithEnglish
+                           );
+                    cardPanel.Children.Add(card);
+                }
+                grid.Children.Add(cardPanel);
+            }
+        }
+        public static void GenerateCardsForAllahNames(this Grid grid, List<DTOAllahNames> data)
+        {
+            if (data.Any())
+            {
+                WrapPanel cardPanel = new()
+                {
+                    HorizontalAlignment = HorizontalAlignment.Stretch,
+                    VerticalAlignment = VerticalAlignment.Stretch,
+                    Margin = new Thickness(220,30,0,0),
+                };
+                foreach (var item in data)
+                {
+                    var card = GenerateCardForAllahNames(
+                           title1: item.name,
+                           title3: item.text
                            );
                     cardPanel.Children.Add(card);
                 }

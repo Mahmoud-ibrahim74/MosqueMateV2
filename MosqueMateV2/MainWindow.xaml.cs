@@ -2,6 +2,7 @@
 using MosqueMateV2.DataAccess.Models;
 using MosqueMateV2.Pages;
 using MosqueMateV2.Resources;
+using System.Drawing;
 using System.Windows;
 
 namespace MosqueMateV2
@@ -14,11 +15,33 @@ namespace MosqueMateV2
 
         public string apiContent { get; set; } = string.Empty;
         public List<PrayerSlide> PrayerSlidesData { get; set; }
+        BitmapIcon _quranIcon { get; set; }
+        BitmapIcon _beadsIcon { get; set; }
+        BitmapIcon _readQuran { get; set; }
+        BitmapIcon allah { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
             PrayerSlidesData = [];
+
+            #region SideBarIcons
+            _quranIcon = new();
+            _beadsIcon = new();
+            _readQuran = new();
+            allah = new();
+
+            _quranIcon.UriSource = new Uri("pack://application:,,,/Assets/quranSideBar.png");
+            _beadsIcon.UriSource = new Uri("pack://application:,,,/Assets/beads.png");
+            _readQuran.UriSource = new Uri("pack://application:,,,/Assets/read-quran.png");
+            allah.UriSource = new Uri("pack://application:,,,/Assets/allah.png");
+
+
+            quraanItem.Icon = _quranIcon;
+            adhkarItem.Icon = _beadsIcon;
+            hadithItem.Icon = _readQuran;
+            allahNamesItem.Icon = allah; 
+            #endregion
         }
 
         private void NavView_SelectionChanged(object sender, NavigationViewSelectionChangedEventArgs e)
@@ -42,10 +65,13 @@ namespace MosqueMateV2
                         MainFrame.Navigate(new Quran());
                         break;
                     case AppLocalization.AdhkarTag:
-                        MainFrame.Navigate(new Adhkar());  
-                        break;  
+                        MainFrame.Navigate(new Adhkar());
+                        break;
                     case AppLocalization.Hadith:
                         MainFrame.Navigate(new Hadith());
+                        break;               
+                    case AppLocalization.allahName:
+                        MainFrame.Navigate(new AllahNames());
                         break;
                 }
             }
@@ -61,6 +87,7 @@ namespace MosqueMateV2
             quraanItem.Content = App.LocalizationService[AppLocalization.Quran];
             adhkarItem.Content = App.LocalizationService[AppLocalization.AzkarDoaa];
             hadithItem.Content = App.LocalizationService[AppLocalization.Hadith];
+            allahNamesItem.Content = App.LocalizationService[AppLocalization.allahName];
             #endregion
 
             #region Tags
@@ -69,7 +96,8 @@ namespace MosqueMateV2
             quraanItem.Tag = AppLocalization.QuranTag;
             adhkarItem.Tag = AppLocalization.AdhkarTag;
             hadithItem.Tag = AppLocalization.Hadith;
-            NavView.SelectedItem = homeItem; 
+            allahNamesItem.Tag = AppLocalization.allahName;
+            NavView.SelectedItem = homeItem;
             #endregion
 
             MainFrame.Navigate(new Home());

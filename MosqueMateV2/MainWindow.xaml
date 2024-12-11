@@ -81,24 +81,29 @@
                 </ui:NavigationViewItem>
 
                 <ui:NavigationViewItem x:Name="quraanItem">
-                    <ui:NavigationViewItem.Icon>
-                        <ui:FontIcon Glyph="&#xE736;" />
-                    </ui:NavigationViewItem.Icon>
+                    <!--<ui:NavigationViewItem.Icon>
+                        <ui:BitmapIcon UriSource="Assets/quranSideBar.png"></ui:BitmapIcon>
+                    </ui:NavigationViewItem.Icon>-->
                 </ui:NavigationViewItem>
                 
                 <ui:NavigationViewItem x:Name="adhkarItem">
-                    <ui:NavigationViewItem.Icon>
-                        <ui:FontIcon Glyph="&#xE95E;" />
-                    </ui:NavigationViewItem.Icon>
+                    <!--<ui:NavigationViewItem.Icon>
+                        <ui:BitmapIcon UriSource="Assets/beads.png"></ui:BitmapIcon>
+                    </ui:NavigationViewItem.Icon>-->
                 </ui:NavigationViewItem>
                 
                 <ui:NavigationViewItem x:Name="hadithItem">
-                    <ui:NavigationViewItem.Icon>
-                        <ui:FontIcon Glyph="&#xE736;" />
-                    </ui:NavigationViewItem.Icon>
+                    <!--<ui:NavigationViewItem.Icon>
+                        <ui:BitmapIcon UriSource="Assets/read-quran.png"></ui:BitmapIcon>
+                    </ui:NavigationViewItem.Icon>-->
                 </ui:NavigationViewItem>
 
-                <ui:NavigationViewItem Content="Tutors" Tag="TutorsPage" Icon="People" />
+                <ui:NavigationViewItem x:Name="allahNamesItem">
+                    <!--<ui:NavigationViewItem.Icon>
+                        <ui:BitmapIcon UriSource="Assets/allah.png"></ui:BitmapIcon>
+                    </ui:NavigationViewItem.Icon>-->
+                </ui:NavigationViewItem>
+
             </ui:NavigationView.MenuItems>
 
         </ui:NavigationView>

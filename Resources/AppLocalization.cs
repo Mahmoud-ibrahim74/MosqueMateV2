@@ -21,7 +21,7 @@
         public const string Play = "Play";
         public const string Stop = "Stop";
         public const int AnimationDuration = 2;
-        public const int NotificatonDuration = 2;
+        public const int NotificatonDuration = 5;
         public const string Pause = "Pause";
         public const string MainMenu = "MainMenu";
         public const string Home = "Home";
@@ -33,6 +33,7 @@
         public const string ContinueReading = "ContinueReading";
         public const string Hadith = "Hadith";
         public const string Azkar = "Azkar";
+        public const string allahName = "allahName";
         public const string ZekrReminder = "ZekrReminder";
         public const string AzkarDoaa = "AzkarDoaa";
         public const string PrayerLearning = "PrayerLearning";

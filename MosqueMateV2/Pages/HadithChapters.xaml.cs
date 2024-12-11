@@ -46,12 +46,11 @@ namespace MosqueMateV2.Pages
                          {
                              GridCardContainer.GenerateCards(
                                                    data: chapter.chapters,
-                                                   getName: item => App.AppLanguage == AppLocalization.Arabic ?
-                                                   item.chapterArabic : item.chapterEnglish,
+                                                   getName: item => item.chapterArabic + "\n\n" + item.chapterEnglish,
                                                    getId: item => item.id,
                                                    serviceType: PagesTypesEnum.HadithChapter,
                                                    CardWidth: 350,
-                                                   CardHeight: 100,
+                                                   CardHeight: 150,
                                                    PaddingTopTxt: 15
                                                );
                              this.loader.Visibility = Visibility.Collapsed;

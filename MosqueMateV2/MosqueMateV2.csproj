@@ -18,7 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\allah.png" />
     <None Remove="Assets\Asr.jpg" />
+    <None Remove="Assets\beads.png" />
     <None Remove="Assets\Fonts\ArbFONTS-Al-Kharashi-20.ttf" />
     <None Remove="Assets\Fonts\ArbFONTS-MCS Hijaz S_U adorn..ttf" />
     <None Remove="Assets\Fonts\ArbFONTS-MCS Jaly S_U adorn..ttf" />
@@ -31,11 +33,14 @@
     <None Remove="Assets\letter-v.png" />
     <None Remove="Assets\loader.gif" />
     <None Remove="Assets\menu-bar.png" />
+    <None Remove="Assets\muslim.svg" />
     <None Remove="Assets\night.png" />
     <None Remove="Assets\pause.png" />
     <None Remove="Assets\play.png" />
     <None Remove="Assets\quran.png" />
     <None Remove="Assets\quranGif.gif" />
+    <None Remove="Assets\quranSideBar.png" />
+    <None Remove="Assets\read-quran.png" />
     <None Remove="Assets\shalat.png" />
     <None Remove="Assets\sunny.png" />
     <None Remove="Assets\two.png" />
@@ -48,6 +53,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\allah.png" />
+    <Resource Include="Assets\beads.png" />
     <Resource Include="Assets\Fonts\ArbFONTS-Al-Kharashi-20.ttf" />
     <Resource Include="Assets\Fonts\ArbFONTS-MCS Hijaz S_U adorn..ttf" />
     <Resource Include="Assets\Fonts\ArbFONTS-MCS Jaly S_U adorn..ttf" />
@@ -56,6 +63,7 @@
     <Resource Include="Assets\islamic-pattern.png" />
     <Resource Include="Assets\islamic.png" />
     <Resource Include="Assets\letter-v.png" />
+    <Resource Include="Assets\muslim.svg" />
     <Resource Include="Assets\pray.ico" />
     <Content Include="pray.ico" />
   </ItemGroup>
@@ -106,6 +114,8 @@
     <Resource Include="Assets\play.png" />
     <Resource Include="Assets\quran.png" />
     <Resource Include="Assets\quranGif.gif" />
+    <Resource Include="Assets\quranSideBar.png" />
+    <Resource Include="Assets\read-quran.png" />
     <Resource Include="Assets\shalat.png" />
     <Resource Include="Assets\sunny.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
