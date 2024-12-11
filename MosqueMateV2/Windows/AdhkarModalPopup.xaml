@@ -136,7 +136,7 @@
                                   VerticalAlignment="Top"
                                   ShowText="False"
                                   FontSize="15"
-                                  ArcThickness="15"
+                                  ArcThickness="12"
                                   FontWeight="UltraBold"
                                   Height="98"
                                   Foreground="Orange">
@@ -145,14 +145,13 @@
             <TextBlock x:Name="zekrCounterTxt"
                        Text="1"
                        FontSize="20"
-                       Padding="0 20 0 0"
                        TextAlignment="Center"
                        VerticalAlignment="Top"
-                       HorizontalAlignment="Center"
-                       Width="100"
-                       Height="50"
+                       HorizontalAlignment="Left"
+                       Width="38"
+                       Height="24"
                        FontWeight="DemiBold"
-                       Margin="255,463,245,0" />
+                       Margin="279,478,0,0" />
             <!--#endregion-->
 
 

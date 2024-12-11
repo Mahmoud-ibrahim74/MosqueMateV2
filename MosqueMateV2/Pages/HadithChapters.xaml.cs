@@ -39,27 +39,29 @@ namespace MosqueMateV2.Pages
                  backgroundTask: token => new ApiClient(_baseUrl:ApiRquestHelper.HadithChpterLink(this._bookSlug)).GetAsync(),
                  onSuccess: result =>
                  {
-                     chapter = JsonConvert.DeserializeObject<DTOChapter>(result);
-                     if (chapter?.status == 200)
+                     if (result is not null)
                      {
-                         GridCardContainer.GenerateCards(
-                                               data: chapter.chapters,
-                                               getName: item =>App.AppLanguage == AppLocalization.Arabic ? 
-                                               item.chapterArabic : item.chapterEnglish,
-                                               getId: item => item.id,
-                                               serviceType: PagesTypesEnum.HadithChapter,
-                                               CardWidth:350,
-                                               CardHeight:100,
-                                               PaddingTopTxt:15
-                                           );
-                         this.loader.Visibility = Visibility.Collapsed;
-
+                         chapter = JsonConvert.DeserializeObject<DTOChapter>(result);
+                         if (chapter?.status == 200)
+                         {
+                             GridCardContainer.GenerateCards(
+                                                   data: chapter.chapters,
+                                                   getName: item => App.AppLanguage == AppLocalization.Arabic ?
+                                                   item.chapterArabic : item.chapterEnglish,
+                                                   getId: item => item.id,
+                                                   serviceType: PagesTypesEnum.HadithChapter,
+                                                   CardWidth: 350,
+                                                   CardHeight: 100,
+                                                   PaddingTopTxt: 15
+                                               );
+                             this.loader.Visibility = Visibility.Collapsed;
+                         }
                      }
                  },
                  retryNumber: 2,
                  () => // handle an error
                  {
-
+                     this.loader.Visibility = Visibility.Collapsed;
                  });
         }
         private void searchOnQuran_Click(object sender, RoutedEventArgs e)

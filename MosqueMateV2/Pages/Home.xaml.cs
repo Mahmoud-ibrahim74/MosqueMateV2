@@ -22,7 +22,6 @@ namespace MosqueMateV2.Pages
     public partial class Home : Page
     {
 
-        public string apiContent { get; set; } = string.Empty;
         public List<PrayerSlide> PrayerSlidesData { get; set; }
         RxTaskManger rxTaskManger;
         ApiClient api { get; set; }
@@ -34,7 +33,7 @@ namespace MosqueMateV2.Pages
 
             api = new ApiClient(
                 Country: AppSettings.Default.Country.ToLowerInvariant()
-                ,City: AppSettings.Default.City.ToLowerInvariant(),
+                , City: AppSettings.Default.City.ToLowerInvariant(),
                 method: method);
 
 
@@ -49,16 +48,18 @@ namespace MosqueMateV2.Pages
                  backgroundTask: token => api.GetAsync(),
                  onSuccess: result =>
                  {
-                     apiContent = result;
+                     if (result is not null)
+                     {
+                         App.Api_Response = JsonConvert.DeserializeObject<DTOPrayerTimesResponse>(result);
+                     }
                      IsEnabled = true;
                      Loader.Visibility = Visibility.Hidden;
-                     App.Api_Response = JsonConvert.DeserializeObject<DTOPrayerTimesResponse>(apiContent);
                      RenderWindowWithData();
                  },
                  retryNumber: 5,
                  () => // handle an error
                  {
-
+                     Loader.Visibility = Visibility.Collapsed;
                  });
 
         }
@@ -77,36 +78,39 @@ namespace MosqueMateV2.Pages
 
             BindingCarusel();
             BindingBottomPanel();
+            if (App.Api_Response is not null)
+            {
+                #region hijriDateBuilder
 
-            #region hijriDateBuilder
-            var hijriDate = StringExtenstion.AppendString(
-                 App.Api_Response.Data.Date.Hijri.Day,
-                 " - ",
-                 App.AppLanguage == AppLocalization.Arabic ?
-                 App.Api_Response.Data.Date.Hijri.Weekday.Arabic :
-                 App.Api_Response.Data.Date.Hijri.Weekday.English,
-                 " ",
-                 App.AppLanguage == AppLocalization.Arabic ?
-                 App.Api_Response.Data.Date.Hijri.Month.Arabic :
-                 App.Api_Response.Data.Date.Hijri.Month.English,
-                 " ",
-                 App.Api_Response.Data.Date.Hijri.Year);
-            #endregion
+                var hijriDate = StringExtenstion.AppendString(
+                     App.Api_Response.Data.Date.Hijri.Day,
+                     " - ",
+                     App.AppLanguage == AppLocalization.Arabic ?
+                     App.Api_Response.Data.Date.Hijri.Weekday.Arabic :
+                     App.Api_Response.Data.Date.Hijri.Weekday.English,
+                     " ",
+                     App.AppLanguage == AppLocalization.Arabic ?
+                     App.Api_Response.Data.Date.Hijri.Month.Arabic :
+                     App.Api_Response.Data.Date.Hijri.Month.English,
+                     " ",
+                     App.Api_Response.Data.Date.Hijri.Year);
+                #endregion
 
-            #region WelcomeBuilder
-            var WelcomeBuilder = StringExtenstion.AppendString(
-                App.LocalizationService[AppLocalization.WeclomeApp],
-                " , ",
-                DateTimeHelper.PrintGreeting()
-                );
-            #endregion
+                #region WelcomeBuilder
+                var WelcomeBuilder = StringExtenstion.AppendString(
+                    App.LocalizationService[AppLocalization.WeclomeApp],
+                    " , ",
+                    DateTimeHelper.PrintGreeting()
+                    );
+                #endregion
 
-            #region WindowControls
+                #region WindowControls
 
-            welcomeLBL.Content = WelcomeBuilder.ToString();
-            hijiriDateLBL.Content = hijriDate.ToString();
-            miladiDateLBL.Content = DateTime.Now.ToLocalizedDate(App.AppLanguage);
-            #endregion
+                welcomeLBL.Content = WelcomeBuilder.ToString();
+                hijiriDateLBL.Content = hijriDate.ToString();
+                miladiDateLBL.Content = DateTime.Now.ToLocalizedDate(App.AppLanguage);
+                #endregion
+            }
 
             rxTaskManger.StartUITaskScheduler(async () => await Task.CompletedTask, TimeSpan.FromSeconds(1), UpdateNextPrayerLabel);
 

@@ -38,27 +38,28 @@ namespace MosqueMateV2.Pages
                  backgroundTask: token => new ApiClient(_baseUrl:AppLocalization.HadithApiLink).GetAsync(),
                  onSuccess: result =>
                  {
+                     if(result is not null) { 
                      hadithBooks = JsonConvert.DeserializeObject<DTOBookResponse>(result);
-                     if (hadithBooks?.status == 200)
-                     {
-                         GridCardContainer.GenerateCards(
-                                               data: hadithBooks.books,
-                                               getName: item => item.bookName,
-                                               getId: item => item.id,
-                                               UidCard:item=> item.bookSlug,
-                                               serviceType: PagesTypesEnum.Hadith,
-                                               CardWidth:250,
-                                               CardHeight:100,
-                                               PaddingTopTxt:20
-                                           );
+                         if (hadithBooks?.status == 200)
+                         {
+                             GridCardContainer.GenerateCards(
+                                                   data: hadithBooks.books,
+                                                   getName: item => item.bookName,
+                                                   getId: item => item.id,
+                                                   UidCard: item => item.bookSlug,
+                                                   serviceType: PagesTypesEnum.Hadith,
+                                                   CardWidth: 250,
+                                                   CardHeight: 100,
+                                                   PaddingTopTxt: 20
+                                               );
+                         }
                          this.loader.Visibility = Visibility.Collapsed;
-
                      }
                  },
                  retryNumber: 2,
                  () => // handle an error
                  {
-
+                     this.loader.Visibility = Visibility.Collapsed;
                  });
         }
         private void searchOnQuran_Click(object sender, RoutedEventArgs e)

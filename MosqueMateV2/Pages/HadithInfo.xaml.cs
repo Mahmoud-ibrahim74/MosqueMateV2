@@ -47,18 +47,22 @@ namespace MosqueMateV2.Pages
                      )).GetAsync(),
                  onSuccess: result =>
                  {
-                     hadithInfo = JsonConvert.DeserializeObject<DTOHadithInfo>(result);
-                     if (hadithInfo?.status == 200)
+                     if (result is not null)
                      {
-                         GridCardContainer.GenerateCardsForHadith(hadithInfo.hadiths.data);
-                         this.loader.Visibility = Visibility.Collapsed;
-                         Console.WriteLine("GridCardContainer.Children  " + GridCardContainer.Children.Count);
+                         hadithInfo = JsonConvert.DeserializeObject<DTOHadithInfo>(result);
+                         if (hadithInfo?.status == 200)
+                         {
+                             GridCardContainer.GenerateCardsForHadith(hadithInfo.hadiths.data);
+                             this.loader.Visibility = Visibility.Collapsed;
+                             Console.WriteLine("GridCardContainer.Children  " + GridCardContainer.Children.Count);
+                         }
                      }
                  },
+
                  retryNumber: 2,
                  () => // handle an error
                  {
-
+                     this.loader.Visibility = Visibility.Collapsed;
                  });
         }
     }
