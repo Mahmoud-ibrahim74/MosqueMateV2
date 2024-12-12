@@ -36,6 +36,7 @@
         public const string Prophets = "Prophets";
         public const string allahName = "allahName";
         public const string ZekrReminder = "ZekrReminder";
+        public const string Rokya = "Rokya";
         public const string AzkarDoaa = "AzkarDoaa";
         public const string PrayerLearning = "PrayerLearning";
         public const string PrayerLeft = "PrayerLeft";

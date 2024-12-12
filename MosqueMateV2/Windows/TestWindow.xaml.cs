@@ -30,21 +30,7 @@ namespace MosqueMateV2.Windows
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            rxTaskManger.RunBackgroundTaskOnUI(
-          backgroundTask: token => FileHelper.WritePdfToTempAsync(FileResources.Stories),
-                        onSuccess: result =>
-                        {
-                            if(result is not null)
-                            {
-                                WebView.Source = new Uri(result);
 
-                            }
-                        },
-                        retryNumber: 2,
-                        () => // handle an error
-                        {
-
-                        });
 
         }
     }

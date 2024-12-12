@@ -21,6 +21,7 @@
     <None Remove="Assets\allah.png" />
     <None Remove="Assets\Asr.jpg" />
     <None Remove="Assets\beads.png" />
+    <None Remove="Assets\dua.png" />
     <None Remove="Assets\Fonts\ArbFONTS-Al-Kharashi-20.ttf" />
     <None Remove="Assets\Fonts\ArbFONTS-MCS Hijaz S_U adorn..ttf" />
     <None Remove="Assets\Fonts\ArbFONTS-MCS Jaly S_U adorn..ttf" />
@@ -56,6 +57,7 @@
   <ItemGroup>
     <Resource Include="Assets\allah.png" />
     <Resource Include="Assets\beads.png" />
+    <Resource Include="Assets\dua.png" />
     <Resource Include="Assets\Fonts\ArbFONTS-Al-Kharashi-20.ttf" />
     <Resource Include="Assets\Fonts\ArbFONTS-MCS Hijaz S_U adorn..ttf" />
     <Resource Include="Assets\Fonts\ArbFONTS-MCS Jaly S_U adorn..ttf" />
@@ -139,9 +141,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
       <DependentUpon>AppSettings.settings</DependentUpon>
-    </Compile>
-    <Compile Update="Windows\StoriesModalPopup.xaml.cs">
-      <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\QuranModalPopup.xaml.cs">
       <SubType>Code</SubType>

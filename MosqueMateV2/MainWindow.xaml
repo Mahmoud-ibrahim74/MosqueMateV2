@@ -91,9 +91,12 @@
 
                 <ui:NavigationViewItem x:Name="allahNamesItem">
                 </ui:NavigationViewItem>
+                
                 <ui:NavigationViewItem x:Name="ProphetsStoriesItem">
                 </ui:NavigationViewItem>
 
+                <ui:NavigationViewItem x:Name="RokyaItems">
+                </ui:NavigationViewItem>
             </ui:NavigationView.MenuItems>
 
         </ui:NavigationView>
