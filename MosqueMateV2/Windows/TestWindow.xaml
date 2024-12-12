@@ -6,27 +6,33 @@
          xmlns:system="clr-namespace:System;assembly=System.Runtime"
          xmlns:local="clr-namespace:MosqueMateV2.CustomUserControls"
          xmlns:hc="https://handyorg.github.io/handycontrol"
+         xmlns:wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
          Title="Exit Confirmation Example"
          ThemeMode="Light"
-         Height="900"
-         Width="800"
-         Loaded="ConfirmationDialog_Loaded">
+         Height="700"
+         Width="700"
+         Loaded="ConfirmationDialog_Loaded"
+         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid HorizontalAlignment="Stretch"
-              VerticalAlignment="Stretch">
-            <hc:LoadingLine HorizontalAlignment="Left"
-                            Margin="656,35,0,0"
-                            VerticalAlignment="Top" />
-
-            <Grid Margin="266,333,266,333">
-                <Button HorizontalAlignment="Center"
-                        Width="268"
-                        Height="78"
-                        Click="Button_Click"></Button>
-            </Grid>
-
-
-        </Grid>
+        <hc:LoadingCircle x:Name="loader"
+                          DotSpeed="5"
+                          DotCount="5"
+                          Width="101"
+                          Height="40"
+                          Panel.ZIndex="2"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Visibility="Collapsed" />
+        <Button Width="268"
+                Content="Convert"
+                FontSize="20"
+                Height="78"
+                Click="Button_Click"
+                VerticalAlignment="Top"
+                Margin="210,588,0,0" />
+        <wpf:WebView2 x:Name="WebView"
+                  Source="about:blank"
+                      Margin="0,0,0,111" />
         
     </Grid>
 </Window>

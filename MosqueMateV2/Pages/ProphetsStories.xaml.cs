@@ -26,20 +26,23 @@ namespace MosqueMateV2.Pages
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-           // var main = Application.Current.MainWindow;
-           // this.loader.Visibility = Visibility.Visible;
-           //rxTaskManger.RunBackgroundTaskOnUI(
-           //      backgroundTask: () => YoutubeHelper.GetPlayListAsync(AppLocalization.PlayListUrl),
-           //      onSuccess: result =>
-           //      {
-           //          GridCardContainer.GenerateMaterialDesignCardsPlayList(result);
-           //          this.loader.Visibility = Visibility.Hidden;
-           //      },
-           //      retryNumber: 2,
-           //      () => // handle an error
-           //      {
-           //          this.loader.Visibility = Visibility.Hidden;
-           //      });
+            this.loader.Visibility = Visibility.Visible;
+            rxTaskManger.RunBackgroundTaskOnUI(
+          backgroundTask: token => FileHelper.WritePdfToTempAsync(FileResources.Stories),
+                        onSuccess: result =>
+                        {
+                            if (result is not null)
+                            {
+                                WebView.Source = new Uri(result);
+                                this.loader.Visibility = Visibility.Collapsed;    
+                            }
+                        },
+                        retryNumber: 2,
+                        () => // handle an error
+                        {
+                            this.loader.Visibility = Visibility.Collapsed;
+
+                        });
         }
         private async void searchOnAdhan_Click(object sender, RoutedEventArgs e)
         {
@@ -57,6 +60,11 @@ namespace MosqueMateV2.Pages
             //        }
             //    }
             //}
+        }
+
+        private void backToHome_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

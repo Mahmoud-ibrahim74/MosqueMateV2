@@ -7,53 +7,26 @@
          xmlns:local="clr-namespace:MosqueMateV2.CustomUserControls"
          xmlns:ui="http://schemas.modernwpf.com/2019"
          xmlns:hc="https://handyorg.github.io/handycontrol"
+         xmlns:wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
          mc:Ignorable="d"
          Title="MainWindow"
          ui:ThemeManager.RequestedTheme="Default"
          FontFamily="Bahnschrift Condensed"
          Loaded="Window_Loaded">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*"></RowDefinition>
-            <RowDefinition Height="25*" />
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <TextBox x:Name="AdhkarSearchTxt"
-                     HorizontalAlignment="Center"
-                     VerticalAlignment="Center"
-                     Width="450"
-                     Height="40"
-                     Padding="10"
-                     FontSize="18"
-                     FlowDirection="RightToLeft" />
-            <Button x:Name="searchOnAdhan"
-                    Width="50"
-                    Height="40"
-                    Padding="10"
-                    FontSize="18"
-                    Cursor="Hand"
-                    HorizontalAlignment="Center"
-                    Margin="-550,0,0,0"
-                    Click="searchOnAdhan_Click">
-                <materialDesign:PackIcon Kind="search"
-                                         Height="15"
-                                         Width="25"
-                                         HorizontalAlignment="Center" />
-            </Button>
-        </Grid>
-        <ScrollViewer x:Name="adhkarScrollViewer"
-                      Grid.Row="1">
-            <Grid x:Name="GridCardContainer"
-                  Grid.RowSpan="2">
-                <hc:LoadingCircle x:Name="loader"
-                                  DotSpeed="4"
-                                  DotCount="5"
-                                  Width="60"
-                                  Height="50"
-                                  HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"
-                                  Visibility="Collapsed" />
-            </Grid>
-        </ScrollViewer>
+    <Grid x:Name="GridCardContainer"
+          Grid.RowSpan="2">
+        <hc:LoadingCircle x:Name="loader"
+                          DotSpeed="4"
+                          DotCount="5"
+                          Width="60"
+                          Height="50"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Visibility="Collapsed" />
+        <Button x:Name="backToHome" Click="backToHome_Click">
+            <materialDesign:PackIcon Kind="ArrowBack"></materialDesign:PackIcon>
+        </Button>
+        <wpf:WebView2 x:Name="WebView"
+                      Source="about:blank"/>
     </Grid>
 </ui:Page>

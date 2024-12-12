@@ -77,31 +77,21 @@
             SelectionChanged="NavView_SelectionChanged">
             <!-- Navigation Menu Items -->
             <ui:NavigationView.MenuItems>
-                <ui:NavigationViewItem x:Name="homeItem"  Icon="Home">
+                <ui:NavigationViewItem x:Name="homeItem"
+                                       Icon="Home">
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem x:Name="quraanItem">
                 </ui:NavigationViewItem>
 
-                <ui:NavigationViewItem x:Name="quraanItem">
-                    <!--<ui:NavigationViewItem.Icon>
-                        <ui:BitmapIcon UriSource="Assets/quranSideBar.png"></ui:BitmapIcon>
-                    </ui:NavigationViewItem.Icon>-->
-                </ui:NavigationViewItem>
-                
                 <ui:NavigationViewItem x:Name="adhkarItem">
-                    <!--<ui:NavigationViewItem.Icon>
-                        <ui:BitmapIcon UriSource="Assets/beads.png"></ui:BitmapIcon>
-                    </ui:NavigationViewItem.Icon>-->
                 </ui:NavigationViewItem>
-                
+
                 <ui:NavigationViewItem x:Name="hadithItem">
-                    <!--<ui:NavigationViewItem.Icon>
-                        <ui:BitmapIcon UriSource="Assets/read-quran.png"></ui:BitmapIcon>
-                    </ui:NavigationViewItem.Icon>-->
                 </ui:NavigationViewItem>
 
                 <ui:NavigationViewItem x:Name="allahNamesItem">
-                    <!--<ui:NavigationViewItem.Icon>
-                        <ui:BitmapIcon UriSource="Assets/allah.png"></ui:BitmapIcon>
-                    </ui:NavigationViewItem.Icon>-->
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem x:Name="ProphetsStoriesItem">
                 </ui:NavigationViewItem>
 
             </ui:NavigationView.MenuItems>

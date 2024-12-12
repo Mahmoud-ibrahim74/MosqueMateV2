@@ -93,6 +93,16 @@ namespace MosqueMateV2.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] e2024162 {
+            get {
+                object obj = ResourceManager.GetObject("e2024162", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] loading {
             get {
                 object obj = ResourceManager.GetObject("loading", resourceCulture);
@@ -126,6 +136,16 @@ namespace MosqueMateV2.Resources {
         public static byte[] SharedResource {
             get {
                 object obj = ResourceManager.GetObject("SharedResource", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Stories {
+            get {
+                object obj = ResourceManager.GetObject("Stories", resourceCulture);
                 return ((byte[])(obj));
             }
         }

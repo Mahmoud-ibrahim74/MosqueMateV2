@@ -2,7 +2,7 @@
 {
     public static class AppLocalization
     {
-        public static string VideoDirectoryDownload = Path.Combine(Path.GetTempPath(),AppAssemblyName);
+        public static string AppTempPath = Path.Combine(Path.GetTempPath(),AppAssemblyName);
 
 
         public const string AppName = "AppName";
@@ -33,6 +33,7 @@
         public const string ContinueReading = "ContinueReading";
         public const string Hadith = "Hadith";
         public const string Azkar = "Azkar";
+        public const string Prophets = "Prophets";
         public const string allahName = "allahName";
         public const string ZekrReminder = "ZekrReminder";
         public const string AzkarDoaa = "AzkarDoaa";

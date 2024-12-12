@@ -142,4 +142,10 @@
   <data name="surahNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\surahNames.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="e2024162" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\e2024162.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Stories" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Stories.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

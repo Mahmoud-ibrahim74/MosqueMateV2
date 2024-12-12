@@ -33,6 +33,7 @@
     <None Remove="Assets\letter-v.png" />
     <None Remove="Assets\loader.gif" />
     <None Remove="Assets\menu-bar.png" />
+    <None Remove="Assets\muhammad.png" />
     <None Remove="Assets\muslim.svg" />
     <None Remove="Assets\night.png" />
     <None Remove="Assets\pause.png" />
@@ -63,6 +64,7 @@
     <Resource Include="Assets\islamic-pattern.png" />
     <Resource Include="Assets\islamic.png" />
     <Resource Include="Assets\letter-v.png" />
+    <Resource Include="Assets\muhammad.png" />
     <Resource Include="Assets\muslim.svg" />
     <Resource Include="Assets\pray.ico" />
     <Content Include="pray.ico" />
@@ -71,6 +73,7 @@
   <ItemGroup>
     <PackageReference Include="HandyControl" Version="3.5.1" />
     <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" />
     <PackageReference Include="ModernWpfUI" Version="0.9.6" />
     <PackageReference Include="Notification.Wpf" Version="8.0.0" />
     <PackageReference Include="System.Reactive" Version="6.0.1" />
@@ -136,6 +139,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
       <DependentUpon>AppSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Windows\StoriesModalPopup.xaml.cs">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\QuranModalPopup.xaml.cs">
       <SubType>Code</SubType>
