@@ -80,7 +80,10 @@
                 <ui:NavigationViewItem x:Name="homeItem"
                                        Icon="Home">
                 </ui:NavigationViewItem>
+                
                 <ui:NavigationViewItem x:Name="quraanItem">
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem x:Name="quraanTafseerItem">
                 </ui:NavigationViewItem>
 
                 <ui:NavigationViewItem x:Name="adhkarItem">

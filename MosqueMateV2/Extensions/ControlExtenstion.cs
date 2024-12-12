@@ -477,6 +477,9 @@ namespace MosqueMateV2.Extensions
                 case PagesTypesEnum.HadithChapter:
                     OpenHadithInfo(sender as Card);
                     break;
+                case PagesTypesEnum.QuranTafseer:
+                    OpenQuranTafseer(sender as Card);
+                    break;
                 default:
                     break;
             }
@@ -577,6 +580,20 @@ namespace MosqueMateV2.Extensions
                 {
                     var uId = selectedCard.Uid;
                     frame?.Navigate(new HadithInfo(index));
+                }
+
+            }
+        }
+        private static void OpenQuranTafseer(Card selectedCard)
+        {
+            if (selectedCard is not null)
+            {
+                var window = Application.Current.MainWindow;
+                var frame = window.FindName("MainFrame") as Frame;
+                if (frame is not null)
+                {
+                    var uId = selectedCard.Uid;
+                    frame?.Navigate(new YoutubeViewerPage(uId));
                 }
 
             }

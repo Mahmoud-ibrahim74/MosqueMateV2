@@ -24,6 +24,11 @@
     "en": "Stories of the Prophets",
     "fr": "Histoires des prophètes"
   },
+  "QuranTafseer": {
+    "ar": "دروس تفسير القرآن",
+    "en": "Quran interpretation lessons",
+    "fr": "Leçons sur l’interprétation du Coran"
+  },
   "Alert": {
     "en": "Alert",
     "ar": "تنبيه",

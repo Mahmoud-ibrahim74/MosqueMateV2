@@ -1,4 +1,6 @@
 ﻿using Microsoft.Win32;
+using ModernWpf.Controls;
+using MosqueMateV2.Pages;
 using MosqueMateV2.Resources;
 using System.Diagnostics;
 using System.IO;
@@ -6,9 +8,9 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-using System.Windows.Forms;
 using System.Windows.Media;
 using Control = System.Windows.Controls.Control;
+using Frame = ModernWpf.Controls.Frame;
 
 namespace MosqueMateV2.Helpers
 {
@@ -89,13 +91,27 @@ namespace MosqueMateV2.Helpers
             }
             catch (Exception)
             {
-                return false;   
+                return false;
             }
 
         }
 
-        public static string PlayListName {  get; set; }
-        public static string? currentVideoFileName {  get; set; }
-        public static string? currentVideoFullPath {  get; set; }
+        public static void BackToHome()
+        {
+            var window = App.Current.MainWindow;
+            if (window is not null)
+            {
+                var frame = window.FindName("MainFrame") as Frame;
+                frame?.Navigate(new Home());
+                var nav = window.FindName("NavView") as NavigationView;
+                var homeItem = window.FindName("homeItem") as NavigationViewItem;
+                if (nav is not null && homeItem is not null)
+                    nav.SelectedItem = homeItem;
+            }
+        }
+
+        public static string PlayListName { get; set; }
+        public static string? currentVideoFileName { get; set; }
+        public static string? currentVideoFullPath { get; set; }
     }
 }

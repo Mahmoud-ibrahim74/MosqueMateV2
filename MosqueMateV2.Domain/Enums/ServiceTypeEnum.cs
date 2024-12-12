@@ -10,10 +10,11 @@
     public enum PagesTypesEnum
     {
         Quran = 1,
-        Adhkar = 2,
-        Hadith = 3,
-        HadithChapter = 4,
-        HadithInfo = 5,
-        AllahNames = 6
+        QuranTafseer = 2,
+        Adhkar = 3,
+        Hadith = 4,
+        HadithChapter = 5,
+        HadithInfo = 6,
+        AllahNames = 7
     }
 }

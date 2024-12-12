@@ -16,6 +16,7 @@ namespace MosqueMateV2
         public string apiContent { get; set; } = string.Empty;
         public List<PrayerSlide> PrayerSlidesData { get; set; }
         BitmapIcon _quranIcon { get; set; }
+        BitmapIcon _quranTafseerIcon { get; set; }
         BitmapIcon _beadsIcon { get; set; }
         BitmapIcon _readQuran { get; set; }
         BitmapIcon allah { get; set; }
@@ -34,15 +35,18 @@ namespace MosqueMateV2
             Prophet = new();
             allah = new();
             Rokay = new();
+            _quranTafseerIcon = new();  
             _quranIcon.UriSource = new Uri("pack://application:,,,/Assets/quranSideBar.png");
+            _quranTafseerIcon.UriSource = new Uri("pack://application:,,,/Assets/quranSideBar.png");
             _beadsIcon.UriSource = new Uri("pack://application:,,,/Assets/beads.png");
             _readQuran.UriSource = new Uri("pack://application:,,,/Assets/read-quran.png");
             allah.UriSource = new Uri("pack://application:,,,/Assets/allah.png");
             allah.UriSource = new Uri("pack://application:,,,/Assets/allah.png");
             Prophet.UriSource = new Uri("pack://application:,,,/Assets/muhammad.png");
-            Rokay.UriSource = new Uri("pack://application:,,,/Assets/dua.png"); 
+            Rokay.UriSource = new Uri("pack://application:,,,/Assets/dua.png");
 
             quraanItem.Icon = _quranIcon;
+            quraanTafseerItem.Icon = _quranTafseerIcon;
             adhkarItem.Icon = _beadsIcon;
             hadithItem.Icon = _readQuran;
             allahNamesItem.Icon = allah;
@@ -83,9 +87,12 @@ namespace MosqueMateV2
                         break;
                     case AppLocalization.Prophets:
                         MainFrame.Navigate(new PdfViewerPage(Domain.Enums.ViewTypesEnum.Stories));
-                        break;           
+                        break;
                     case AppLocalization.Rokya:
                         MainFrame.Navigate(new PdfViewerPage(Domain.Enums.ViewTypesEnum.Rokya));
+                        break;
+                    case AppLocalization.QuranTafseer:
+                        MainFrame.Navigate(new QuranTafseer());
                         break;
                 }
             }
@@ -104,6 +111,7 @@ namespace MosqueMateV2
             allahNamesItem.Content = App.LocalizationService[AppLocalization.allahName];
             ProphetsStoriesItem.Content = App.LocalizationService[AppLocalization.Prophets];
             RokyaItems.Content = App.LocalizationService[AppLocalization.Rokya];
+            quraanTafseerItem.Content = App.LocalizationService[AppLocalization.QuranTafseer];
             #endregion
 
             #region Tags
@@ -115,6 +123,7 @@ namespace MosqueMateV2
             allahNamesItem.Tag = AppLocalization.allahName;
             ProphetsStoriesItem.Tag = AppLocalization.Prophets;
             RokyaItems.Tag = AppLocalization.Rokya;
+            quraanTafseerItem.Tag = AppLocalization.QuranTafseer;
             NavView.SelectedItem = homeItem;
             #endregion
 
