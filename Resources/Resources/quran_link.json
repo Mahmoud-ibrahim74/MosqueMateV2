@@ -1,458 +1,572 @@
 [
-    {
-        "name": "الفاتحة",
-        "url": "https://www.youtube.com/watch?v=SxzUeUdi5hI&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "البقرة",
-        "url": "https://www.youtube.com/watch?v=BZO7UfCjOsk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "آل عمران",
-        "url": "https://www.youtube.com/watch?v=Tfcj7zhdwvk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "النساء",
-        "url": "https://www.youtube.com/watch?v=DOjBBK4zpgI&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "المائدة",
-        "url": "https://www.youtube.com/watch?v=zg7yN6dxcqg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الأنعام",
-        "url": "https://www.youtube.com/watch?v=zHD4NCrt87g&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الأعراف",
-        "url": "https://www.youtube.com/watch?v=xox0A8g5Cns&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الأنفال",
-        "url": "https://www.youtube.com/watch?v=vzLI0aDhmsU&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "التوبة",
-        "url": "https://www.youtube.com/watch?v=_Sc7B9kB2IQ&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "يونس",
-        "url": "https://www.youtube.com/watch?v=Ir8dBV5WLFU&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "هود",
-        "url": "https://www.youtube.com/watch?v=1flAj40UwzU&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "يوسف",
-        "url": "https://www.youtube.com/watch?v=pYvasOT6WJg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الرعد",
-        "url": "https://www.youtube.com/watch?v=LzhC42DAK0k&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "إبراهيم",
-        "url": "https://www.youtube.com/watch?v=pJlb6ge8z8M&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الحجر",
-        "url": "https://www.youtube.com/watch?v=Unb1GluLPLk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "النحل",
-        "url": "https://www.youtube.com/watch?v=I_WYcsjzk94&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الإسراء",
-        "url": "https://www.youtube.com/watch?v=WThWPH1z0hc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الكهف",
-        "url": "https://www.youtube.com/watch?v=Jf5TtD_btYc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "مريم",
-        "url": "https://www.youtube.com/watch?v=X9q8pAuWyqY&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "طه",
-        "url": "https://www.youtube.com/watch?v=hjvvE0KQIsk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الأنبياء",
-        "url": "https://www.youtube.com/watch?v=LuYXy0IcR3s&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الحج",
-        "url": "https://www.youtube.com/watch?v=s8cot_eWe5I&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "المؤمنون",
-        "url": "https://www.youtube.com/watch?v=N7PjCBLk0Bw&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "النّور",
-        "url": "https://www.youtube.com/watch?v=UeP8H9NvOM4&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الفرقان",
-        "url": "https://www.youtube.com/watch?v=XzLOYviBqww&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الشعراء",
-        "url": "https://www.youtube.com/watch?v=cnkzjVkF4yQ&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "النّمل",
-        "url": "https://www.youtube.com/watch?v=ywKuk70EryU&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "القصص",
-        "url": "https://www.youtube.com/watch?v=9bgpTJ7iQm8&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "العنكبوت",
-        "url": "https://www.youtube.com/watch?v=_hLcb4DqPTc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الرّوم",
-        "url": "https://www.youtube.com/watch?v=LhKHwazNwng&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "لقمان",
-        "url": "https://www.youtube.com/watch?v=ShAz0byshYs&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "السجدة",
-        "url": "https://www.youtube.com/watch?v=QN6sS9ZyvX4&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الأحزاب",
-        "url": "https://www.youtube.com/watch?v=8kp7G-fujus&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "سبأ",
-        "url": "https://www.youtube.com/watch?v=9GH7tcDFoUg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "فاطر",
-        "url": "https://www.youtube.com/watch?v=azvBf-zW-AA&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "يس",
-        "url": "https://www.youtube.com/watch?v=kCkmqxiCUtc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الصافات",
-        "url": "https://www.youtube.com/watch?v=mu7r1nmNIYI&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "ص",
-        "url": "https://www.youtube.com/watch?v=hAu7WwP_4Y0&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الزمر",
-        "url": "https://www.youtube.com/watch?v=ST8PscKTxMQ&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "غافر",
-        "url": "https://www.youtube.com/watch?v=nmxBZ5HlDhs&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "فصّلت",
-        "url": "https://www.youtube.com/watch?v=ux9COg5OmFU&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الشورى",
-        "url": "https://www.youtube.com/watch?v=2mG78cWjdMs&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الزخرف",
-        "url": "https://www.youtube.com/watch?v=cdlf1_419wQ&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الدّخان",
-        "url": "https://www.youtube.com/watch?v=po0bzX9FTYg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الجاثية",
-        "url": "https://www.youtube.com/watch?v=a1upBOv7DQQ&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الأحقاف",
-        "url": "https://www.youtube.com/watch?v=zl3pSSHrYDs&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "محمد",
-        "url": "https://www.youtube.com/watch?v=8LyzLo9hfso&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الفتح",
-        "url": "https://www.youtube.com/watch?v=DuzCm28408k&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الحجرات",
-        "url": "https://www.youtube.com/watch?v=5T-Xr_L0X9M&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "ق",
-        "url": "https://www.youtube.com/watch?v=l1Foq-wto8M&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الذاريات",
-        "url": "https://www.youtube.com/watch?v=9qm8vFH-NBg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الطور",
-        "url": "https://www.youtube.com/watch?v=o1r6DxR52v8&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "النجم",
-        "url": "https://www.youtube.com/watch?v=yBCmjKRIyw8&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "القمر",
-        "url": "https://www.youtube.com/watch?v=etCOrpxTJ38&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الرحمن",
-        "url": "https://www.youtube.com/watch?v=Xq67-o0sIPk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الواقعة",
-        "url": "https://www.youtube.com/watch?v=ysD0xzGV_n4&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الحديد",
-        "url": "https://www.youtube.com/watch?v=gyR823NHDyw&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "المجادلة",
-        "url": "https://www.youtube.com/watch?v=95iKuRwwbSs&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الحشر",
-        "url": "https://www.youtube.com/watch?v=T5kTkTuDmVI&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الممتحنة",
-        "url": "https://www.youtube.com/watch?v=8wWB4Ms3WVw&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الصف",
-        "url": "https://www.youtube.com/watch?v=MB3G_FHwGj8&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الجمعة",
-        "url": "https://www.youtube.com/watch?v=GxXcnQWQYxA&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "المنافقون",
-        "url": "https://www.youtube.com/watch?v=l53yRFsMNn0&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "التغابن",
-        "url": "https://www.youtube.com/watch?v=Y4QRi25V5qM&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الطلاق",
-        "url": "https://www.youtube.com/watch?v=2ToK-EQxSQc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "التحريم",
-        "url": "https://www.youtube.com/watch?v=DMJMTIwTaJw&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الملك",
-        "url": "https://www.youtube.com/watch?v=73ZacedIv9E&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "القلم",
-        "url": "https://www.youtube.com/watch?v=I_x-n7QshTs&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الحاقة",
-        "url": "https://www.youtube.com/watch?v=zikpb1qY7tk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "المعارج",
-        "url": "https://www.youtube.com/watch?v=sN0_rYuFASg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "نوح",
-        "url": "https://www.youtube.com/watch?v=8SJsewRW55U&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الجن",
-        "url": "https://www.youtube.com/watch?v=boSFhRlP5Ng&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "المزّمّل",
-        "url": "https://www.youtube.com/watch?v=vVMXKo95jms&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "المدّثر",
-        "url": "https://www.youtube.com/watch?v=Ky3OAvuQaXc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "القيامة",
-        "url": "https://www.youtube.com/watch?v=1IQ25nSQ94w&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الإنسان",
-        "url": "https://www.youtube.com/watch?v=8VOgt-Ukf4U&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "المرسلات",
-        "url": "https://www.youtube.com/watch?v=LBKB9-w000A&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "النبأ",
-        "url": "https://www.youtube.com/watch?v=BluUfbX5h2M&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "النازعات",
-        "url": "https://www.youtube.com/watch?v=8OIRlduuTcU&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "عبس",
-        "url": "https://www.youtube.com/watch?v=PyYsvPzFdYc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "التكوير",
-        "url": "https://www.youtube.com/watch?v=aZs23BMMHG0&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الإنفطار",
-        "url": "https://www.youtube.com/watch?v=nAwQP4MfheA&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "المطفّفين",
-        "url": "https://www.youtube.com/watch?v=sAakWeLdz2U&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الإنشقاق",
-        "url": "https://www.youtube.com/watch?v=6FKMcwvf-yg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "البروج",
-        "url": "https://www.youtube.com/watch?v=Xbf19x7p0qc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الطارق",
-        "url": "https://www.youtube.com/watch?v=J-LYuVaHdQY&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الأعلى",
-        "url": "https://www.youtube.com/watch?v=gEVZCMAE_ds&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الغاشية",
-        "url": "https://www.youtube.com/watch?v=fR8_qMbpsGY&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الفجر",
-        "url": "https://www.youtube.com/watch?v=QtAf1T-Vk9I&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "البلد",
-        "url": "https://www.youtube.com/watch?v=xivOqPhiM60&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الشمس",
-        "url": "https://www.youtube.com/watch?v=9E4M2koIjJA&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الليل",
-        "url": "https://www.youtube.com/watch?v=YwG7FMp8XM8&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الضحى",
-        "url": "https://www.youtube.com/watch?v=J27N8tVWz3U&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الشرح",
-        "url": "https://www.youtube.com/watch?v=PoenstIUsSk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "التين",
-        "url": "https://www.youtube.com/watch?v=Wt0Yv4Ti-9M&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "العلق",
-        "url": "https://www.youtube.com/watch?v=py8cR4ngKmk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "القدر",
-        "url": "https://www.youtube.com/watch?v=nm7-M5FfiZg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "البينة",
-        "url": "https://www.youtube.com/watch?v=lyitkqhCYGM&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الزلزلة",
-        "url": "https://www.youtube.com/watch?v=W-QLliEGt10&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "العاديات",
-        "url": "https://www.youtube.com/watch?v=zjRkZzcJA2E&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "القارعة",
-        "url": "https://www.youtube.com/watch?v=75BIPlHwFOs&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "التكاثر",
-        "url": "https://www.youtube.com/watch?v=uVcBf9yTRUI&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "العصر",
-        "url": "https://www.youtube.com/watch?v=B_sMSfZekNQ&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الهمزة",
-        "url": "https://www.youtube.com/watch?v=XbytvfxHlcM&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الفيل",
-        "url": "https://www.youtube.com/watch?v=asMVhaBdK20&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "قريش",
-        "url": "https://www.youtube.com/watch?v=vIKw4uxWhrg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الماعون",
-        "url": "https://www.youtube.com/watch?v=OSRTCr2ZuWo&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الكوثر",
-        "url": "https://www.youtube.com/watch?v=0JjY_7t3Y1g&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الكافرون",
-        "url": "https://www.youtube.com/watch?v=-DTXT2oQ34g&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "النصر",
-        "url": "https://www.youtube.com/watch?v=0JSYpCriRRo&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "المسد",
-        "url": "https://www.youtube.com/watch?v=PqNnzZuouAI&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الإخلاص",
-        "url": "https://www.youtube.com/watch?v=DxYLLNe07EQ&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "الفلق",
-        "url": "https://www.youtube.com/watch?v=3yzIICQL2V0&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    },
-    {
-        "name": "النّاس",
-        "url": "https://www.youtube.com/watch?v=8A7vMv-ptJk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr"
-    }
+  {
+    "name": "الفاتحة",
+    "url1": "https://www.youtube.com/watch?v=SxzUeUdi5hI&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=BnW2nciNhEk&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "البقرة",
+    "url1": "https://www.youtube.com/watch?v=BZO7UfCjOsk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=gBPOEHoeNdY&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "آل عمران",
+    "url1": "https://www.youtube.com/watch?v=Tfcj7zhdwvk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=5ZgcEz1DOUk&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "النساء",
+    "url1": "https://www.youtube.com/watch?v=DOjBBK4zpgI&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=K8qBHfmMvYk&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "المائدة",
+    "url1": "https://www.youtube.com/watch?v=zg7yN6dxcqg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=Qxtk55xKAZw&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الأنعام",
+    "url1": "https://www.youtube.com/watch?v=zHD4NCrt87g&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=nFI7-DL9QvQ&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الأعراف",
+    "url1": "https://www.youtube.com/watch?v=xox0A8g5Cns&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=LTNNiPONCsU&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الأنفال",
+    "url1": "https://www.youtube.com/watch?v=vzLI0aDhmsU&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=SlLnm_CDRf4&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "التوبة",
+    "url1": "https://www.youtube.com/watch?v=_Sc7B9kB2IQ&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=TTVH1fyeD7Y&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "يونس",
+    "url1": "https://www.youtube.com/watch?v=Ir8dBV5WLFU&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=RArRFTD-M7o&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "هود",
+    "url1": "https://www.youtube.com/watch?v=1flAj40UwzU&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=bkavgo2xe-c&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "يوسف",
+    "url1": "https://www.youtube.com/watch?v=pYvasOT6WJg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=SeZ2MNMbSxE&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الرعد",
+    "url1": "https://www.youtube.com/watch?v=LzhC42DAK0k&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=ocqabS_RlTc&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "إبراهيم",
+    "url1": "https://www.youtube.com/watch?v=pJlb6ge8z8M&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=9SmRt5UhrBs&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الحجر",
+    "url1": "https://www.youtube.com/watch?v=Unb1GluLPLk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=JkmCx36pDoI&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "النحل",
+    "url1": "https://www.youtube.com/watch?v=I_WYcsjzk94&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=1ZCXlM8ao5M&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الإسراء",
+    "url1": "https://www.youtube.com/watch?v=WThWPH1z0hc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=nXTGa4DosDw&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الكهف",
+    "url1": "https://www.youtube.com/watch?v=Jf5TtD_btYc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=4P4QdrHZg3o&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "مريم",
+    "url1": "https://www.youtube.com/watch?v=X9q8pAuWyqY&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=lgH8MlIMILg&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "طه",
+    "url1": "https://www.youtube.com/watch?v=hjvvE0KQIsk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=M3BN6N8-uNg&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الأنبياء",
+    "url1": "https://www.youtube.com/watch?v=LuYXy0IcR3s&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=sEx2Q7eZ9gA&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الحج",
+    "url1": "https://www.youtube.com/watch?v=s8cot_eWe5I&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=JkmCx36pDoI&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "المؤمنون",
+    "url1": "https://www.youtube.com/watch?v=N7PjCBLk0Bw&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=G3Fy0AIlORg&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "النور",
+    "url1": "https://www.youtube.com/watch?v=UeP8H9NvOM4&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=fhJrO6BfSZQ&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الفرقان",
+    "url1": "https://www.youtube.com/watch?v=XzLOYviBqww&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=m-NVoobZLz8&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الشعراء",
+    "url1": "https://www.youtube.com/watch?v=cnkzjVkF4yQ&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=ZQ-2X3OUXlE&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "النمل",
+    "url1": "https://www.youtube.com/watch?v=ywKuk70EryU&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=yx9oH6GeaW8&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "القصص",
+    "url1": "https://www.youtube.com/watch?v=9bgpTJ7iQm8&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=-v0JTlJsMQI&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "العنكبوت",
+    "url1": "https://www.youtube.com/watch?v=_hLcb4DqPTc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=5IpZi4TbNAo&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الروم",
+    "url1": "https://www.youtube.com/watch?v=LhKHwazNwng&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=pZZcj7pNs7A&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "لقمان",
+    "url1": "https://www.youtube.com/watch?v=ShAz0byshYs&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=GN5MUx_fMag&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "السجدة",
+    "url1": "https://www.youtube.com/watch?v=QN6sS9ZyvX4&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=TWcTG9t9kNU&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الأحزاب",
+    "url1": "https://www.youtube.com/watch?v=8kp7G-fujus&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=iaHUH5zfBV4&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "سبأ",
+    "url1": "https://www.youtube.com/watch?v=9GH7tcDFoUg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=1V3fir-X93Q&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "فاطر",
+    "url1": "https://www.youtube.com/watch?v=azvBf-zW-AA&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=etRpQkw0X6Y&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "يس",
+    "url1": "https://www.youtube.com/watch?v=kCkmqxiCUtc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=emR9JiqJfEk&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الصافات",
+    "url1": "https://www.youtube.com/watch?v=mu7r1nmNIYI&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=63OJCD7i1Zo&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "ص",
+    "url1": "https://www.youtube.com/watch?v=hAu7WwP_4Y0&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=-v0JTlJsMQI&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الزمر",
+    "url1": "https://www.youtube.com/watch?v=ST8PscKTxMQ&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=oamubG1x07o&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "غافر",
+    "url1": "https://www.youtube.com/watch?v=nmxBZ5HlDhs&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=uuCdrEs1MfI&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "فصلت",
+    "url1": "https://www.youtube.com/watch?v=ux9COg5OmFU&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=PlXxupkF0MA&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الشورى",
+    "url1": "https://www.youtube.com/watch?v=2mG78cWjdMs&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=VhijRPTkcic&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الزخرف",
+    "url1": "https://www.youtube.com/watch?v=cdlf1_419wQ&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=wMx9S0-wt8g&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الدخان",
+    "url1": "https://www.youtube.com/watch?v=po0bzX9FTYg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=J2JEk5Eg77E&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الجاثية",
+    "url1": "https://www.youtube.com/watch?v=a1upBOv7DQQ&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=2pUcWTFnyL4&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الأحقاف",
+    "url1": "https://www.youtube.com/watch?v=zl3pSSHrYDs&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=rGxZ6-CpVHY&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "محمد",
+    "url1": "https://www.youtube.com/watch?v=8LyzLo9hfso&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=bLB1JLSVFAo&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الفتح",
+    "url1": "https://www.youtube.com/watch?v=DuzCm28408k&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=n7UFr5biNNA&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الحجرات",
+    "url1": "https://www.youtube.com/watch?v=5T-Xr_L0X9M&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=ZtVcANpHhlU&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "ق",
+    "url1": "https://www.youtube.com/watch?v=l1Foq-wto8M&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=BnW2nciNhEk&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الذاريات",
+    "url1": "https://www.youtube.com/watch?v=9qm8vFH-NBg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=uNNZ4CdxBTs&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الطور",
+    "url1": "https://www.youtube.com/watch?v=o1r6DxR52v8&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=VOAliCK-JBM&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "النجم",
+    "url1": "https://www.youtube.com/watch?v=yBCmjKRIyw8&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=wT8vxvJo72o&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "القمر",
+    "url1": "https://www.youtube.com/watch?v=etCOrpxTJ38&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=fcCQhNBvtAg&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الرحمن",
+    "url1": "https://www.youtube.com/watch?v=Xq67-o0sIPk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=CMQdgdC0sCo&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الواقعة",
+    "url1": "https://www.youtube.com/watch?v=ysD0xzGV_n4&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=Yhc8k8ucELU&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الحديد",
+    "url1": "https://www.youtube.com/watch?v=gyR823NHDyw&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=Zhsr7QzXbss&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "المجادلة",
+    "url1": "https://www.youtube.com/watch?v=95iKuRwwbSs&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=zUu2FBj9Po8&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الحشر",
+    "url1": "https://www.youtube.com/watch?v=T5kTkTuDmVI&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=cBqilKqUiuE&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الممتحنة",
+    "url1": "https://www.youtube.com/watch?v=8wWB4Ms3WVw&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=wLRkRybwysE&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الصف",
+    "url1": "https://www.youtube.com/watch?v=MB3G_FHwGj8&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=yarJ8LFXZUo&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الجمعة",
+    "url1": "https://www.youtube.com/watch?v=GxXcnQWQYxA&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=K5du9fhxPgs&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "المنافقون",
+    "url1": "https://www.youtube.com/watch?v=l53yRFsMNn0&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=0aiNTAC3IuQ&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "التغابن",
+    "url1": "https://www.youtube.com/watch?v=Y4QRi25V5qM&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=9A3PFNIuV7M&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الطلاق",
+    "url1": "https://www.youtube.com/watch?v=2ToK-EQxSQc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=9RrfDSXLTS4&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "التحريم",
+    "url1": "https://www.youtube.com/watch?v=DMJMTIwTaJw&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=_N-hFCXsb1s&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الملك",
+    "url1": "https://www.youtube.com/watch?v=73ZacedIv9E&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=jxJOzvpek4c&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "القلم",
+    "url1": "https://www.youtube.com/watch?v=I_x-n7QshTs&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=HeutDrI0Ezk&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الحاقة",
+    "url1": "https://www.youtube.com/watch?v=zikpb1qY7tk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=N1BP1OrwYSQ&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "المعارج",
+    "url1": "https://www.youtube.com/watch?v=sN0_rYuFASg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=9V7F1S_fAAo&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "نوح",
+    "url1": "https://www.youtube.com/watch?v=8SJsewRW55U&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=izcidoYFLqQ&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الجن",
+    "url1": "https://www.youtube.com/watch?v=boSFhRlP5Ng&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=BzJuL3cOmgI&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "المزّمّل",
+    "url1": "https://www.youtube.com/watch?v=vVMXKo95jms&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=DOFNR_-qDKU&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "المدّثر",
+    "url1": "https://www.youtube.com/watch?v=Ky3OAvuQaXc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=DuapkcGahbo&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "القيامة",
+    "url1": "https://www.youtube.com/watch?v=1IQ25nSQ94w&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=1eHO0PGbX60&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الإنسان",
+    "url1": "https://www.youtube.com/watch?v=8VOgt-Ukf4U&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=rQr02GDYm3Q&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "المرسلات",
+    "url1": "https://www.youtube.com/watch?v=LBKB9-w000A&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=-WLZu7T0Nqw&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "النبأ",
+    "url1": "https://www.youtube.com/watch?v=BluUfbX5h2M&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=VgnE-lqaK_4&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "النازعات",
+    "url1": "https://www.youtube.com/watch?v=8OIRlduuTcU&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=dgoewTxzT4I&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "عبس",
+    "url1": "https://www.youtube.com/watch?v=PyYsvPzFdYc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=_79zvJw4eNA&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "التكوير",
+    "url1": "https://www.youtube.com/watch?v=aZs23BMMHG0&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=vYDxe6zUTq8&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الإنفطار",
+    "url1": "https://www.youtube.com/watch?v=nAwQP4MfheA&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=4O6PBYHo-BE&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "المطفّفين",
+    "url1": "https://www.youtube.com/watch?v=sAakWeLdz2U&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=ys3WIrdESgw&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الإنشقاق",
+    "url1": "https://www.youtube.com/watch?v=6FKMcwvf-yg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=FtWkjDD7Zw4&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "البروج",
+    "url1": "https://www.youtube.com/watch?v=Xbf19x7p0qc&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=wk4sZAGkov0&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الطارق",
+    "url1": "https://www.youtube.com/watch?v=J-LYuVaHdQY&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=SPPN-Y2kYmQ&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الأعلى",
+    "url1": "https://www.youtube.com/watch?v=gEVZCMAE_ds&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=2Rx5DORbHsg&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الغاشية",
+    "url1": "https://www.youtube.com/watch?v=fR8_qMbpsGY&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=iaSBqTQ_IRc&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الفجر",
+    "url1": "https://www.youtube.com/watch?v=QtAf1T-Vk9I&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=ghstU5Fs__E&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "البلد",
+    "url1": "https://www.youtube.com/watch?v=xivOqPhiM60&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=BoRA1h-FLLs&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الشمس",
+    "url1": "https://www.youtube.com/watch?v=9E4M2koIjJA&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=AA7g8sSCDV8&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الليل",
+    "url1": "https://www.youtube.com/watch?v=YwG7FMp8XM8&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=_Dn6A9aCn5A&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الضحى",
+    "url1": "https://www.youtube.com/watch?v=J27N8tVWz3U&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=gv98q8itMp8&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الشرح",
+    "url1": "https://www.youtube.com/watch?v=PoenstIUsSk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=MlHIjRYLXsQ&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "التين",
+    "url1": "https://www.youtube.com/watch?v=Wt0Yv4Ti-9M&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=ciPCfFzg6U0&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "العلق",
+    "url1": "https://www.youtube.com/watch?v=py8cR4ngKmk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=ms2abgOFGnc&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "القدر",
+    "url1": "https://www.youtube.com/watch?v=nm7-M5FfiZg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=1iHmD3IiHVs&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "البينة",
+    "url1": "https://www.youtube.com/watch?v=lyitkqhCYGM&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=WG_XV4SkkzI&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الزلزلة",
+    "url1": "https://www.youtube.com/watch?v=W-QLliEGt10&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=WZakp3h6S3w&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "العاديات",
+    "url1": "https://www.youtube.com/watch?v=zjRkZzcJA2E&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=nf5BD7PQiLE&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "القارعة",
+    "url1": "https://www.youtube.com/watch?v=75BIPlHwFOs&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=nwkipSOSh50&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "التكاثر",
+    "url1": "https://www.youtube.com/watch?v=uVcBf9yTRUI&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=D-qwtmbJk_I&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "العصر",
+    "url1": "https://www.youtube.com/watch?v=B_sMSfZekNQ&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=kWhpTGmZn54&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الهمزة",
+    "url1": "https://www.youtube.com/watch?v=XbytvfxHlcM&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=lFBAHYDo7pc&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الفيل",
+    "url1": "https://www.youtube.com/watch?v=asMVhaBdK20&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=ew39GsNzW-w&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "قريش",
+    "url1": "https://www.youtube.com/watch?v=vIKw4uxWhrg&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=uLfD4B94RP8&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الماعون",
+    "url1": "https://www.youtube.com/watch?v=OSRTCr2ZuWo&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=hreMgAtwA6U&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الكوثر",
+    "url1": "https://www.youtube.com/watch?v=0JjY_7t3Y1g&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=7fwfk0ckfMo&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الكافرون",
+    "url1": "https://www.youtube.com/watch?v=-DTXT2oQ34g&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=hwOlZ0HKa9g&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "النصر",
+    "url1": "https://www.youtube.com/watch?v=0JSYpCriRRo&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=zG7VDWpez48&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "المسد",
+    "url1": "https://www.youtube.com/watch?v=PqNnzZuouAI&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=OJC2a2OVdoE&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الإخلاص",
+    "url1": "https://www.youtube.com/watch?v=DxYLLNe07EQ&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=GA9RTS0o9Ac&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "الفلق",
+    "url1": "https://www.youtube.com/watch?v=3yzIICQL2V0&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=xmzchw9Vrok&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  },
+  {
+    "name": "النّاس",
+    "url1": "https://www.youtube.com/watch?v=8A7vMv-ptJk&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
+    "url2": "https://www.youtube.com/watch?v=N1IXIEzofws&list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou"
+  }
 ]

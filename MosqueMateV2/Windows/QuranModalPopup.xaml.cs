@@ -156,7 +156,7 @@ namespace MosqueMateV2.Windows
             this.connectionTxt.Visibility = Visibility.Visible; 
             this.IsEnabled = false;
             this.imgViewer.Opacity = 0.2;
-            var link = linkRepository.GetLinkByName(this.suraName).url;
+            var link = linkRepository.GetLinkByName(this.suraName).url1;
             var audioName = fileServices.CombinePathWithTemp(this.suraName + AppLocalization.Mp3_exe);
             rxTaskManger.RunBackgroundTaskOnUI(
                       backgroundTask: token => youtubeService.DownloadYouTubeAudioAsync(link, audioName),
@@ -186,7 +186,7 @@ namespace MosqueMateV2.Windows
         private void LoadData()
         {
             var suraName = _sura.GetSuraById(pageIndex).name ?? AppLocalization.DefaultSura;
-            var link = linkRepository.GetLinkByName(suraName).url;
+            var link = linkRepository.GetLinkByName(suraName).url1;
             var audioName = fileServices.CombinePathWithTemp(suraName + AppLocalization.Mp3_exe);
             if (File.Exists(audioName))
             {

@@ -7,7 +7,8 @@
 
         public const string AppName = "AppName";
         public const string ApiKey = "$2y$10$Ckz6VyLSegpzFvyOfUwkuFAa9xocfLgG9SWRA4gW9prCzkf0LGTq";
-        public const string PlayListUrl = "https://www.youtube.com/playlist?list=PLsabgwJDKALr2-EPjszQZ3eTQQ1yl81ui";
+        public const string PlayListUrl1 = "https://www.youtube.com/playlist?list=PLsabgwJDKALr2-EPjszQZ3eTQQ1yl81ui";
+        public const string PlayListUrl2 = "https://www.youtube.com/playlist?list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou";
         public const string PlayListTafseerUrl = "https://www.youtube.com/playlist?list=PLQ7560lEIhRwONVvGZ7P2AcU4Si_fbKaY";
         public const string HadithApiLink = $"https://hadithapi.com/api/books?apiKey={ApiKey}";
         public const string AppAssemblyName = "MosqueMateV2";
