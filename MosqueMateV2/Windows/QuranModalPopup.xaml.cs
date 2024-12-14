@@ -1,4 +1,5 @@
-﻿using MosqueMateV2.Domain.Interfaces;
+﻿using MosqueMateV2.Domain.Enums;
+using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Properties;
@@ -156,7 +157,21 @@ namespace MosqueMateV2.Windows
             this.connectionTxt.Visibility = Visibility.Visible; 
             this.IsEnabled = false;
             this.imgViewer.Opacity = 0.2;
-            var link = linkRepository.GetLinkByName(this.suraName).url1;
+
+
+            #region ReceiterSetting
+            var receiterSetting = EnumHelper<ReciterTypesEnum>.GetEnumValue(AppSettings.Default.Reciter);
+
+            var link = receiterSetting switch
+            {
+                ReciterTypesEnum.Ofasy => linkRepository.GetLinkByName(this.suraName).url1,
+                ReciterTypesEnum.Dosary => linkRepository.GetLinkByName(this.suraName).url2,
+                _ => linkRepository.GetLinkByName(this.suraName).url1
+            }; 
+            #endregion
+
+
+
             var audioName = fileServices.CombinePathWithTemp(this.suraName + AppLocalization.Mp3_exe);
             rxTaskManger.RunBackgroundTaskOnUI(
                       backgroundTask: token => youtubeService.DownloadYouTubeAudioAsync(link, audioName),

@@ -142,5 +142,17 @@ namespace MosqueMateV2.Properties {
                 this["ContinueReading"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ofacy")]
+        public string Reciter {
+            get {
+                return ((string)(this["Reciter"]));
+            }
+            set {
+                this["Reciter"] = value;
+            }
+        }
     }
 }

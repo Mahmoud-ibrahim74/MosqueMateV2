@@ -25,6 +25,7 @@ namespace MosqueMateV2.Domain.Repositories
         }
         public DTOQuranLinks GetLinkByName(string name)
         {
+
             return _links.FirstOrDefault(x => x.name == name) ??
             new()
             {

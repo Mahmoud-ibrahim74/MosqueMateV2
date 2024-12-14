@@ -4,7 +4,7 @@
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-         xmlns:ui="http://schemas.modernwpf.com/2019" 
+         xmlns:ui="http://schemas.modernwpf.com/2019"
          xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
          mc:Ignorable="d"
          Loaded="Page_Loaded">
@@ -261,15 +261,34 @@
                    FontSize="17" />
         <!--#endregion-->
 
+        <!--#region Reader -->
+        <Label x:Name="reciterLBL"
+               Grid.Column="1"
+               Grid.Row="4"
+               Padding="10 15 0 0"
+               FontSize="15"
+               Margin="5,10,179,35"></Label>
+        <ComboBox x:Name="reciterBox"
+                  Margin="0,65,0,12"
+                  Grid.Row="4"
+                  Width="257"
+                  Height="37"
+                  Grid.Column="1"
+                  FontSize="13"
+                  FontWeight="DemiBold"
+                  HorizontalAlignment="Center" />
+        <!--#endregion-->
+
         <Button x:Name="save"
                 Grid.Column="1"
                 Grid.Row="5"
-                Width="257"
+                Width="256"
                 FontSize="25"
                 Height="60"
                 Cursor="Hand"
-                HorizontalAlignment="Center"
-                Click="save_Click" />
+                Click="save_Click"
+                Margin="5,51,0,0"
+                VerticalAlignment="Top" />
 
 
     </Grid>

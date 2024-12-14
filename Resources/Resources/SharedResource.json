@@ -19,6 +19,11 @@
     "en": "Main Menu",
     "fr": "Menu principal"
   },
+  "Reciter": {
+    "ar": "اختر المقرئ",
+    "en": "Choose the reciter",
+    "fr": "Choisissez le récitant"
+  },
   "Prophets": {
     "ar": "قصص الأنبياء",
     "en": "Stories of the Prophets",

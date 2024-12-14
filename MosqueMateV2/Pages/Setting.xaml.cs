@@ -47,6 +47,7 @@ namespace MosqueMateV2.Pages
             this.adhanLBL.Content = App.LocalizationService[AppLocalization.Muezzin];
             this.adhanFajrLBL.Content = App.LocalizationService[AppLocalization.adhanFajr];
             this.notificationLBL.Content = App.LocalizationService[AppLocalization.notificationLBL];
+            this.reciterLBL.Content = App.LocalizationService[AppLocalization.Reciter];
             this.save.Content = App.LocalizationService[AppLocalization.Save];
 
             #endregion
@@ -54,6 +55,12 @@ namespace MosqueMateV2.Pages
             this.countryBox.IsEnabled = false;
             this.adhanBox.IsEnabled = false;
             this.adhanFajrBox.IsEnabled = false;
+
+            #region reciterBoxItems
+            var receiters = EnumHelper<ReciterTypesEnum>.ConvertEnumToFormattedList();
+            reciterBox.ItemsSource = receiters; 
+            #endregion
+
 
             #region BackgroundWorker-Area
             rxTaskManger.RunBackgroundTaskOnUI(
@@ -205,6 +212,10 @@ namespace MosqueMateV2.Pages
 
             #endregion
 
+            #region Reciter
+            var reciter = reciterBox.SelectedValue as string;
+
+            #endregion
 
             #region Set-Value-Settings
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Lang)] = lang;
@@ -216,6 +227,7 @@ namespace MosqueMateV2.Pages
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Adhan)] = adhan;
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.AdhanFajr)] = adhanFajr;
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.NotificationEnabled)] = notification;
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Reciter)] = reciter;
             #endregion
 
 
@@ -243,6 +255,7 @@ namespace MosqueMateV2.Pages
                 this.countryBox.SelectedValue = Properties.AppSettings.Default.Country;
                 this.cityBox.SelectedValue = Properties.AppSettings.Default.City;
                 this.calcBox.SelectedValue = Properties.AppSettings.Default.Method;
+                this.reciterBox.SelectedValue = Properties.AppSettings.Default.Reciter;
                 this.calcBox.ToolTip = App.LocalizationService[AppLocalization.calculationMethodToolTip];
 
                 this.arabicRadioBtn.IsChecked = Properties.AppSettings.Default.Lang == AppLocalization.Arabic;
@@ -260,23 +273,6 @@ namespace MosqueMateV2.Pages
                 return false;
 
             }
-        }
-        private void notificationToggle_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private async void show_Click(object sender, RoutedEventArgs e)
-        {
-            //// Get the parent MetroWindow and cast it
-            // var metroWindow = Application.Current.MainWindow as MetroWindow;
-            // if (metroWindow != null)
-            // {
-            //     await ShowPopupAsync(metroWindow);
-            // }
-            // else
-            // {
-            //     MessageBox.Show("The main window is not a MetroWindow.");
-            // }
         }
     }
 }
