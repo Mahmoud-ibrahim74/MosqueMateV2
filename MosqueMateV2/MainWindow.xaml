@@ -87,7 +87,7 @@
                            Opacity="0.95"
                            Panel.ZIndex="1"
                            ToolTip="Menu"
-                           HorizontalAlignment="Center"
+                           HorizontalAlignment="Left"
                            IsBackButtonVisible="Collapsed"
                            IsSettingsVisible="True"
                            SelectionChanged="NavView_SelectionChanged"

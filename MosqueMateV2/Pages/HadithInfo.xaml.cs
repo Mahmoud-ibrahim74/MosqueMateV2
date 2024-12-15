@@ -86,5 +86,10 @@ namespace MosqueMateV2.Pages
                 }
             }
         }
+
+        private void GotoTop_Click(object sender, RoutedEventArgs e)
+        {
+            quranScrollViewer.ScrollToTop();
+        }
     }
 }

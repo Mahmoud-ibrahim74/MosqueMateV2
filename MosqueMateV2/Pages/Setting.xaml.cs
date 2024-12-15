@@ -58,7 +58,7 @@ namespace MosqueMateV2.Pages
 
             #region reciterBoxItems
             var receiters = EnumHelper<ReciterTypesEnum>.ConvertEnumToFormattedList();
-            reciterBox.ItemsSource = receiters; 
+            reciterBox.ItemsSource = receiters;
             #endregion
 
 
@@ -84,12 +84,12 @@ namespace MosqueMateV2.Pages
                              this.adhanFajrBox.IsEnabled = true;
                              this.adhanBox.ItemsSource = result.
                                                           Select(x => x.Name).
-                                                          Where(x => !x.Contains(PrayerEnum.Fajr.ToString()) && !x.Contains("Now"))
-                                                         .AddSpacesBetweenWords();
+                                                          Where(x => !x.Contains(PrayerEnum.Fajr.ToString()) && !x.Contains("Now") && !x.Contains("pick"))
+                                                         .AddSpacesBetweenWords().OrderBy(x => x);
                              this.adhanFajrBox.ItemsSource = result.
                                                           Select(x => x.Name).
-                                                          Where(x => x.Contains(PrayerEnum.Fajr.ToString()) && !x.Contains("Now"))
-                                                         .AddSpacesBetweenWords();
+                                                          Where(x => x.Contains(PrayerEnum.Fajr.ToString()) && !x.Contains("Now") && !x.Contains("pick"))
+                                                         .AddSpacesBetweenWords().OrderBy(x => x);
                          },
                          retryNumber: 2,
                          () => // handle an error
@@ -243,7 +243,7 @@ namespace MosqueMateV2.Pages
                             AppHelper.RestartApp();
                         },
            type: Notification.Wpf.NotificationType.Success);
-            
+
         }
         private async Task<bool> LoadProfile()
         {
@@ -273,6 +273,27 @@ namespace MosqueMateV2.Pages
                 return false;
 
             }
+        }
+
+        private void adhanBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (adhanBox.SelectedValue is not null)
+            {
+                var value = adhanBox?.SelectedValue as string;
+                if (value is not null)
+                {
+                    var res = resourceManager.GetResourceByte(value.Replace(" ",""));
+                    if (res is not null)
+                    {
+                        App.mP3Player.Play(res);
+                    }
+                }
+            }
+        }
+
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            App.mP3Player.Stop();   
         }
     }
 }

@@ -166,6 +166,9 @@
     <value>Resources\محمد الكريني.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     <comment>محمد الكريني</comment>
   </data>
+  <data name="MohamedGazy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\MohamedGazy.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="MohamedRamadanSaad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\محمد رمضان سعد.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     <comment>محمد رمضان سعد</comment>

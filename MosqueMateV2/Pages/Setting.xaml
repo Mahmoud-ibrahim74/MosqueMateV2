@@ -6,6 +6,7 @@
          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:ui="http://schemas.modernwpf.com/2019"
          xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+         Unloaded="Page_Unloaded"
          mc:Ignorable="d"
          Loaded="Page_Loaded">
     <ui:Page.Resources>
@@ -209,7 +210,8 @@
                   Width="275"
                   FontSize="13"
                   FontWeight="DemiBold"
-                  Height="37" />
+                  Height="37"
+                  SelectionChanged="adhanBox_SelectionChanged" />
         <!--#endregion-->
 
         <!--#region AdhanFajrSound-Area -->
