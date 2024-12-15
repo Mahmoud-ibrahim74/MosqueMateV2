@@ -42,6 +42,8 @@
         public const string Rokya = "Rokya";
         public const string QuranTafseer = "QuranTafseer";
         public const string AzkarDoaa = "AzkarDoaa";
+        public const string FortyNawawi = "FortyNawawi";
+        public const string Kodosy = "HadithQudsi";
         public const string PrayerLearning = "PrayerLearning";
         public const string PrayerLeft = "PrayerLeft";
         public const string Alert = "Alert";

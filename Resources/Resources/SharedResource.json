@@ -24,6 +24,16 @@
     "en": "Choose the reciter",
     "fr": "Choisissez le récitant"
   },
+  "FortyNawawi": {
+    "ar": "الأربعون النووية",
+    "en": "The Forty Hadith of Nawawi",
+    "fr": "Al-Nawawi Quarante"
+  },
+  "HadithQudsi": {
+    "ar": "الأحاديث القدسية",
+    "en": "Hadith Qudsi",
+    "fr": "Hadiths sacrés"
+  },
   "HadithCount": {
     "ar": "عدد الأحاديث",
     "en": "Hadith No. ",

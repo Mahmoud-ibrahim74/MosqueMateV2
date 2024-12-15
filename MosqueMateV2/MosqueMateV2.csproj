@@ -21,6 +21,7 @@
     <None Remove="Assets\allah.png" />
     <None Remove="Assets\Asr.jpg" />
     <None Remove="Assets\beads.png" />
+    <None Remove="Assets\crescent.png" />
     <None Remove="Assets\dua.png" />
     <None Remove="Assets\Fonts\ArbFONTS-Al-Kharashi-20.ttf" />
     <None Remove="Assets\Fonts\ArbFONTS-MCS Hijaz S_U adorn..ttf" />
@@ -39,6 +40,7 @@
     <None Remove="Assets\night.png" />
     <None Remove="Assets\pause.png" />
     <None Remove="Assets\play.png" />
+    <None Remove="Assets\qudsi.png" />
     <None Remove="Assets\quran.png" />
     <None Remove="Assets\quranGif.gif" />
     <None Remove="Assets\quranSideBar.png" />
@@ -57,6 +59,7 @@
   <ItemGroup>
     <Resource Include="Assets\allah.png" />
     <Resource Include="Assets\beads.png" />
+    <Resource Include="Assets\crescent.png" />
     <Resource Include="Assets\dua.png" />
     <Resource Include="Assets\Fonts\ArbFONTS-Al-Kharashi-20.ttf" />
     <Resource Include="Assets\Fonts\ArbFONTS-MCS Hijaz S_U adorn..ttf" />
@@ -117,6 +120,7 @@
     </Resource>
     <Resource Include="Assets\pause.png" />
     <Resource Include="Assets\play.png" />
+    <Resource Include="Assets\qudsi.png" />
     <Resource Include="Assets\quran.png" />
     <Resource Include="Assets\quranGif.gif" />
     <Resource Include="Assets\quranSideBar.png" />

@@ -151,4 +151,10 @@
   <data name="rokya" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\rokya.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="nawawi40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nawawi40.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Qdssiah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Qdssiah.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

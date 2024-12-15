@@ -123,6 +123,26 @@ namespace MosqueMateV2.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] nawawi40 {
+            get {
+                object obj = ResourceManager.GetObject("nawawi40", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Qdssiah {
+            get {
+                object obj = ResourceManager.GetObject("Qdssiah", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] quran_link {
             get {
                 object obj = ResourceManager.GetObject("quran_link", resourceCulture);

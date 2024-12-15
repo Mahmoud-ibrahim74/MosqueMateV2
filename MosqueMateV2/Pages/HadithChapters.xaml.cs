@@ -52,7 +52,7 @@ namespace MosqueMateV2.Pages
                                                    getId: item => int.Parse(item.chapterNumber),
                                                    serviceType: PagesTypesEnum.HadithChapter,
                                                    CardWidth: 350,
-                                                   CardHeight: 150,
+                                                   CardHeight: 200,
                                                    PaddingTopTxt: 15
                                                );
                              this.loader.Visibility = Visibility.Collapsed;

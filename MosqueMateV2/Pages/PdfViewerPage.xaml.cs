@@ -32,6 +32,9 @@ namespace MosqueMateV2.Pages
             {
                 ViewTypesEnum.Stories => FileResources.Stories,
                 ViewTypesEnum.Rokya => FileResources.rokya,
+                ViewTypesEnum.FortyNawawi => FileResources.nawawi40,
+                ViewTypesEnum.Kodosy =>FileResources.Qdssiah,
+                _ => FileResources.Stories
             };
 
             rxTaskManger.RunBackgroundTaskOnUI(
