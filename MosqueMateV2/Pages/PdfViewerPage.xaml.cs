@@ -1,7 +1,5 @@
 ﻿using ModernWpf.Controls;
 using MosqueMateV2.Domain.Enums;
-using MosqueMateV2.Domain.Interfaces;
-using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
 using System.Windows;
@@ -34,6 +32,7 @@ namespace MosqueMateV2.Pages
                 ViewTypesEnum.Rokya => FileResources.rokya,
                 ViewTypesEnum.FortyNawawi => FileResources.nawawi40,
                 ViewTypesEnum.Kodosy =>FileResources.Qdssiah,
+                ViewTypesEnum.Wasaya =>FileResources.Wasaya,
                 _ => FileResources.Stories
             };
 

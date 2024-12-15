@@ -5,6 +5,7 @@
         Stories = 1,
         Rokya = 2,
         FortyNawawi = 3,
-        Kodosy = 4
+        Kodosy = 4,
+        Wasaya = 5
     }
 }

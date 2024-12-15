@@ -24,6 +24,7 @@ namespace MosqueMateV2
         BitmapIcon Rokay { get; set; }
         BitmapIcon Crescent { get; set; }
         BitmapIcon Kodosy { get; set; }
+        BitmapIcon Wasay { get; set; }
 
         public MainWindow()
         {
@@ -39,6 +40,7 @@ namespace MosqueMateV2
             Rokay = new();
             Crescent = new();   
             Kodosy = new();
+            Wasay = new();
             _quranTafseerIcon = new();  
             _quranIcon.UriSource = new Uri("pack://application:,,,/Assets/quranSideBar.png");
             _quranTafseerIcon.UriSource = new Uri("pack://application:,,,/Assets/quranSideBar.png");
@@ -50,6 +52,7 @@ namespace MosqueMateV2
             Rokay.UriSource = new Uri("pack://application:,,,/Assets/dua.png");
             Crescent.UriSource = new Uri("pack://application:,,,/Assets/crescent.png");
             Kodosy.UriSource = new Uri("pack://application:,,,/Assets/qudsi.png");
+            Wasay.UriSource = new Uri("pack://application:,,,/Assets/wsaya.png");
 
             quraanItem.Icon = _quranIcon;
             quraanTafseerItem.Icon = _quranTafseerIcon;
@@ -59,7 +62,8 @@ namespace MosqueMateV2
             ProphetsStoriesItem.Icon = Prophet;
             RokyaItems.Icon = Rokay;
             CrescentItems.Icon = Crescent;
-            KosdosyItems.Icon = Kodosy; 
+            KosdosyItems.Icon = Kodosy;
+            WasayaItems.Icon = Wasay;
 
             #endregion
         }
@@ -105,6 +109,9 @@ namespace MosqueMateV2
                     case AppLocalization.Kodosy:
                         MainFrame.Navigate(new PdfViewerPage(Domain.Enums.ViewTypesEnum.Kodosy));
                         break;
+                    case AppLocalization.Wasaya:
+                        MainFrame.Navigate(new PdfViewerPage(Domain.Enums.ViewTypesEnum.Wasaya));
+                        break;
                     case AppLocalization.QuranTafseer:
                         MainFrame.Navigate(new QuranTafseer());
                         break;
@@ -129,6 +136,7 @@ namespace MosqueMateV2
             quraanTafseerItem.Content = App.LocalizationService[AppLocalization.QuranTafseer];
             CrescentItems.Content = App.LocalizationService[AppLocalization.FortyNawawi];
             KosdosyItems.Content = App.LocalizationService[AppLocalization.Kodosy];
+            WasayaItems.Content = App.LocalizationService[AppLocalization.Wasaya];
             #endregion
 
             #region Tags
@@ -143,6 +151,7 @@ namespace MosqueMateV2
             quraanTafseerItem.Tag = AppLocalization.QuranTafseer;
             CrescentItems.Tag = AppLocalization.FortyNawawi;
             KosdosyItems.Tag = AppLocalization.Kodosy;
+            WasayaItems.Tag = AppLocalization.Wasaya;
             NavView.SelectedItem = homeItem;
 
             #endregion

@@ -5,45 +5,58 @@
         xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="770" 
+        Title="MainWindow"
+        Height="770"
         Width="1000"
-        MinWidth="800" MinHeight="600" 
-        WindowStartupLocation="CenterScreen" 
+        MinWidth="800"
+        MinHeight="600"
+        WindowStartupLocation="CenterScreen"
         FontWeight="UltraBlack"
-        ThemeMode="System" Loaded="Window_Loaded">
+        ThemeMode="System"
+        Loaded="Window_Loaded">
     <!-- Resources for Animations -->
     <Window.Resources>
         <!-- Slide-in Animation -->
         <Storyboard x:Key="SlideInAnimation">
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" 
+            <ThicknessAnimation Storyboard.TargetProperty="Margin"
                                 Duration="0:0:0.5"
-                                From="-300,0,0,0" 
+                                From="-300,0,0,0"
                                 To="0,0,0,0" />
         </Storyboard>
         <!-- Slide-out Animation -->
         <Storyboard x:Key="SlideOutAnimation">
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" 
+            <ThicknessAnimation Storyboard.TargetProperty="Margin"
                                 Duration="0:0:0.5"
-                                From="0,0,0,0" 
+                                From="0,0,0,0"
                                 To="-300,0,0,0" />
         </Storyboard>
 
         <!-- Button Style with Active Trigger -->
-        <Style x:Key="MenuButtonStyle" TargetType="Button">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="HorizontalAlignment" Value="Left" />
-            <Setter Property="Padding" Value="10,5" />
-            <Setter Property="Margin" Value="0,5" />
+        <Style x:Key="MenuButtonStyle"
+               TargetType="Button">
+            <Setter Property="Foreground"
+                    Value="White" />
+            <Setter Property="FontSize"
+                    Value="14" />
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="BorderThickness"
+                    Value="0" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Left" />
+            <Setter Property="Padding"
+                    Value="10,5" />
+            <Setter Property="Margin"
+                    Value="0,5" />
 
             <!-- Hover Effect -->
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Left"
+                                              VerticalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -51,36 +64,40 @@
 
             <!-- Trigger for Active Button -->
             <Style.Triggers>
-                <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="True">
-                    <Setter Property="Background" Value="#FF4A56CC" />
+                <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}"
+                             Value="True">
+                    <Setter Property="Background"
+                            Value="#FF4A56CC" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <Grid x:Name="GridContainer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid x:Name="GridContainer"
+          HorizontalAlignment="Stretch"
+          VerticalAlignment="Stretch">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="13*"/>
-            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="13*" />
+            <ColumnDefinition Width="37*" />
         </Grid.ColumnDefinitions>
 
         <!-- Sliding Panel -->
-        
+
         <ui:NavigationView x:Name="NavView"
-                                   PaneTitle=""
-                                    Opacity="0.95"
-                                    Panel.ZIndex="1"
-                                    ToolTip="Menu"
-                                    HorizontalAlignment="Left"
-                                    VerticalAlignment="Stretch"
-                                    IsBackButtonVisible="Collapsed"
-                                    IsSettingsVisible="True"
-            SelectionChanged="NavView_SelectionChanged">
+                           PaneTitle=""
+                           Opacity="0.95"
+                           Panel.ZIndex="1"
+                           ToolTip="Menu"
+                           HorizontalAlignment="Center"
+                           IsBackButtonVisible="Collapsed"
+                           IsSettingsVisible="True"
+                           SelectionChanged="NavView_SelectionChanged"
+                           Width="260">
             <!-- Navigation Menu Items -->
             <ui:NavigationView.MenuItems>
                 <ui:NavigationViewItem x:Name="homeItem"
                                        Icon="Home">
                 </ui:NavigationViewItem>
-                
+
                 <ui:NavigationViewItem x:Name="quraanItem">
                 </ui:NavigationViewItem>
                 <ui:NavigationViewItem x:Name="quraanTafseerItem">
@@ -94,7 +111,7 @@
 
                 <ui:NavigationViewItem x:Name="allahNamesItem">
                 </ui:NavigationViewItem>
-                
+
                 <ui:NavigationViewItem x:Name="ProphetsStoriesItem">
                 </ui:NavigationViewItem>
 
@@ -105,9 +122,15 @@
                 </ui:NavigationViewItem>
                 <ui:NavigationViewItem x:Name="KosdosyItems">
                 </ui:NavigationViewItem>
+                <ui:NavigationViewItem x:Name="WasayaItems">
+                </ui:NavigationViewItem>
             </ui:NavigationView.MenuItems>
 
         </ui:NavigationView>
-        <ui:Frame x:Name="MainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.ColumnSpan="2"></ui:Frame>
+        <ui:Frame x:Name="MainFrame"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"></ui:Frame>
     </Grid>
 </Window>

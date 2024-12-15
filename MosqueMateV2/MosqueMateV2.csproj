@@ -50,6 +50,7 @@
     <None Remove="Assets\two.png" />
     <None Remove="Assets\version.png" />
     <None Remove="Assets\wave1.png" />
+    <None Remove="Assets\wsaya.png" />
     <None Remove="Assets\zekr.png" />
     <None Remove="loading.gif" />
     <None Remove="quran.png" />
@@ -135,6 +136,7 @@
     <Resource Include="Assets\two.png" />
     <Resource Include="Assets\version.png" />
     <Resource Include="Assets\wave1.png" />
+    <Resource Include="Assets\wsaya.png" />
     <Resource Include="Assets\zekr.png" />
     <Resource Include="quran.png" />
     <Resource Include="Assets\tasbih.png" />

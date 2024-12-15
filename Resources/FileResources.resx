@@ -157,4 +157,7 @@
   <data name="Qdssiah" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Qdssiah.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Wasaya" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Wasaya.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

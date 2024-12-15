@@ -44,6 +44,7 @@
         public const string AzkarDoaa = "AzkarDoaa";
         public const string FortyNawawi = "FortyNawawi";
         public const string Kodosy = "HadithQudsi";
+        public const string Wasaya = "Wasaya";
         public const string PrayerLearning = "PrayerLearning";
         public const string PrayerLeft = "PrayerLeft";
         public const string Alert = "Alert";

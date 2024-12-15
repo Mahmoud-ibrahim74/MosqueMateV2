@@ -34,6 +34,11 @@
     "en": "Hadith Qudsi",
     "fr": "Hadiths sacrés"
   },
+  "Wasaya": {
+    "ar": "وصايا الرسول",
+    "en": "The Prophet's commandments",
+    "fr": "Les commandements du Messager"
+  },
   "HadithCount": {
     "ar": "عدد الأحاديث",
     "en": "Hadith No. ",

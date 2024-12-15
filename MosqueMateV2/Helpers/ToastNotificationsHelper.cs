@@ -1,4 +1,5 @@
-﻿using Notification.Wpf;
+﻿using MosqueMateV2.Properties;
+using Notification.Wpf;
 
 namespace MosqueMateV2.Helpers
 {
@@ -15,14 +16,17 @@ namespace MosqueMateV2.Helpers
             Action onClick = null,
             Action onClose = null)
         {
+            if (!AppSettings.Default.NotificationEnabled)
+                return;
+
             NotificationManager notificationManager = new();
             notificationManager.Show(
-                            title:title,
-                            message:message,
-                            expirationTime:duration,
-                            type:type,
-                            onClick:onClick,
-                            onClose:onClose
+                            title: title,
+                            message: message,
+                            expirationTime: duration,
+                            type: type,
+                            onClick: onClick,
+                            onClose: onClose
                 );
         }
     }

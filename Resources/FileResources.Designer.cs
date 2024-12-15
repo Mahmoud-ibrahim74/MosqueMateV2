@@ -189,5 +189,15 @@ namespace MosqueMateV2.Resources {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Wasaya {
+            get {
+                object obj = ResourceManager.GetObject("Wasaya", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
