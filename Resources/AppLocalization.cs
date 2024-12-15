@@ -34,6 +34,7 @@
         public const string Duration = "Duration";
         public const string ContinueReading = "ContinueReading";
         public const string Hadith = "Hadith";
+        public const string HadithCount = "HadithCount";
         public const string Azkar = "Azkar";
         public const string Prophets = "Prophets";
         public const string allahName = "allahName";

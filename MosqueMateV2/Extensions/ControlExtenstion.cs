@@ -1,8 +1,10 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using HandyControl.Controls;
+using MaterialDesignThemes.Wpf;
 using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Pages;
+using MosqueMateV2.Resources;
 using MosqueMateV2.Windows;
 using System.Windows;
 using System.Windows.Controls;
@@ -127,8 +129,8 @@ namespace MosqueMateV2.Extensions
                     header = new()
                     {
                         Text = HeaderTxt(item),
-                        FontSize = 18,
-                        FontWeight = FontWeights.Bold,
+                        FontSize = 20,
+                        FontWeight = FontWeights.UltraBold,
                         Margin = new Thickness(0, 0, 0, 8),
                         TextWrapping = TextWrapping.WrapWithOverflow,
                         TextAlignment = textAlignment,
@@ -142,8 +144,8 @@ namespace MosqueMateV2.Extensions
                 TextBlock title = new()
                 {
                     Text = getName(item),
-                    FontSize = 18,
-                    FontWeight = FontWeights.Bold,
+                    FontSize = 20,
+                    FontWeight = FontWeights.UltraBold,
                     Margin = new Thickness(0, 0, 0, 8),
                     TextWrapping = TextWrapping.WrapWithOverflow,
                     TextAlignment = textAlignment,
@@ -166,30 +168,27 @@ namespace MosqueMateV2.Extensions
         }
 
 
-        private static Card GenerateCardForHadith(
+        public static Card GenerateCardForHadith(
                 string title1 = "",
                 string title2 = "",
                 string title3 = "",
                 string title4 = ""
                  )
         {
-            // Create the Card
+
             var card = new Card
             {
 
                 BorderBrush = null,
                 Background = ColorHelper.CreateGradientBackgroundCode("#1E201E", "#021526"),
                 Foreground = Brushes.PapayaWhip,
-                //Height = 1000,
-                //Width = 550,
+                //Width = 1000,
                 Margin = new Thickness(10),
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Stretch,  
 
             };
-
-            // Create the Grid
             var grid = new Grid();
-
-            // Define RowDefinitions
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(250, GridUnitType.Star) });
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(250, GridUnitType.Star) });
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(250, GridUnitType.Star) });
@@ -200,26 +199,26 @@ namespace MosqueMateV2.Extensions
             {
                 Name = "title1Txt",
                 Text = title1,
-                Padding = new Thickness(10),
                 TextAlignment = TextAlignment.Center,
                 TextWrapping = TextWrapping.WrapWithOverflow,
-                Margin = new Thickness(0, 0, 0, 99),
+                Margin = new Thickness(0, 10, 0, 99),
                 FontSize = 20,
                 Foreground = Brushes.Wheat,
+                Background = Brushes.Transparent,
             };
             Grid.SetRow(title1Txt, 0);
 
-            var title2Txt = new TextBlock
+            var title2Txt = new  TextBlock
             {
                 Name = "title2Txt",
                 Text = title2,
-                Padding = new Thickness(10),
                 TextAlignment = TextAlignment.Center,
                 TextWrapping = TextWrapping.WrapWithOverflow,
-                Margin = new Thickness(0, 70, 0, 99),
+                Margin = new Thickness(0, 80, 0, 99),
                 FontSize = 20,
                 Foreground = Brushes.Wheat,
                 FlowDirection = FlowDirection.RightToLeft,
+                Background = Brushes.Transparent,
             };
             Grid.SetRow(title2Txt, 0);
             var title3Txt = new TextBlock
@@ -228,11 +227,12 @@ namespace MosqueMateV2.Extensions
                 Text = title3,
                 TextAlignment = TextAlignment.Center,
                 TextWrapping = TextWrapping.WrapWithOverflow,
+                Margin = new Thickness(0, 5, 0, 99),
                 FontSize = 20,
                 FontWeight = FontWeights.UltraBold,
-                LineHeight = 40,
                 Foreground = Brushes.White,
-
+                Background = Brushes.Transparent,
+                LineHeight = 40,
             };
             Grid.SetRow(title3Txt, 1);
 
@@ -240,18 +240,16 @@ namespace MosqueMateV2.Extensions
             {
                 Name = "title4Txt",
                 Text = title4,
-                Padding = new Thickness(0, 20, 0, 0),
                 TextAlignment = TextAlignment.Center,
                 TextWrapping = TextWrapping.WrapWithOverflow,
                 FontSize = 20,
-                LineHeight = 40,
+                Background = Brushes.Transparent,
                 Foreground = Brushes.White,
+                LineHeight = 40,
+
             };
             Grid.SetRow(title4Txt, 2);
 
-
-
-            // Create Buttons
             var copyToClipboard = new Button
             {
                 Name = "copyToClipboard",
@@ -298,6 +296,40 @@ namespace MosqueMateV2.Extensions
             // Add Grid to Card
             card.Content = grid;
             return card;
+        }
+
+
+        public static void GenerateCardsForHadith(this Grid grid, List<Data> data)
+        {
+            if (data.Any())
+            {
+                StackPanel cardPanel = new()
+                {
+                    Margin = new Thickness(30),
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Top,
+                   
+                };
+                TextBlock textBlock = new()
+                {
+                    Text = App.LocalizationService[AppLocalization.HadithCount] + " : " + data.Count,
+                    Margin = new Thickness(25, 0, 0, 0)
+                };
+                cardPanel.Children.Add(textBlock);
+                foreach (var item in data)
+                {
+                    var head1 = $"Chapter ({item.chapterId}) : " + item.headingEnglish;
+                    var head2 = $"({item.chapterId}) : " + item.headingArabic;
+                    var card = GenerateCardForHadith(
+                           title1: head1,
+                           title2: head2,
+                           title3: item.hadithArabic,
+                           title4: item.hadithEnglish
+                           );
+                    cardPanel.Children.Add(card);
+                }
+                grid.Children.Add(cardPanel);
+            }
         }
 
         private static Card GenerateCardForAllahNames(
@@ -398,7 +430,17 @@ namespace MosqueMateV2.Extensions
             card.Content = grid;
             return card;
         }
-
+        public static LoadingLine GenerateLineLoading()
+        {
+            var loadingLine = new LoadingLine
+            {
+                Margin = new Thickness(100, 0, 0, 0),
+                Foreground = new SolidColorBrush(Colors.Blue), 
+                Style = (Style)Application.Current.Resources["LoadingLineLarge"],
+                Visibility = Visibility.Collapsed,  
+            };
+            return loadingLine;
+        }
         private static void CopyToClipboard_Click(object sender, RoutedEventArgs e, string value)
         {
             Clipboard.SetText(value);
@@ -412,31 +454,6 @@ namespace MosqueMateV2.Extensions
         private static void ShareButton_Click(object sender, RoutedEventArgs e, string value)
         {
             ShareHelper.ShareText("Share Text", "Share text using Windows Share functionality.", value);
-        }
-        public static void GenerateCardsForHadith(this Grid grid, List<Data> data)
-        {
-            if (data.Any())
-            {
-                WrapPanel cardPanel = new()
-                {
-                    HorizontalAlignment = HorizontalAlignment.Stretch,
-                    VerticalAlignment = VerticalAlignment.Stretch,
-                    Margin = new Thickness(50),
-                };
-                foreach (var item in data)
-                {
-                    var head1 = $"Chapter ({item.chapterId}) : " + item.headingEnglish;
-                    var head2 = $"({item.chapterId}) : " + item.headingArabic;
-                    var card = GenerateCardForHadith(
-                           title1: head1,
-                           title2: head2,
-                           title3: item.hadithArabic,
-                           title4: item.hadithEnglish
-                           );
-                    cardPanel.Children.Add(card);
-                }
-                grid.Children.Add(cardPanel);
-            }
         }
         public static void GenerateCardsForAllahNames(this Grid grid, List<DTOAllahNames> data)
         {
@@ -529,7 +546,18 @@ namespace MosqueMateV2.Extensions
             };
         }
 
+        private static Pagination LoadMore()
+        {
+            Pagination pagination = new()
+            {
+                PageIndex = PaginationHelper._pageIndex,
+                MaxPageCount = PaginationHelper._pageSize,
+                Margin = new Thickness(20, 0, 0, 0)
+            };
+            return pagination;
+        }
 
+        #region Modal
         private static void OpenQuranModal(Card selectedCard)
         {
             if (selectedCard is not null)
@@ -598,6 +626,7 @@ namespace MosqueMateV2.Extensions
 
             }
         }
+        #endregion
     }
 
     public class ControlBinding<T>

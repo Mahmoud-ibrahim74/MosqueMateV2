@@ -46,8 +46,10 @@ namespace MosqueMateV2.Pages
                          {
                              GridCardContainer.GenerateCards(
                                                    data: chapter.chapters,
-                                                   getName: item => item.chapterArabic + "\n\n" + item.chapterEnglish,
-                                                   getId: item => item.id,
+                                                   getName: item =>"(" + item.chapterNumber + ")" + "\n" + 
+                                                   item.chapterArabic + "\n" + 
+                                                   item.chapterEnglish,
+                                                   getId: item => int.Parse(item.chapterNumber),
                                                    serviceType: PagesTypesEnum.HadithChapter,
                                                    CardWidth: 350,
                                                    CardHeight: 150,
@@ -62,23 +64,6 @@ namespace MosqueMateV2.Pages
                  {
                      this.loader.Visibility = Visibility.Collapsed;
                  });
-        }
-        private void searchOnQuran_Click(object sender, RoutedEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(AdhkarSearchTxt.Text))
-            {
-                var offest = GridCardContainer.GetOffsetChildOfElement(AdhkarSearchTxt.Text);
-                if (offest.ControlPosition is not null)
-                {
-                    quranScrollViewer.ScrollToVerticalOffset(offest.ControlPosition.Value.Y - 300);
-                    if (offest.SelectedElement is not null)
-                    {
-                        AnimationHelper animation = new(AppLocalization.AnimationDuration);
-                        animation.CreatePulseAnimation(offest.SelectedElement);
-                        animation.StartPulseAnimation();
-                    }
-                }
-            }
         }
     }
 }

@@ -70,8 +70,11 @@
                             Margin="101,3,0,0"
                             VerticalAlignment="Top"
                             Visibility="Hidden"
+                            Foreground="#1F509A"
+                            Style="{StaticResource LoadingLineLarge}"
                             Height="16"
                             Width="457" />
+            
         </Grid>
         <Grid x:Name="carouselContainer"
               Grid.Row="1"

@@ -11,13 +11,9 @@
          Title="MainWindow"
          ui:ThemeManager.RequestedTheme="Dark"
          Loaded="Window_Loaded">
-    <Grid >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*"></RowDefinition>
-            <RowDefinition Height="25*" />
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0" />
+    <Grid>
         <ScrollViewer x:Name="quranScrollViewer"
+                      ScrollChanged="quranScrollViewer_ScrollChanged"                
                       Grid.Row="1">
             <Grid x:Name="GridCardContainer"
                   Grid.RowSpan="2">

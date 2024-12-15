@@ -62,22 +62,5 @@ namespace MosqueMateV2.Pages
                      this.loader.Visibility = Visibility.Collapsed;
                  });
         }
-        private void searchOnQuran_Click(object sender, RoutedEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(AdhkarSearchTxt.Text))
-            {
-                var offest = GridCardContainer.GetOffsetChildOfElement(AdhkarSearchTxt.Text);
-                if (offest.ControlPosition is not null)
-                {
-                    quranScrollViewer.ScrollToVerticalOffset(offest.ControlPosition.Value.Y - 300);
-                    if (offest.SelectedElement is not null)
-                    {
-                        AnimationHelper animation = new(AppLocalization.AnimationDuration);
-                        animation.CreatePulseAnimation(offest.SelectedElement);
-                        animation.StartPulseAnimation();
-                    }
-                }
-            }
-        }
     }
 }

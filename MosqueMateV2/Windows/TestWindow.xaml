@@ -5,8 +5,8 @@
          xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
          xmlns:system="clr-namespace:System;assembly=System.Runtime"
          xmlns:local="clr-namespace:MosqueMateV2.CustomUserControls"
-         xmlns:hc="https://handyorg.github.io/handycontrol"
          xmlns:wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+         xmlns:hc="https://handyorg.github.io/handycontrol"
          Title="Exit Confirmation Example"
          ThemeMode="Light"
          Height="700"
@@ -14,25 +14,24 @@
          Loaded="ConfirmationDialog_Loaded"
          WindowStartupLocation="CenterScreen">
     <Grid>
-        <hc:LoadingCircle x:Name="loader"
-                          DotSpeed="5"
-                          DotCount="5"
-                          Width="101"
-                          Height="40"
-                          Panel.ZIndex="2"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Visibility="Collapsed" />
-        <Button Width="268"
-                Content="Convert"
-                FontSize="20"
-                Height="78"
-                Click="Button_Click"
-                VerticalAlignment="Top"
-                Margin="210,588,0,0" />
-        <wpf:WebView2 x:Name="WebView"
-                  Source="about:blank"
-                      Margin="0,0,0,111" />
-        
+        <StackPanel  Width="600"
+                     Margin="32"
+                     VerticalAlignment="Center">
+            <hc:LoadingLine Margin="0,30"
+                            Foreground="Blue"
+                            Style="{StaticResource LoadingLineLarge}" />
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <hc:LoadingCircle />
+                <Border VerticalAlignment="Center"
+                        Margin="32,0,0,0"
+                        Background="{DynamicResource PrimaryBrush}"
+                        CornerRadius="10">
+                    <hc:LoadingCircle Style="{StaticResource LoadingCircleLight}"
+                                      Margin="10" />
+                </Border>
+            </StackPanel>
+        </StackPanel>
+
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using MosqueMateV2.Domain.APIService;
+﻿using HandyControl.Controls;
+using MosqueMateV2.Domain.APIService;
 using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
@@ -6,8 +7,11 @@ using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
 using Newtonsoft.Json;
+using System.Drawing.Printing;
 using System.Windows;
+using System.Windows.Controls;
 using Page = ModernWpf.Controls.Page;
+using ScrollViewer = System.Windows.Controls.ScrollViewer;
 
 namespace MosqueMateV2.Pages
 {
@@ -20,30 +24,32 @@ namespace MosqueMateV2.Pages
         RxTaskManger rxTaskManger;
         public ISuraRepository _suraRepository;
         DTOHadithInfo hadithInfo { get; set; }
-        int _chapterNumber {  get; set; }
+        int _chapterNumber { get; set; }
+        int _pageSize { get; set; } = 200;
+        private LoadingLine _Loading { get; set; }
+
         public HadithInfo(int chapterNumber)
         {
             InitializeComponent();
             rxTaskManger = new();
             _suraRepository = new SuraRepository();
-            this._chapterNumber = chapterNumber;  
+            this._chapterNumber = chapterNumber;
             HadithHelper.SelectedChapter = chapterNumber;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            SendRequestAsync(25);
+            SendRequestAsync();
         }
 
-        private void SendRequestAsync(int page)
+        private void SendRequestAsync()
         {
             this.loader.Visibility = Visibility.Visible;
-
             rxTaskManger.RunBackgroundTaskOnUI(
                  backgroundTask: token => new ApiClient(_baseUrl: ApiRquestHelper.HadithCollectionLink(
                      bookSlug: HadithHelper.SelectedBook,
                      chapterNumber: this._chapterNumber,
-                     paginate:page
+                     paginate: _pageSize
                      )).GetAsync(),
                  onSuccess: result =>
                  {
@@ -54,7 +60,6 @@ namespace MosqueMateV2.Pages
                          {
                              GridCardContainer.GenerateCardsForHadith(hadithInfo.hadiths.data);
                              this.loader.Visibility = Visibility.Collapsed;
-                             Console.WriteLine("GridCardContainer.Children  " + GridCardContainer.Children.Count);
                          }
                      }
                  },
@@ -64,6 +69,22 @@ namespace MosqueMateV2.Pages
                  {
                      this.loader.Visibility = Visibility.Collapsed;
                  });
+        }
+
+        private void quranScrollViewer_ScrollChanged(object sender, System.Windows.Controls.ScrollChangedEventArgs e)
+        {
+            if (sender is ScrollViewer scrollViewer)
+            {
+                if (scrollViewer.VerticalOffset == scrollViewer.ScrollableHeight)
+                {
+                    //_pageSize = 60;
+                    //GridCardContainer.Children.Clear();
+                    //_Loading = ControlExtenstion.GenerateLineLoading();
+                    //_Loading.Visibility = Visibility.Visible;
+                    //GridCardContainer.Children.Add(_Loading);
+                    //SendRequestAsync();
+                }
+            }
         }
     }
 }

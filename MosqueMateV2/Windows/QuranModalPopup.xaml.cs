@@ -200,15 +200,18 @@ namespace MosqueMateV2.Windows
 
         private void LoadData()
         {
-            var suraName = _sura.GetSuraById(pageIndex).name ?? AppLocalization.DefaultSura;
-            var link = linkRepository.GetLinkByName(suraName).url1;
-            var audioName = fileServices.CombinePathWithTemp(suraName + AppLocalization.Mp3_exe);
-            if (File.Exists(audioName))
+            if (_sura.GetSuraById(pageIndex) is not null)
             {
-                audioService = new NAudioService(audioName);
-                downloadAudio.Visibility = Visibility.Collapsed;
-                playAudio.Visibility = Visibility.Visible;
-                stopAudio.Visibility = Visibility.Visible;
+                var suraName = _sura.GetSuraById(pageIndex).name;
+                var link = linkRepository.GetLinkByName(suraName).url1;
+                var audioName = fileServices.CombinePathWithTemp(suraName + AppLocalization.Mp3_exe);
+                if (File.Exists(audioName))
+                {
+                    audioService = new NAudioService(audioName);
+                    downloadAudio.Visibility = Visibility.Collapsed;
+                    playAudio.Visibility = Visibility.Visible;
+                    stopAudio.Visibility = Visibility.Visible;
+                }
             }
         }
     }

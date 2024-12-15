@@ -11,35 +11,7 @@
          Title="MainWindow"
          ui:ThemeManager.RequestedTheme="Default"
          Loaded="Window_Loaded">
-    <Grid >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*"></RowDefinition>
-            <RowDefinition Height="25*" />
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <TextBox x:Name="AdhkarSearchTxt"
-                     HorizontalAlignment="Center"
-                     VerticalAlignment="Center"
-                     Width="450"
-                     Height="40"
-                     Padding="10"
-                     FontSize="18"
-                     FlowDirection="RightToLeft" />
-            <Button x:Name="searchOnQuran"
-                    Width="50"
-                    Height="40"
-                    Padding="10"
-                    FontSize="18"
-                    Cursor="Hand"
-                    HorizontalAlignment="Center"
-                    Margin="-550,0,0,0"
-                    Click="searchOnQuran_Click">
-                <materialDesign:PackIcon Kind="search"
-                                         Height="15"
-                                         Width="25"
-                                         HorizontalAlignment="Center" />
-            </Button>
-        </Grid>
+    <Grid>
         <ScrollViewer x:Name="quranScrollViewer"
                       Grid.Row="1">
             <Grid x:Name="GridCardContainer"

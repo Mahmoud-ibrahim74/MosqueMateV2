@@ -24,6 +24,11 @@
     "en": "Choose the reciter",
     "fr": "Choisissez le récitant"
   },
+  "HadithCount": {
+    "ar": "عدد الأحاديث",
+    "en": "Hadith No. ",
+    "fr": "Hadith n°"
+  },
   "Prophets": {
     "ar": "قصص الأنبياء",
     "en": "Stories of the Prophets",
