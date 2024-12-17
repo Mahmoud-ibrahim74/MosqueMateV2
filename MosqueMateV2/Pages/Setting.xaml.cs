@@ -4,8 +4,6 @@ using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
-using NAudio.CoreAudioApi;
-using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -21,6 +19,7 @@ namespace MosqueMateV2.Pages
         IJsonCityRepository jsonCity;
         IResourceManagerRepository resourceManager;
         RxTaskManger rxTaskManger;
+        bool IsPLaying { get; set; }
         public Setting()
         {
             InitializeComponent();
@@ -277,23 +276,28 @@ namespace MosqueMateV2.Pages
 
         private void adhanBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (adhanBox.SelectedValue is not null)
+            if (IsPLaying)
             {
-                var value = adhanBox?.SelectedValue as string;
-                if (value is not null)
+                if (adhanBox.SelectedValue is not null)
                 {
-                    var res = resourceManager.GetResourceByte(value.Replace(" ",""));
-                    if (res is not null)
+                    var value = adhanBox?.SelectedValue as string;
+                    if (value is not null)
                     {
-                        App.mP3Player.Play(res);
+                        var res = resourceManager.GetResourceByte(value.Replace(" ", ""));
+                        if (res is not null)
+                        {
+                            App.mP3Player.Play(res);
+                        }
                     }
                 }
             }
+            else
+                IsPLaying = true;
         }
 
         private void Page_Unloaded(object sender, RoutedEventArgs e)
         {
-            App.mP3Player.Stop();   
+            App.mP3Player.Stop();
         }
     }
 }
