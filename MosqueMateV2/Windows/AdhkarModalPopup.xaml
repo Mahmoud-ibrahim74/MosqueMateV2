@@ -116,21 +116,23 @@
             <!--#endregion-->
 
             <!--#region Description -->
-            <TextBlock x:Name="zekrDescription"
-                       Text=""
-                       TextWrapping="WrapWithOverflow"
-                       LineHeight="40"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Top"
-                       TextAlignment="Center"
-                       FontSize="18"
-                       Cursor="Hand"
-                       Padding="0 20 0 0"
-                       Margin="0,166,0,0"
-                       Height="261"
-                       Width="548"
-                       FlowDirection="RightToLeft"
-                       MouseLeftButtonDown="zekrDescription_PreviewMouseLeftButtonDown" />
+            <ScrollViewer                       
+                Padding="0 20 0 0"
+                Margin="0,20,0,0"
+                Height="261"
+                Width="548">
+                <TextBlock x:Name="zekrDescription"
+                           Text=""
+                           TextWrapping="WrapWithOverflow"
+                           LineHeight="40"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           TextAlignment="Center"
+                           FontSize="18"
+                           Cursor="Hand"
+                           FlowDirection="RightToLeft"
+                           MouseLeftButtonDown="zekrDescription_PreviewMouseLeftButtonDown" />
+            </ScrollViewer>
             <hc:CircleProgressBar x:Name="zekrCounter"
                                   Margin="240,444,230,0"
                                   VerticalAlignment="Top"
