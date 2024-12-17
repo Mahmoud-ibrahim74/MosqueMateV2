@@ -59,20 +59,7 @@ namespace MosqueMateV2.Pages
         {
             if ((e.Key == Key.B && Keyboard.IsKeyDown(Key.LeftCtrl)) || (e.Key == Key.B && Keyboard.IsKeyDown(Key.RightCtrl)))
             {
-                BackToHome();
-            }
-        }
-        private void BackToHome()
-        {
-            var window = App.Current.MainWindow;
-            if (window is not null)
-            {
-                var frame = window.FindName("MainFrame") as Frame;
-                frame?.Navigate(new Home());
-                var nav = window.FindName("NavView") as NavigationView;
-                var homeItem = window.FindName("homeItem") as NavigationViewItem;
-                if (nav is not null && homeItem is not null)
-                    nav.SelectedItem = homeItem;
+                AppHelper.GoBack();
             }
         }
     }

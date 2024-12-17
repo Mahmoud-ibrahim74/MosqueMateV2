@@ -392,6 +392,11 @@
     "en": "Notifications",
     "fr": "Notifications"
   },
+  "PrayerLearningChildren": {
+    "ar": "تعليم الصلاة للأطفال",
+    "en": "Teaching children to pray",
+    "fr": "Enseigner la prière aux enfants"
+  },
   "notificationDesc": {
     "ar": " عند تشغيل هذه الميزة ستصلك إشعارات مثل تنبيه قبل الآذان  أو إشعارات الآذان الآن وإشعارات التحديثات",
     "en": "When this feature is turned on, you will receive notifications such as an alert  before the call to prayer or notifications of the call to prayer now and Updates Notifications",

@@ -15,6 +15,7 @@
         Hadith = 4,
         HadithChapter = 5,
         HadithInfo = 6,
-        AllahNames = 7
+        AllahNames = 7,
+        PrayerLearning = 8,
     }
 }

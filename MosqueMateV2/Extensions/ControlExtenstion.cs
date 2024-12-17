@@ -185,7 +185,7 @@ namespace MosqueMateV2.Extensions
                 //Width = 1000,
                 Margin = new Thickness(10),
                 HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Stretch,  
+                VerticalAlignment = VerticalAlignment.Stretch,
 
             };
             var grid = new Grid();
@@ -208,7 +208,7 @@ namespace MosqueMateV2.Extensions
             };
             Grid.SetRow(title1Txt, 0);
 
-            var title2Txt = new  TextBlock
+            var title2Txt = new TextBlock
             {
                 Name = "title2Txt",
                 Text = title2,
@@ -308,7 +308,7 @@ namespace MosqueMateV2.Extensions
                     Margin = new Thickness(30),
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Top,
-                   
+
                 };
                 TextBlock textBlock = new()
                 {
@@ -435,9 +435,9 @@ namespace MosqueMateV2.Extensions
             var loadingLine = new LoadingLine
             {
                 Margin = new Thickness(100, 0, 0, 0),
-                Foreground = new SolidColorBrush(Colors.Blue), 
+                Foreground = new SolidColorBrush(Colors.Blue),
                 Style = (Style)Application.Current.Resources["LoadingLineLarge"],
-                Visibility = Visibility.Collapsed,  
+                Visibility = Visibility.Collapsed,
             };
             return loadingLine;
         }
@@ -497,6 +497,9 @@ namespace MosqueMateV2.Extensions
                 case PagesTypesEnum.QuranTafseer:
                     OpenQuranTafseer(sender as Card);
                     break;
+                case PagesTypesEnum.PrayerLearning:
+                    OpenPrayerLearning(sender as Card);
+                    break;
                 default:
                     break;
             }
@@ -544,17 +547,6 @@ namespace MosqueMateV2.Extensions
             {
                 ControlPosition = new Point(10, 10),
             };
-        }
-
-        private static Pagination LoadMore()
-        {
-            Pagination pagination = new()
-            {
-                PageIndex = PaginationHelper._pageIndex,
-                MaxPageCount = PaginationHelper._pageSize,
-                Margin = new Thickness(20, 0, 0, 0)
-            };
-            return pagination;
         }
 
         #region Modal
@@ -613,6 +605,20 @@ namespace MosqueMateV2.Extensions
             }
         }
         private static void OpenQuranTafseer(Card selectedCard)
+        {
+            if (selectedCard is not null)
+            {
+                var window = Application.Current.MainWindow;
+                var frame = window.FindName("MainFrame") as Frame;
+                if (frame is not null)
+                {
+                    var uId = selectedCard.Uid;
+                    frame?.Navigate(new YoutubeViewerPage(uId));
+                }
+
+            }
+        }
+        private static void OpenPrayerLearning(Card selectedCard)
         {
             if (selectedCard is not null)
             {

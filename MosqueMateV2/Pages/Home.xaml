@@ -193,6 +193,7 @@
                 </Button.Template>
             </Button>
             <Button x:Name="prayerLearningBtn"
+                    Click="prayerLearningBtn_Click"
                     Grid.Column="1"
                     Grid.Row="1"
                     Width="150"

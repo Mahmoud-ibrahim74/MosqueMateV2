@@ -11,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using Control = System.Windows.Controls.Control;
 using Frame = ModernWpf.Controls.Frame;
+using Page = System.Windows.Controls.Page;
 
 namespace MosqueMateV2.Helpers
 {
@@ -107,6 +108,31 @@ namespace MosqueMateV2.Helpers
                 var homeItem = window.FindName("homeItem") as NavigationViewItem;
                 if (nav is not null && homeItem is not null)
                     nav.SelectedItem = homeItem;
+            }
+        }
+        public static void GoBack()
+        {
+            var window = App.Current.MainWindow;
+            if (window is not null)
+            {
+                var frame = window.FindName("MainFrame") as Frame;
+                if (frame is not null)
+                {
+                    if (frame.CanGoBack)
+                    {
+                        frame.GoBack();
+                    }
+                }
+            }
+        }
+
+        public static void NavigateToSpecificPage(Page page)
+        {
+            var window = App.Current.MainWindow;
+            if (window is not null)
+            {
+                var frame = window.FindName("MainFrame") as Frame;
+                frame?.Navigate(page);
             }
         }
 

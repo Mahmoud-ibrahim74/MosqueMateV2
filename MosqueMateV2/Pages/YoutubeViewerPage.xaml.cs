@@ -1,9 +1,4 @@
-﻿using ModernWpf.Controls;
-using MosqueMateV2.Domain.Enums;
-using MosqueMateV2.Domain.Interfaces;
-using MosqueMateV2.Domain.Repositories;
-using MosqueMateV2.Helpers;
-using MosqueMateV2.Resources;
+﻿using MosqueMateV2.Helpers;
 using System.Windows;
 using System.Windows.Input;
 using Page = ModernWpf.Controls.Page;
@@ -15,14 +10,10 @@ namespace MosqueMateV2.Pages
     /// </summary>
     public partial class YoutubeViewerPage : Page
     {
-
-        RxTaskManger rxTaskManger;
-        ViewTypesEnum _Type;
         string VidoeUrl {  get; set; }  
         public YoutubeViewerPage(string videUrl)
         {
             InitializeComponent();
-            rxTaskManger = new();
             this.VidoeUrl = videUrl;    
         }
 
@@ -36,7 +27,7 @@ namespace MosqueMateV2.Pages
             if ((e.Key == Key.B && Keyboard.IsKeyDown(Key.LeftCtrl)) || 
                 (e.Key == Key.B && Keyboard.IsKeyDown(Key.RightCtrl)))
             {
-                AppHelper.BackToHome();
+                AppHelper.GoBack();
             }
         }
 

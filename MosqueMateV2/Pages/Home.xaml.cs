@@ -171,7 +171,7 @@ namespace MosqueMateV2.Pages
             if (hadithTxt is not null)
                 hadithTxt.Text = App.LocalizationService[AppLocalization.Hadith];
             if (prayerLearningTxt is not null)
-                prayerLearningTxt.Text = App.LocalizationService[AppLocalization.PrayerLearning];
+                prayerLearningTxt.Text = App.LocalizationService[AppLocalization.PrayerLearningChildren];
 
         }
 
@@ -238,6 +238,11 @@ namespace MosqueMateV2.Pages
         private void azkarBtn_Click(object sender, RoutedEventArgs e)
         {
             new AdhkarModalPopup(new Random().Next(1, 100)).ShowModal();
+        }
+
+        private void prayerLearningBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AppHelper.NavigateToSpecificPage(new PrayerLearning());
         }
     }
 }
