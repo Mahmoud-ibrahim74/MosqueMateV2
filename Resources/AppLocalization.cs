@@ -10,7 +10,7 @@
         public const string PlayListUrl1 = "https://www.youtube.com/playlist?list=PLsabgwJDKALr2-EPjszQZ3eTQQ1yl81ui";
         public const string PlayListUrl2 = "https://www.youtube.com/playlist?list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou";
         public const string PlayListTafseerUrl = "https://www.youtube.com/playlist?list=PLQ7560lEIhRwONVvGZ7P2AcU4Si_fbKaY";
-        public const string PrayerLerningUrl = "https://www.youtube.com/playlist?list=PL4FnEVtIH0GElgETFb-UAU_ktHMZ1-v6G";
+        public const string PrayerLerningUrl = "https://www.youtube.com/playlist?list=PLiPr-ZDwFWrOsEt1eNBsmlYxAJBuSJcSs";
         public const string HadithApiLink = $"https://hadithapi.com/api/books?apiKey={ApiKey}";
         public const string AppAssemblyName = "MosqueMateV2";
         public const string WeclomeApp = "WeclomeApp";
