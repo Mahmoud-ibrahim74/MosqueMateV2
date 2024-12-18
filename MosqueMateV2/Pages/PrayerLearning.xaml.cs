@@ -43,7 +43,7 @@ namespace MosqueMateV2.Pages
                                    PaddingTopTxt: 30,
                                    CardWidth:300,
                                    CardHeight:180,
-                                   serviceType: PagesTypesEnum.PrayerLearning
+                                   serviceType: PagesTypesEnum.YoutubeViewerPage
                                );
                      this.loader.Visibility = Visibility.Collapsed;
 

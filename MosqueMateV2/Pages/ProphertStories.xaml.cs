@@ -1,6 +1,4 @@
 ﻿using MosqueMateV2.Domain.Enums;
-using MosqueMateV2.Domain.Interfaces;
-using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
@@ -14,13 +12,13 @@ namespace MosqueMateV2.Pages
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class QuranTafseer : Page
+    public partial class ProphertStories : Page
     {
 
         RxTaskManger rxTaskManger;
         public IYoutubeService _youtubeService;
 
-        public QuranTafseer()
+        public ProphertStories()
         {
             InitializeComponent();
             rxTaskManger = new();
@@ -33,7 +31,7 @@ namespace MosqueMateV2.Pages
         {
             this.loader.Visibility = Visibility.Visible;
             rxTaskManger.RunBackgroundTaskOnUI(
-                 backgroundTask: token => _youtubeService.GetPlayListAsync(AppLocalization.PlayListTafseerUrl),
+                 backgroundTask: token => _youtubeService.GetPlayListAsync(AppLocalization.ProphetsStoriesUrl),
                  onSuccess: result =>
                  {
                      var list = result.ToList();

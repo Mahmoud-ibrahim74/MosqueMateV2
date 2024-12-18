@@ -98,7 +98,7 @@ namespace MosqueMateV2
                         MainFrame.Navigate(new AllahNames());
                         break;
                     case AppLocalization.Prophets:
-                        MainFrame.Navigate(new PdfViewerPage(Domain.Enums.ViewTypesEnum.Stories));
+                        MainFrame.Navigate(new ProphertStories());
                         break;
                     case AppLocalization.Rokya:
                         MainFrame.Navigate(new PdfViewerPage(Domain.Enums.ViewTypesEnum.Rokya));

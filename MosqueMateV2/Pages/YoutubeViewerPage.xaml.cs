@@ -20,6 +20,7 @@ namespace MosqueMateV2.Pages
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             WebView.Source = new Uri(VidoeUrl);
+            WebView.Focus();    
         }
   
         private void WebView_KeyDown(object sender, KeyEventArgs e)
