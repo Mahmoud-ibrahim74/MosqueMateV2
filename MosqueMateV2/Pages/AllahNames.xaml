@@ -14,7 +14,7 @@
     <Grid>
         <ScrollViewer x:Name="adhkarScrollViewer"
                       >
-            <Grid x:Name="GridCardContainer"
+            <Grid x:Name="GridCardContainer" KeyDown="GridCardContainer_KeyDown"
                >
             </Grid>
         </ScrollViewer>

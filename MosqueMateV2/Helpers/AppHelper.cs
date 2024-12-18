@@ -97,7 +97,7 @@ namespace MosqueMateV2.Helpers
 
         }
 
-        public static void BackToHome()
+        public static void GoHome()
         {
             var window = App.Current.MainWindow;
             if (window is not null)

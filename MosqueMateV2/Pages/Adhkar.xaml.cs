@@ -36,11 +36,15 @@ namespace MosqueMateV2.Pages
                  onSuccess: result =>
                  {
                      GridCardContainer.GenerateCards(
-                                    data: result,
-                                    getName: item => item.category,
-                                    getId: item => item.id,
-                                    PaddingTopTxt:50,
-                                    serviceType: PagesTypesEnum.Adhkar
+                                   data: result,
+                                   getName: item => item.category,
+                                   getId: item =>item.id,
+                                   PaddingTopTxt: 30,
+                                   CardWidth: 380,
+                                   CardHeight: 150,
+                                   FontSize: 10,
+                                   textWrapping: TextWrapping.Wrap,
+                                   serviceType: PagesTypesEnum.Adhkar
                                 );
                  },
                  retryNumber: 2,

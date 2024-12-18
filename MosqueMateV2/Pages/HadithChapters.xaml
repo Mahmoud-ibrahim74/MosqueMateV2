@@ -14,7 +14,7 @@
     <Grid>
         <ScrollViewer x:Name="quranScrollViewer"
                       Grid.Row="1">
-            <Grid x:Name="GridCardContainer"
+            <Grid x:Name="GridCardContainer" KeyDown="GridCardContainer_KeyDown"
                   Grid.RowSpan="2">
                 <hc:LoadingCircle x:Name="loader"
                                   DotSpeed="5"

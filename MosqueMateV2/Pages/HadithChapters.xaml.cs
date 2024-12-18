@@ -8,6 +8,7 @@ using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
 using Newtonsoft.Json;
 using System.Windows;
+using System.Windows.Input;
 using Page = ModernWpf.Controls.Page;
 
 namespace MosqueMateV2.Pages
@@ -51,11 +52,14 @@ namespace MosqueMateV2.Pages
                                                    item.chapterEnglish,
                                                    getId: item => int.Parse(item.chapterNumber),
                                                    serviceType: PagesTypesEnum.HadithChapter,
-                                                   CardWidth: 350,
-                                                   CardHeight: 200,
-                                                   PaddingTopTxt: 15
+                                                   PaddingTopTxt: 10,
+                                                   CardWidth: 380,
+                                                   CardHeight: 150,
+                                                   FontSize: 10,
+                                                   textWrapping: TextWrapping.Wrap
                                                );
                              this.loader.Visibility = Visibility.Collapsed;
+                             GridCardContainer.Focus();
                          }
                      }
                  },
@@ -64,6 +68,14 @@ namespace MosqueMateV2.Pages
                  {
                      this.loader.Visibility = Visibility.Collapsed;
                  });
+        }
+
+        private void GridCardContainer_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            KeyboardHelper.ActionPressCTRLKey(e, Key.B, () =>
+            {
+                AppHelper.GoBack();
+            });
         }
     }
 }

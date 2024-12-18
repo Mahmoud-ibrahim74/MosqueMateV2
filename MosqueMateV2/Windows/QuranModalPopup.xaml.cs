@@ -203,7 +203,6 @@ namespace MosqueMateV2.Windows
             if (_sura.GetSuraById(pageIndex) is not null)
             {
                 var suraName = _sura.GetSuraById(pageIndex).name;
-                var link = linkRepository.GetLinkByName(suraName).url1;
                 var audioName = fileServices.CombinePathWithTemp(suraName + AppLocalization.Mp3_exe);
                 if (File.Exists(audioName))
                 {

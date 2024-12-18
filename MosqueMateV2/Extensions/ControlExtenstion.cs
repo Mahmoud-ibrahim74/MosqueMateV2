@@ -92,9 +92,11 @@ namespace MosqueMateV2.Extensions
         int PaddingRightTxt = 0,
         int PaddingTopTxt = 0,
         int PaddingBottomTxt = 0,
+        int FontSize = 10,
         Func<T, string> HeaderTxt = null,
         FlowDirection flowDirection = FlowDirection.LeftToRight,
-        TextAlignment textAlignment = TextAlignment.Center
+        TextAlignment textAlignment = TextAlignment.Center,
+        TextWrapping textWrapping = TextWrapping.NoWrap
        )
         {
             WrapPanel cardPanel = new()
@@ -129,10 +131,10 @@ namespace MosqueMateV2.Extensions
                     header = new()
                     {
                         Text = HeaderTxt(item),
-                        FontSize = 20,
+                        FontSize = FontSize,
                         FontWeight = FontWeights.UltraBold,
                         Margin = new Thickness(0, 0, 0, 8),
-                        TextWrapping = TextWrapping.WrapWithOverflow,
+                        TextWrapping = textWrapping,
                         TextAlignment = textAlignment,
                         Padding = new Thickness(PaddingLeftTxt,
                                       PaddingTopTxt,

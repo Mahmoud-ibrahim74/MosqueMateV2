@@ -5,6 +5,7 @@ using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
 using System.Windows;
+using System.Windows.Input;
 using Page = ModernWpf.Controls.Page;
 
 namespace MosqueMateV2.Pages
@@ -37,12 +38,21 @@ namespace MosqueMateV2.Pages
                      GridCardContainer.GenerateCardsForAllahNames(
                                     data: result
                                 );
+                     GridCardContainer.Focus();
                  },
                  retryNumber: 2,
                  () => // handle an error
                  {
 
                  });
+        }
+
+        private void GridCardContainer_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            KeyboardHelper.ActionPressCTRLKey(e, Key.B, () =>
+            {
+                AppHelper.GoBack();
+            });
         }
     }
 }

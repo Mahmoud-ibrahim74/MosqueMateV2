@@ -41,8 +41,10 @@ namespace MosqueMateV2.Pages
                                    getId: item => new Random().Next(1, 1000000),
                                    UidCard: item => item.Url,
                                    PaddingTopTxt: 30,
-                                   CardWidth:300,
-                                   CardHeight:150,
+                                   CardWidth: 380,
+                                   CardHeight: 150,
+                                   FontSize: 10,
+                                   textWrapping: TextWrapping.Wrap,
                                    serviceType: PagesTypesEnum.YoutubeViewerPage
                                );
                      this.loader.Visibility = Visibility.Collapsed;

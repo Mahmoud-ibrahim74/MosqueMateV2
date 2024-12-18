@@ -7,6 +7,7 @@ using MosqueMateV2.Resources;
 using MosqueMateV2.Service.IServices;
 using MosqueMateV2.Service.Services;
 using System.Windows;
+using System.Windows.Input;
 using Page = ModernWpf.Controls.Page;
 
 namespace MosqueMateV2.Pages
@@ -43,11 +44,14 @@ namespace MosqueMateV2.Pages
                                    getId: item => new Random().Next(1, 1000000),
                                    UidCard: item => item.Url,
                                    PaddingTopTxt: 30,
-                                   CardWidth:300,
-                                   CardHeight:150,
+                                   CardWidth: 380,
+                                   CardHeight: 150,
+                                   FontSize: 10,
+                                   textWrapping: TextWrapping.Wrap,
                                    serviceType: PagesTypesEnum.YoutubeViewerPage
                                );
                      this.loader.Visibility = Visibility.Collapsed;
+                     GridCardContainer.Focus(); 
 
                  },
                  retryNumber: 2,
@@ -56,6 +60,14 @@ namespace MosqueMateV2.Pages
                      this.loader.Visibility = Visibility.Collapsed;
 
                  });
+        }
+
+        private void GridCardContainer_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyboardHelper.ActionPressCTRLKey(e, Key.B, () =>
+            {
+                AppHelper.GoBack();
+            });
         }
     }
 }

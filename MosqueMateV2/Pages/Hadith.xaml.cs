@@ -48,9 +48,11 @@ namespace MosqueMateV2.Pages
                                                    getId: item => item.id,
                                                    UidCard: item => item.bookSlug,
                                                    serviceType: PagesTypesEnum.Hadith,
-                                                   CardWidth: 250,
-                                                   CardHeight: 100,
-                                                   PaddingTopTxt: 20
+                                                   PaddingTopTxt: 30,
+                                                   CardWidth: 380,
+                                                   CardHeight: 150,
+                                                   FontSize: 10,
+                                                   textWrapping: TextWrapping.Wrap
                                                );
                          }
                          this.loader.Visibility = Visibility.Collapsed;

@@ -5,11 +5,9 @@ using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
-using MosqueMateV2.Resources;
 using Newtonsoft.Json;
-using System.Drawing.Printing;
 using System.Windows;
-using System.Windows.Controls;
+using System.Windows.Input;
 using Page = ModernWpf.Controls.Page;
 using ScrollViewer = System.Windows.Controls.ScrollViewer;
 
@@ -60,6 +58,7 @@ namespace MosqueMateV2.Pages
                          {
                              GridCardContainer.GenerateCardsForHadith(hadithInfo.hadiths.data);
                              this.loader.Visibility = Visibility.Collapsed;
+                             GridCardContainer.Focus(); 
                          }
                      }
                  },
@@ -90,6 +89,14 @@ namespace MosqueMateV2.Pages
         private void GotoTop_Click(object sender, RoutedEventArgs e)
         {
             quranScrollViewer.ScrollToTop();
+        }
+
+        private void GridCardContainer_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            KeyboardHelper.ActionPressCTRLKey(e, Key.B, () =>
+            {
+                AppHelper.GoBack();
+            });
         }
     }
 }

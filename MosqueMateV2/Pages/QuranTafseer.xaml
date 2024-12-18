@@ -13,7 +13,7 @@
          Loaded="Window_Loaded">
     <ScrollViewer x:Name="quranScrollViewer"
                  >
-        <Grid x:Name="GridCardContainer"
+        <Grid x:Name="GridCardContainer" KeyDown="GridCardContainer_KeyDown"
               >
             <hc:LoadingCircle x:Name="loader"
                               DotSpeed="5"

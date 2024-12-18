@@ -57,10 +57,10 @@ namespace MosqueMateV2.Pages
   
         private void WebView_KeyDown(object sender, KeyEventArgs e)
         {
-            if ((e.Key == Key.B && Keyboard.IsKeyDown(Key.LeftCtrl)) || (e.Key == Key.B && Keyboard.IsKeyDown(Key.RightCtrl)))
+            KeyboardHelper.ActionPressCTRLKey(e, Key.B, () =>
             {
-                AppHelper.GoBack();
-            }
+                AppHelper.GoHome();
+            });
         }
     }
 }

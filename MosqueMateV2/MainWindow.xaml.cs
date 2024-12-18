@@ -79,7 +79,6 @@ namespace MosqueMateV2
                     return;
                 }
 
-                // Navigate to the appropriate page
                 switch (pageTag)
                 {
                     case AppLocalization.HomeTag:
