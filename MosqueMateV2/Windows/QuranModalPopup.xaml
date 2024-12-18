@@ -10,7 +10,7 @@
         Height="800"
         Topmost="False"
         KeyDown="Window_KeyDown"
-        ResizeMode="NoResize"
+        ResizeMode="CanMinimize"
         ShowInTaskbar="True"
         WindowStartupLocation="CenterScreen"
         ThemeMode="System"
