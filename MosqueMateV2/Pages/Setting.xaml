@@ -269,9 +269,12 @@
                Grid.Row="4"
                Padding="10 15 0 0"
                FontSize="15"
-               Margin="5,10,179,35"></Label>
+               Margin="7,36,0,0"
+               VerticalAlignment="Top"
+               Width="248"
+               HorizontalAlignment="Left"></Label>
         <ComboBox x:Name="reciterBox"
-                  Margin="0,65,0,12"
+                  Margin="0,77,0,0"
                   Grid.Row="4"
                   Width="257"
                   Height="37"
