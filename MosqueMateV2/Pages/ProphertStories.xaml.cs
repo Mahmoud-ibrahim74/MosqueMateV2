@@ -35,6 +35,7 @@ namespace MosqueMateV2.Pages
                  onSuccess: result =>
                  {
                      var list = result.ToList();
+                     GridCardContainer.FlowDirection = FlowDirection.RightToLeft;
                      GridCardContainer.GenerateCards(
                                    data: list,
                                    getName: item => item.Title,
@@ -44,6 +45,8 @@ namespace MosqueMateV2.Pages
                                    CardWidth: 380,
                                    CardHeight: 150,
                                    FontSize: 10,
+                                   PaddingRightTxt: 15,
+                                   PaddingLeftTxt: 15,
                                    textWrapping: TextWrapping.Wrap,
                                    serviceType: PagesTypesEnum.YoutubeViewerPage
                                );

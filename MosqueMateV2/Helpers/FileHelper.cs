@@ -13,12 +13,20 @@ namespace MosqueMateV2.Helpers
     {
         public static async Task<string> WritePdfToTempAsync(byte[] file)
         {
-            if (file.Length == 0)
-                return null;
+            try
+            {
+                if (!Directory.Exists(AppLocalization.AppTempPath))
+                    Directory.CreateDirectory(AppLocalization.AppTempPath);
 
-            var filePath = Path.Combine(AppLocalization.AppTempPath, "output.pdf");
-            await File.WriteAllBytesAsync(filePath, file);
-            return filePath;
+                var filePath = Path.Combine(AppLocalization.AppTempPath, "output.pdf");
+                await File.WriteAllBytesAsync(filePath, file);
+                return filePath;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
         }
         public static void ConvertPlayListToJsonFile(IReadOnlyList<PlaylistVideo> list)
         {
@@ -34,9 +42,9 @@ namespace MosqueMateV2.Helpers
                 if (surah.name == "النّمل")
                     surah.name = "النمل";
                 if (surah.name == "الرّوم")
-                    surah.name = "الروم";        
+                    surah.name = "الروم";
                 if (surah.name == "فصّلت")
-                    surah.name = "فصلت";           
+                    surah.name = "فصلت";
                 if (surah.name == "الدّخان")
                     surah.name = "الدخان";
 
