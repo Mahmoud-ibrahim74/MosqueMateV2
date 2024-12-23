@@ -2,8 +2,10 @@
 using MosqueMateV2.Domain.Extensions;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
+using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -31,23 +33,24 @@ namespace MosqueMateV2.Pages
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             #region Labels
-            this.Title = App.LocalizationService[AppLocalization.Settings];
-            this.reminderTimeLBL.Content = App.LocalizationService[AppLocalization.ReminderTime];
-            this.hoursLBL.Content = App.LocalizationService[AppLocalization.Hours];
-            this.minutesLBL.Content = App.LocalizationService[AppLocalization.Minutes];
-            this.minutesLBL.Content = App.LocalizationService[AppLocalization.Minutes];
-            this.countryLBL.Content = App.LocalizationService[AppLocalization.countryLBL];
-            this.cityLBL.Content = App.LocalizationService[AppLocalization.cityLBL];
-            this.regionLBL.Content = App.LocalizationService[AppLocalization.regionLBL];
-            this.LanguageLBL.Content = App.LocalizationService[AppLocalization.Language];
-            this.calcLBL.Content = App.LocalizationService[AppLocalization.calculationMethod];
-            this.calcLBL.Content = App.LocalizationService[AppLocalization.calculationMethod];
-            this.startupToggleLBL.Content = App.LocalizationService[AppLocalization.autoStartUp];
-            this.adhanLBL.Content = App.LocalizationService[AppLocalization.Muezzin];
-            this.adhanFajrLBL.Content = App.LocalizationService[AppLocalization.adhanFajr];
-            this.notificationLBL.Content = App.LocalizationService[AppLocalization.notificationLBL];
-            this.reciterLBL.Content = App.LocalizationService[AppLocalization.Reciter];
-            this.save.Content = App.LocalizationService[AppLocalization.Save];
+            this.Title = App.LocalizationService[SD.Localization.Settings];
+            this.reminderTimeLBL.Content = App.LocalizationService[SD.Localization.ReminderTime];
+            this.hoursLBL.Content = App.LocalizationService[SD.Localization.Hours];
+            this.minutesLBL.Content = App.LocalizationService[SD.Localization.Minutes];
+            this.minutesLBL.Content = App.LocalizationService[SD.Localization.Minutes];
+            this.countryLBL.Content = App.LocalizationService[SD.Localization.countryLBL];
+            this.cityLBL.Content = App.LocalizationService[SD.Localization.cityLBL];
+            this.regionLBL.Content = App.LocalizationService[SD.Localization.regionLBL];
+            this.LanguageLBL.Content = App.LocalizationService[SD.Localization.Language];
+            this.calcLBL.Content = App.LocalizationService[SD.Localization.calculationMethod];
+            this.calcLBL.Content = App.LocalizationService[SD.Localization.calculationMethod];
+            this.startupToggleLBL.Content = App.LocalizationService[SD.Localization.autoStartUp];
+            this.adhanLBL.Content = App.LocalizationService[SD.Localization.Muezzin];
+            this.adhanFajrLBL.Content = App.LocalizationService[SD.Localization.adhanFajr];
+            this.notificationLBL.Content = App.LocalizationService[SD.Localization.notificationLBL];
+            this.reciterLBL.Content = App.LocalizationService[SD.Localization.Reciter];
+            this.themeModeLBL.Content = App.LocalizationService[SD.Localization.ChooseMode];
+            this.save.Content = App.LocalizationService[SD.Localization.Save];
 
             #endregion
 
@@ -60,6 +63,13 @@ namespace MosqueMateV2.Pages
             reciterBox.ItemsSource = receiters;
             #endregion
 
+            #region themeBoxItems
+            var theme = ReflectionExtensions.GetPropertyNames<ThemeMode>(
+                BindingFlags.Public,
+                BindingFlags.Static);
+            theme.Remove(nameof(ThemeMode.None));
+            themeModeBox.ItemsSource = theme;
+            #endregion
 
             #region BackgroundWorker-Area
             rxTaskManger.RunBackgroundTaskOnUI(
@@ -152,26 +162,7 @@ namespace MosqueMateV2.Pages
         }
         private void notificationToggle_Click(object sender, RoutedEventArgs e)
         {
-            if (notificationToggle.IsChecked is true)
-            {
-                if (Application.Current.ThemeMode == ThemeMode.Light)
-                {
-                    notificationAlertTxt.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
-                        FlowDirection.RightToLeft : FlowDirection.LeftToRight;
-                    notificationAlertTxt.Foreground = new SolidColorBrush(Colors.DarkOrange);
-                }
-                else
-                {
-                    notificationAlertTxt.FlowDirection = FlowDirection.LeftToRight;
-                }
-                notificationAlertTxt.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
-                FlowDirection.RightToLeft : FlowDirection.LeftToRight;
-                notificationAlertTxt.Text = App.LocalizationService[AppLocalization.notificationDesc];
-            }
-            else if (notificationToggle.IsChecked is false)
-            {
-                notificationAlertTxt.Text = string.Empty;
-            }
+           
         }
         private void save_Click(object sender, RoutedEventArgs e)
         {
@@ -194,10 +185,10 @@ namespace MosqueMateV2.Pages
             #region Lang-Area
 
 
-            string lang = arabicRadioBtn.IsChecked == true ? AppLocalization.Arabic :
-                          englishRadioBtn.IsChecked == true ? AppLocalization.English :
-                          frenshRadioBtn.IsChecked == true ? AppLocalization.Frensh :
-                          AppLocalization.Arabic;
+            string lang = arabicRadioBtn.IsChecked == true ? SD.Localization.Arabic :
+                          englishRadioBtn.IsChecked == true ? SD.Localization.English :
+                          frenshRadioBtn.IsChecked == true ? SD.Localization.Frensh :
+                          SD.Localization.Arabic;
             #endregion
 
             #region AutoStart
@@ -216,6 +207,11 @@ namespace MosqueMateV2.Pages
 
             #endregion
 
+            #region Theme-Mode
+            var theme = themeModeBox.SelectedValue as string;
+
+            #endregion
+
             #region Set-Value-Settings
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Lang)] = lang;
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.TimeRemainder)] = remainderTime;
@@ -227,6 +223,7 @@ namespace MosqueMateV2.Pages
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.AdhanFajr)] = adhanFajr;
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.NotificationEnabled)] = notification;
             Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Reciter)] = reciter;
+            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.themeMode)] = theme;
             #endregion
 
 
@@ -234,9 +231,9 @@ namespace MosqueMateV2.Pages
 
             ToastNotificationsHelper.
             SendNotification(
-                        title: App.LocalizationService[AppLocalization.Sucsess],
-                        message: App.LocalizationService[AppLocalization.SavedSucsessfully],
-                        duration: new TimeSpan(0, 0, AppLocalization.NotificatonDuration),
+                        title: App.LocalizationService[SD.Localization.Sucsess],
+                        message: App.LocalizationService[SD.Localization.SavedSucsessfully],
+                        duration: new TimeSpan(0, 0, SD.Localization.NotificatonDuration),
                         onClose: () =>
                         {
                             AppHelper.RestartApp();
@@ -255,11 +252,12 @@ namespace MosqueMateV2.Pages
                 this.cityBox.SelectedValue = Properties.AppSettings.Default.City;
                 this.calcBox.SelectedValue = Properties.AppSettings.Default.Method;
                 this.reciterBox.SelectedValue = Properties.AppSettings.Default.Reciter;
-                this.calcBox.ToolTip = App.LocalizationService[AppLocalization.calculationMethodToolTip];
+                this.themeModeBox.SelectedValue = Properties.AppSettings.Default.themeMode;
+                this.calcBox.ToolTip = App.LocalizationService[SD.Localization.calculationMethodToolTip];
 
-                this.arabicRadioBtn.IsChecked = Properties.AppSettings.Default.Lang == AppLocalization.Arabic;
-                this.englishRadioBtn.IsChecked = Properties.AppSettings.Default.Lang == AppLocalization.English;
-                this.frenshRadioBtn.IsChecked = Properties.AppSettings.Default.Lang == AppLocalization.Frensh;
+                this.arabicRadioBtn.IsChecked = Properties.AppSettings.Default.Lang == SD.Localization.Arabic;
+                this.englishRadioBtn.IsChecked = Properties.AppSettings.Default.Lang == SD.Localization.English;
+                this.frenshRadioBtn.IsChecked = Properties.AppSettings.Default.Lang == SD.Localization.Frensh;
 
                 this.startupTogle.IsChecked = Properties.AppSettings.Default.AutoStartUp;
                 this.adhanBox.SelectedValue = Properties.AppSettings.Default.Adhan;

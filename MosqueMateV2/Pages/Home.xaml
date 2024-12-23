@@ -8,7 +8,6 @@
          x:Class="MosqueMateV2.Pages.Home"
          mc:Ignorable="d"
          Title="MainWindow"
-         ui:ThemeManager.RequestedTheme="Default"
          Loaded="Window_Loaded">
     <Grid x:Name="GridContainer"
           HorizontalAlignment="Stretch"
@@ -94,7 +93,6 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250*" />
                 <ColumnDefinition Width="250*" />
-                <ColumnDefinition Width="250*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="20*" />
@@ -110,6 +108,7 @@
                     Height="60"
                     Margin="30,2,0,0"
                     VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
                     Cursor="Hand" Click="QuranBtn_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -132,40 +131,14 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="tasbihBtn"
-                    Grid.Column="2"
-                    Width="150"
-                    Height="60"
-                    Margin="30,2,0,0"
-                    VerticalAlignment="Top"
-                    Cursor="Hand">
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Grid Margin="0,0,0,-30">
-                            <!-- Background Image -->
-                            <Rectangle Margin="0,0,0,20">
-                                <Rectangle.Fill>
-                                    <ImageBrush ImageSource="/Assets/zekr.png"
-                                                Stretch="Uniform" />
-                                </Rectangle.Fill>
-                            </Rectangle>
-                            <!-- Label -->
-                            <TextBlock x:Name="tasbihTxt"
-                                       HorizontalAlignment="Center"
-                                       VerticalAlignment="Bottom"
-                                       FontSize="13"
-                                       FontWeight="DemiBold"
-                                       TextAlignment="Center" />
-                        </Grid>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
+
             <Button x:Name="hadithBtn"
                     Grid.Column="0"
                     Grid.Row="1"
                     Width="130"
                     Height="60"
                     Margin="30,5,0,0"
+                    HorizontalAlignment="Center"                 
                     VerticalAlignment="Top"
                     Cursor="Hand">
                 <Button.Template>
@@ -200,6 +173,8 @@
                     Height="70"
                     Margin="30,5,0,0"
                     VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    
                     Cursor="Hand">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -222,33 +197,6 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Grid.Column="2"
-                    Grid.Row="1"
-                    Width="150"
-                    Height="60"
-                    Margin="30,5,0,0"
-                    Cursor="Hand"
-                    Click="Button_Click">
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Grid Margin="0,0,0,-30">
-                            <!-- Background Image -->
-                            <Rectangle Margin="0,0,0,20">
-                                <Rectangle.Fill>
-                                    <ImageBrush ImageSource="/Assets/tasbih.png"
-                                                Stretch="Uniform" />
-                                </Rectangle.Fill>
-                            </Rectangle>
-                            <!-- Label -->
-                            <TextBlock HorizontalAlignment="Center"
-                                       VerticalAlignment="Bottom"
-                                       FontSize="13"
-                                       FontWeight="DemiBold"
-                                       TextAlignment="Center" />
-                        </Grid>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
             <Button x:Name="azkarBtn"
                     Grid.Column="1"
                     Width="150"
@@ -256,6 +204,8 @@
                     Margin="30,2,0,0"
                     Click="azkarBtn_Click"
                     VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    
                     Cursor="Hand">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">

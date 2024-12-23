@@ -29,7 +29,7 @@ namespace MosqueMateV2.Domain.Repositories
             return _links.FirstOrDefault(x => x.name == name) ??
             new()
             {
-                name = AppLocalization.DefaultSura,
+                name = SD.Localization.DefaultSura,
                 url1 = "https://www.youtube.com/watch?v=SxzUeUdi5hI&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
             };
         }

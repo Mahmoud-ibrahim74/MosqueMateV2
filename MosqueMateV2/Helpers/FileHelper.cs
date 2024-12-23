@@ -15,10 +15,10 @@ namespace MosqueMateV2.Helpers
         {
             try
             {
-                if (!Directory.Exists(AppLocalization.AppTempPath))
-                    Directory.CreateDirectory(AppLocalization.AppTempPath);
+                if (!Directory.Exists(SD.Localization.AppTempPath))
+                    Directory.CreateDirectory(SD.Localization.AppTempPath);
 
-                var filePath = Path.Combine(AppLocalization.AppTempPath, "output.pdf");
+                var filePath = Path.Combine(SD.Localization.AppTempPath, "output.pdf");
                 await File.WriteAllBytesAsync(filePath, file);
                 return filePath;
             }
@@ -30,7 +30,7 @@ namespace MosqueMateV2.Helpers
         }
         public static void ConvertPlayListToJsonFile(IReadOnlyList<PlaylistVideo> list)
         {
-            var filePath = Path.Combine(AppLocalization.AppTempPath, "output.json");
+            var filePath = Path.Combine(SD.Localization.AppTempPath, "output.json");
 
             string jsonContent = Encoding.UTF8.GetString(FileResources.quran_link);
             var surahs = JsonConvert.DeserializeObject<List<DTOQuranLinks>>(jsonContent);

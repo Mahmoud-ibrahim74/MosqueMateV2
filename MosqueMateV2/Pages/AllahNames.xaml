@@ -8,7 +8,6 @@
          xmlns:ui="http://schemas.modernwpf.com/2019"
          mc:Ignorable="d"
          Title="MainWindow"
-         ui:ThemeManager.RequestedTheme="Dark"
          FontFamily="Bahnschrift Condensed"
          Loaded="Window_Loaded">
     <Grid>

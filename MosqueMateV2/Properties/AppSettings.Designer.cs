@@ -109,7 +109,7 @@ namespace MosqueMateV2.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("cairo")]
+        [global::System.Configuration.DefaultSettingValueAttribute("CAIRO")]
         public string City {
             get {
                 return ((string)(this["City"]));
@@ -121,7 +121,7 @@ namespace MosqueMateV2.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
         public string Method {
             get {
                 return ((string)(this["Method"]));
@@ -152,6 +152,18 @@ namespace MosqueMateV2.Properties {
             }
             set {
                 this["Reciter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("System")]
+        public string themeMode {
+            get {
+                return ((string)(this["themeMode"]));
+            }
+            set {
+                this["themeMode"] = value;
             }
         }
     }

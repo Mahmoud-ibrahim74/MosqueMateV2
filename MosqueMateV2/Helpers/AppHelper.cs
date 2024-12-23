@@ -62,7 +62,7 @@ namespace MosqueMateV2.Helpers
         }
         public static void AddApplicationToStartup()
         {
-            string appName = Assembly.GetExecutingAssembly().GetName().Name ?? AppLocalization.AppAssemblyName;
+            string appName = Assembly.GetExecutingAssembly().GetName().Name ?? SD.Localization.AppAssemblyName;
             string appPath = System.Windows.Application.ResourceAssembly.Location.Replace(".dll", ".exe");
             if (File.Exists(appPath))
             {
@@ -73,7 +73,7 @@ namespace MosqueMateV2.Helpers
         }
         public static void RemoveApplicationFromStartup()
         {
-            string appName = Assembly.GetExecutingAssembly().GetName().Name ?? AppLocalization.AppAssemblyName;
+            string appName = Assembly.GetExecutingAssembly().GetName().Name ?? SD.Localization.AppAssemblyName;
             using var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
             if (key.GetValue(appName) != null)
             {
@@ -133,6 +133,30 @@ namespace MosqueMateV2.Helpers
             {
                 var frame = window.FindName("MainFrame") as Frame;
                 frame?.Navigate(page);
+            }
+        }
+
+        /// <summary>
+        /// Gets all the windows currently open in the WPF application.
+        /// </summary>
+        /// <returns>A list of all open windows.</returns>
+        public static List<Window> GetAllWindows()
+        {
+            return Application.Current.Windows.Cast<Window>().ToList();
+        }
+
+        public static void ChnageAppTheme(ThemeMode mode)
+        {
+            var allWindows = GetAllWindows();   
+            if (allWindows.Count > 0)
+            {
+                foreach (var window in allWindows)
+                {
+                    if (window is not null)
+                    {
+                        window.ThemeMode = mode;
+                    }
+                }
             }
         }
 

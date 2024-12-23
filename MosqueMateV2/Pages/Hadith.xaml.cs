@@ -35,7 +35,7 @@ namespace MosqueMateV2.Pages
             var main = Application.Current.MainWindow;
             this.loader.Visibility = Visibility.Visible;  
             rxTaskManger.RunBackgroundTaskOnUI(
-                 backgroundTask: token => new ApiClient(_baseUrl:AppLocalization.HadithApiLink).GetAsync(),
+                 backgroundTask: token => new ApiClient(_baseUrl:SD.Localization.HadithApiLink).GetAsync(),
                  onSuccess: result =>
                  {
                      if(result is not null) { 

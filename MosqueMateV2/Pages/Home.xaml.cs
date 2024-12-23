@@ -67,12 +67,12 @@ namespace MosqueMateV2.Pages
         {
             Focusable = true;
             Focus();
-            Title = App.LocalizationService[AppLocalization.AppName];
+            Title = App.LocalizationService[SD.Localization.AppName];
 
-            topGrid.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
+            topGrid.FlowDirection = App.AppLanguage == SD.Localization.Arabic ?
                                        FlowDirection.RightToLeft :
                                        FlowDirection.LeftToRight;
-            centerGrid.FlowDirection = App.AppLanguage == AppLocalization.Arabic ?
+            centerGrid.FlowDirection = App.AppLanguage == SD.Localization.Arabic ?
                 FlowDirection.RightToLeft :
                 FlowDirection.LeftToRight;
 
@@ -85,11 +85,11 @@ namespace MosqueMateV2.Pages
                 var hijriDate = StringExtenstion.AppendString(
                      App.Api_Response.Data.Date.Hijri.Day,
                      " - ",
-                     App.AppLanguage == AppLocalization.Arabic ?
+                     App.AppLanguage == SD.Localization.Arabic ?
                      App.Api_Response.Data.Date.Hijri.Weekday.Arabic :
                      App.Api_Response.Data.Date.Hijri.Weekday.English,
                      " ",
-                     App.AppLanguage == AppLocalization.Arabic ?
+                     App.AppLanguage == SD.Localization.Arabic ?
                      App.Api_Response.Data.Date.Hijri.Month.Arabic :
                      App.Api_Response.Data.Date.Hijri.Month.English,
                      " ",
@@ -98,7 +98,7 @@ namespace MosqueMateV2.Pages
 
                 #region WelcomeBuilder
                 var WelcomeBuilder = StringExtenstion.AppendString(
-                    App.LocalizationService[AppLocalization.WeclomeApp],
+                    App.LocalizationService[SD.Localization.WeclomeApp],
                     " , ",
                     DateTimeHelper.PrintGreeting()
                     );
@@ -165,13 +165,13 @@ namespace MosqueMateV2.Pages
             var prayerLearningTxt = prayerLearningBtn.Template.FindName("prayerLearningTxt", prayerLearningBtn) as TextBlock;
 
             if (quranTxt is not null)
-                quranTxt.Text = App.LocalizationService[AppLocalization.ContinueReading];
+                quranTxt.Text = App.LocalizationService[SD.Localization.ContinueReading];
             if (azkarTxt is not null)
-                azkarTxt.Text = App.LocalizationService[AppLocalization.ZekrReminder];
+                azkarTxt.Text = App.LocalizationService[SD.Localization.ZekrReminder];
             if (hadithTxt is not null)
-                hadithTxt.Text = App.LocalizationService[AppLocalization.Hadith];
+                hadithTxt.Text = App.LocalizationService[SD.Localization.Hadith];
             if (prayerLearningTxt is not null)
-                prayerLearningTxt.Text = App.LocalizationService[AppLocalization.PrayerLearningChildren];
+                prayerLearningTxt.Text = App.LocalizationService[SD.Localization.PrayerLearningChildren];
 
         }
 
@@ -188,7 +188,7 @@ namespace MosqueMateV2.Pages
 
 
                 nextPrayerLBL.Content = StringExtenstion.AppendString(
-                      App.LocalizationService[AppLocalization.NextPrayer],
+                      App.LocalizationService[SD.Localization.NextPrayer],
                       " ",
                       $"{nextPrayer.Hours}:{nextPrayer.Minutes}:{nextPrayer.Seconds}",
                       "  ( " + localizationNextAdhan + " )"
@@ -205,17 +205,17 @@ namespace MosqueMateV2.Pages
             if (AdhanHelper.IsAlertForNextAdhan)
             {
                 var alertMsg = StringExtenstion.AppendString(
-                    App.LocalizationService[AppLocalization.PrayerLeft],
+                    App.LocalizationService[SD.Localization.PrayerLeft],
                                 " ",
                                 timeLeft.Minutes.ToString(),
                                 " ",
-                                App.LocalizationService[AppLocalization.Minutes]);
+                                App.LocalizationService[SD.Localization.Minutes]);
 
 
                 ToastNotificationsHelper.SendNotification(
-                            title: App.LocalizationService[AppLocalization.Alert],
+                            title: App.LocalizationService[SD.Localization.Alert],
                             message: alertMsg,
-                            duration: new TimeSpan(0, 0, AppLocalization.NotificatonDuration),
+                            duration: new TimeSpan(0, 0, SD.Localization.NotificatonDuration),
                             onClose: () =>
                             {
                                 App.mP3Player.Stop();

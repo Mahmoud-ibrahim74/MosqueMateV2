@@ -252,15 +252,25 @@
                       Height="24"
                       Width="48"
                       Click="notificationToggle_Click" />
-        <TextBlock x:Name="notificationAlertTxt"
-                   Grid.Column="0"
-                   Grid.Row="5"
-                   LineHeight="30"
-                   FontWeight="UltraBold"
-                   TextWrapping="WrapWithOverflow"
-                   Foreground="yellow"
-                   Padding="10 5 0 0"
-                   FontSize="17" />
+        <!--#endregion-->
+
+        <!--#region Theme-Mode -->
+        <Label x:Name="themeModeLBL"
+               Grid.Column="0"
+               Grid.Row="5"
+               Padding="10 15 0 0"
+               FontSize="15"
+               Margin="17,8,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"></Label>
+        <ComboBox x:Name="themeModeBox"
+                  Margin="12,58,36,26"
+                  Grid.Row="5"
+                  Width="275"
+                  FontSize="13"
+                  FontWeight="DemiBold"
+                  Height="37"
+                  />
         <!--#endregion-->
 
         <!--#region Reader -->

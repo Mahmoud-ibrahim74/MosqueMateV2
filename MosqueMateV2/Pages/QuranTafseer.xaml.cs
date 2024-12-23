@@ -34,7 +34,7 @@ namespace MosqueMateV2.Pages
         {
             this.loader.Visibility = Visibility.Visible;
             rxTaskManger.RunBackgroundTaskOnUI(
-                 backgroundTask: token => _youtubeService.GetPlayListAsync(AppLocalization.PlayListTafseerUrl),
+                 backgroundTask: token => _youtubeService.GetPlayListAsync(SD.Localization.PlayListTafseerUrl),
                  onSuccess: result =>
                  {
                      var list = result.ToList();

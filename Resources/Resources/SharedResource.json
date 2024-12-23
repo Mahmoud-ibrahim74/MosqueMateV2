@@ -225,10 +225,10 @@
     "en": "Language",
     "fr": "Langue"
   },
-  "Mode": {
-    "ar": "الوضع المظلم",
-    "en": "Dark Mode",
-    "fr": "Mode Sombre"
+  "ChooseMode": {
+    "ar": "اختر الوضع",
+    "en": "Choose Mode",
+    "fr": "Choisir le mode"
   },
   "MiladiTitle": {
     "ar": "التاريخ الميلادى",

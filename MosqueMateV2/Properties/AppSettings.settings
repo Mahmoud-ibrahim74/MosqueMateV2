@@ -24,16 +24,19 @@
       <Value Profile="(Default)">egypt</Value>
     </Setting>
     <Setting Name="City" Type="System.String" Scope="User">
-      <Value Profile="(Default)">cairo</Value>
+      <Value Profile="(Default)">CAIRO</Value>
     </Setting>
     <Setting Name="Method" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">8</Value>
     </Setting>
     <Setting Name="ContinueReading" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="Reciter" Type="System.String" Scope="User">
       <Value Profile="(Default)">Ofacy</Value>
+    </Setting>
+    <Setting Name="themeMode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">System</Value>
     </Setting>
   </Settings>
 </SettingsFile>

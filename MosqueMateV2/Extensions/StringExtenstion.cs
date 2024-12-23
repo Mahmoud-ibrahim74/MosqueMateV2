@@ -1,5 +1,7 @@
 ﻿using MosqueMateV2.Resources;
+using System.Reflection;
 using System.Text;
+using System.Windows;
 
 namespace MosqueMateV2.Extensions
 {
@@ -38,8 +40,33 @@ namespace MosqueMateV2.Extensions
         }
         public static string AppendDuration(this string input, TimeSpan duration)
         {
-            string formattedDuration = $"{App.LocalizationService[AppLocalization.Duration]} : {duration.Hours:D2}:{duration.Minutes:D2}:{duration.Seconds:D2}";
+            string formattedDuration = $"{App.LocalizationService[SD.Localization.Duration]} : {duration.Hours:D2}:{duration.Minutes:D2}:{duration.Seconds:D2}";
             return $"{input} {formattedDuration}".Trim();
+        }
+
+        /// <summary>
+        /// Converts a string to a ThemeMode struct.
+        /// </summary>
+        /// <param name="value">The string value to convert.</param>
+        /// <returns>The corresponding ThemeMode struct.</returns>
+        public static ThemeMode ToThemeMode(this string value)
+        {
+            // Get the type of ThemeMode
+            Type themeModeType = typeof(ThemeMode);
+
+            // Search for a static property matching the string value
+            var staticProperty = themeModeType
+                .GetProperty(value, BindingFlags.Public | BindingFlags.Static | BindingFlags.IgnoreCase);
+
+            if (staticProperty != null && staticProperty.PropertyType == themeModeType)
+            {
+                // Return the matching static instance
+                return (ThemeMode)staticProperty.GetValue(null);
+            }
+
+            // If no predefined static instance matches, create a new ThemeMode with the string value
+            return (ThemeMode)Activator.CreateInstance(themeModeType, value);
         }
     }
 }
+

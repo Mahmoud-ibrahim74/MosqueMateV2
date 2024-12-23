@@ -62,7 +62,7 @@ namespace MosqueMateV2.Pages
                     quranScrollViewer.ScrollToVerticalOffset(offest.ControlPosition.Value.Y - 300);
                     if (offest.SelectedElement is not null)
                     {
-                        AnimationHelper animation = new(AppLocalization.AnimationDuration);
+                        AnimationHelper animation = new(SD.Localization.AnimationDuration);
                         animation.CreatePulseAnimation(offest.SelectedElement);
                         animation.StartPulseAnimation();
                     }

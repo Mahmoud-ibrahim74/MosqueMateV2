@@ -1,7 +1,9 @@
 ﻿using MosqueMateV2.Domain.DTOs;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
+using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
+using MosqueMateV2.Properties;
 using MosqueMateV2.Resources;
 using System.Windows;
 using System.Windows.Media.Animation;
@@ -23,6 +25,10 @@ namespace MosqueMateV2.Windows
 
         public AdhkarModalPopup(int zekId)
         {
+            #region SetTheme
+            var currentTheme = AppSettings.Default.themeMode.ToThemeMode();
+            this.ThemeMode = currentTheme;
+            #endregion
             InitializeComponent();
             rxTaskManger = new();
             this.zekr_id = zekId;

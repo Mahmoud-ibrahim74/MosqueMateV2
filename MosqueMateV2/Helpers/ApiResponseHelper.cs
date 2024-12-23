@@ -14,7 +14,7 @@ namespace MosqueMateV2.Helpers
         public static string HadithChpterLink(string bookSlug)
         {
             var url = $"https://hadithapi.com/api/{bookSlug}/" +
-                        $"chapters?apiKey={AppLocalization.ApiKey}";
+                        $"chapters?apiKey={SD.Localization.ApiKey}";
             return url;
         }
         public static string HadithCollectionLink(string bookSlug, 
@@ -23,7 +23,7 @@ namespace MosqueMateV2.Helpers
             int paginate = 25)
         {
             var url = $"https://hadithapi.com/api/hadiths/?" +
-                $"apiKey={AppLocalization.ApiKey}" +
+                $"apiKey={SD.Localization.ApiKey}" +
                 $"&book={bookSlug}" +
                 $"&chapter={chapterNumber}" +
                 $"&status={status}" +

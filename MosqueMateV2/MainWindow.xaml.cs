@@ -1,6 +1,11 @@
-﻿using ModernWpf.Controls;
+﻿using AngleSharp.Common;
+using ModernWpf;
+using ModernWpf.Controls;
 using MosqueMateV2.DataAccess.Models;
+using MosqueMateV2.Extensions;
+using MosqueMateV2.Helpers;
 using MosqueMateV2.Pages;
+using MosqueMateV2.Properties;
 using MosqueMateV2.Resources;
 using System.Drawing;
 using System.Windows;
@@ -28,6 +33,11 @@ namespace MosqueMateV2
 
         public MainWindow()
         {
+            #region SetTheme
+            var currentTheme = AppSettings.Default.themeMode.ToThemeMode();
+            this.ThemeMode = currentTheme;  
+            #endregion
+
             InitializeComponent();
             PrayerSlidesData = [];
 
@@ -66,6 +76,7 @@ namespace MosqueMateV2
             WasayaItems.Icon = Wasay;
 
             #endregion
+
         }
 
         private void NavView_SelectionChanged(object sender, NavigationViewSelectionChangedEventArgs e)
@@ -81,37 +92,37 @@ namespace MosqueMateV2
 
                 switch (pageTag)
                 {
-                    case AppLocalization.HomeTag:
+                    case SD.Localization.HomeTag:
                         MainFrame.Navigate(new Home());
                         break;
-                    case AppLocalization.QuranTag:
+                    case SD.Localization.QuranTag:
                         MainFrame.Navigate(new Quran());
                         break;
-                    case AppLocalization.AdhkarTag:
+                    case SD.Localization.AdhkarTag:
                         MainFrame.Navigate(new Adhkar());
                         break;
-                    case AppLocalization.Hadith:
+                    case SD.Localization.Hadith:
                         MainFrame.Navigate(new Hadith());
                         break;
-                    case AppLocalization.allahName:
+                    case SD.Localization.allahName:
                         MainFrame.Navigate(new AllahNames());
                         break;
-                    case AppLocalization.Prophets:
+                    case SD.Localization.Prophets:
                         MainFrame.Navigate(new ProphertStories());
                         break;
-                    case AppLocalization.Rokya:
+                    case SD.Localization.Rokya:
                         MainFrame.Navigate(new PdfViewerPage(Domain.Enums.ViewTypesEnum.Rokya));
                         break;              
-                    case AppLocalization.FortyNawawi:
+                    case SD.Localization.FortyNawawi:
                         MainFrame.Navigate(new PdfViewerPage(Domain.Enums.ViewTypesEnum.FortyNawawi));
                         break;               
-                    case AppLocalization.Kodosy:
+                    case SD.Localization.Kodosy:
                         MainFrame.Navigate(new PdfViewerPage(Domain.Enums.ViewTypesEnum.Kodosy));
                         break;
-                    case AppLocalization.Wasaya:
+                    case SD.Localization.Wasaya:
                         MainFrame.Navigate(new PdfViewerPage(Domain.Enums.ViewTypesEnum.Wasaya));
                         break;
-                    case AppLocalization.QuranTafseer:
+                    case SD.Localization.QuranTafseer:
                         MainFrame.Navigate(new QuranTafseer());
                         break;
                 }
@@ -122,35 +133,35 @@ namespace MosqueMateV2
         {
 
             #region Labels
-            Title = App.LocalizationService[AppLocalization.AppName];
-            NavView.PaneTitle = App.LocalizationService[AppLocalization.MainMenu];
-            homeItem.Content = App.LocalizationService[AppLocalization.Home];
-            quraanItem.Content = App.LocalizationService[AppLocalization.Quran];
-            adhkarItem.Content = App.LocalizationService[AppLocalization.AzkarDoaa];
-            hadithItem.Content = App.LocalizationService[AppLocalization.Hadith];
-            allahNamesItem.Content = App.LocalizationService[AppLocalization.allahName];
-            ProphetsStoriesItem.Content = App.LocalizationService[AppLocalization.Prophets];
-            RokyaItems.Content = App.LocalizationService[AppLocalization.Rokya];
-            quraanTafseerItem.Content = App.LocalizationService[AppLocalization.QuranTafseer];
-            quraanTafseerItem.Content = App.LocalizationService[AppLocalization.QuranTafseer];
-            CrescentItems.Content = App.LocalizationService[AppLocalization.FortyNawawi];
-            KosdosyItems.Content = App.LocalizationService[AppLocalization.Kodosy];
-            WasayaItems.Content = App.LocalizationService[AppLocalization.Wasaya];
+            Title = App.LocalizationService[SD.Localization.AppName];
+            NavView.PaneTitle = App.LocalizationService[SD.Localization.MainMenu];
+            homeItem.Content = App.LocalizationService[SD.Localization.Home];
+            quraanItem.Content = App.LocalizationService[SD.Localization.Quran];
+            adhkarItem.Content = App.LocalizationService[SD.Localization.AzkarDoaa];
+            hadithItem.Content = App.LocalizationService[SD.Localization.Hadith];
+            allahNamesItem.Content = App.LocalizationService[SD.Localization.allahName];
+            ProphetsStoriesItem.Content = App.LocalizationService[SD.Localization.Prophets];
+            RokyaItems.Content = App.LocalizationService[SD.Localization.Rokya];
+            quraanTafseerItem.Content = App.LocalizationService[SD.Localization.QuranTafseer];
+            quraanTafseerItem.Content = App.LocalizationService[SD.Localization.QuranTafseer];
+            CrescentItems.Content = App.LocalizationService[SD.Localization.FortyNawawi];
+            KosdosyItems.Content = App.LocalizationService[SD.Localization.Kodosy];
+            WasayaItems.Content = App.LocalizationService[SD.Localization.Wasaya];
             #endregion
 
             #region Tags
 
-            homeItem.Tag = AppLocalization.HomeTag;
-            quraanItem.Tag = AppLocalization.QuranTag;
-            adhkarItem.Tag = AppLocalization.AdhkarTag;
-            hadithItem.Tag = AppLocalization.Hadith;
-            allahNamesItem.Tag = AppLocalization.allahName;
-            ProphetsStoriesItem.Tag = AppLocalization.Prophets;
-            RokyaItems.Tag = AppLocalization.Rokya;
-            quraanTafseerItem.Tag = AppLocalization.QuranTafseer;
-            CrescentItems.Tag = AppLocalization.FortyNawawi;
-            KosdosyItems.Tag = AppLocalization.Kodosy;
-            WasayaItems.Tag = AppLocalization.Wasaya;
+            homeItem.Tag = SD.Localization.HomeTag;
+            quraanItem.Tag = SD.Localization.QuranTag;
+            adhkarItem.Tag = SD.Localization.AdhkarTag;
+            hadithItem.Tag = SD.Localization.Hadith;
+            allahNamesItem.Tag = SD.Localization.allahName;
+            ProphetsStoriesItem.Tag = SD.Localization.Prophets;
+            RokyaItems.Tag = SD.Localization.Rokya;
+            quraanTafseerItem.Tag = SD.Localization.QuranTafseer;
+            CrescentItems.Tag = SD.Localization.FortyNawawi;
+            KosdosyItems.Tag = SD.Localization.Kodosy;
+            WasayaItems.Tag = SD.Localization.Wasaya;
             NavView.SelectedItem = homeItem;
 
             #endregion

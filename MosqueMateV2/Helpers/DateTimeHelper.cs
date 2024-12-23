@@ -10,9 +10,9 @@ namespace MosqueMateV2.Helpers
             var currentHour = DateTime.Now.Hour;
 
             if (currentHour < 12)
-                return App.LocalizationService[AppLocalization.GoodMorning];
+                return App.LocalizationService[SD.Localization.GoodMorning];
             else
-                return App.LocalizationService[AppLocalization.GoodEvening];
+                return App.LocalizationService[SD.Localization.GoodEvening];
         }
         public static string GetNightOfDay(DateTime magribTime)
         {

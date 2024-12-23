@@ -314,7 +314,7 @@ namespace MosqueMateV2.Extensions
                 };
                 TextBlock textBlock = new()
                 {
-                    Text = App.LocalizationService[AppLocalization.HadithCount] + " : " + data.Count,
+                    Text = App.LocalizationService[SD.Localization.HadithCount] + " : " + data.Count,
                     Margin = new Thickness(25, 0, 0, 0)
                 };
                 cardPanel.Children.Add(textBlock);

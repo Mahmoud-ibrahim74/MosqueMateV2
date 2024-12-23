@@ -12,7 +12,6 @@
         MinHeight="600"
         WindowStartupLocation="CenterScreen"
         FontWeight="UltraBlack"
-        ThemeMode="System"
         Loaded="Window_Loaded">
     <!-- Resources for Animations -->
     <Window.Resources>

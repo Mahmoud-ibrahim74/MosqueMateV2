@@ -1,6 +1,7 @@
 ﻿using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
+using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Properties;
 using MosqueMateV2.Resources;
@@ -32,6 +33,10 @@ namespace MosqueMateV2.Windows
 
         public QuranModalPopup(int pageIndex)
         {
+            #region SetTheme
+            var currentTheme = AppSettings.Default.themeMode.ToThemeMode();
+            this.ThemeMode = currentTheme;
+            #endregion
             InitializeComponent();
             this.index = pageIndex;
             this.pageIndex = pageIndex;
@@ -57,12 +62,12 @@ namespace MosqueMateV2.Windows
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.downloadAudio.Content = App.LocalizationService[AppLocalization.DownloadAudio];
+            this.downloadAudio.Content = App.LocalizationService[SD.Localization.DownloadAudio];
             var resByte = quranRes.GetPageContent(index);
             imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
-            playAudio.ToolTip = App.LocalizationService[AppLocalization.Play];
-            stopAudio.ToolTip = App.LocalizationService[AppLocalization.Stop];
-            connectionTxt.Text = App.LocalizationService[AppLocalization.Connection];
+            playAudio.ToolTip = App.LocalizationService[SD.Localization.Play];
+            stopAudio.ToolTip = App.LocalizationService[SD.Localization.Stop];
+            connectionTxt.Text = App.LocalizationService[SD.Localization.Connection];
 
             ChangeWindowTitle();
             LoadData();
@@ -172,7 +177,7 @@ namespace MosqueMateV2.Windows
 
 
 
-            var audioName = fileServices.CombinePathWithTemp(this.suraName + AppLocalization.Mp3_exe);
+            var audioName = fileServices.CombinePathWithTemp(this.suraName + SD.Localization.Mp3_exe);
             rxTaskManger.RunBackgroundTaskOnUI(
                       backgroundTask: token => youtubeService.DownloadYouTubeAudioAsync(link, audioName),
                       onSuccess: result =>
@@ -203,7 +208,7 @@ namespace MosqueMateV2.Windows
             if (_sura.GetSuraById(pageIndex) is not null)
             {
                 var suraName = _sura.GetSuraById(pageIndex).name;
-                var audioName = fileServices.CombinePathWithTemp(suraName + AppLocalization.Mp3_exe);
+                var audioName = fileServices.CombinePathWithTemp(suraName + SD.Localization.Mp3_exe);
                 if (File.Exists(audioName))
                 {
                     audioService = new NAudioService(audioName);

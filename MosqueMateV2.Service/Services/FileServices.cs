@@ -9,7 +9,7 @@ namespace MosqueMateV2.Service.Services
 
         public FileServices()
         {
-            this.AppTempPath = Path.Combine(Path.GetTempPath(), AppLocalization.AppAssemblyName);
+            this.AppTempPath = Path.Combine(Path.GetTempPath(), SD.Localization.AppAssemblyName);
 
             if (!Directory.Exists(this.AppTempPath))
                 Directory.CreateDirectory(this.AppTempPath);
