@@ -2,6 +2,7 @@
 using MosqueMateV2.Resources;
 using System.Collections;
 using System.Globalization;
+using System.Linq.Expressions;
 using System.Resources;
 using System.Resources.NetStandard;
 
@@ -49,6 +50,26 @@ namespace MosqueMateV2.Domain.Repositories
                                Name = entry.Key.ToString(),
                            };
                        }).ToList() ?? [];
+            return Task.FromResult(resources);
+        }
+        public Task<List<ResourceEntry>> GetAllResourcesFromResxAsync(string _prefixName)
+        {
+            List<ResourceEntry> resources = [];
+            if (resourceManager is null)
+                return Task.FromResult(resources);
+
+            resources = resourceManager
+                   .GetResourceSet(CultureInfo.InvariantCulture, true, true)?
+                   .Cast<DictionaryEntry>()
+                   .Where(x=>x.Key.ToString().Contains(_prefixName))
+                   .Select(entry =>
+                   {
+                       return new ResourceEntry
+                       {
+                           Name = entry.Key.ToString(),
+                           Value = entry.Value
+                       };
+                   }).ToList() ?? [];
             return Task.FromResult(resources);
         }
         public byte[] GetResourceByte(string key)

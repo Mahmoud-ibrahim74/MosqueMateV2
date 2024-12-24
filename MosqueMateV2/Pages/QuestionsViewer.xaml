@@ -4,8 +4,23 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d"
-         Loaded="Window_Loaded">
-    <Grid>
-        
+      Loaded="Window_Loaded">
+    <Grid  Margin="250,60,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <StackPanel>
+            <TextBlock x:Name="headerTxt"
+                       Height="25">...................</TextBlock>
+            <TextBlock x:Name="questionCountTxt"
+                       Height="25">...................</TextBlock>
+            <TextBlock x:Name="questionTxt"
+                       Height="31"><Run Text="..................." /></TextBlock>
+            <RadioButton x:Name="ans1"
+                         Height="33"></RadioButton>
+            <RadioButton x:Name="ans2"
+                         Height="46"></RadioButton>
+            <RadioButton x:Name="ans3"
+                         Height="42"></RadioButton>
+            <Button x:Name="nextBtn"
+                    Height="41"></Button>
+        </StackPanel>
     </Grid>
 </Page>

@@ -63,9 +63,69 @@ namespace MosqueMateV2.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] abasi_level_1 {
+            get {
+                object obj = ResourceManager.GetObject("abasi-level-1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] abasi_level_2 {
+            get {
+                object obj = ResourceManager.GetObject("abasi-level-2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] abasi_level_3 {
+            get {
+                object obj = ResourceManager.GetObject("abasi-level-3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] adhkar {
             get {
                 object obj = ResourceManager.GetObject("adhkar", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] amwi_level_1 {
+            get {
+                object obj = ResourceManager.GetObject("amwi-level-1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] amwi_level_2 {
+            get {
+                object obj = ResourceManager.GetObject("amwi-level-2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] amwi_level_3 {
+            get {
+                object obj = ResourceManager.GetObject("amwi-level-3", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -103,9 +163,99 @@ namespace MosqueMateV2.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] kholfa_level_1 {
+            get {
+                object obj = ResourceManager.GetObject("kholfa-level-1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] kholfa_level_2 {
+            get {
+                object obj = ResourceManager.GetObject("kholfa-level-2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] kholfa_level_3 {
+            get {
+                object obj = ResourceManager.GetObject("kholfa-level-3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] loading {
             get {
                 object obj = ResourceManager.GetObject("loading", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] mamalik_level_1 {
+            get {
+                object obj = ResourceManager.GetObject("mamalik-level-1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] mamalik_level_2 {
+            get {
+                object obj = ResourceManager.GetObject("mamalik-level-2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] mamalik_level_3 {
+            get {
+                object obj = ResourceManager.GetObject("mamalik-level-3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] moasir_level_1 {
+            get {
+                object obj = ResourceManager.GetObject("moasir-level-1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] moasir_level_2 {
+            get {
+                object obj = ResourceManager.GetObject("moasir-level-2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] moasir_level_3 {
+            get {
+                object obj = ResourceManager.GetObject("moasir-level-3", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -126,6 +276,36 @@ namespace MosqueMateV2.Resources {
         public static byte[] nawawi40 {
             get {
                 object obj = ResourceManager.GetObject("nawawi40", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] osmany_level_1 {
+            get {
+                object obj = ResourceManager.GetObject("osmany-level-1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] osmany_level_2 {
+            get {
+                object obj = ResourceManager.GetObject("osmany-level-2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] osmany_level_3 {
+            get {
+                object obj = ResourceManager.GetObject("osmany-level-3", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -166,6 +346,36 @@ namespace MosqueMateV2.Resources {
         public static byte[] SharedResource {
             get {
                 object obj = ResourceManager.GetObject("SharedResource", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] sirah_level_1 {
+            get {
+                object obj = ResourceManager.GetObject("sirah-level-1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] sirah_level_2 {
+            get {
+                object obj = ResourceManager.GetObject("sirah-level-2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] sirah_level_3 {
+            get {
+                object obj = ResourceManager.GetObject("sirah-level-3", resourceCulture);
                 return ((byte[])(obj));
             }
         }

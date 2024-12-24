@@ -152,6 +152,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AppSettings.settings</DependentUpon>
     </Compile>
+    <Compile Update="Windows\QuestionsModal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\LiveStream.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -175,6 +178,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Setting.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\QuestionsModal.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

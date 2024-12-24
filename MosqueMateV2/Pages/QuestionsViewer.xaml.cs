@@ -1,4 +1,5 @@
-﻿using MosqueMateV2.Domain.Enums;
+﻿using MosqueMateV2.Domain.DTOs;
+using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Helpers;
@@ -16,18 +17,35 @@ namespace MosqueMateV2.Pages
 
         RxTaskManger rxTaskManger;
         HistoricTypesEnum _historicTypes;
-        IResourceManagerRepository resourceManager {  get; set; }   
-        public QuestionsViewer(HistoricTypesEnum type)
+        IJsonQuestionRepository _jsonQuestion;
+        int _level;
+        int questionIndex = 0;
+        List<DTOQuestions> questionList = [];
+        public QuestionsViewer()
         {
+            _level = new Random().Next(1,3);
             InitializeComponent();
             rxTaskManger = new();
-            this._historicTypes = type;
-            resourceManager = new ResourceManagerRepository(ResourceTypeEnum.FileResources);
+            _jsonQuestion = new JsonQuestionRepository(EnumHelper<HistoricTypesEnum>.GetRandomValue(), _level);
+            questionList = _jsonQuestion.GetAllQuestions();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            var question = questionList.FirstOrDefault();
+            FillQuestion(question);
 
+        }
+        private void FillQuestion(DTOQuestions question)
+        {
+            if (question is not null)
+            {
+                questionCountTxt.Text = $"Qo . {questionIndex + 1} / {questionList.Count}";
+                questionTxt.Text = question.q;
+                ans1.Content = question.answers[0].answer;
+                ans2.Content = question.answers[1].answer;
+                ans3.Content = question.answers[2].answer;
+            }
         }
     }
 }

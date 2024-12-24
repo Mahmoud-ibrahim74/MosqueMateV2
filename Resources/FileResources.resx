@@ -160,4 +160,67 @@
   <data name="Wasaya" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Wasaya.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="abasi-level-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\abasi-level-1.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="abasi-level-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\abasi-level-2.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="abasi-level-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\abasi-level-3.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="amwi-level-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\amwi-level-1.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="amwi-level-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\amwi-level-2.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="amwi-level-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\amwi-level-3.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kholfa-level-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\kholfa-level-1.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kholfa-level-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\kholfa-level-2.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kholfa-level-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\kholfa-level-3.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mamalik-level-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\mamalik-level-1.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mamalik-level-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\mamalik-level-2.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mamalik-level-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\mamalik-level-3.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="moasir-level-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\moasir-level-1.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="moasir-level-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\moasir-level-2.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="moasir-level-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\moasir-level-3.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="osmany-level-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\osmany-level-1.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="osmany-level-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\osmany-level-2.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="osmany-level-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\osmany-level-3.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sirah-level-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\sirah-level-1.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sirah-level-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\sirah-level-2.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sirah-level-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\sirah-level-3.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

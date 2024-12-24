@@ -32,6 +32,13 @@ namespace MosqueMateV2.Helpers
 
             return default;
         }
+        public static T GetRandomValue()
+        {
+            var values = Enum.GetValues(typeof(T));
+            Random random = new ();
+            int randomIndex = random.Next(values.Length);
+            return (T)values.GetValue(randomIndex);
+        }
 
 
     }

@@ -247,7 +247,8 @@ namespace MosqueMateV2.Pages
 
         private void quizBtn_Click(object sender, RoutedEventArgs e)
         {
-            AppHelper.NavigateToSpecificPage(new HistoricQuestions());
+            if (!AppHelper.IsWindowOpen<QuestionsModal>("questionWindow", true))
+                new QuestionsModal().ShowModal();
 
         }
     }
