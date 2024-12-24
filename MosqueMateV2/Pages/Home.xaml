@@ -132,11 +132,12 @@
                 </Button.Template>
             </Button>
 
-            <Button x:Name="hadithBtn"
+            <Button x:Name="quizBtn"
                     Grid.Column="0"
                     Grid.Row="1"
                     Width="130"
                     Height="60"
+                    Click="quizBtn_Click"
                     Margin="30,5,0,0"
                     HorizontalAlignment="Center"                 
                     VerticalAlignment="Top"
@@ -147,12 +148,12 @@
                             <!-- Background Image -->
                             <Rectangle Margin="0,0,0,20">
                                 <Rectangle.Fill>
-                                    <ImageBrush ImageSource="/Assets/hadith.png"
+                                    <ImageBrush ImageSource="/Assets/quiz.png"
                                                 Stretch="Uniform" />
                                 </Rectangle.Fill>
                             </Rectangle>
                             <!-- Label -->
-                            <TextBlock x:Name="hadithTxt"
+                            <TextBlock x:Name="quizTxt"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Top"
                                        FontWeight="DemiBold"

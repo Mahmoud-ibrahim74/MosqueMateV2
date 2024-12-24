@@ -15,6 +15,7 @@
         HadithChapter = 4,
         HadithInfo = 5,
         AllahNames = 6,
-        YoutubeViewerPage = 7
+        YoutubeViewerPage = 7,
+        HistoricQuestion = 8,
     }
 }

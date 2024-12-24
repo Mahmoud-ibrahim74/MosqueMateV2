@@ -43,6 +43,7 @@
             public const string Duration = "Duration";
             public const string ContinueReading = "ContinueReading";
             public const string Hadith = "Hadith";
+            public const string TestYourSelf = "TestYourSelf";
             public const string HadithCount = "HadithCount";
             public const string Azkar = "Azkar";
             public const string Prophets = "Prophets";

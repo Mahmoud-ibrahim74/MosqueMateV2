@@ -161,15 +161,15 @@ namespace MosqueMateV2.Pages
         {
             var quranTxt = QuranBtn.Template.FindName("quranTxt", QuranBtn) as TextBlock;
             var azkarTxt = azkarBtn.Template.FindName("azkarTxt", azkarBtn) as TextBlock;
-            var hadithTxt = hadithBtn.Template.FindName("hadithTxt", hadithBtn) as TextBlock;
+            var quizTxt = quizBtn.Template.FindName("quizTxt", quizBtn) as TextBlock;
             var prayerLearningTxt = prayerLearningBtn.Template.FindName("prayerLearningTxt", prayerLearningBtn) as TextBlock;
 
             if (quranTxt is not null)
                 quranTxt.Text = App.LocalizationService[SD.Localization.ContinueReading];
             if (azkarTxt is not null)
                 azkarTxt.Text = App.LocalizationService[SD.Localization.ZekrReminder];
-            if (hadithTxt is not null)
-                hadithTxt.Text = App.LocalizationService[SD.Localization.Hadith];
+            if (quizTxt is not null)
+                quizTxt.Text = App.LocalizationService[SD.Localization.TestYourSelf];
             if (prayerLearningTxt is not null)
                 prayerLearningTxt.Text = App.LocalizationService[SD.Localization.PrayerLearningChildren];
 
@@ -243,6 +243,12 @@ namespace MosqueMateV2.Pages
         private void prayerLearningBtn_Click(object sender, RoutedEventArgs e)
         {
             AppHelper.NavigateToSpecificPage(new PrayerLearning());
+        }
+
+        private void quizBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AppHelper.NavigateToSpecificPage(new HistoricQuestions());
+
         }
     }
 }

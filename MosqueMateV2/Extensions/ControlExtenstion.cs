@@ -169,6 +169,87 @@ namespace MosqueMateV2.Extensions
             grid.Children.Add(cardPanel);
         }
 
+        /// <summary>
+        /// Generates Material Design cards for the given data and adds them to the specified Grid.
+        /// This method is designed to be generic and works for different types of data by utilizing
+        /// lambda functions to extract required properties and a service type to determine the card's behavior.
+        /// </summary>
+        /// <typeparam name="TKey">The type of Key of the data items used to generate the cards.</typeparam>
+        /// <typeparam name="TValue">The type of Value of the data items used to generate the cards.</typeparam>
+        /// <param name="grid">The Grid control where the cards will be added.</param>
+        /// <param name="data">The list of data items used to create the cards.</param>
+        /// <param name="serviceType">An enum value indicating the type of service (e.g., Adhkar, Quran) for the cards.</param>
+        /// <param name="CardWidth">Determine width of card</param>
+        /// <param name="CardHeight">Determine height of card</param>
+        /// <param name="PaddingLeftTxt">Determine Padding left Textblock of card</param>
+        /// <param name="PaddingRightTxt">Determine Padding right Textblock of card</param>
+        /// <param name="PaddingTopTxt">Determine Padding top Textblock of card</param>
+        /// <param name="PaddingBottomTxt">Determine Padding bottom Textblock of card</param>
+        /// <param name="flowDirection">Determine Flow Direction of Card</param>
+        public static void GenerateCards<TKey, TValue>(
+        this Grid grid,
+        Dictionary<TKey,TValue> data,
+        PagesTypesEnum serviceType,
+        int CardWidth = 250,
+        int CardHeight = 150,
+        int PaddingLeftTxt = 0,
+        int PaddingRightTxt = 0,
+        int PaddingTopTxt = 0,
+        int PaddingBottomTxt = 0,
+        int FontSize = 10,
+        FlowDirection flowDirection = FlowDirection.LeftToRight,
+        TextAlignment textAlignment = TextAlignment.Center,
+        TextWrapping textWrapping = TextWrapping.NoWrap
+       )
+        {
+            WrapPanel cardPanel = new()
+            {
+                Margin = new Thickness(10),
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Top
+            };
+
+            foreach (var item in data)
+            {
+                Card card = new()
+                {
+                    Uid = item.Key.ToString(),
+                    Width = CardWidth,
+                    Height = CardHeight,
+                    Margin = new Thickness(10),
+                    Background = ColorHelper.CreateGradientBackgroundRgb(26, 132, 184, 53, 76, 124),
+                    Padding = new Thickness(16),
+                    Foreground = new SolidColorBrush(Colors.White),
+                    Cursor = Cursors.Hand,
+                    FlowDirection = flowDirection,
+                    BorderBrush = null,
+                };
+                card.MouseLeftButtonDown += (sender, e) => Card_MouseLeftButtonDown(sender, e, serviceType);
+
+                StackPanel contentPanel = new();
+                TextBlock title = new()
+                {
+                    Text =item.Value.ToString() ?? string.Empty,
+                    FontSize = 20,
+                    FontWeight = FontWeights.UltraBold,
+                    Margin = new Thickness(0, 0, 0, 8),
+                    TextWrapping = TextWrapping.WrapWithOverflow,
+                    TextAlignment = textAlignment,
+                    Padding = new Thickness(PaddingLeftTxt,
+                                            PaddingTopTxt,
+                                            PaddingRightTxt,
+                                            PaddingBottomTxt),
+                    LineHeight = 30
+                };
+                contentPanel.Children.Add(title);
+                card.Content = contentPanel;
+                cardPanel.Children.Add(card);
+            }
+
+            grid.Children.Add(cardPanel);
+        }
+
+
 
         public static Card GenerateCardForHadith(
                 string title1 = "",

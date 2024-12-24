@@ -41,6 +41,7 @@
     <None Remove="Assets\pause.png" />
     <None Remove="Assets\play.png" />
     <None Remove="Assets\qudsi.png" />
+    <None Remove="Assets\quiz.png" />
     <None Remove="Assets\quran.png" />
     <None Remove="Assets\quranGif.gif" />
     <None Remove="Assets\quranSideBar.png" />
@@ -123,6 +124,7 @@
     <Resource Include="Assets\pause.png" />
     <Resource Include="Assets\play.png" />
     <Resource Include="Assets\qudsi.png" />
+    <Resource Include="Assets\quiz.png" />
     <Resource Include="Assets\quran.png" />
     <Resource Include="Assets\quranGif.gif" />
     <Resource Include="Assets\quranSideBar.png" />
