@@ -8,13 +8,18 @@
 
 
             public const string AppName = "AppName";
+
+            #region Urls-Constants
             public const string ApiKey = "$2y$10$Ckz6VyLSegpzFvyOfUwkuFAa9xocfLgG9SWRA4gW9prCzkf0LGTq";
             public const string PlayListUrl1 = "https://www.youtube.com/playlist?list=PLsabgwJDKALr2-EPjszQZ3eTQQ1yl81ui";
             public const string PlayListUrl2 = "https://www.youtube.com/playlist?list=PLWzzF688g_niHJtQS9T4dQ4bC8kke08ou";
             public const string PlayListTafseerUrl = "https://www.youtube.com/playlist?list=PLQ7560lEIhRwONVvGZ7P2AcU4Si_fbKaY";
             public const string PrayerLerningUrl = "https://www.youtube.com/playlist?list=PLiPr-ZDwFWrOsEt1eNBsmlYxAJBuSJcSs";
             public const string ProphetsStoriesUrl = "https://www.youtube.com/playlist?list=PLbDRORmj0gydNzexxDf-HufsQLbT3GIJl";
-            public const string HadithApiLink = $"https://hadithapi.com/api/books?apiKey={ApiKey}";
+            public const string LiveStreamUrl = "https://n0c.radiojar.com/8s5u5tpdtwzuv?rj-ttl=5&rj-tok=AAABk_fPlF4AdF9kd5NQo3ieLA";
+            public const string HadithApiLink = $"https://hadithapi.com/api/books?apiKey={ApiKey}"; 
+            #endregion
+
             public const string AppAssemblyName = "MosqueMateV2";
             public const string WeclomeApp = "WeclomeApp";
             public const string Arabic = "ar";
@@ -59,6 +64,8 @@
             public const string NextPrayer = "NextPrayer";
             public const string SomethingWrong = "SomethingWrong";
             public const string NotClinic = "NotClinic";
+            public const string QuranLive = "QuranLive";
+            public const string MiniQuranLive = "MiniQuranLive";
             public const string CourseLevel = "CourseLevel";
             public const string DoctorExperience = "DoctorExperience";
             public const string MustBeSubCat = "MustBeSubCat";

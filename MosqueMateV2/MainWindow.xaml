@@ -123,6 +123,8 @@
                 </ui:NavigationViewItem>
                 <ui:NavigationViewItem x:Name="WasayaItems">
                 </ui:NavigationViewItem>
+                <ui:NavigationViewItem x:Name="RadioItems">
+                </ui:NavigationViewItem>
             </ui:NavigationView.MenuItems>
 
         </ui:NavigationView>

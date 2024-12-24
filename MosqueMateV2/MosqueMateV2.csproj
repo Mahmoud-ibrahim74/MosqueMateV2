@@ -46,6 +46,7 @@
     <None Remove="Assets\quranSideBar.png" />
     <None Remove="Assets\read-quran.png" />
     <None Remove="Assets\shalat.png" />
+    <None Remove="Assets\signal.png" />
     <None Remove="Assets\sunny.png" />
     <None Remove="Assets\two.png" />
     <None Remove="Assets\version.png" />
@@ -127,6 +128,7 @@
     <Resource Include="Assets\quranSideBar.png" />
     <Resource Include="Assets\read-quran.png" />
     <Resource Include="Assets\shalat.png" />
+    <Resource Include="Assets\signal.png" />
     <Resource Include="Assets\sunny.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -147,6 +149,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
       <DependentUpon>AppSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Windows\LiveStream.xaml.cs">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\QuranModalPopup.xaml.cs">
       <SubType>Code</SubType>

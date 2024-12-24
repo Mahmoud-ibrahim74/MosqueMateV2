@@ -94,7 +94,16 @@
     "ar": "وقت التذكير",
     "fr": "Heure de rappel"
   },
-
+  "QuranLive": {
+    "en": "Holy Quran Radio from Cairo",
+    "ar": "إذاعة القران الكريم من القاهرة",
+    "fr": "Radio du Saint Coran du Caire"
+  },
+  "MiniQuranLive": {
+    "en": "Holy Quran Radio",
+    "ar": "إذاعة القران الكريم",
+    "fr": "Radio du Saint Coran"
+  },
   "HadithNo": {
     "en": "Hadith No.",
     "ar": "الحديث رقم",

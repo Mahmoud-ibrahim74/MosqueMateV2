@@ -7,6 +7,7 @@ using MosqueMateV2.Helpers;
 using MosqueMateV2.Pages;
 using MosqueMateV2.Properties;
 using MosqueMateV2.Resources;
+using MosqueMateV2.Windows;
 using System.Drawing;
 using System.Windows;
 
@@ -30,12 +31,13 @@ namespace MosqueMateV2
         BitmapIcon Crescent { get; set; }
         BitmapIcon Kodosy { get; set; }
         BitmapIcon Wasay { get; set; }
+        BitmapIcon Radio { get; set; }
 
         public MainWindow()
         {
             #region SetTheme
             var currentTheme = AppSettings.Default.themeMode.ToThemeMode();
-            this.ThemeMode = currentTheme;  
+            this.ThemeMode = currentTheme;
             #endregion
 
             InitializeComponent();
@@ -48,10 +50,11 @@ namespace MosqueMateV2
             Prophet = new();
             allah = new();
             Rokay = new();
-            Crescent = new();   
+            Crescent = new();
             Kodosy = new();
             Wasay = new();
-            _quranTafseerIcon = new();  
+            Radio = new();
+            _quranTafseerIcon = new();
             _quranIcon.UriSource = new Uri("pack://application:,,,/Assets/quranSideBar.png");
             _quranTafseerIcon.UriSource = new Uri("pack://application:,,,/Assets/quranSideBar.png");
             _beadsIcon.UriSource = new Uri("pack://application:,,,/Assets/beads.png");
@@ -63,6 +66,7 @@ namespace MosqueMateV2
             Crescent.UriSource = new Uri("pack://application:,,,/Assets/crescent.png");
             Kodosy.UriSource = new Uri("pack://application:,,,/Assets/qudsi.png");
             Wasay.UriSource = new Uri("pack://application:,,,/Assets/wsaya.png");
+            Radio.UriSource = new Uri("pack://application:,,,/Assets/signal.png");
 
             quraanItem.Icon = _quranIcon;
             quraanTafseerItem.Icon = _quranTafseerIcon;
@@ -74,6 +78,7 @@ namespace MosqueMateV2
             CrescentItems.Icon = Crescent;
             KosdosyItems.Icon = Kodosy;
             WasayaItems.Icon = Wasay;
+            RadioItems.Icon = Radio;
 
             #endregion
 
@@ -110,12 +115,16 @@ namespace MosqueMateV2
                     case SD.Localization.Prophets:
                         MainFrame.Navigate(new ProphertStories());
                         break;
+                    case SD.Localization.MiniQuranLive:
+                        if (!AppHelper.IsWindowOpen<LiveStream>("LiveStreamWindow", true))
+                            new LiveStream(SD.Localization.LiveStreamUrl).Show();
+                        break;
                     case SD.Localization.Rokya:
                         MainFrame.Navigate(new PdfViewerPage(Domain.Enums.ViewTypesEnum.Rokya));
-                        break;              
+                        break;
                     case SD.Localization.FortyNawawi:
                         MainFrame.Navigate(new PdfViewerPage(Domain.Enums.ViewTypesEnum.FortyNawawi));
-                        break;               
+                        break;
                     case SD.Localization.Kodosy:
                         MainFrame.Navigate(new PdfViewerPage(Domain.Enums.ViewTypesEnum.Kodosy));
                         break;
@@ -147,6 +156,7 @@ namespace MosqueMateV2
             CrescentItems.Content = App.LocalizationService[SD.Localization.FortyNawawi];
             KosdosyItems.Content = App.LocalizationService[SD.Localization.Kodosy];
             WasayaItems.Content = App.LocalizationService[SD.Localization.Wasaya];
+            RadioItems.Content = App.LocalizationService[SD.Localization.MiniQuranLive];
             #endregion
 
             #region Tags
@@ -162,6 +172,7 @@ namespace MosqueMateV2
             CrescentItems.Tag = SD.Localization.FortyNawawi;
             KosdosyItems.Tag = SD.Localization.Kodosy;
             WasayaItems.Tag = SD.Localization.Wasaya;
+            RadioItems.Tag = SD.Localization.MiniQuranLive;
             NavView.SelectedItem = homeItem;
 
             #endregion

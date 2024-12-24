@@ -1,12 +1,15 @@
 ﻿using MosqueMateV2.Domain.Enums;
 using MosqueMateV2.Resources;
+using System.Net;
 
 namespace MosqueMateV2.Helpers
 {
     public class ApiResponseHelper
     {
         public static Dictionary<PrayerEnum, DateTime> PrayerTimings { get; set; } = [];
-        public static object CastTimingsFromApi {  get; set; }  
+        public static object CastTimingsFromApi {  get; set; }
+
+
     }
 
     public class ApiRquestHelper

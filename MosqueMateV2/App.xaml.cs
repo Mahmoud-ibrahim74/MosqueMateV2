@@ -19,7 +19,7 @@ namespace MosqueMateV2
         public static string AppLanguage { get; private set; }
         public static DTOPrayerTimesResponse Api_Response { get; set; }
         public static IMP3Player mP3Player { get; set; }
-
+        public static ThemeMode CurrentTheme { get; set; }
         public App()
         {
         }
@@ -38,6 +38,12 @@ namespace MosqueMateV2
             else
                 AppHelper.RemoveApplicationFromStartup();
             #endregion
+
+            #region SetTheme
+            var currentTheme = AppSettings.Default.themeMode.ToThemeMode();
+            CurrentTheme = currentTheme;
+            #endregion
+
 
             AppLanguage = Thread.CurrentThread.CurrentUICulture.Name;
 

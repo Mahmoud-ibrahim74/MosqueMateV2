@@ -126,6 +126,25 @@ namespace MosqueMateV2.Helpers
             }
         }
 
+        public static bool IsWindowOpen<T>(string windowName, bool IsActivate) where T : Window
+        {
+            var window = Application.Current.Windows.OfType<T>().FirstOrDefault(w => w.Name.Contains(windowName));
+            if (window is not null)
+            {
+                if (IsActivate)
+                {
+                    if (window.WindowState == WindowState.Minimized)
+                    {
+                        window.WindowState = WindowState.Normal;
+                        window.Activate();
+                    }
+
+                }
+                return true;
+            }
+            return false;
+        }
+
         public static void NavigateToSpecificPage(Page page)
         {
             var window = App.Current.MainWindow;
@@ -147,7 +166,7 @@ namespace MosqueMateV2.Helpers
 
         public static void ChnageAppTheme(ThemeMode mode)
         {
-            var allWindows = GetAllWindows();   
+            var allWindows = GetAllWindows();
             if (allWindows.Count > 0)
             {
                 foreach (var window in allWindows)
