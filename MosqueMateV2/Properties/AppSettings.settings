@@ -36,7 +36,7 @@
       <Value Profile="(Default)">Ofacy</Value>
     </Setting>
     <Setting Name="themeMode" Type="System.String" Scope="User">
-      <Value Profile="(Default)">System</Value>
+      <Value Profile="(Default)">Dark</Value>
     </Setting>
   </Settings>
 </SettingsFile>

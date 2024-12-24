@@ -157,7 +157,7 @@ namespace MosqueMateV2.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("System")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Dark")]
         public string themeMode {
             get {
                 return ((string)(this["themeMode"]));

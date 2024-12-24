@@ -48,6 +48,8 @@ namespace MosqueMateV2
             AppLanguage = Thread.CurrentThread.CurrentUICulture.Name;
 
 
+
+
             base.OnStartup(e);
 
         }

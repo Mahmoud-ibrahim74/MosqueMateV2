@@ -68,6 +68,7 @@ namespace MosqueMateV2.Pages
                 BindingFlags.Public,
                 BindingFlags.Static);
             theme.Remove(nameof(ThemeMode.None));
+            theme.Remove(nameof(ThemeMode.System));
             themeModeBox.ItemsSource = theme;
             #endregion
 
