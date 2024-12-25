@@ -32,6 +32,7 @@ namespace MosqueMateV2
         BitmapIcon Kodosy { get; set; }
         BitmapIcon Wasay { get; set; }
         BitmapIcon Radio { get; set; }
+        BitmapIcon Calculator { get; set; }
 
         public MainWindow()
         {
@@ -55,6 +56,7 @@ namespace MosqueMateV2
             Wasay = new();
             Radio = new();
             _quranTafseerIcon = new();
+            Calculator = new();
             _quranIcon.UriSource = new Uri("pack://application:,,,/Assets/quranSideBar.png");
             _quranTafseerIcon.UriSource = new Uri("pack://application:,,,/Assets/quranSideBar.png");
             _beadsIcon.UriSource = new Uri("pack://application:,,,/Assets/beads.png");
@@ -67,6 +69,7 @@ namespace MosqueMateV2
             Kodosy.UriSource = new Uri("pack://application:,,,/Assets/qudsi.png");
             Wasay.UriSource = new Uri("pack://application:,,,/Assets/wsaya.png");
             Radio.UriSource = new Uri("pack://application:,,,/Assets/signal.png");
+            Calculator.UriSource = new Uri("pack://application:,,,/Assets/calculator.png");
 
             quraanItem.Icon = _quranIcon;
             quraanTafseerItem.Icon = _quranTafseerIcon;
@@ -79,7 +82,7 @@ namespace MosqueMateV2
             KosdosyItems.Icon = Kodosy;
             WasayaItems.Icon = Wasay;
             RadioItems.Icon = Radio;
-
+            CalculatorItems.Icon = Calculator;
             #endregion
 
         }
@@ -134,6 +137,10 @@ namespace MosqueMateV2
                     case SD.Localization.QuranTafseer:
                         MainFrame.Navigate(new QuranTafseer());
                         break;
+                    case SD.Localization.Zakat:
+                        if (!AppHelper.IsWindowOpen<ZakatCalculator>("zakatCalculatorWindow", true))
+                            new ZakatCalculator().ShowModal();
+                        break;
                 }
             }
         }
@@ -157,6 +164,7 @@ namespace MosqueMateV2
             KosdosyItems.Content = App.LocalizationService[SD.Localization.Kodosy];
             WasayaItems.Content = App.LocalizationService[SD.Localization.Wasaya];
             RadioItems.Content = App.LocalizationService[SD.Localization.MiniQuranLive];
+            CalculatorItems.Content = App.LocalizationService[SD.Localization.Zakat];
             #endregion
 
             #region Tags
@@ -173,6 +181,7 @@ namespace MosqueMateV2
             KosdosyItems.Tag = SD.Localization.Kodosy;
             WasayaItems.Tag = SD.Localization.Wasaya;
             RadioItems.Tag = SD.Localization.MiniQuranLive;
+            CalculatorItems.Tag = SD.Localization.Zakat;
             NavView.SelectedItem = homeItem;
 
             #endregion

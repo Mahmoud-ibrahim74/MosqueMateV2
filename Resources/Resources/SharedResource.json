@@ -605,6 +605,31 @@
     "ar": "تشغيل الأذان",
     "en": "Play Adhan",
     "fr": "Play Adhan"
+  },
+  "ZakatTitle": {
+    "ar": "ما هي طريقة حساب مبلغ الزكاة ؟",
+    "en": "What is the method of calculating the amount of Zakat ?",
+    "fr": "Quelle est la méthode de calcul du montant de la zakat ?"
+  },
+  "zakatDescritpion": {
+    "ar": "​​تعرف​ الزكاة المستحقة على المنشأة بتعبئة الإقرار الزكوي لدى الهيئة، ثم يظهر للمنشأة الزكاة المستحقة بناءً على الإقرار المقدم، والزكاة المستحقة هي (2.5%) من الوعاء الزكوي، ويتكون الوعاء الزكوي من إجمالي مصادر التمويل محسومًا منها الأصول الثابتة وما في حكمها. وتقوم الهيئة بحساب الوعاء الزكوي وفقًا للقاعدة الآتية :  الوعاء الزكوي + إ​جمالي مصادر التمويل - الأصول الثابتة وما في حكمها.​",
+    "en": "The Zakat due on the establishment is known by filling out the Zakat declaration with the Authority, then the establishment will see the Zakat due based on the declaration submitted, and the Zakat due is (2.5%) of the Zakat base, and the Zakat base consists of the total sources of financing minus fixed assets and the like. The Authority calculates the Zakat base according to the following rule  : Zakat base + Total sources of financing - Fixed assets and the like.",
+    "fr": "La Zakat due par l'établissement est déterminée en remplissant la déclaration Zakat auprès de l'Autorité, puis la Zakat due est présentée à l'établissement sur la base de la déclaration soumise. La Zakat due correspond à (2,5 %) de la base Zakat et de la base Zakat. se compose du total des sources de financement, déduites des immobilisations et autres. L'Autorité calcule la base de la Zakat selon la règle suivante  : Base de la Zakat + sources totales de financement – ​​immobilisations et autres.​"
+  },
+  "ZakatAmount": {
+    "ar": "قيمة المال الذى املكة",
+    "en": "The value of the money I have",
+    "fr": "La valeur de l'argent dont je dispose"
+  },
+  "ZakatValue": {
+    "ar": "قيمة الذكاه",
+    "en": "Zakat Value",
+    "fr": "La valeur de la zakat"
+  },
+  "Zakat": {
+    "ar": "الذكاه",
+    "en": "Zakat",
+    "fr": "Zakat"
   }
 
 }

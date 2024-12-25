@@ -102,8 +102,6 @@ namespace MosqueMateV2.Helpers
             var window = App.Current.MainWindow;
             if (window is not null)
             {
-                var frame = window.FindName("MainFrame") as Frame;
-                frame?.Navigate(new Home());
                 var nav = window.FindName("NavView") as NavigationView;
                 var homeItem = window.FindName("homeItem") as NavigationViewItem;
                 if (nav is not null && homeItem is not null)

@@ -21,6 +21,7 @@
     <None Remove="Assets\allah.png" />
     <None Remove="Assets\Asr.jpg" />
     <None Remove="Assets\beads.png" />
+    <None Remove="Assets\calculator.png" />
     <None Remove="Assets\crescent.png" />
     <None Remove="Assets\dua.png" />
     <None Remove="Assets\Fonts\ArbFONTS-Al-Kharashi-20.ttf" />
@@ -62,6 +63,7 @@
   <ItemGroup>
     <Resource Include="Assets\allah.png" />
     <Resource Include="Assets\beads.png" />
+    <Resource Include="Assets\calculator.png" />
     <Resource Include="Assets\crescent.png" />
     <Resource Include="Assets\dua.png" />
     <Resource Include="Assets\Fonts\ArbFONTS-Al-Kharashi-20.ttf" />
@@ -151,6 +153,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
       <DependentUpon>AppSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Windows\ZakatCalculator.xaml.cs">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\QuestionsModal.xaml.cs">
       <SubType>Code</SubType>

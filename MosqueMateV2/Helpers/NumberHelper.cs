@@ -21,7 +21,7 @@ namespace MosqueMateV2.Helpers
             }
             return 0;
         }
-        [GeneratedRegex("^[0-9]+$")]
+        [GeneratedRegex(@"^[+-]?(\d+(\.\d*)?|\.\d+)$")]
         private static partial Regex TextNumericRegx();
         [GeneratedRegex(@"\d+")]
         private static partial Regex IsTextHasDigitRegx();
