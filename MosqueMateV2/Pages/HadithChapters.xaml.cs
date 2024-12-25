@@ -78,5 +78,10 @@ namespace MosqueMateV2.Pages
                 AppHelper.GoBack();
             });
         }
+
+        private void GotoTop_Click(object sender, RoutedEventArgs e)
+        {
+            hadithScrollViewer.ScrollToTop();
+        }
     }
 }

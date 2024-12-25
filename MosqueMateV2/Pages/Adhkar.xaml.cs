@@ -47,6 +47,7 @@ namespace MosqueMateV2.Pages
                                    textWrapping: TextWrapping.Wrap,
                                    serviceType: PagesTypesEnum.Adhkar
                                 );
+                     GridCardContainer.Focus();
                  },
                  retryNumber: 2,
                  () => // handle an error
@@ -70,6 +71,20 @@ namespace MosqueMateV2.Pages
                     }
                 }
             }
+        }
+
+        private void GotoTop_Click(object sender, RoutedEventArgs e)
+        {
+            adhkarScrollViewer.ScrollToTop();
+        }
+
+        private void GridCardContainer_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            KeyboardHelper.ActionPressCTRLKey(
+                e,
+                System.Windows.Input.Key.B,
+                 AppHelper.GoHome
+                );
         }
     }
 }

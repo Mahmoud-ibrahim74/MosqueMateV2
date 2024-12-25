@@ -581,9 +581,6 @@ namespace MosqueMateV2.Extensions
                 case PagesTypesEnum.YoutubeViewerPage:
                     OpenYoutubeViewer(sender as Card);
                     break;         
-                case PagesTypesEnum.HistoricQuestion:
-                    OpenQuestionViewer(sender as Card);
-                    break;
                 default:
                     break;
             }
@@ -702,20 +699,6 @@ namespace MosqueMateV2.Extensions
 
             }
         }    
-        private static void OpenQuestionViewer(Card selectedCard)
-        {
-            if (selectedCard is not null)
-            {
-                var window = Application.Current.MainWindow;
-                var frame = window.FindName("MainFrame") as Frame;
-                if (frame is not null)
-                {
-                    var type = EnumHelper<HistoricTypesEnum>.GetEnumValue(selectedCard.Uid);
-                    frame?.Navigate(new QuestionsViewer());
-                }
-
-            }
-        }
 
         #endregion
     }

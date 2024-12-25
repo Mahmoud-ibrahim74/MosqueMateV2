@@ -10,19 +10,29 @@
          mc:Ignorable="d"
          Title="MainWindow"
          Loaded="Window_Loaded">
-    <ScrollViewer x:Name="quranScrollViewer"
-                 >
-        <Grid x:Name="GridCardContainer" KeyDown="GridCardContainer_KeyDown"
-              >
-            <hc:LoadingCircle x:Name="loader"
-                              DotSpeed="5"
-                              DotCount="5"
-                              Width="101"
-                              Height="40"
-                              Panel.ZIndex="2"
-                              HorizontalAlignment="Center"
-                              VerticalAlignment="Center"
-                              Visibility="Collapsed" />
-        </Grid>
-    </ScrollViewer>
+    <Grid>
+        <hc:ScrollViewer x:Name="quranTafseerScrollViewer"
+                         Margin="0,10,0,0">
+            <Grid x:Name="GridCardContainer"
+                  Grid.RowSpan="2">
+                <hc:LoadingCircle x:Name="loader"
+                                  DotSpeed="5"
+                                  DotCount="5"
+                                  Width="101"
+                                  Height="40"
+                                  Panel.ZIndex="2"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  Visibility="Collapsed" />
+            </Grid>
+        </hc:ScrollViewer>
+        <hc:GotoTop Animated="True"
+                    AutoHiding="True"
+                    AnimationTime="500"
+                    Target="{Binding ElementName=ScrollViewerDemo}"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,20,20"
+                    Click="GotoTop_Click" />
+    </Grid>
 </ui:Page>

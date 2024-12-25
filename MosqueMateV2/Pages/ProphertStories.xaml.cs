@@ -45,7 +45,7 @@ namespace MosqueMateV2.Pages
                                    CardWidth: 380,
                                    CardHeight: 150,
                                    FontSizeHeader: 10,
-                                   FontSizeText:15,
+                                   FontSizeText:18,
                                    PaddingRightTxt: 15,
                                    PaddingLeftTxt: 15,
                                    textWrapping: TextWrapping.Wrap,
@@ -60,6 +60,11 @@ namespace MosqueMateV2.Pages
                      this.loader.Visibility = Visibility.Collapsed;
 
                  });
+        }
+
+        private void GotoTop_Click(object sender, RoutedEventArgs e)
+        {
+            prophertStoriesScrollViewer.ScrollToTop();
         }
     }
 }

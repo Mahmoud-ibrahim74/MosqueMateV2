@@ -6,6 +6,7 @@
          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:local="clr-namespace:MosqueMateV2.CustomUserControls"
          xmlns:ui="http://schemas.modernwpf.com/2019"
+         xmlns:hc="https://handyorg.github.io/handycontrol"
          mc:Ignorable="d"
          Title="MainWindow"
          Loaded="Window_Loaded">
@@ -38,11 +39,31 @@
                                          HorizontalAlignment="Center" />
             </Button>
         </Grid>
-        <ScrollViewer x:Name="adhkarScrollViewer"
-                      Grid.Row="1">
-            <Grid x:Name="GridCardContainer"
-                  Grid.RowSpan="2">
-            </Grid>
-        </ScrollViewer>
+        <Grid Grid.Row="1">
+            <hc:ScrollViewer x:Name="adhkarScrollViewer"
+                             Margin="0,10,0,0">
+                <Grid x:Name="GridCardContainer"
+                      KeyDown="GridCardContainer_KeyDown"
+                      Grid.RowSpan="2">
+                    <hc:LoadingCircle x:Name="loader"
+                                      DotSpeed="5"
+                                      DotCount="5"
+                                      Width="101"
+                                      Height="40"
+                                      Panel.ZIndex="2"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      Visibility="Collapsed" />
+                </Grid>
+            </hc:ScrollViewer>
+            <hc:GotoTop Animated="True"
+                        AutoHiding="True"
+                        AnimationTime="500"
+                        Target="{Binding ElementName=ScrollViewerDemo}"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Margin="0,0,20,20"
+                        Click="GotoTop_Click" />
+        </Grid>
     </Grid>
 </ui:Page>

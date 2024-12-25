@@ -74,7 +74,7 @@ namespace MosqueMateV2.Windows
                        // AnsSolutionIcon.Visibility = Visibility.Visible;
                         break;         
                     case 2:
-                        AnsSolutionIcon.Margin = new Thickness(500, 450, 49, 110);
+                        AnsSolutionIcon.Margin = new Thickness(500, 455, 49, 110);
                        // AnsSolutionIcon.Visibility = Visibility.Visible;
                         break;
 

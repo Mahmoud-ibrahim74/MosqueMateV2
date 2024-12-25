@@ -159,7 +159,7 @@
                                        FontWeight="DemiBold"
                                        FontSize="13"
                                        TextAlignment="Center"
-                                       Margin="0,75,0,0"
+                                       Margin="-10,73,0,0"
                                        Height="40"
                                        Width="70" />
                         </Grid>

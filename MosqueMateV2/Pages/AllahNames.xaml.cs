@@ -1,9 +1,7 @@
-﻿using MosqueMateV2.Domain.Enums;
-using MosqueMateV2.Domain.Interfaces;
+﻿using MosqueMateV2.Domain.Interfaces;
 using MosqueMateV2.Domain.Repositories;
 using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
-using MosqueMateV2.Resources;
 using System.Windows;
 using System.Windows.Input;
 using Page = ModernWpf.Controls.Page;
@@ -53,6 +51,16 @@ namespace MosqueMateV2.Pages
             {
                 AppHelper.GoBack();
             });
+        }
+
+        private void adhkarScrollViewer_ScrollChanged(object sender, System.Windows.Controls.ScrollChangedEventArgs e)
+        {
+           
+        }
+
+        private void GotoTop_Click(object sender, RoutedEventArgs e)
+        {
+            adhkarScrollViewer.ScrollToTop();
         }
     }
 }
