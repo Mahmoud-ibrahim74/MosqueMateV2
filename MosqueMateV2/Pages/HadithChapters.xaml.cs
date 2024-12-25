@@ -55,7 +55,8 @@ namespace MosqueMateV2.Pages
                                                    PaddingTopTxt: 10,
                                                    CardWidth: 380,
                                                    CardHeight: 150,
-                                                   FontSize: 10,
+                                                   FontSizeHeader: 10,
+                                                   FontSizeText:18,
                                                    textWrapping: TextWrapping.Wrap
                                                );
                              this.loader.Visibility = Visibility.Collapsed;

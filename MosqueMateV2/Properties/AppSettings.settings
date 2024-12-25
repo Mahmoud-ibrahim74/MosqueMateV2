@@ -6,7 +6,7 @@
       <Value Profile="(Default)">00:00:00</Value>
     </Setting>
     <Setting Name="Lang" Type="System.String" Scope="User">
-      <Value Profile="(Default)">en</Value>
+      <Value Profile="(Default)">ar</Value>
     </Setting>
     <Setting Name="AutoStartUp" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

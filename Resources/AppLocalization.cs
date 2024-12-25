@@ -31,6 +31,8 @@
             public const string IsNotExisted = "IsNotExisted";
             public const string Play = "Play";
             public const string Stop = "Stop";
+            public const string PlaySoura = "PlaySoura";
+            public const string PauseSoura = "PauseSoura";
             public const int AnimationDuration = 2;
             public const int NotificatonDuration = 5;
             public const string Pause = "Pause";

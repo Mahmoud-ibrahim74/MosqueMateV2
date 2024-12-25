@@ -591,15 +591,20 @@
     "en": "Listin to soura",
     "fr": "écoute Soura"
   },
+  "PauseSoura": {
+    "ar": "ايقاف تشغيل السورة",
+    "en": "Pause Soura",
+    "fr": "Pause Soura"
+  },
+  "Stop": {
+    "ar": "ايقاف السورة",
+    "en": "Pause Adhan",
+    "fr": "Pause Adhan"
+  },
   "Play": {
     "ar": "تشغيل الأذان",
     "en": "Play Adhan",
     "fr": "Play Adhan"
-  },
-  "Pause": {
-    "ar": "ايقاف تشغيل",
-    "en": "Pause Adhan",
-    "fr": "Pause Adhan"
   }
 
 }

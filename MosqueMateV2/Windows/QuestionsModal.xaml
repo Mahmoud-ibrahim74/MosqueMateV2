@@ -8,7 +8,7 @@
         xmlns:hc="https://handyorg.github.io/handycontrol"
         mc:Ignorable="d"
         Width="600"
-        Height="700"
+        Height="720"
         Topmost="False"
         ResizeMode="NoResize"
         ShowInTaskbar="True"
@@ -89,15 +89,14 @@
                        Padding="10"
                        FontSize="17"
                        FontWeight="ExtraBold"
-                       Margin="0,151,0,322"
-                       Text="..................." />
+                       Margin="0,151,0,322" />
             <materialDesign:PackIcon x:Name="AnsSolutionIcon"
                                      Width="20"
                                      Height="20"
                                      Kind="CheckBold"
                                      Foreground="LawnGreen"
-                                     Visibility="Collapsed"
-                                     Margin="531,470,49,114"></materialDesign:PackIcon>
+                                     Visibility="Visible"
+                                     Margin="520, 480, 31, 254"></materialDesign:PackIcon>
             <RadioButton x:Name="ans1"
                          Height="54"
                          FontSize="17"
@@ -111,7 +110,7 @@
                          FontSize="17"
                          FontWeight="ExtraBold"
                          VerticalAlignment="Top"
-                         Margin="24,374,0,0"
+                         Margin="24,380,0,0"
                          Width="499"
                          HorizontalAlignment="Left" />
             <RadioButton x:Name="ans3"
@@ -119,21 +118,21 @@
                          FontSize="17"
                          FontWeight="ExtraBold"
                          VerticalAlignment="Top"
-                         Margin="27,453,0,0"
+                         Margin="27,461,0,0"
                          Width="499"
                          HorizontalAlignment="Left" />
 
             <Button x:Name="checkAnswer"
                     Content="عرض الإجابة"
                     FontSize="17"
-                    Padding="0 -10 0 0"
+                    Padding="0 -5 0 0"
                     FontWeight="ExtraBold"
                     Style="{StaticResource ButtonPrimary}"
                     Width="470"
                     HorizontalAlignment="Left"
-                    Margin="56,523,0,0"
+                    Margin="56,550,0,0"
                     VerticalAlignment="Top"
-                    Height="58"
+                    Height="53"
                     Click="checkAnswer_Click" />
 
             <!--#endregion-->

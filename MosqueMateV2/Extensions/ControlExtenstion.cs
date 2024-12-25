@@ -92,7 +92,8 @@ namespace MosqueMateV2.Extensions
         int PaddingRightTxt = 0,
         int PaddingTopTxt = 0,
         int PaddingBottomTxt = 0,
-        int FontSize = 10,
+        int FontSizeHeader = 10,
+        int FontSizeText = 10,
         Func<T, string> HeaderTxt = null,
         FlowDirection flowDirection = FlowDirection.LeftToRight,
         TextAlignment textAlignment = TextAlignment.Center,
@@ -131,7 +132,7 @@ namespace MosqueMateV2.Extensions
                     header = new()
                     {
                         Text = HeaderTxt(item),
-                        FontSize = FontSize,
+                        FontSize = FontSizeHeader,
                         FontWeight = FontWeights.UltraBold,
                         Margin = new Thickness(0, 0, 0, 8),
                         TextWrapping = textWrapping,
@@ -146,7 +147,7 @@ namespace MosqueMateV2.Extensions
                 TextBlock title = new()
                 {
                     Text = getName(item),
-                    FontSize = 20,
+                    FontSize = FontSizeText,
                     FontWeight = FontWeights.UltraBold,
                     Margin = new Thickness(0, 0, 0, 8),
                     TextWrapping = TextWrapping.WrapWithOverflow,

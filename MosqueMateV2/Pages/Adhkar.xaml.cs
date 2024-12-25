@@ -39,10 +39,11 @@ namespace MosqueMateV2.Pages
                                    data: result,
                                    getName: item => item.category,
                                    getId: item =>item.id,
-                                   PaddingTopTxt: 30,
+                                   PaddingTopTxt: 40,
                                    CardWidth: 380,
                                    CardHeight: 150,
-                                   FontSize: 10,
+                                   FontSizeHeader: 10,
+                                   FontSizeText: 20,
                                    textWrapping: TextWrapping.Wrap,
                                    serviceType: PagesTypesEnum.Adhkar
                                 );

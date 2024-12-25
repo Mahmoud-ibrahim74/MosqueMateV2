@@ -43,10 +43,11 @@ namespace MosqueMateV2.Pages
                                    getName: item => item.Title,
                                    getId: item => new Random().Next(1, 1000000),
                                    UidCard: item => item.Url,
-                                   PaddingTopTxt: 30,
+                                   PaddingTopTxt: 40,
                                    CardWidth: 380,
                                    CardHeight: 150,
-                                   FontSize: 10,
+                                   FontSizeHeader: 10,
+                                   FontSizeText: 18,
                                    textWrapping: TextWrapping.Wrap,
                                    serviceType: PagesTypesEnum.YoutubeViewerPage
                                );

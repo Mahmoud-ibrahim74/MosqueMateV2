@@ -65,8 +65,8 @@ namespace MosqueMateV2.Windows
             this.downloadAudio.Content = App.LocalizationService[SD.Localization.DownloadAudio];
             var resByte = quranRes.GetPageContent(index);
             imgViewer.ImageSource = ImageHelper.ConvertBytesToBitmapFrame(resByte);
-            playAudio.ToolTip = App.LocalizationService[SD.Localization.Play];
-            stopAudio.ToolTip = App.LocalizationService[SD.Localization.Stop];
+            playAudio.ToolTip = App.LocalizationService[SD.Localization.PlaySoura];
+            stopAudio.ToolTip = App.LocalizationService[SD.Localization.PauseSoura];
             connectionTxt.Text = App.LocalizationService[SD.Localization.Connection];
 
             ChangeWindowTitle();

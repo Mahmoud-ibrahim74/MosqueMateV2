@@ -66,16 +66,16 @@ namespace MosqueMateV2.Windows
                 switch (index)
                 {
                     case 0:
-                        AnsSolutionIcon.Margin = new Thickness(519, 300, 31, 254);
-                        AnsSolutionIcon.Visibility = Visibility.Visible;
+                        AnsSolutionIcon.Margin = new Thickness(500, 300, 31, 254);
+                        //AnsSolutionIcon.Visibility = Visibility.Visible;
                         break;           
                     case 1:
-                        AnsSolutionIcon.Margin = new Thickness(528,391,52,193);
-                        AnsSolutionIcon.Visibility = Visibility.Visible;
+                        AnsSolutionIcon.Margin = new Thickness(500, 380,52,100);
+                       // AnsSolutionIcon.Visibility = Visibility.Visible;
                         break;         
                     case 2:
-                        AnsSolutionIcon.Margin = new Thickness(531, 470, 49, 114);
-                        AnsSolutionIcon.Visibility = Visibility.Visible;
+                        AnsSolutionIcon.Margin = new Thickness(500, 450, 49, 110);
+                       // AnsSolutionIcon.Visibility = Visibility.Visible;
                         break;
 
                     default:

@@ -38,10 +38,11 @@ namespace MosqueMateV2.Pages
                                    data: result,
                                    getName: item => item.name,
                                    getId: item => item.pageIndex,
-                                   PaddingTopTxt: 30,
+                                   PaddingTopTxt: 50,
                                    CardWidth: 380,
                                    CardHeight: 150,
-                                   FontSize: 10,
+                                   FontSizeHeader: 10, 
+                                   FontSizeText: 25,
                                    textWrapping: TextWrapping.Wrap,
                                    serviceType: PagesTypesEnum.Quran
                                );

@@ -37,7 +37,7 @@ namespace MosqueMateV2.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("en")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ar")]
         public string Lang {
             get {
                 return ((string)(this["Lang"]));

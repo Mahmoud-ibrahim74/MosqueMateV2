@@ -43,7 +43,8 @@ namespace MosqueMateV2.Pages
                                    PaddingTopTxt: 30,
                                    CardWidth: 380,
                                    CardHeight: 150,
-                                   FontSize: 10,
+                                   FontSizeHeader: 10,
+                                   FontSizeText: 15,
                                    textWrapping: TextWrapping.Wrap,
                                    serviceType: PagesTypesEnum.YoutubeViewerPage
                                );
@@ -56,6 +57,11 @@ namespace MosqueMateV2.Pages
                      this.loader.Visibility = Visibility.Collapsed;
 
                  });
+        }
+
+        private void GridCardContainer_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            KeyboardHelper.ActionPressCTRLKey(e, System.Windows.Input.Key.B, AppHelper.GoHome);
         }
     }
 }
