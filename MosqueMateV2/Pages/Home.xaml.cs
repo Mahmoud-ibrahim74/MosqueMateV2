@@ -72,7 +72,7 @@ namespace MosqueMateV2.Pages
             topGrid.FlowDirection = App.AppLanguage == SD.Localization.Arabic ?
                                        FlowDirection.RightToLeft :
                                        FlowDirection.LeftToRight;
-            centerGrid.FlowDirection = App.AppLanguage == SD.Localization.Arabic ?
+            carouselContainer.FlowDirection = App.AppLanguage == SD.Localization.Arabic ?
                 FlowDirection.RightToLeft :
                 FlowDirection.LeftToRight;
 

@@ -4,52 +4,66 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="1000" Loaded="UserControl_Loaded">
+             d:DesignHeight="450"
+             Loaded="UserControl_Loaded">
     <Grid>
         <!-- Main Slide Container -->
-        <Grid x:Name="SlideContainer"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid x:Name="SlideContainer"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
             <Image x:Name="timeNow"
                    Stretch="UniformToFill"
-                   Width="40" Height="40"
+                   Width="40"
+                   Height="40"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Margin="11,15,0,0"
                    Panel.ZIndex="1"
-                   FlowDirection="LeftToRight"
-                   >
+                   FlowDirection="LeftToRight">
             </Image>
-            <ToggleButton x:Name="toggleAdhan" Cursor="Hand"
-                              Visibility="Visible"
-                              FontWeight="ExtraBold"
-                              FontSize="15" 
-                              VerticalAlignment="Bottom"
-                              HorizontalAlignment="Stretch"
-                              Click="toggleAdhan_Click" 
-                              Height="60" 
-                              Background="Transparent"
-                              BorderBrush="Transparent"
-                              Panel.ZIndex="1"
-                              />
-            <ItemsControl x:Name="ItemsControlSlides" 
-                    ItemsSource="{Binding PrayerSlides, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch">
+            <ToggleButton x:Name="toggleAdhan"
+                          Cursor="Hand"
+                          Visibility="Visible"
+                          FontWeight="ExtraBold"
+                          FontSize="15"
+                          VerticalAlignment="Bottom"
+                          HorizontalAlignment="Stretch"
+                          Click="toggleAdhan_Click"
+                          Height="60"
+                          Background="Transparent"
+                          BorderBrush="Transparent"
+                          Panel.ZIndex="1" />
+            <ItemsControl x:Name="ItemsControlSlides"
+                          ItemsSource="{Binding PrayerSlides, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
-
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Grid Width="1000">
-                            <Image Source="{Binding ImagePath}" Stretch="UniformToFill"  />
-                            <Rectangle Fill="Black" Opacity="0.6" />
+                        <Grid HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=ItemsControl}}">
+                            <Image Source="{Binding ImagePath}"
+                                   Stretch="UniformToFill" />
+                            <Rectangle Fill="Black"
+                                       Opacity="0.6" />
                             <Grid>
                                 <!-- Bottom Overlay -->
-                                <StackPanel VerticalAlignment="Bottom" Background="#80000000" >
-                                    <TextBlock Text="{Binding CurrentPrayerName}" FontSize="16" Padding="10 0 0 10" FontWeight="UltraBold" Foreground="White" />
-                                    <TextBlock Text="{Binding CurrentPrayerTime}" FontSize="12" Padding="10 0 0 10" Foreground="White" />
+                                <StackPanel VerticalAlignment="Bottom"
+                                            Background="#80000000">
+                                    <TextBlock Text="{Binding CurrentPrayerName}"
+                                               FontSize="16"
+                                               Padding="10 0 0 10"
+                                               FontWeight="UltraBold"
+                                               Foreground="White" />
+                                    <TextBlock Text="{Binding CurrentPrayerTime}"
+                                               FontSize="12"
+                                               Padding="10 0 0 10"
+                                               Foreground="White" />
                                 </StackPanel>
                             </Grid>
                         </Grid>
@@ -59,11 +73,19 @@
         </Grid>
 
         <!-- Navigation Buttons -->
-        <Button Cursor="Hand" Content="❮" Width="40" Height="40" 
-                HorizontalAlignment="Left" VerticalAlignment="Stretch"
+        <Button Cursor="Hand"
+                Content="❮"
+                Width="40"
+                Height="40"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Stretch"
                 Click="PrevButton_Click" />
-        <Button Cursor="Hand" Content="❯" Width="40" Height="40" 
-                HorizontalAlignment="Right" VerticalAlignment="Stretch"
+        <Button Cursor="Hand"
+                Content="❯"
+                Width="40"
+                Height="40"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Stretch"
                 Click="NextButton_Click" />
     </Grid>
 </UserControl>
