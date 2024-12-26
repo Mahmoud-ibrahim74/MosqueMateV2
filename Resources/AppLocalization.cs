@@ -115,6 +115,18 @@
             public const string AdhkarTag = "AdhkarPage";
 
             #endregion
+
+
+            #region Social-Links
+            public const string Github = "Github";
+            public const string GithubLink = "Github";
+            public const string Facebook = "Facebook";
+            public const string FacebookLink = "Github";
+            public const string LinkedIn = "LinkedIn";
+            public const string LinkedInLink = "LinkedIn";
+            public const string WhatsApp = "WhatsApp";
+            public const string WhatsAppLink = "WhatsAppLink";
+            #endregion
         }
     }
 }

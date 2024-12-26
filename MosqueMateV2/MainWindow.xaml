@@ -124,8 +124,18 @@
                 <ui:NavigationViewItem x:Name="WasayaItems">
                 </ui:NavigationViewItem>
                 <ui:NavigationViewItem x:Name="RadioItems">
-                </ui:NavigationViewItem>       
+                </ui:NavigationViewItem> 
+                
                 <ui:NavigationViewItem x:Name="CalculatorItems">
+                </ui:NavigationViewItem>
+
+                <ui:NavigationViewItem x:Name="GithubItems">
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem x:Name="LinkedInItems">
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem x:Name="FacebookItems">
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem x:Name="WhatsAppItems">
                 </ui:NavigationViewItem>
             </ui:NavigationView.MenuItems>
 

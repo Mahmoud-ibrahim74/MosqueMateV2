@@ -22,7 +22,8 @@ namespace MosqueMateV2
 
         public string apiContent { get; set; } = string.Empty;
         public List<PrayerSlide> PrayerSlidesData { get; set; }
-        #region ICons
+
+        #region Icons
         BitmapIcon _quranIcon { get; set; }
         BitmapIcon _quranTafseerIcon { get; set; }
         BitmapIcon _beadsIcon { get; set; }
@@ -35,6 +36,14 @@ namespace MosqueMateV2
         BitmapIcon Wasay { get; set; }
         BitmapIcon Radio { get; set; }
         BitmapIcon Calculator { get; set; }
+
+        #region Social-Media-Icons
+        BitmapIcon Github { get; set; }
+        BitmapIcon LinkedIn { get; set; }
+        BitmapIcon Facebook { get; set; }
+        BitmapIcon WhatsApp { get; set; }
+
+        #endregion
         #endregion
 
         public MainWindow()
@@ -60,6 +69,10 @@ namespace MosqueMateV2
             Radio = new();
             _quranTafseerIcon = new();
             Calculator = new();
+            Github = new();
+            LinkedIn = new();
+            Facebook = new();
+            WhatsApp = new();
             _quranIcon.UriSource = new Uri("pack://application:,,,/Assets/quranSideBar.png");
             _quranTafseerIcon.UriSource = new Uri("pack://application:,,,/Assets/quranSideBar.png");
             _beadsIcon.UriSource = new Uri("pack://application:,,,/Assets/beads.png");
@@ -73,7 +86,10 @@ namespace MosqueMateV2
             Wasay.UriSource = new Uri("pack://application:,,,/Assets/wsaya.png");
             Radio.UriSource = new Uri("pack://application:,,,/Assets/signal.png");
             Calculator.UriSource = new Uri("pack://application:,,,/Assets/calculator.png");
-
+            Github.UriSource = new Uri("pack://application:,,,/Assets/github.png");
+            LinkedIn.UriSource = new Uri("pack://application:,,,/Assets/linkedin-logo.png");
+            Facebook.UriSource = new Uri("pack://application:,,,/Assets/facebook.png");
+            WhatsApp.UriSource = new Uri("pack://application:,,,/Assets/whatsapp.png");
             quraanItem.Icon = _quranIcon;
             quraanTafseerItem.Icon = _quranTafseerIcon;
             adhkarItem.Icon = _beadsIcon;
@@ -86,6 +102,10 @@ namespace MosqueMateV2
             WasayaItems.Icon = Wasay;
             RadioItems.Icon = Radio;
             CalculatorItems.Icon = Calculator;
+            GithubItems.Icon = Github;
+            LinkedInItems.Icon = LinkedIn;  
+            FacebookItems.Icon = Facebook;
+            WhatsAppItems.Icon = WhatsApp;  
             #endregion
 
             #region CheckCurrenTheme
@@ -163,6 +183,21 @@ namespace MosqueMateV2
                         if (!AppHelper.IsWindowOpen<ZakatCalculator>("zakatCalculatorWindow", true))
                             new ZakatCalculator().ShowModal();
                         break;
+
+                    #region Social
+                    case SD.Localization.Github:
+                        ProcoessHelper.OpenAppLink("https://github.com/Mahmoud-ibrahim74");
+                        break;
+                    case SD.Localization.Facebook:
+                        ProcoessHelper.OpenAppLink("https://www.facebook.com/Houda405");
+                        break;
+                    case SD.Localization.LinkedIn:
+                        ProcoessHelper.OpenAppLink("https://www.linkedin.com/in/mahmoud-ibrahim74/");
+                        break;
+                    case SD.Localization.WhatsApp:
+                        ProcoessHelper.OpenAppLink("https://wa.me/2001069903556");
+                        break; 
+                        #endregion
                 }
             }
         }
@@ -187,6 +222,11 @@ namespace MosqueMateV2
             WasayaItems.Content = App.LocalizationService[SD.Localization.Wasaya];
             RadioItems.Content = App.LocalizationService[SD.Localization.MiniQuranLive];
             CalculatorItems.Content = App.LocalizationService[SD.Localization.Zakat];
+
+            GithubItems.Content = SD.Localization.Github;
+            FacebookItems.Content = SD.Localization.Facebook;
+            LinkedInItems.Content = SD.Localization.LinkedIn;   
+            WhatsAppItems.Content = SD.Localization.WhatsApp;
             #endregion
 
             #region Tags
@@ -204,6 +244,10 @@ namespace MosqueMateV2
             WasayaItems.Tag = SD.Localization.Wasaya;
             RadioItems.Tag = SD.Localization.MiniQuranLive;
             CalculatorItems.Tag = SD.Localization.Zakat;
+            GithubItems.Tag = SD.Localization.Github;
+            FacebookItems.Tag = SD.Localization.Facebook;
+            LinkedInItems.Tag = SD.Localization.LinkedIn;
+            WhatsAppItems.Tag = SD.Localization.WhatsApp;
             NavView.SelectedItem = homeItem;
 
             #endregion

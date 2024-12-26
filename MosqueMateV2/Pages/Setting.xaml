@@ -169,7 +169,6 @@
         <ComboBox x:Name="calcBox"
                   Grid.Column="1"
                   Grid.Row="2"
-                  IsEditable="True"
                   FontSize="13"
                   FontWeight="DemiBold"
                   Width="262"
