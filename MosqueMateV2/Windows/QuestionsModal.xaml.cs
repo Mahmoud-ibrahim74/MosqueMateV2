@@ -67,15 +67,21 @@ namespace MosqueMateV2.Windows
                 {
                     case 0:
                         AnsSolutionIcon.Margin = new Thickness(500, 300, 31, 254);
-                        //AnsSolutionIcon.Visibility = Visibility.Visible;
+                        ans1.IsChecked = true;
+                        ans2.IsEnabled = false;
+                        ans3.IsEnabled = false;
                         break;           
                     case 1:
                         AnsSolutionIcon.Margin = new Thickness(500, 380,52,100);
-                       // AnsSolutionIcon.Visibility = Visibility.Visible;
+                        ans2.IsChecked = true;
+                        ans1.IsEnabled = false;
+                        ans3.IsEnabled = false;
                         break;         
                     case 2:
                         AnsSolutionIcon.Margin = new Thickness(500, 455, 49, 110);
-                       // AnsSolutionIcon.Visibility = Visibility.Visible;
+                        ans3.IsChecked = true;
+                        ans1.IsEnabled = false;
+                        ans2.IsEnabled = false;
                         break;
 
                     default:

@@ -10,6 +10,7 @@ using MosqueMateV2.Resources;
 using MosqueMateV2.Windows;
 using System.Drawing;
 using System.Windows;
+using System.Windows.Media;
 
 namespace MosqueMateV2
 {
@@ -21,6 +22,7 @@ namespace MosqueMateV2
 
         public string apiContent { get; set; } = string.Empty;
         public List<PrayerSlide> PrayerSlidesData { get; set; }
+        #region ICons
         BitmapIcon _quranIcon { get; set; }
         BitmapIcon _quranTafseerIcon { get; set; }
         BitmapIcon _beadsIcon { get; set; }
@@ -33,6 +35,7 @@ namespace MosqueMateV2
         BitmapIcon Wasay { get; set; }
         BitmapIcon Radio { get; set; }
         BitmapIcon Calculator { get; set; }
+        #endregion
 
         public MainWindow()
         {
@@ -85,6 +88,25 @@ namespace MosqueMateV2
             CalculatorItems.Icon = Calculator;
             #endregion
 
+            #region CheckCurrenTheme
+            if (App.CurrentTheme == ThemeMode.Light)
+            {
+                homeItem.Foreground = System.Windows.Media.Brushes.White;
+                quraanItem.Foreground = System.Windows.Media.Brushes.White;
+                adhkarItem.Foreground = System.Windows.Media.Brushes.White;
+                hadithItem.Foreground = System.Windows.Media.Brushes.White;
+                allahNamesItem.Foreground = System.Windows.Media.Brushes.White;
+                ProphetsStoriesItem.Foreground = System.Windows.Media.Brushes.White;
+                RokyaItems.Foreground = System.Windows.Media.Brushes.White;
+                quraanTafseerItem.Foreground = System.Windows.Media.Brushes.White;
+                quraanTafseerItem.Foreground = System.Windows.Media.Brushes.White;
+                CrescentItems.Foreground = System.Windows.Media.Brushes.White;
+                KosdosyItems.Foreground = System.Windows.Media.Brushes.White;
+                WasayaItems.Foreground = System.Windows.Media.Brushes.White;
+                RadioItems.Foreground = System.Windows.Media.Brushes.White;
+                CalculatorItems.Foreground = System.Windows.Media.Brushes.White;
+            } 
+            #endregion
         }
 
         private void NavView_SelectionChanged(object sender, NavigationViewSelectionChangedEventArgs e)

@@ -38,6 +38,7 @@ namespace MosqueMateV2.Pages
 
 
             PrayerSlidesData = [];
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
