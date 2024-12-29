@@ -51,6 +51,7 @@ namespace MosqueMateV2.Pages
             this.reciterLBL.Content = App.LocalizationService[SD.Localization.Reciter];
             this.themeModeLBL.Content = App.LocalizationService[SD.Localization.ChooseMode];
             this.save.Content = App.LocalizationService[SD.Localization.Save];
+            this.notificationToggle.ToolTip = App.LocalizationService[SD.Localization.notificationDesc];
 
             #endregion
 
