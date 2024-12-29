@@ -28,6 +28,22 @@ namespace MosqueMateV2.Helpers
             }
 
         }
+        public static async Task<string> WriteTextToFileAsync(string value)
+        {
+            try
+            {
+                if (!Directory.Exists(SD.Localization.AppTempPath))
+                    Directory.CreateDirectory(SD.Localization.AppTempPath);
+
+                var filePath = Path.Combine(SD.Localization.AppTempPath, "output.txt");
+                await File.WriteAllTextAsync(filePath, value);
+                return filePath;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
         public static void ConvertPlayListToJsonFile(IReadOnlyList<PlaylistVideo> list)
         {
             var filePath = Path.Combine(SD.Localization.AppTempPath, "output.json");

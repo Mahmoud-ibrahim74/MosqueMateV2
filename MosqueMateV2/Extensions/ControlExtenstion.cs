@@ -256,7 +256,9 @@ namespace MosqueMateV2.Extensions
                 string title1 = "",
                 string title2 = "",
                 string title3 = "",
-                string title4 = ""
+                string title4 = "",
+                string tooltipCopyBtn = "",
+                string tooltipShareBtn = ""
                  )
         {
 
@@ -337,7 +339,7 @@ namespace MosqueMateV2.Extensions
             var copyToClipboard = new Button
             {
                 Name = "copyToClipboard",
-                ToolTip = "Copy Hadith",
+                ToolTip = tooltipCopyBtn,
                 Background = Brushes.Transparent,
                 Margin = new Thickness(20),
                 HorizontalAlignment = HorizontalAlignment.Right,
@@ -356,7 +358,7 @@ namespace MosqueMateV2.Extensions
             var shareButton = new Button
             {
                 Name = "Share",
-                ToolTip = "Copy Hadith",
+                ToolTip = tooltipShareBtn,
                 Background = Brushes.Transparent,
                 Margin = new Thickness(30, 0, 0, 0),
                 Height = 35,
@@ -408,7 +410,9 @@ namespace MosqueMateV2.Extensions
                            title1: head1,
                            title2: head2,
                            title3: item.hadithArabic,
-                           title4: item.hadithEnglish
+                           title4: item.hadithEnglish,
+                           tooltipCopyBtn:"Copy Hadith",
+                           tooltipShareBtn:"Share Hadith"
                            );
                     cardPanel.Children.Add(card);
                 }
@@ -418,7 +422,9 @@ namespace MosqueMateV2.Extensions
 
         private static Card GenerateCardForAllahNames(
         string title1 = "",
-        string title3 = ""
+        string title3 = "",
+        string tooltipCopyBtn = "",
+        string tooltipShareBtn = ""
          )
         {
             // Create the Card
@@ -473,7 +479,7 @@ namespace MosqueMateV2.Extensions
             var copyToClipboard = new Button
             {
                 Name = "copyToClipboard",
-                ToolTip = "Copy Hadith",
+                ToolTip = tooltipCopyBtn,
                 Background = Brushes.Transparent,
                 Margin = new Thickness(470, 90, 0, 0),
                 Height = 35,
@@ -491,7 +497,7 @@ namespace MosqueMateV2.Extensions
             var shareButton = new Button
             {
                 Name = "Share",
-                ToolTip = "Copy Hadith",
+                ToolTip = tooltipShareBtn,
                 Background = Brushes.Transparent,
                 Margin = new Thickness(20, 80, 0, 0),
                 Height = 35,
@@ -537,7 +543,7 @@ namespace MosqueMateV2.Extensions
         }
         private static void ShareButton_Click(object sender, RoutedEventArgs e, string value)
         {
-            ShareHelper.ShareText("Share Text", "Share text using Windows Share functionality.", value);
+            ShareHelper.ShareText(value);
         }
         public static void GenerateCardsForAllahNames(this Grid grid, List<DTOAllahNames> data)
         {
@@ -553,7 +559,9 @@ namespace MosqueMateV2.Extensions
                 {
                     var card = GenerateCardForAllahNames(
                            title1: item.name,
-                           title3: item.text
+                           title3: item.text,
+                           tooltipCopyBtn:"Copy Name",
+                           tooltipShareBtn:"Share Name"
                            );
                     cardPanel.Children.Add(card);
                 }
