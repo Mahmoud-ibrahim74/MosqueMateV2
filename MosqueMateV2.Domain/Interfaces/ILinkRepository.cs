@@ -1,9 +1,4 @@
 ﻿using MosqueMateV2.Domain.DTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MosqueMateV2.Domain.Interfaces
 {
@@ -11,5 +6,7 @@ namespace MosqueMateV2.Domain.Interfaces
     {
         public Task<List<DTOQuranLinks>> GetAllLinks();
         public DTOQuranLinks GetLinkByName(string name);
+        public string ModifyOneLink(List<string> urls);
+
     }
 }

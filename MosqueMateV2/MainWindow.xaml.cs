@@ -1,5 +1,4 @@
-﻿using AngleSharp.Common;
-using ModernWpf;
+﻿using ModernWpf;
 using ModernWpf.Controls;
 using MosqueMateV2.DataAccess.Models;
 using MosqueMateV2.Extensions;
@@ -8,9 +7,7 @@ using MosqueMateV2.Pages;
 using MosqueMateV2.Properties;
 using MosqueMateV2.Resources;
 using MosqueMateV2.Windows;
-using System.Drawing;
 using System.Windows;
-using System.Windows.Media;
 
 namespace MosqueMateV2
 {
@@ -48,9 +45,19 @@ namespace MosqueMateV2
 
         public MainWindow()
         {
+
             #region SetTheme
             var currentTheme = AppSettings.Default.themeMode.ToThemeMode();
             this.ThemeMode = currentTheme;
+            if (this.NavView?.Resources != null)
+            {
+                NavView.Resources.MergedDictionaries.Clear();
+                NavView.Resources.MergedDictionaries.Add(
+                    new ResourceDictionary
+                    {
+                        Source = new Uri($"pack://application:,,,/ModernWpf;component/Themes/{ThemeManager.Current.ApplicationTheme}.xaml")
+                    });
+            }
             #endregion
 
             InitializeComponent();
@@ -108,25 +115,25 @@ namespace MosqueMateV2
             WhatsAppItems.Icon = WhatsApp;  
             #endregion
 
-            #region CheckCurrenTheme
-            if (App.CurrentTheme == ThemeMode.Light)
-            {
-                homeItem.Foreground = System.Windows.Media.Brushes.White;
-                quraanItem.Foreground = System.Windows.Media.Brushes.White;
-                adhkarItem.Foreground = System.Windows.Media.Brushes.White;
-                hadithItem.Foreground = System.Windows.Media.Brushes.White;
-                allahNamesItem.Foreground = System.Windows.Media.Brushes.White;
-                ProphetsStoriesItem.Foreground = System.Windows.Media.Brushes.White;
-                RokyaItems.Foreground = System.Windows.Media.Brushes.White;
-                quraanTafseerItem.Foreground = System.Windows.Media.Brushes.White;
-                quraanTafseerItem.Foreground = System.Windows.Media.Brushes.White;
-                CrescentItems.Foreground = System.Windows.Media.Brushes.White;
-                KosdosyItems.Foreground = System.Windows.Media.Brushes.White;
-                WasayaItems.Foreground = System.Windows.Media.Brushes.White;
-                RadioItems.Foreground = System.Windows.Media.Brushes.White;
-                CalculatorItems.Foreground = System.Windows.Media.Brushes.White;
-            } 
-            #endregion
+            //#region CheckCurrenTheme
+            //if (App.CurrentTheme == ThemeMode.Light)
+            //{
+            //    homeItem.Foreground = System.Windows.Media.Brushes.White;
+            //    quraanItem.Foreground = System.Windows.Media.Brushes.White;
+            //    adhkarItem.Foreground = System.Windows.Media.Brushes.White;
+            //    hadithItem.Foreground = System.Windows.Media.Brushes.White;
+            //    allahNamesItem.Foreground = System.Windows.Media.Brushes.White;
+            //    ProphetsStoriesItem.Foreground = System.Windows.Media.Brushes.White;
+            //    RokyaItems.Foreground = System.Windows.Media.Brushes.White;
+            //    quraanTafseerItem.Foreground = System.Windows.Media.Brushes.White;
+            //    quraanTafseerItem.Foreground = System.Windows.Media.Brushes.White;
+            //    CrescentItems.Foreground = System.Windows.Media.Brushes.White;
+            //    KosdosyItems.Foreground = System.Windows.Media.Brushes.White;
+            //    WasayaItems.Foreground = System.Windows.Media.Brushes.White;
+            //    RadioItems.Foreground = System.Windows.Media.Brushes.White;
+            //    CalculatorItems.Foreground = System.Windows.Media.Brushes.White;
+            //} 
+            //#endregion
         }
 
         private void NavView_SelectionChanged(object sender, NavigationViewSelectionChangedEventArgs e)
@@ -202,9 +209,8 @@ namespace MosqueMateV2
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
             #region Labels
             Title = App.LocalizationService[SD.Localization.AppName];
             NavView.PaneTitle = App.LocalizationService[SD.Localization.MainMenu];

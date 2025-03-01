@@ -21,7 +21,6 @@
                      VerticalAlignment="Center"
                      Width="450"
                      Height="40"
-                     Padding="10"
                      FontSize="18"
                      FlowDirection="RightToLeft" />
             <Button x:Name="searchOnAdhan"

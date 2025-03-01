@@ -17,21 +17,30 @@ namespace MosqueMateV2.Domain.Repositories
                 return;
 
             string jsonContent = Encoding.UTF8.GetString(FileResources.quran_link);
-            _links = JsonConvert.DeserializeObject<List<DTOQuranLinks>>(jsonContent) ?? [];
+            _links = JsonConvert.DeserializeObject<List<DTOQuranLinks>>(jsonContent) ?? new List<DTOQuranLinks>();
         }
         public Task<List<DTOQuranLinks>> GetAllLinks()
         {
-            return Task.FromResult(_links ?? []);
+            return Task.FromResult(_links ?? new List<DTOQuranLinks>());
         }
         public DTOQuranLinks GetLinkByName(string name)
         {
 
             return _links.FirstOrDefault(x => x.name == name) ??
-            new()
+            new DTOQuranLinks
             {
                 name = SD.Localization.DefaultSura,
                 url1 = "https://www.youtube.com/watch?v=SxzUeUdi5hI&list=PLdjxZcgE9WhA-0aup6tYg7soQRNhxOSHr",
             };
+        }
+        public string ModifyOneLink(List<string> urls)
+        {
+            for (int i = 0; i < _links.Count; i++)
+            {
+                _links[i].url1 = urls[i];
+            }
+            var serialized = JsonConvert.SerializeObject(_links);
+            return serialized;
         }
     }
 }

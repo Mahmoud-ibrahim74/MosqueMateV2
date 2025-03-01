@@ -7,10 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LibVLCSharp" Version="3.9.1" />
+    <PackageReference Include="LibVLCSharp" Version="3.9.2" />
     <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.21" />
-    <PackageReference Include="YoutubeExplode" Version="6.5.0" />
+    <PackageReference Include="YoutubeExplode" Version="6.5.3" />
   </ItemGroup>
 
   <ItemGroup>

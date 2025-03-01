@@ -25,6 +25,12 @@ namespace MosqueMateV2.Pages
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            ToastNotificationsHelper.
+            SendNotification(
+                        title: "Info",
+                        message: "Press Alt + ← to Back",
+                        duration: new TimeSpan(0, 0, SD.Localization.NotificatonDuration),
+                        type: Notification.Wpf.NotificationType.Information);
             this.loader.Visibility = Visibility.Visible;
             var fileByte = this._Type switch
             {

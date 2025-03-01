@@ -172,75 +172,89 @@ namespace MosqueMateV2.Pages
         }
         private void SaveProfile()
         {
-            #region Remainder-Area
-            var hours = int.Parse(hoursTxt.Text);
-            var min = int.Parse(minutesTxt.Text);
-            var remainderTime = new TimeSpan(hours, min, 0);
-            #endregion
+            try
+            {
+                #region Remainder-Area
+                var hours = int.Parse(hoursTxt.Text);
+                var min = int.Parse(minutesTxt.Text);
+                var remainderTime = new TimeSpan(hours, min, 0);
+                #endregion
 
-            #region Region-Area
-            var country = countryBox.SelectedValue as string;
-            var city = cityBox.SelectedValue as string;
-            var calc = calcBox.SelectedValue as string;
-            #endregion
+                #region Region-Area
+                var country = countryBox.SelectedValue as string;
+                var city = cityBox.SelectedValue as string;
+                var calc = calcBox.SelectedValue as string;
+                #endregion
 
-            #region Lang-Area
-
-
-            string lang = arabicRadioBtn.IsChecked == true ? SD.Localization.Arabic :
-                          englishRadioBtn.IsChecked == true ? SD.Localization.English :
-                          frenshRadioBtn.IsChecked == true ? SD.Localization.Frensh :
-                          SD.Localization.Arabic;
-            #endregion
-
-            #region AutoStart
-            var autoStart = startupTogle.IsChecked;
-            var notification = notificationToggle.IsChecked;
-            #endregion
-
-            #region TheMuzzein
-            var adhan = adhanBox.SelectedValue as string;
-            var adhanFajr = adhanFajrBox.SelectedValue as string;
-
-            #endregion
-
-            #region Reciter
-            var reciter = reciterBox.SelectedValue as string;
-
-            #endregion
-
-            #region Theme-Mode
-            var theme = themeModeBox.SelectedValue as string;
-
-            #endregion
-
-            #region Set-Value-Settings
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Lang)] = lang;
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.TimeRemainder)] = remainderTime;
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Country)] = country;
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.City)] = city;
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Method)] = calc;
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.AutoStartUp)] = autoStart;
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Adhan)] = adhan;
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.AdhanFajr)] = adhanFajr;
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.NotificationEnabled)] = notification;
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Reciter)] = reciter;
-            Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.themeMode)] = theme;
-            #endregion
+                #region Lang-Area
 
 
-            Properties.AppSettings.Default.Save();
+                string lang = arabicRadioBtn.IsChecked == true ? SD.Localization.Arabic :
+                              englishRadioBtn.IsChecked == true ? SD.Localization.English :
+                              frenshRadioBtn.IsChecked == true ? SD.Localization.Frensh :
+                              SD.Localization.Arabic;
+                #endregion
 
-            ToastNotificationsHelper.
-            SendNotification(
-                        title: App.LocalizationService[SD.Localization.Sucsess],
-                        message: App.LocalizationService[SD.Localization.SavedSucsessfully],
-                        duration: new TimeSpan(0, 0, SD.Localization.NotificatonDuration),
-                        onClose: () =>
-                        {
-                            AppHelper.RestartApp();
-                        },
-           type: Notification.Wpf.NotificationType.Success);
+                #region AutoStart
+                var autoStart = startupTogle.IsChecked;
+                var notification = notificationToggle.IsChecked;
+                #endregion
+
+                #region TheMuzzein
+                var adhan = adhanBox.SelectedValue as string;
+                var adhanFajr = adhanFajrBox.SelectedValue as string;
+
+                #endregion
+
+                #region Reciter
+                var reciter = reciterBox.SelectedValue as string;
+
+                #endregion
+
+                #region Theme-Mode
+                var theme = themeModeBox.SelectedValue as string;
+
+                #endregion
+
+                #region Set-Value-Settings
+                Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Lang)] = lang;
+                Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.TimeRemainder)] = remainderTime;
+                Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Country)] = country;
+                Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.City)] = city;
+                Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Method)] = calc;
+                Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.AutoStartUp)] = autoStart;
+                Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Adhan)] = adhan;
+                Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.AdhanFajr)] = adhanFajr;
+                Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.NotificationEnabled)] = notification;
+                Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.Reciter)] = reciter;
+                Properties.AppSettings.Default[nameof(Properties.AppSettings.Default.themeMode)] = theme;
+                #endregion
+
+
+                Properties.AppSettings.Default.Save();
+
+                ToastNotificationsHelper.
+                SendNotification(
+                            title: App.LocalizationService[SD.Localization.Sucsess],
+                            message: App.LocalizationService[SD.Localization.SavedSucsessfully],
+                            duration: new TimeSpan(0, 0, SD.Localization.NotificatonDuration),
+                            onClose: () =>
+                            {
+                                AppHelper.RestartApp();
+                            },
+               type: Notification.Wpf.NotificationType.Success);
+            }
+            catch (Exception ex)
+            {
+                ToastNotificationsHelper.
+                    SendNotification(
+                                title: "Error",
+                                message:ex.Message,
+                                duration: new TimeSpan(0, 0, SD.Localization.NotificatonDuration),
+                                type: Notification.Wpf.NotificationType.Error);
+
+            }
+
 
         }
         private async Task<bool> LoadProfile()
