@@ -34,8 +34,7 @@ namespace MosqueMateV2.Windows
         public QuranModalPopup(int pageIndex)
         {
             #region SetTheme
-            var currentTheme = AppSettings.Default.themeMode.ToThemeMode();
-            this.ThemeMode = currentTheme;
+            this.ThemeMode = OSHelper.GetWindowsTheme();
             #endregion
             InitializeComponent();
             this.index = pageIndex;

@@ -18,8 +18,7 @@ namespace MosqueMateV2.Windows
         public ZakatCalculator()
         {
             #region SetTheme
-            var currentTheme = AppSettings.Default.themeMode.ToThemeMode();
-            this.ThemeMode = currentTheme;
+            this.ThemeMode = OSHelper.GetWindowsTheme();
             #endregion
             InitializeComponent();
 

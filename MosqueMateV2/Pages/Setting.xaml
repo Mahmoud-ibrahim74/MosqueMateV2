@@ -258,12 +258,15 @@
                Grid.Column="0"
                Grid.Row="5"
                Padding="10 15 0 0"
+                  Visibility="Collapsed"
+               
                FontSize="15"
                Margin="17,8,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"></Label>
         <ComboBox x:Name="themeModeBox"
                   IsEnabled="False"
+                  Visibility="Collapsed"
                   Margin="12,58,36,26"
                   Grid.Row="5"
                   Width="275"

@@ -15,8 +15,7 @@ namespace MosqueMateV2.Windows
         public LiveStream(string url)
         {
             #region SetTheme
-            var currentTheme = AppSettings.Default.themeMode.ToThemeMode();
-            this.ThemeMode = currentTheme;
+            this.ThemeMode = OSHelper.GetWindowsTheme();
             #endregion
             InitializeComponent();
             this._StreamUrl = url;

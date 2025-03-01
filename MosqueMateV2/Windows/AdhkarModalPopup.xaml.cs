@@ -26,8 +26,7 @@ namespace MosqueMateV2.Windows
         public AdhkarModalPopup(int zekId)
         {
             #region SetTheme
-            var currentTheme = AppSettings.Default.themeMode.ToThemeMode();
-            this.ThemeMode = currentTheme;
+            this.ThemeMode = OSHelper.GetWindowsTheme();
             #endregion
             InitializeComponent();
             rxTaskManger = new();

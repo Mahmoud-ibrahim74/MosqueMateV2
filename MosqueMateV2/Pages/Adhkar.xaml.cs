@@ -5,7 +5,6 @@ using MosqueMateV2.Extensions;
 using MosqueMateV2.Helpers;
 using MosqueMateV2.Resources;
 using System.Windows;
-using System.Windows.Controls;
 using Page = ModernWpf.Controls.Page;
 
 namespace MosqueMateV2.Pages

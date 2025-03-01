@@ -47,17 +47,7 @@ namespace MosqueMateV2
         {
 
             #region SetTheme
-            var currentTheme = AppSettings.Default.themeMode.ToThemeMode();
-            this.ThemeMode = currentTheme;
-            if (this.NavView?.Resources != null)
-            {
-                NavView.Resources.MergedDictionaries.Clear();
-                NavView.Resources.MergedDictionaries.Add(
-                    new ResourceDictionary
-                    {
-                        Source = new Uri($"pack://application:,,,/ModernWpf;component/Themes/{ThemeManager.Current.ApplicationTheme}.xaml")
-                    });
-            }
+            this.ThemeMode = OSHelper.GetWindowsTheme();
             #endregion
 
             InitializeComponent();
